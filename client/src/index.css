@@ -551,3 +551,138 @@
     padding: 1rem;
   }
 }
+
+/* ── Community Stats Card ───────────────────────────────────── */
+
+/* 4-tile stat grid */
+.comm-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.comm-stat-tile {
+  background: oklch(0.16 0.008 155);
+  border: 1px solid var(--border);
+  border-top: 2px solid oklch(0.78 0.22 155 / 0.5);
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.comm-stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--terminal-green);
+  line-height: 1;
+}
+.comm-stat-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+}
+
+/* New members list */
+.new-members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.new-member-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid oklch(0.22 0.01 155 / 0.5);
+}
+.new-member-row:last-child {
+  border-bottom: none;
+}
+.new-member-name {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--foreground);
+}
+.new-member-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--terminal-dim);
+}
+
+/* Recent posts list */
+.recent-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.recent-post-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid oklch(0.22 0.01 155 / 0.5);
+}
+.recent-post-row:last-child {
+  border-bottom: none;
+}
+.recent-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.recent-post-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--terminal-dim);
+}
+.recent-post-author {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.68rem;
+  color: var(--muted-foreground);
+  background: oklch(0.16 0.008 155);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+}
+.recent-post-engagement {
+  display: flex;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--terminal-amber);
+}
+.recent-post-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--foreground);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 150ms ease-out;
+}
+.recent-post-title:hover {
+  color: var(--terminal-green);
+}
+
+/* Fetch timestamp */
+.comm-stat-footer {
+  margin-top: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--terminal-dim);
+  text-align: right;
+}
+
+/* Mobile: 2x2 grid for stat tiles */
+@media (max-width: 640px) {
+  .comm-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comm-stat-value {
+    font-size: 1.25rem;
+  }
+}

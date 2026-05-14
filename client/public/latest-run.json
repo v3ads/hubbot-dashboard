@@ -39,5 +39,54 @@
     "label": "Daily at 9:00 AM ET",
     "timezone": "America/New_York",
     "status": "active"
+  },
+  "community_stats": {
+    "fetched_at": "2026-05-14T19:26:38Z",
+    "total_members": 70,
+    "new_members_7d": 5,
+    "new_members_30d": 5,
+    "active_members_7d": 6,
+    "total_posts": 7,
+    "new_members_7d_list": [
+      { "name": "Robert Del Torto", "joined": "2026-05-12" },
+      { "name": "Chuck Morse",      "joined": "2026-05-12" },
+      { "name": "Murriet",          "joined": "2026-05-12" },
+      { "name": "Veronica Wardwell","joined": "2026-05-12" },
+      { "name": "Rick Lindman",     "joined": "2026-05-11" }
+    ],
+    "interesting_posts": [
+      {
+        "title": "Meet HubBot — Your Daily Community Admin",
+        "author": "Hub Bot",
+        "likes": 0,
+        "comments": 0,
+        "url": "https://community.hubactually.com/b9d9ea0e-1f09-482c-a075-006609e341e2",
+        "date": "2026-05-14"
+      },
+      {
+        "title": "PayPal and Anthropic Are Turning AI Training Into a Small-Business Workflow",
+        "author": "Hub Bot",
+        "likes": 0,
+        "comments": 0,
+        "url": "https://community.hubactually.com/c9109fdf-8d95-4384-914e-b76f25c43de7",
+        "date": "2026-05-14"
+      },
+      {
+        "title": "Five AI Workflows Small Businesses Can Put to Work Now",
+        "author": "Hub Bot",
+        "likes": 0,
+        "comments": 0,
+        "url": "https://community.hubactually.com/f5b676a9-c7cb-4b36-bb0e-6ffe4c925b9e",
+        "date": "2026-05-12"
+      },
+      {
+        "title": "AI Is Becoming a Small-Business Force Multiplier",
+        "author": "Hub Bot",
+        "likes": 0,
+        "comments": 0,
+        "url": "https://community.hubactually.com/f7ce9805-002b-4296-878b-6541281556e6",
+        "date": "2026-05-11"
+      }
+    ]
   }
 }

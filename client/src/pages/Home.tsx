@@ -45,6 +45,23 @@ interface RunData {
     timezone: string;
     status: string;
   };
+  community_stats?: {
+    fetched_at: string;
+    total_members: number;
+    new_members_7d: number;
+    new_members_30d: number;
+    active_members_7d: number;
+    total_posts: number;
+    new_members_7d_list: { name: string; joined: string }[];
+    interesting_posts: {
+      title: string;
+      author: string;
+      likes: number;
+      comments: number;
+      url: string;
+      date: string;
+    }[];
+  };
 }
 
 // ── Helpers ──────────────────────────────────────────────────
@@ -239,6 +256,88 @@ function PostCard({ data }: { data: RunData }) {
   );
 }
 
+function CommunityStatsCard({ stats }: { stats: NonNullable<RunData["community_stats"]> }) {
+  return (
+    <div className="term-card card-enter" style={{ animationDelay: "120ms" }}>
+      <div className="term-label" style={{ marginBottom: "0.85rem" }}>community stats</div>
+
+      {/* Top-level numbers */}
+      <div className="comm-stat-grid">
+        <div className="comm-stat-tile">
+          <div className="comm-stat-value">{stats.total_members}</div>
+          <div className="comm-stat-label">total members</div>
+        </div>
+        <div className="comm-stat-tile">
+          <div className="comm-stat-value" style={{ color: stats.new_members_7d > 0 ? "var(--terminal-green)" : "var(--terminal-dim)" }}>
+            +{stats.new_members_7d}
+          </div>
+          <div className="comm-stat-label">new (7 days)</div>
+        </div>
+        <div className="comm-stat-tile">
+          <div className="comm-stat-value">{stats.active_members_7d}</div>
+          <div className="comm-stat-label">active (7 days)</div>
+        </div>
+        <div className="comm-stat-tile">
+          <div className="comm-stat-value">{stats.total_posts}</div>
+          <div className="comm-stat-label">total posts</div>
+        </div>
+      </div>
+
+      {/* New members list */}
+      {stats.new_members_7d_list.length > 0 && (
+        <>
+          <hr className="term-rule" />
+          <div className="term-label" style={{ marginBottom: "0.5rem", fontSize: "0.72rem" }}>new members this week</div>
+          <div className="new-members-list">
+            {stats.new_members_7d_list.map((m) => (
+              <div key={m.name + m.joined} className="new-member-row">
+                <span className="new-member-name">{m.name}</span>
+                <span className="new-member-date">{m.joined}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* Recent posts */}
+      {stats.interesting_posts.length > 0 && (
+        <>
+          <hr className="term-rule" />
+          <div className="term-label" style={{ marginBottom: "0.5rem", fontSize: "0.72rem" }}>recent posts</div>
+          <div className="recent-posts-list">
+            {stats.interesting_posts.map((p) => (
+              <div key={p.url} className="recent-post-row">
+                <div className="recent-post-meta">
+                  <span className="recent-post-date">{p.date}</span>
+                  <span className="recent-post-author">{p.author}</span>
+                  {(p.likes > 0 || p.comments > 0) && (
+                    <span className="recent-post-engagement">
+                      {p.likes > 0 && <span>♥ {p.likes}</span>}
+                      {p.comments > 0 && <span>💬 {p.comments}</span>}
+                    </span>
+                  )}
+                </div>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="recent-post-title"
+                >
+                  {p.title}
+                </a>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      <div className="comm-stat-footer">
+        fetched at {stats.fetched_at.replace('T', ' ').slice(0, 16)} UTC
+      </div>
+    </div>
+  );
+}
+
 function BlockersCard({ blockers }: { blockers: string[] }) {
   return (
     <div
@@ -357,6 +456,7 @@ export default function Home() {
           {data && (
             <>
               <RunLedgerCard data={data} />
+              {data.community_stats && <CommunityStatsCard stats={data.community_stats} />}
               <PostCard data={data} />
               <BlockersCard blockers={data.blockers} />
             </>
