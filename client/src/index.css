@@ -139,10 +139,11 @@
   }
   .term-label {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted-foreground);
+    letter-spacing: 0.13em;
+    color: oklch(0.92 0.06 155);
   }
 
   /* Status pill */
