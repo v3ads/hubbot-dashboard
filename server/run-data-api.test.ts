@@ -34,6 +34,16 @@ describe("/api/run-data middleware logic", () => {
     expect(authorized).toBe(false);
   });
 
+  it("run-data.json contains run_completed_at_et ISO timestamp when present", () => {
+    const dataFile = path.join(__dirname, "..", "run-data.json");
+    if (!fs.existsSync(dataFile)) return;
+    const parsed = JSON.parse(fs.readFileSync(dataFile, "utf8"));
+    if (parsed.run_completed_at_et) {
+      expect(typeof parsed.run_completed_at_et).toBe("string");
+      expect(parsed.run_completed_at_et).toContain("T");
+    }
+  });
+
   it("run-data.json is readable and valid JSON", () => {
     const dataFile = path.join(__dirname, "..", "run-data.json");
     // If the file doesn't exist yet, the seed logic handles it at runtime

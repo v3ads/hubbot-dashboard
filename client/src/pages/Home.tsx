@@ -16,6 +16,7 @@ interface ChecklistItem {
 
 interface RunData {
   run_date: string;
+  run_completed_at_et?: string;
   run_weekday: string;
   timezone: string;
   status: string;
@@ -79,6 +80,33 @@ function outcomeLabel(outcome: string): string {
   if (outcome === "skipped_no_escalation") return "— skipped / no escalation";
   if (outcome === "failed") return "✗ failed";
   return outcome;
+}
+
+function relativeTime(iso: string): string {
+  try {
+    const diff = Date.now() - new Date(iso).getTime();
+    const mins = Math.floor(diff / 60000);
+    if (mins < 1) return "just now";
+    if (mins < 60) return `${mins} min ago`;
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return `${hrs}h ago`;
+    const days = Math.floor(hrs / 24);
+    return `${days}d ago`;
+  } catch {
+    return iso;
+  }
+}
+
+function RelativeTime({ iso, fallback }: { iso: string; fallback?: string }) {
+  const [label, setLabel] = useState(() => relativeTime(iso));
+  useEffect(() => {
+    setLabel(relativeTime(iso));
+    const id = setInterval(() => setLabel(relativeTime(iso)), 60000);
+    return () => clearInterval(id);
+  }, [iso]);
+  // If iso is just a date (no time), fall back to the human label
+  if (!iso.includes("T") && fallback) return <>{fallback}</>;
+  return <>{label}</>;
 }
 
 function statusPillClass(status: string): string {
@@ -467,6 +495,11 @@ export default function Home() {
       {/* ── Footer ── */}
       <footer className="hubbot-footer">
         <span className="footer-text">data source: /api/run-data</span>
+        {data && (
+          <span className="footer-text footer-updated">
+            last updated: <RelativeTime iso={data.run_completed_at_et ?? data.run_date} fallback={data.last_run_label} />
+          </span>
+        )}
         <span className="footer-text footer-cron">
           {data?.schedule.cron ?? "0 0 9 * * *"} · {data?.schedule.timezone ?? "America/New_York"}
         </span>

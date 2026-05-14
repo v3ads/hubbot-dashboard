@@ -16,7 +16,7 @@
 - [x] HUBBOT_API_KEY secret set in project environment
 - [x] post_run_data_to_dashboard.py helper script for HubBot runs
 - [x] Vitest tests for API key and endpoint auth logic
-- [ ] Wire post_run_data_to_dashboard.py into HubBot daily run schedule
+- [x] Wire post_run_data_to_dashboard.py into HubBot daily run schedule (§16 added to schedule playbook)
 - [ ] Run history panel (scrollable log of past runs from run-history.json)
-- [ ] Last-updated "X minutes ago" timestamp in footer/sidebar
+- [x] Last-updated relative timestamp in footer (RelativeTime component: "X min ago", auto-refreshes every 60s, falls back to last_run_label)
 - [ ] Saturday digest preview card (appears only on Saturdays)
