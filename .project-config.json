@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663032099346/Jre6MKmEXmQu3GTxD9SCSm",
+    "access_key_id": "ASIAZV3A2ECZO5PJNKBC",
+    "secret_access_key": "X8Q6z0gyVCSVp4gaYdtVAoq1uqL7WfdcasFy0dKR",
+    "session_token": "IQoJb3JpZ2luX2VjEJv//////////wEaCXVzLWVhc3QtMSJHMEUCIHJVjDY8BCDGoXJE/uZhzSMP263GA6QKU2EZyrDALKsRAiEA9oAwwIAzTj8LcvF10hrUU7cqoDrhl2SrpVZGOzR4PnQq9gMIZBAEGgw2NjUzODYwOTg4NjYiDGb8FK5BjkxgvzpgCyrTAwegT8q2wAp/kEAfC82CYemfGjNWMsUTltmwFt37oNgNOnWqmFb79ROToaYQn4uMsGDQdKYbvqDqalIMVVYQKMyuFE9kAcHL0CAXIHpN35qn4J8TEcFq0y2XDEjHsvkaEQDFzq1o4RL53dpIteL48cAwphMFZsMY1AnYluAG7vpi+p7Fk2AN2wOMWCMamwTYuYN32UmZOTNMBDRlJXpaMHMUow2T2NR4Vgy6MQqprVK3sf+oW12puBHD+SnHwCIeMjs3COn0yCm5pQ1fWQm+QmDSJ1QXLtU2yG3jvJluG5NRXU0aIvVBp30oUWlCl4AqRZ2tx35jYDwgoiNq0xDUonF4EtzhhE8610qji3FuPTzKSdLzUG6EeHQJyrHOabNh60DJIOnU4FFFHF7RW2vAbLVyeK5Wd0hkeyzAUm1gzkDBAyz0f/bLPiGku+oUtItX/pAPkZvbKyXrwM7UO5ttwJJmnemxMzZZlAmWMeTZtL1Zf/FcUyRPHhO8qcKi9MGz62PEAdBmWSxPFtRpxUivHj1sW9bqefFwqx7LBcnzvESR0WZV/ejjFYNtiMljgBZWkqvDsrw3iMOaaABBk5jgmIg8516qa/odrrEmt8DUGMw936YaMPGnmNAGOp0BMHppGUiazgWlCx/K+DnjbWu/U3zkTWLixEs4qYjCBxtS7UtJ0ReNEIjVqupwx+hT8ouGq+mHvyR3ClPFEMvTWkKtlc8QxSisCUOUtFBECfc2edZgLZLQXSsW25ICwhX/3/ismk/aqLnxrpzh/Z/6bZMu4vHveZoQx0QmK0jKn8hNlbi9Mb60h4DzfATS4FOEub5RGerco24YW6FzOA==",
+    "expiration": "2026-05-15T06:26:57.000Z"
+  },
+  "name": "hubbot-dashboard",
+  "path": "/home/ubuntu/hubbot-dashboard",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "CzUMyzEXrK8BaFByTfPKF6",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "29ZrhtmoytDMyHJpMqdFRU",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Ayman Shalaby",
+    "OWNER_OPEN_ID": "A4NZhGbPuYLZ4NtjizyHRm",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "dd080cfe-614c-4799-81be-949691aa85b7",
+    "VITE_APP_ID": "Jre6MKmEXmQu3GTxD9SCSm",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "HubBot Dashboard",
+    "VITE_FRONTEND_FORGE_API_KEY": "eXEFEhf8aiJTxxfG8w4ttb",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
