@@ -2,6 +2,7 @@
    HubBot Dashboard — Home Page
    Design: Terminal Ops Log (phosphor-green on near-black)
    Data source: /latest-run.json (fetched at runtime)
+   Mobile: sidebar collapses to horizontal strip on small screens
    ============================================================ */
 
 import { useEffect, useState } from "react";
@@ -70,103 +71,82 @@ function statusPillClass(status: string): string {
   return "status-pill status-pill-dim";
 }
 
-// ── Sub-components ───────────────────────────────────────────
+// ── Sidebar (desktop: left column | mobile: top strip) ───────
 
 function Sidebar({ data }: { data: RunData | null }) {
+  const metrics = data
+    ? [
+        ["posts published", data.metrics.posts_published],
+        ["tasks completed", data.metrics.required_tasks_completed],
+        ["tasks failed", data.metrics.required_tasks_failed],
+        ["alerts sent", data.metrics.owner_alerts_sent],
+        ["welcomes sent", data.metrics.new_welcomes_sent],
+      ]
+    : [];
+
   return (
-    <aside
-      style={{
-        width: 220,
-        minWidth: 220,
-        borderRight: "1px solid var(--border)",
-        padding: "1.5rem 1.25rem",
-        display: "flex",
-        flexDirection: "column",
-        gap: "1.5rem",
-        background: "var(--card)",
-      }}
-    >
-      {/* Agent identity */}
-      <div>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.4rem" }}>
+    <aside className="hubbot-sidebar">
+      {/* Identity row */}
+      <div className="sidebar-identity">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <div className="pulse-dot" />
-          <span
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "1rem",
-              fontWeight: 600,
-              color: "var(--terminal-green)",
-            }}
-          >
-            HubBot
-          </span>
-          <span
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.7rem",
-              color: "var(--muted-foreground)",
-            }}
-          >
-            v1
-          </span>
+          <span className="sidebar-agent-name">HubBot</span>
+          <span className="sidebar-agent-version">v1</span>
         </div>
-        <div className="term-label" style={{ marginBottom: "0.25rem" }}>community</div>
-        <div className="term-value" style={{ fontSize: "0.78rem" }}>
-          {data?.community ?? "HubActually"}
+        <div className="sidebar-community-label">
+          <span className="term-label">community</span>
+          <span className="term-value sidebar-community-value">
+            {data?.community ?? "HubActually"}
+          </span>
         </div>
       </div>
 
-      <hr className="term-rule" style={{ margin: "0" }} />
+      <div className="sidebar-divider" />
 
       {/* Schedule */}
-      <div>
-        <div className="term-label" style={{ marginBottom: "0.5rem" }}>schedule</div>
-        <div className="term-value" style={{ fontSize: "0.78rem", marginBottom: "0.25rem" }}>
+      <div className="sidebar-section">
+        <div className="term-label sidebar-section-title">schedule</div>
+        <div className="term-value" style={{ fontSize: "0.78rem", marginBottom: "0.2rem" }}>
           {data?.schedule.label ?? "Daily at 9:00 AM ET"}
         </div>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "var(--terminal-dim)" }}>
+        <div className="sidebar-cron">
           {data?.schedule.cron ?? "0 0 9 * * *"}
         </div>
-        <div style={{ marginTop: "0.5rem" }}>
+        <div style={{ marginTop: "0.4rem" }}>
           <span className={data?.schedule.status === "active" ? "status-pill status-pill-green" : "status-pill status-pill-amber"}>
             {data?.schedule.status ?? "active"}
           </span>
         </div>
       </div>
 
-      <hr className="term-rule" style={{ margin: "0" }} />
+      <div className="sidebar-divider" />
 
       {/* Last run */}
-      <div>
-        <div className="term-label" style={{ marginBottom: "0.4rem" }}>last run</div>
+      <div className="sidebar-section">
+        <div className="term-label sidebar-section-title">last run</div>
         <div className="term-value" style={{ fontSize: "0.75rem", lineHeight: 1.5 }}>
           {data?.last_run_label ?? "—"}
         </div>
       </div>
 
-      <hr className="term-rule" style={{ margin: "0" }} />
+      <div className="sidebar-divider" />
 
       {/* Metrics */}
-      <div>
-        <div className="term-label" style={{ marginBottom: "0.6rem" }}>metrics</div>
+      <div className="sidebar-section">
+        <div className="term-label sidebar-section-title">metrics</div>
         {data ? (
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-            {[
-              ["posts published", data.metrics.posts_published],
-              ["tasks completed", data.metrics.required_tasks_completed],
-              ["tasks failed", data.metrics.required_tasks_failed],
-              ["alerts sent", data.metrics.owner_alerts_sent],
-              ["welcomes sent", data.metrics.new_welcomes_sent],
-            ].map(([label, val]) => (
-              <div key={String(label)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.72rem", color: "var(--muted-foreground)" }}>
-                  {label}
-                </span>
+          <div className="metrics-grid">
+            {metrics.map(([label, val]) => (
+              <div key={String(label)} className="metric-row">
+                <span className="metric-label">{label}</span>
                 <span
                   className="term-value"
                   style={{
                     fontSize: "0.8rem",
-                    color: label === "tasks failed" && Number(val) > 0 ? "var(--terminal-red)" : "var(--terminal-green)",
+                    color:
+                      label === "tasks failed" && Number(val) > 0
+                        ? "var(--terminal-red)"
+                        : "var(--terminal-green)",
                   }}
                 >
                   {val}
@@ -182,12 +162,14 @@ function Sidebar({ data }: { data: RunData | null }) {
   );
 }
 
+// ── Cards ─────────────────────────────────────────────────────
+
 function RunLedgerCard({ data }: { data: RunData }) {
   return (
     <div className="term-card card-enter" style={{ animationDelay: "0ms" }}>
       <div className="term-label" style={{ marginBottom: "0.75rem" }}>latest run ledger</div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem", flexWrap: "wrap" }}>
         <span className={statusPillClass(data.status)}>{data.status}</span>
         <span className="term-value" style={{ fontSize: "0.8rem" }}>{data.last_run_label}</span>
       </div>
@@ -206,14 +188,12 @@ function RunLedgerCard({ data }: { data: RunData }) {
 
       <hr className="term-rule" />
 
-      {/* Checklist */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.4rem 1.5rem" }}>
+      {/* Checklist — 2 cols on desktop, 1 col on mobile */}
+      <div className="checklist-grid">
         {data.checklist.map((item) => (
-          <div key={item.task} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }}>
-            <span style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.78rem", color: "var(--muted-foreground)" }}>
-              {item.task}
-            </span>
-            <span className={outcomeClass(item.outcome)} style={{ whiteSpace: "nowrap" }}>
+          <div key={item.task} className="checklist-row">
+            <span className="checklist-task">{item.task}</span>
+            <span className={outcomeClass(item.outcome)} style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
               {outcomeLabel(item.outcome)}
             </span>
           </div>
@@ -229,34 +209,16 @@ function PostCard({ data }: { data: RunData }) {
     <div className="term-card card-enter" style={{ animationDelay: "40ms" }}>
       <div className="term-label" style={{ marginBottom: "0.75rem" }}>daily ai-news post</div>
 
-      <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+      <div className="post-card-inner">
         {post.image_url && (
           <img
             src={post.image_url}
             alt="Post cover"
-            style={{
-              width: 90,
-              height: 64,
-              objectFit: "cover",
-              borderRadius: 2,
-              border: "1px solid var(--border)",
-              flexShrink: 0,
-            }}
+            className="post-thumb"
           />
         )}
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div
-            style={{
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontWeight: 600,
-              fontSize: "0.9rem",
-              color: "var(--foreground)",
-              lineHeight: 1.4,
-              marginBottom: "0.5rem",
-            }}
-          >
-            {post.title}
-          </div>
+          <div className="post-title">{post.title}</div>
           <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
             <span className="status-pill status-pill-dim">{post.category}</span>
             {post.image_attached && (
@@ -267,13 +229,7 @@ function PostCard({ data }: { data: RunData }) {
             href={post.thread_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="term-value"
-            style={{
-              fontSize: "0.72rem",
-              textDecoration: "none",
-              borderBottom: "1px solid oklch(0.78 0.22 155 / 0.4)",
-              paddingBottom: "1px",
-            }}
+            className="term-value post-link"
           >
             {post.thread_url}
           </a>
@@ -285,7 +241,10 @@ function PostCard({ data }: { data: RunData }) {
 
 function BlockersCard({ blockers }: { blockers: string[] }) {
   return (
-    <div className={`term-card card-enter ${blockers.length > 0 ? "term-card-red" : "term-card-dim"}`} style={{ animationDelay: "80ms" }}>
+    <div
+      className={`term-card card-enter ${blockers.length > 0 ? "term-card-red" : "term-card-dim"}`}
+      style={{ animationDelay: "80ms" }}
+    >
       <div className="term-label" style={{ marginBottom: "0.6rem" }}>blockers &amp; flagged items</div>
       {blockers.length === 0 ? (
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
@@ -321,11 +280,7 @@ function EmptyState() {
     >
       <div
         className="cursor-blink"
-        style={{
-          fontFamily: "'JetBrains Mono', monospace",
-          fontSize: "1.1rem",
-          color: "var(--terminal-green)",
-        }}
+        style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "1.1rem", color: "var(--terminal-green)" }}
       >
         awaiting first run
       </div>
@@ -360,67 +315,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        background: "var(--background)",
-        fontFamily: "'IBM Plex Sans', sans-serif",
-      }}
-    >
+    <div className="hubbot-root">
       {/* ── Top bar ── */}
-      <header
-        style={{
-          borderBottom: "1px solid var(--border)",
-          padding: "0.75rem 1.5rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          background: "var(--card)",
-          flexShrink: 0,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <span
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontWeight: 600,
-              fontSize: "0.85rem",
-              color: "var(--terminal-green)",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            HubBot Dashboard
-          </span>
-          <span style={{ color: "var(--border)" }}>|</span>
-          <span
-            style={{
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "0.78rem",
-              color: "var(--muted-foreground)",
-            }}
-          >
-            HubActually autonomous community admin
-          </span>
+      <header className="hubbot-header">
+        <div className="header-left">
+          <span className="header-title">HubBot Dashboard</span>
+          <span className="header-sep">|</span>
+          <span className="header-subtitle">HubActually autonomous community admin</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          {data && (
-            <span className={statusPillClass(data.status)}>{data.status}</span>
-          )}
+        <div className="header-right">
+          {data && <span className={statusPillClass(data.status)}>{data.status}</span>}
           <a
             href="https://community.hubactually.com"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.72rem",
-              color: "var(--terminal-dim)",
-              textDecoration: "none",
-              borderBottom: "1px solid var(--border)",
-              paddingBottom: "1px",
-            }}
+            className="header-community-link"
           >
             community ↗
           </a>
@@ -428,30 +337,12 @@ export default function Home() {
       </header>
 
       {/* ── Body ── */}
-      <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+      <div className="hubbot-body">
         <Sidebar data={data} />
 
-        <main
-          style={{
-            flex: 1,
-            padding: "1.5rem",
-            overflowY: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-          }}
-        >
+        <main className="hubbot-main">
           {loading && (
-            <div
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.82rem",
-                color: "var(--terminal-dim)",
-                padding: "2rem",
-              }}
-            >
-              loading run ledger…
-            </div>
+            <div className="loading-msg">loading run ledger…</div>
           )}
 
           {error && (
@@ -474,21 +365,9 @@ export default function Home() {
       </div>
 
       {/* ── Footer ── */}
-      <footer
-        style={{
-          borderTop: "1px solid var(--border)",
-          padding: "0.5rem 1.5rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          background: "var(--card)",
-          flexShrink: 0,
-        }}
-      >
-        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.68rem", color: "var(--terminal-dim)" }}>
-          data source: /latest-run.json
-        </span>
-        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.68rem", color: "var(--terminal-dim)" }}>
+      <footer className="hubbot-footer">
+        <span className="footer-text">data source: /latest-run.json</span>
+        <span className="footer-text footer-cron">
           {data?.schedule.cron ?? "0 0 9 * * *"} · {data?.schedule.timezone ?? "America/New_York"}
         </span>
       </footer>
