@@ -46,6 +46,21 @@ interface RunData {
     timezone: string;
     status: string;
   };
+  saturday_digest?: {
+    status: string; // "sent" | "skipped_not_saturday" | "blocked"
+    sent_at_et?: string;
+    recipient_count?: number;
+    subject?: string;
+    reason?: string;
+  };
+  run_history?: {
+    run_date: string;
+    status: string;
+    primary_result: string;
+    posts_published: number;
+    tasks_completed: number;
+    tasks_failed: number;
+  }[];
   community_stats?: {
     fetched_at: string;
     total_members: number;
@@ -391,6 +406,89 @@ function BlockersCard({ blockers }: { blockers: string[] }) {
   );
 }
 
+// ── Saturday Digest Card ─────────────────────────────────────
+
+function SaturdayDigestCard({ digest }: { digest: NonNullable<RunData["saturday_digest"]> }) {
+  const isSent = digest.status === "sent";
+  const isBlocked = digest.status === "blocked";
+  const pillClass = isSent
+    ? "status-pill status-pill-green"
+    : isBlocked
+    ? "status-pill status-pill-red"
+    : "status-pill status-pill-dim";
+  const pillLabel = isSent ? "✓ sent" : isBlocked ? "✗ blocked" : "— skipped / not saturday";
+
+  return (
+    <div className="term-card">
+      <div className="term-card-header">
+        <span className="term-label">Saturday Weekly Digest</span>
+        <span className={pillClass}>{pillLabel}</span>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginTop: "0.6rem" }}>
+        {isSent && digest.subject && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.85rem", color: "var(--foreground)" }}>
+            <span className="term-label" style={{ marginRight: "0.5rem" }}>subject</span>
+            {digest.subject}
+          </div>
+        )}
+        {isSent && digest.recipient_count !== undefined && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.85rem", color: "var(--foreground)" }}>
+            <span className="term-label" style={{ marginRight: "0.5rem" }}>recipients</span>
+            {digest.recipient_count}
+          </div>
+        )}
+        {isSent && digest.sent_at_et && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.85rem", color: "var(--foreground)" }}>
+            <span className="term-label" style={{ marginRight: "0.5rem" }}>sent at</span>
+            {digest.sent_at_et}
+          </div>
+        )}
+        {!isSent && digest.reason && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.82rem", color: "var(--muted-foreground)" }}>
+            {digest.reason}
+          </div>
+        )}
+        {!isSent && !digest.reason && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.82rem", color: "var(--muted-foreground)" }}>
+            Digest runs every Saturday at 10:00 AM ET.
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Run History Card ──────────────────────────────────────────
+
+function RunHistoryCard({ history }: { history: NonNullable<RunData["run_history"]> }) {
+  if (!history.length) return null;
+  return (
+    <div className="term-card">
+      <div className="term-card-header">
+        <span className="term-label">Run History</span>
+        <span className="term-label" style={{ opacity: 0.6 }}>{history.length} run{history.length !== 1 ? "s" : ""}</span>
+      </div>
+      <div className="run-history-list">
+        {history.map((run, i) => (
+          <div key={i} className="run-history-row">
+            <div className="run-history-date">{run.run_date}</div>
+            <div className={`status-pill ${
+              run.status === "completed" ? "status-pill-green" :
+              run.status === "blocked" ? "status-pill-red" : "status-pill-amber"
+            }`}>{run.status}</div>
+            <div className="run-history-result">{run.primary_result}</div>
+            <div className="run-history-metrics">
+              <span>{run.posts_published} post{run.posts_published !== 1 ? "s" : ""}</span>
+              <span>{run.tasks_completed} done</span>
+              {run.tasks_failed > 0 && <span style={{ color: "var(--terminal-red)" }}>{run.tasks_failed} failed</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function EmptyState() {
   return (
     <div
@@ -487,6 +585,8 @@ export default function Home() {
               {data.community_stats && <CommunityStatsCard stats={data.community_stats} />}
               <PostCard data={data} />
               <BlockersCard blockers={data.blockers} />
+              {data.saturday_digest && <SaturdayDigestCard digest={data.saturday_digest} />}
+              {data.run_history && data.run_history.length > 0 && <RunHistoryCard history={data.run_history} />}
             </>
           )}
         </main>

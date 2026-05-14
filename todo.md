@@ -17,6 +17,6 @@
 - [x] post_run_data_to_dashboard.py helper script for HubBot runs
 - [x] Vitest tests for API key and endpoint auth logic
 - [x] Wire post_run_data_to_dashboard.py into HubBot daily run schedule (§16 added to schedule playbook)
-- [ ] Run history panel (scrollable log of past runs from run-history.json)
+- [x] Run history panel (scrollable log of past runs from run_history array in run-data.json)
 - [x] Last-updated relative timestamp in footer (RelativeTime component: "X min ago", auto-refreshes every 60s, falls back to last_run_label)
-- [ ] Saturday digest preview card (appears only on Saturdays)
+- [x] Saturday digest preview card (shows sent/skipped/blocked status, reason, recipient count when sent)

@@ -44,6 +44,32 @@ describe("/api/run-data middleware logic", () => {
     }
   });
 
+  it("run-data.json contains saturday_digest with a valid status when present", () => {
+    const dataFile = path.join(__dirname, "..", "run-data.json");
+    if (!fs.existsSync(dataFile)) return;
+    const parsed = JSON.parse(fs.readFileSync(dataFile, "utf8"));
+    if (parsed.saturday_digest) {
+      expect(typeof parsed.saturday_digest.status).toBe("string");
+      expect(["sent", "skipped_not_saturday", "blocked"]).toContain(parsed.saturday_digest.status);
+    }
+  });
+
+  it("run-data.json run_history entries have required fields when present", () => {
+    const dataFile = path.join(__dirname, "..", "run-data.json");
+    if (!fs.existsSync(dataFile)) return;
+    const parsed = JSON.parse(fs.readFileSync(dataFile, "utf8"));
+    if (parsed.run_history && Array.isArray(parsed.run_history)) {
+      for (const entry of parsed.run_history) {
+        expect(typeof entry.run_date).toBe("string");
+        expect(typeof entry.status).toBe("string");
+        expect(typeof entry.primary_result).toBe("string");
+        expect(typeof entry.posts_published).toBe("number");
+        expect(typeof entry.tasks_completed).toBe("number");
+        expect(typeof entry.tasks_failed).toBe("number");
+      }
+    }
+  });
+
   it("run-data.json is readable and valid JSON", () => {
     const dataFile = path.join(__dirname, "..", "run-data.json");
     // If the file doesn't exist yet, the seed logic handles it at runtime

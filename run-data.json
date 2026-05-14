@@ -41,6 +41,20 @@
     "timezone": "America/New_York",
     "status": "active"
   },
+  "saturday_digest": {
+    "status": "skipped_not_saturday",
+    "reason": "Today is Thursday. Digest runs every Saturday at 10:00 AM ET."
+  },
+  "run_history": [
+    {
+      "run_date": "2026-05-14",
+      "status": "completed",
+      "primary_result": "Daily AI-news post published successfully in General with generated image attached.",
+      "posts_published": 1,
+      "tasks_completed": 9,
+      "tasks_failed": 0
+    }
+  ],
   "community_stats": {
     "fetched_at": "2026-05-14T19:26:38Z",
     "total_members": 70,

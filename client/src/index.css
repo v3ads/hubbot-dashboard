@@ -686,3 +686,83 @@
     font-size: 1.25rem;
   }
 }
+
+/* ── Run History Card ─────────────────────────────────────── */
+.run-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0.6rem;
+  max-height: 320px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--terminal-dim) transparent;
+}
+
+.run-history-row {
+  display: grid;
+  grid-template-columns: 6.5rem 6.5rem 1fr auto;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.run-history-row:last-child {
+  border-bottom: none;
+}
+
+.run-history-date {
+  color: var(--terminal-dim);
+  white-space: nowrap;
+}
+
+.run-history-result {
+  color: var(--foreground);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.run-history-metrics {
+  display: flex;
+  gap: 0.6rem;
+  color: var(--terminal-dim);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+/* ── Term card header (shared) ────────────────────────────── */
+.term-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .run-history-row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+  .run-history-date {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .run-history-row .status-pill {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .run-history-result {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    white-space: normal;
+  }
+  .run-history-metrics {
+    display: none;
+  }
+}
