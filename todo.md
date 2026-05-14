@@ -1,0 +1,22 @@
+# HubBot Dashboard TODO
+
+- [x] Terminal ops log design (phosphor-green on near-black, JetBrains Mono)
+- [x] Fetch run data from /api/run-data (no-cache, dynamic)
+- [x] Latest Run Ledger card with checklist and status pills
+- [x] Community Stats card (total members, new joins, active, total posts)
+- [x] New members this week list
+- [x] Recent posts list with links
+- [x] Daily AI-news post card with image and link
+- [x] Blockers & Flagged Items card
+- [x] Sidebar with schedule, last run, metrics
+- [x] Mobile responsive layout (sidebar collapses to top strip, 2x2 stat grid)
+- [x] Brighter, larger section title labels
+- [x] /api/run-data GET endpoint (Vite middleware, no-cache)
+- [x] /api/run-data POST endpoint (protected by HUBBOT_API_KEY)
+- [x] HUBBOT_API_KEY secret set in project environment
+- [x] post_run_data_to_dashboard.py helper script for HubBot runs
+- [x] Vitest tests for API key and endpoint auth logic
+- [ ] Wire post_run_data_to_dashboard.py into HubBot daily run schedule
+- [ ] Run history panel (scrollable log of past runs from run-history.json)
+- [ ] Last-updated "X minutes ago" timestamp in footer/sidebar
+- [ ] Saturday digest preview card (appears only on Saturdays)

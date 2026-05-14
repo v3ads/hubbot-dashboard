@@ -1,7 +1,7 @@
 /* ============================================================
    HubBot Dashboard — Home Page
    Design: Terminal Ops Log (phosphor-green on near-black)
-   Data source: /latest-run.json (fetched at runtime)
+   Data source: /api/run-data (fetched at runtime — no-cache)
    Mobile: sidebar collapses to horizontal strip on small screens
    ============================================================ */
 
@@ -398,7 +398,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/latest-run.json")
+    fetch("/api/run-data", { cache: "no-store" })
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
@@ -466,7 +466,7 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="hubbot-footer">
-        <span className="footer-text">data source: /latest-run.json</span>
+        <span className="footer-text">data source: /api/run-data</span>
         <span className="footer-text footer-cron">
           {data?.schedule.cron ?? "0 0 9 * * *"} · {data?.schedule.timezone ?? "America/New_York"}
         </span>

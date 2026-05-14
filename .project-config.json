@@ -1,15 +1,22 @@
 {
   "build_command": "pnpm run build",
-  "capabilities": [],
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
   "dev_command": "pnpm run dev",
-  "env_vars": {},
+  "env_vars": {
+    "DATABASE_URL": "mysql://ZDafZSKAyA1ek4p.b905331a40c0:2xUZxW4oBE3JQ064BpqY@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/Jre6MKmEXmQu3GTxD9SCSm?ssl={\"rejectUnauthorized\":true}",
+    "DRIZZLE_DATABASE_URL": "mysql://ZDafZSKAyA1ek4p.b905331a40c0:2xUZxW4oBE3JQ064BpqY@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/Jre6MKmEXmQu3GTxD9SCSm?ssl={\"rejectUnauthorized\":true}"
+  },
   "experiments": null,
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663032099346/Jre6MKmEXmQu3GTxD9SCSm",
-    "access_key_id": "ASIAZV3A2ECZO5PJNKBC",
-    "secret_access_key": "X8Q6z0gyVCSVp4gaYdtVAoq1uqL7WfdcasFy0dKR",
-    "session_token": "IQoJb3JpZ2luX2VjEJv//////////wEaCXVzLWVhc3QtMSJHMEUCIHJVjDY8BCDGoXJE/uZhzSMP263GA6QKU2EZyrDALKsRAiEA9oAwwIAzTj8LcvF10hrUU7cqoDrhl2SrpVZGOzR4PnQq9gMIZBAEGgw2NjUzODYwOTg4NjYiDGb8FK5BjkxgvzpgCyrTAwegT8q2wAp/kEAfC82CYemfGjNWMsUTltmwFt37oNgNOnWqmFb79ROToaYQn4uMsGDQdKYbvqDqalIMVVYQKMyuFE9kAcHL0CAXIHpN35qn4J8TEcFq0y2XDEjHsvkaEQDFzq1o4RL53dpIteL48cAwphMFZsMY1AnYluAG7vpi+p7Fk2AN2wOMWCMamwTYuYN32UmZOTNMBDRlJXpaMHMUow2T2NR4Vgy6MQqprVK3sf+oW12puBHD+SnHwCIeMjs3COn0yCm5pQ1fWQm+QmDSJ1QXLtU2yG3jvJluG5NRXU0aIvVBp30oUWlCl4AqRZ2tx35jYDwgoiNq0xDUonF4EtzhhE8610qji3FuPTzKSdLzUG6EeHQJyrHOabNh60DJIOnU4FFFHF7RW2vAbLVyeK5Wd0hkeyzAUm1gzkDBAyz0f/bLPiGku+oUtItX/pAPkZvbKyXrwM7UO5ttwJJmnemxMzZZlAmWMeTZtL1Zf/FcUyRPHhO8qcKi9MGz62PEAdBmWSxPFtRpxUivHj1sW9bqefFwqx7LBcnzvESR0WZV/ejjFYNtiMljgBZWkqvDsrw3iMOaaABBk5jgmIg8516qa/odrrEmt8DUGMw936YaMPGnmNAGOp0BMHppGUiazgWlCx/K+DnjbWu/U3zkTWLixEs4qYjCBxtS7UtJ0ReNEIjVqupwx+hT8ouGq+mHvyR3ClPFEMvTWkKtlc8QxSisCUOUtFBECfc2edZgLZLQXSsW25ICwhX/3/ismk/aqLnxrpzh/Z/6bZMu4vHveZoQx0QmK0jKn8hNlbi9Mb60h4DzfATS4FOEub5RGerco24YW6FzOA==",
-    "expiration": "2026-05-15T06:26:57.000Z"
+    "access_key_id": "ASIAZV3A2ECZGU4MMCDA",
+    "secret_access_key": "7NIu4N5A0yrfn+g/WcZDodb5zRgetC2dIJlDOmDM",
+    "session_token": "IQoJb3JpZ2luX2VjEJz//////////wEaCXVzLWVhc3QtMSJHMEUCICexnUZ1bWAV11AbZyIsaSDJ6RHm6eDaP8dBD7ZUnMCmAiEAi6Ww8FbTiJqHVaoOamD+U6x2+zljtowv0qFz5Szs1MAq9gMIZRAEGgw2NjUzODYwOTg4NjYiDPGb5DwndxIbX3PY4yrTAy/wfE3UQrZqqm31ZQmnlgPmr1rXAz87kPpNE1weBdWhYbxJpJTasXlVnPNNgIIVMGl0QAcP5w9ep5aQhd8EOl5/ePELPGmA89AzytlYMeclg2CA2pcWQtiZTUi/uv/agr4r+NSHeu9UMoCrH0SN87Ksdid3cs6921L0PXZyCEqc8vm3JNqh0Jy2zgFoBEc5UuJbtyNX8zhlxBHnNBbgPbKUPiWs49QqGM8Z7acXuSE08Uppi91LY2wyD7t142MNJ1jLpV/qRQWyWNLjC11Z6jJYiYrAS/1az27vlpqcszS+Z+BJziljIf13bdZjAeGHdXk8dcqMcbFnE/0+qMvgdGsmlNtxFHgtBP649Iv80p0DJjN8yalM9AxzHGgLu41TKT2TM1a+juZ/i8+68qatLgXnakSxFYhans/rYLKQuAuVgfJJzW8BKQEXxa0TLC3A6KMBo8u8kdbUm80zpt/KbulphtanzWeTRLVKgScGhqx2thJOUnCblVqxr877MGOKp7lkuwnXhOss3JXoHd+SkhtyLwsbMOJw5BSdd+ryLIN4KISjM+UFVRisuhx1ZlWNdRh3DgjdSScWdGQM/RXZY/PJu0dX7ixOhHTQ/YFWCnDMaaBVMKvJmNAGOp0B2SZ9WXngfi4fzX13wNy6c+4MMXlbDwNtE2gAdSIclcm9+IZ2lzBrzGynJ1NJ+JRBl6tulm7FnY3TYahg621F7yXi05yOBevHjxCNspndds9vqx41l9fJseekP1klNg1d+GH8BplgonZWfu1ygLL15cmZNbLT3JIfRBbfHXVqLVaTdMpNr6iu0uoQa+mGfsFKY6BcwNGTaJQf1QPqog==",
+    "expiration": "2026-05-15T07:38:19.000Z"
   },
   "name": "hubbot-dashboard",
   "path": "/home/ubuntu/hubbot-dashboard",
@@ -17,6 +24,7 @@
   "secrets": {
     "BUILT_IN_FORGE_API_KEY": "CzUMyzEXrK8BaFByTfPKF6",
     "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "HUBBOT_API_KEY": "11cbad293c71652b95502766eca9c5ef",
     "JWT_SECRET": "29ZrhtmoytDMyHJpMqdFRU",
     "OAUTH_SERVER_URL": "https://api.manus.im",
     "OWNER_NAME": "Ayman Shalaby",
@@ -24,7 +32,7 @@
     "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
     "VITE_ANALYTICS_WEBSITE_ID": "dd080cfe-614c-4799-81be-949691aa85b7",
     "VITE_APP_ID": "Jre6MKmEXmQu3GTxD9SCSm",
-    "VITE_APP_LOGO": "",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310419663032099346/vGElZJhvLfxdUPSk.png",
     "VITE_APP_TITLE": "HubBot Dashboard",
     "VITE_FRONTEND_FORGE_API_KEY": "eXEFEhf8aiJTxxfG8w4ttb",
     "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",

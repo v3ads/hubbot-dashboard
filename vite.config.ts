@@ -150,6 +150,70 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
+function vitePluginRunData(): Plugin {
+  const DATA_FILE = path.join(PROJECT_ROOT, "run-data.json");
+
+  function seedIfMissing() {
+    if (!fs.existsSync(DATA_FILE)) {
+      const seed = path.join(PROJECT_ROOT, "client", "public", "latest-run.json");
+      if (fs.existsSync(seed)) {
+        fs.copyFileSync(seed, DATA_FILE);
+      }
+    }
+  }
+
+  function readData(): string {
+    seedIfMissing();
+    if (!fs.existsSync(DATA_FILE)) return JSON.stringify({ error: "No run data yet" });
+    return fs.readFileSync(DATA_FILE, "utf8");
+  }
+
+  function writeData(body: string): void {
+    fs.writeFileSync(DATA_FILE, body, "utf8");
+  }
+
+  return {
+    name: "manus-run-data",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/run-data", (req, res) => {
+        if (req.method === "GET") {
+          res.writeHead(200, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+          res.end(readData());
+          return;
+        }
+
+        if (req.method === "POST") {
+          const apiKey = process.env.HUBBOT_API_KEY;
+          const provided = (req as any).headers["x-hubbot-api-key"];
+          if (apiKey && provided !== apiKey) {
+            res.writeHead(401, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ error: "Unauthorized" }));
+            return;
+          }
+
+          let body = "";
+          req.on("data", (chunk) => { body += chunk.toString(); });
+          req.on("end", () => {
+            try {
+              JSON.parse(body); // validate JSON
+              writeData(body);
+              res.writeHead(200, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ ok: true, updated_at: new Date().toISOString() }));
+            } catch {
+              res.writeHead(400, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ error: "Invalid JSON" }));
+            }
+          });
+          return;
+        }
+
+        res.writeHead(405, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Method not allowed" }));
+      });
+    },
+  };
+}
+
 function vitePluginStorageProxy(): Plugin {
   return {
     name: "manus-storage-proxy",
@@ -203,7 +267,7 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginRunData(), vitePluginStorageProxy()];
 
 export default defineConfig({
   plugins,
