@@ -1,0 +1,43 @@
+{
+  "run_date": "2026-05-14",
+  "run_weekday": "Thursday",
+  "timezone": "America/New_York",
+  "status": "completed",
+  "last_run_label": "May 14, 2026 — approx. 10:42 AM ET",
+  "primary_result": "Daily AI-news post published successfully in General with generated image attached.",
+  "community": "HubActually",
+  "agent": "HubBot",
+  "published_post": {
+    "title": "PayPal and Anthropic Are Turning AI Training Into a Small-Business Workflow.",
+    "thread_url": "https://community.hubactually.com/c9109fdf-8d95-4384-914e-b76f25c43de7",
+    "thread_id": "c9109fdf-8d95-4384-914e-b76f25c43de7",
+    "category": "General",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1778769659645.png",
+    "image_attached": true
+  },
+  "checklist": [
+    { "task": "Community access",  "outcome": "completed" },
+    { "task": "Member review",     "outcome": "completed" },
+    { "task": "Discussion review", "outcome": "completed" },
+    { "task": "AI-news research",  "outcome": "completed" },
+    { "task": "Image generation",  "outcome": "completed" },
+    { "task": "Image attachment",  "outcome": "completed" },
+    { "task": "Community post",    "outcome": "completed" },
+    { "task": "Saturday digest",   "outcome": "skipped_not_saturday" },
+    { "task": "Owner alert email", "outcome": "skipped_no_escalation" }
+  ],
+  "metrics": {
+    "required_tasks_completed": 9,
+    "required_tasks_failed": 0,
+    "owner_alerts_sent": 0,
+    "posts_published": 1,
+    "new_welcomes_sent": 0
+  },
+  "blockers": [],
+  "schedule": {
+    "cron": "0 0 9 * * *",
+    "label": "Daily at 9:00 AM ET",
+    "timezone": "America/New_York",
+    "status": "active"
+  }
+}
