@@ -267,6 +267,10 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
+const RUN_NOW_COOLDOWN_MS = 10 * 60 * 1000;
+let runNowInFlight = false;
+let lastRunNowTriggeredAt = 0;
+
 function vitePluginRunNow(): Plugin {
   const PLAYBOOK_PATHS = [
     path.join(PROJECT_ROOT, "server", "hubbot_playbook.txt"),
@@ -305,6 +309,13 @@ function vitePluginRunNow(): Plugin {
           res.end(JSON.stringify({ error: "HubBot playbook not found" }));
           return;
         }
+        const now = Date.now();
+        if (runNowInFlight || now - lastRunNowTriggeredAt < RUN_NOW_COOLDOWN_MS) {
+          res.writeHead(429, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "A HubBot run was triggered recently. Please wait before starting another one." }));
+          return;
+        }
+        runNowInFlight = true;
         try {
           const response = await fetch("https://api.manus.ai/v2/task.create", {
             method: "POST",
@@ -319,11 +330,14 @@ function vitePluginRunNow(): Plugin {
           const result = await response.json() as { ok?: boolean; task_id?: string; task_url?: string };
           const taskId = result?.task_id ?? "unknown";
           const taskUrl = result?.task_url ?? `https://manus.im/app/${taskId}`;
+          lastRunNowTriggeredAt = Date.now();
           res.writeHead(200, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() }));
         } catch (err) {
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: "Failed to trigger HubBot run" }));
+        } finally {
+          runNowInFlight = false;
         }
       });
     },

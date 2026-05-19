@@ -35,6 +35,7 @@ interface RunData {
   primary_result: string;
   community: string;
   agent: string;
+  agent_version?: string;
   published_post: {
     title: string;
     thread_url: string;
@@ -69,9 +70,9 @@ interface RunData {
     fetched_at: string;
     total_members: number;
     new_members_7d: number;
-    new_members_30d: number;
-    active_members_7d: number;
-    total_posts: number;
+    new_members_30d: number | null;
+    active_members_7d: number | null;
+    total_posts: number | null;
     new_members_7d_list: { name: string; joined: string }[];
     interesting_posts: {
       title: string;
@@ -97,6 +98,8 @@ function outcomeLabel(outcome: string): string {
   if (outcome === "completed") return "✓ completed";
   if (outcome === "skipped_not_saturday") return "— skipped / not saturday";
   if (outcome === "skipped_no_escalation") return "— skipped / no escalation";
+  if (outcome === "skipped_existing_post") return "— skipped / existing post";
+  if (outcome === "skipped_existing_same_day_post") return "— skipped / existing same-day post";
   if (outcome === "failed") return "✗ failed";
   return outcome;
 }
@@ -155,7 +158,7 @@ function Sidebar({ data }: { data: RunData | null }) {
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <div className="pulse-dot" />
           <span className="sidebar-agent-name">HubBot</span>
-          <span className="sidebar-agent-version">v1</span>
+          <span className="sidebar-agent-version">{data?.agent_version ?? "v2"}</span>
         </div>
         <div className="sidebar-community-label">
           <span className="term-label">community</span>
@@ -321,11 +324,11 @@ function CommunityStatsCard({ stats }: { stats: NonNullable<RunData["community_s
           <div className="comm-stat-label">new (7 days)</div>
         </div>
         <div className="comm-stat-tile">
-          <div className="comm-stat-value">{stats.active_members_7d}</div>
+          <div className="comm-stat-value">{stats.active_members_7d ?? "—"}</div>
           <div className="comm-stat-label">active (7 days)</div>
         </div>
         <div className="comm-stat-tile">
-          <div className="comm-stat-value">{stats.total_posts}</div>
+          <div className="comm-stat-value">{stats.total_posts ?? "—"}</div>
           <div className="comm-stat-label">total posts</div>
         </div>
       </div>
@@ -553,9 +556,18 @@ function RunNowButton({ apiKey }: { apiKey: string }) {
   const [taskUrl, setTaskUrl] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTriggerRef = useRef<number>(0);
 
   const trigger = useCallback(async () => {
     if (state === "triggering") return;
+    const now = Date.now();
+    if (now - lastTriggerRef.current < 10 * 60 * 1000) {
+      setErrorMsg("A HubBot run was just triggered. Please wait 10 minutes before triggering another one.");
+      setState("error");
+      timeoutRef.current = setTimeout(() => setState("idle"), 8000);
+      return;
+    }
+    lastTriggerRef.current = now;
     setState("triggering");
     setTaskUrl(null);
     setErrorMsg(null);

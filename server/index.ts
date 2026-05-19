@@ -4,6 +4,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 
+const RUN_NOW_COOLDOWN_MS = 10 * 60 * 1000;
+let runNowInFlight = false;
+let lastRunNowTriggeredAt = 0;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -126,6 +130,13 @@ async function startServer() {
       return;
     }
 
+    const now = Date.now();
+    if (runNowInFlight || now - lastRunNowTriggeredAt < RUN_NOW_COOLDOWN_MS) {
+      res.status(429).json({ error: "A HubBot run was triggered recently. Please wait before starting another one." });
+      return;
+    }
+
+    runNowInFlight = true;
     try {
       const response = await fetch("https://api.manus.ai/v2/task.create", {
         method: "POST",
@@ -149,11 +160,14 @@ async function startServer() {
       const taskId = result?.task_id ?? "unknown";
       const taskUrl = result?.task_url ?? `https://manus.im/app/${taskId}`;
 
+      lastRunNowTriggeredAt = Date.now();
       console.log("[HubBot] run-now: triggered task", taskId);
       res.json({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() });
     } catch (err) {
       console.error("[HubBot] run-now: fetch error", err);
       res.status(500).json({ error: "Failed to trigger HubBot run" });
+    } finally {
+      runNowInFlight = false;
     }
   });
 
