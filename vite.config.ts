@@ -309,16 +309,16 @@ function vitePluginRunNow(): Plugin {
           const response = await fetch("https://api.manus.ai/v2/task.create", {
             method: "POST",
             headers: { "Content-Type": "application/json", "x-manus-api-key": manusApiKey },
-            body: JSON.stringify({ title: "HubActually autonomous community admin (manual run)", prompt: playbook }),
+            body: JSON.stringify({ message: { content: playbook } }),
           });
           if (!response.ok) {
             res.writeHead(502, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ error: `Manus API error: ${response.status}` }));
             return;
           }
-          const result = await response.json() as { task?: { id?: string; task_url?: string } };
-          const taskId = result?.task?.id ?? "unknown";
-          const taskUrl = result?.task?.task_url ?? `https://manus.im/app/${taskId}`;
+          const result = await response.json() as { ok?: boolean; task_id?: string; task_url?: string };
+          const taskId = result?.task_id ?? "unknown";
+          const taskUrl = result?.task_url ?? `https://manus.im/app/${taskId}`;
           res.writeHead(200, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() }));
         } catch (err) {

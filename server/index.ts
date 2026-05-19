@@ -134,8 +134,7 @@ async function startServer() {
           "x-manus-api-key": manusApiKey,
         },
         body: JSON.stringify({
-          title: "HubActually autonomous community admin (manual run)",
-          prompt: playbook,
+          message: { content: playbook },
         }),
       });
 
@@ -146,9 +145,9 @@ async function startServer() {
         return;
       }
 
-      const result = await response.json() as { task?: { id?: string; task_url?: string } };
-      const taskId = result?.task?.id ?? "unknown";
-      const taskUrl = result?.task?.task_url ?? `https://manus.im/app/${taskId}`;
+      const result = await response.json() as { ok?: boolean; task_id?: string; task_url?: string };
+      const taskId = result?.task_id ?? "unknown";
+      const taskUrl = result?.task_url ?? `https://manus.im/app/${taskId}`;
 
       console.log("[HubBot] run-now: triggered task", taskId);
       res.json({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() });
