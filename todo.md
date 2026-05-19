@@ -21,5 +21,5 @@
 - [x] Last-updated relative timestamp in footer (RelativeTime component: "X min ago", auto-refreshes every 60s, falls back to last_run_label)
 - [x] Saturday digest preview card (shows sent/skipped/blocked status, reason, recipient count when sent)
 - [x] Update post_run_data_to_dashboard.py to accumulate run_history (fetch existing history from API, prepend new entry, deduplicate by date, trim to 30 entries)
-- [ ] Publish hub owners community post draft
-- [ ] Verify HubBot schedule is active and running at 9 AM ET
+- [x] Publish hub owners community post draft (skipped by user — marked complete)
+- [x] Verify HubBot schedule is active and running at 9 AM ET (confirmed active via manus-config schedule status)
