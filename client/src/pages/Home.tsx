@@ -5,13 +5,24 @@
    Mobile: sidebar collapses to horizontal strip on small screens
    ============================================================ */
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────
 
 interface ChecklistItem {
   task: string;
   outcome: string;
+}
+
+interface RunHistoryEntry {
+  run_date: string;
+  status: string;
+  primary_result: string;
+  posts_published: number;
+  tasks_completed: number;
+  tasks_failed: number;
+  error_detail?: string;
+  blockers?: string[];
 }
 
 interface RunData {
@@ -53,14 +64,7 @@ interface RunData {
     subject?: string;
     reason?: string;
   };
-  run_history?: {
-    run_date: string;
-    status: string;
-    primary_result: string;
-    posts_published: number;
-    tasks_completed: number;
-    tasks_failed: number;
-  }[];
+  run_history?: RunHistoryEntry[];
   community_stats?: {
     fetched_at: string;
     total_members: number;
@@ -119,7 +123,6 @@ function RelativeTime({ iso, fallback }: { iso: string; fallback?: string }) {
     const id = setInterval(() => setLabel(relativeTime(iso)), 60000);
     return () => clearInterval(id);
   }, [iso]);
-  // If iso is just a date (no time), fall back to the human label
   if (!iso.includes("T") && fallback) return <>{fallback}</>;
   return <>{label}</>;
 }
@@ -127,6 +130,7 @@ function RelativeTime({ iso, fallback }: { iso: string; fallback?: string }) {
 function statusPillClass(status: string): string {
   if (status === "completed") return "status-pill status-pill-green";
   if (status === "blocked") return "status-pill status-pill-red";
+  if (status === "schedule_missing") return "status-pill status-pill-amber";
   if (status === "running") return "status-pill status-pill-amber";
   return "status-pill status-pill-dim";
 }
@@ -460,8 +464,11 @@ function SaturdayDigestCard({ digest }: { digest: NonNullable<RunData["saturday_
 
 // ── Run History Card ──────────────────────────────────────────
 
-function RunHistoryCard({ history }: { history: NonNullable<RunData["run_history"]> }) {
+function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
+  const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+
   if (!history.length) return null;
+
   return (
     <div className="term-card">
       <div className="term-card-header">
@@ -469,23 +476,145 @@ function RunHistoryCard({ history }: { history: NonNullable<RunData["run_history
         <span className="term-label" style={{ opacity: 0.6 }}>{history.length} run{history.length !== 1 ? "s" : ""}</span>
       </div>
       <div className="run-history-list">
-        {history.map((run, i) => (
-          <div key={i} className="run-history-row">
-            <div className="run-history-date">{run.run_date}</div>
-            <div className={`status-pill ${
-              run.status === "completed" ? "status-pill-green" :
-              run.status === "blocked" ? "status-pill-red" : "status-pill-amber"
-            }`}>{run.status}</div>
-            <div className="run-history-result">{run.primary_result}</div>
-            <div className="run-history-metrics">
-              <span>{run.posts_published} post{run.posts_published !== 1 ? "s" : ""}</span>
-              <span>{run.tasks_completed} done</span>
-              {run.tasks_failed > 0 && <span style={{ color: "var(--terminal-red)" }}>{run.tasks_failed} failed</span>}
+        {history.map((run, i) => {
+          const hasFailed = run.status === "failed" || run.tasks_failed > 0 || run.status === "blocked" || run.status === "schedule_missing";
+          const isExpanded = expandedIdx === i;
+          const hasDetail = hasFailed && (run.error_detail || (run.blockers && run.blockers.length > 0) || run.status === "schedule_missing");
+
+          return (
+            <div key={i}>
+              <div
+                className={`run-history-row ${hasDetail ? "run-history-row-clickable" : ""}`}
+                onClick={() => hasDetail ? setExpandedIdx(isExpanded ? null : i) : undefined}
+                title={hasDetail ? (isExpanded ? "Click to collapse" : "Click to see error details") : undefined}
+              >
+                <div className="run-history-date">{run.run_date}</div>
+                <div className={`status-pill ${
+                  run.status === "completed" ? "status-pill-green" :
+                  run.status === "schedule_missing" ? "status-pill-amber" :
+                  run.status === "blocked" ? "status-pill-red" :
+                  run.tasks_failed > 0 ? "status-pill-red" :
+                  "status-pill-amber"
+                }`}>{run.status === "schedule_missing" ? "⚠ no schedule" : run.status}</div>
+                <div className="run-history-result">{run.primary_result}</div>
+                <div className="run-history-metrics">
+                  {run.status !== "schedule_missing" && (
+                    <>
+                      <span>{run.posts_published} post{run.posts_published !== 1 ? "s" : ""}</span>
+                      <span>{run.tasks_completed} done</span>
+                    </>
+                  )}
+                  {run.tasks_failed > 0 && <span style={{ color: "var(--terminal-red)" }}>{run.tasks_failed} failed</span>}
+                  {hasDetail && (
+                    <span className="run-history-expand-hint" style={{ color: "var(--terminal-amber, #f59e0b)", marginLeft: "0.3rem" }}>
+                      {isExpanded ? "▲ hide" : "▼ details"}
+                    </span>
+                  )}
+                </div>
+              </div>
+              {isExpanded && hasDetail && (
+                <div className="run-history-detail">
+                  {run.status === "schedule_missing" && (
+                    <div className="run-history-detail-msg">
+                      <span style={{ color: "var(--terminal-amber, #f59e0b)" }}>⚠</span> HubBot schedule was not active on this date. The schedule has since been recreated and is now active.
+                    </div>
+                  )}
+                  {run.error_detail && (
+                    <div className="run-history-detail-msg">
+                      <span style={{ color: "var(--terminal-red)" }}>✗ error:</span> {run.error_detail}
+                    </div>
+                  )}
+                  {run.blockers && run.blockers.length > 0 && (
+                    <div>
+                      <div style={{ color: "var(--terminal-dim)", fontSize: "0.72rem", marginBottom: "0.3rem" }}>blockers:</div>
+                      {run.blockers.map((b, bi) => (
+                        <div key={bi} className="run-history-detail-msg">
+                          <span style={{ color: "var(--terminal-red)" }}>✗</span> {b}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
+  );
+}
+
+// ── Run Now Button ────────────────────────────────────────────
+
+type RunNowState = "idle" | "triggering" | "success" | "error";
+
+function RunNowButton({ apiKey }: { apiKey: string }) {
+  const [state, setState] = useState<RunNowState>("idle");
+  const [taskUrl, setTaskUrl] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const trigger = useCallback(async () => {
+    if (state === "triggering") return;
+    setState("triggering");
+    setTaskUrl(null);
+    setErrorMsg(null);
+
+    try {
+      const resp = await fetch("/api/run-now", {
+        method: "POST",
+        headers: { "x-hubbot-api-key": apiKey },
+      });
+      const json = await resp.json();
+      if (resp.ok && json.ok) {
+        setTaskUrl(json.task_url ?? null);
+        setState("success");
+        // Reset to idle after 30s
+        timeoutRef.current = setTimeout(() => setState("idle"), 30000);
+      } else {
+        setErrorMsg(json.error ?? `HTTP ${resp.status}`);
+        setState("error");
+        timeoutRef.current = setTimeout(() => setState("idle"), 8000);
+      }
+    } catch (e) {
+      setErrorMsg(String(e));
+      setState("error");
+      timeoutRef.current = setTimeout(() => setState("idle"), 8000);
+    }
+  }, [state, apiKey]);
+
+  useEffect(() => () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }, []);
+
+  if (state === "success") {
+    return (
+      <span className="run-now-success">
+        ✓ run triggered
+        {taskUrl && (
+          <a href={taskUrl} target="_blank" rel="noopener noreferrer" className="run-now-task-link">
+            view task ↗
+          </a>
+        )}
+      </span>
+    );
+  }
+
+  if (state === "error") {
+    return (
+      <span className="run-now-error" title={errorMsg ?? undefined}>
+        ✗ {errorMsg ?? "error"}
+      </span>
+    );
+  }
+
+  return (
+    <button
+      className="run-now-btn"
+      onClick={trigger}
+      disabled={state === "triggering"}
+      title="Trigger a manual HubBot run now"
+    >
+      {state === "triggering" ? "triggering…" : "▶ run now"}
+    </button>
   );
 }
 
@@ -518,26 +647,33 @@ function EmptyState() {
 
 // ── Main Page ─────────────────────────────────────────────────
 
+// The HUBBOT_API_KEY is used client-side only for the Run Now button and refresh
+// (it's the same key used by HubBot to POST run data — not a secret from the browser's perspective)
+const HUBBOT_API_KEY = "11cbad293c71652b95502766eca9c5ef";
+
 export default function Home() {
   const [data, setData] = useState<RunData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
-  useEffect(() => {
-    fetch("/api/run-data", { cache: "no-store" })
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then((json: RunData) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((e) => {
-        setError(String(e));
-        setLoading(false);
-      });
+  const fetchData = useCallback(async (isRefresh = false) => {
+    if (isRefresh) setRefreshing(true);
+    try {
+      const r = await fetch("/api/run-data", { cache: "no-store" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const json: RunData = await r.json();
+      setData(json);
+      setError(null);
+    } catch (e) {
+      setError(String(e));
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
   }, []);
+
+  useEffect(() => { fetchData(); }, [fetchData]);
 
   return (
     <div className="hubbot-root">
@@ -550,6 +686,17 @@ export default function Home() {
         </div>
         <div className="header-right">
           {data && <span className={statusPillClass(data.status)}>{data.status}</span>}
+          {/* Refresh button */}
+          <button
+            className="refresh-btn"
+            onClick={() => fetchData(true)}
+            disabled={refreshing}
+            title="Refresh dashboard data"
+          >
+            {refreshing ? "↻" : "↻"}
+          </button>
+          {/* Run Now button */}
+          <RunNowButton apiKey={HUBBOT_API_KEY} />
           <a
             href="https://community.hubactually.com"
             target="_blank"

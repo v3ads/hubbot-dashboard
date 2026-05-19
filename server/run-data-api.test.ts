@@ -11,6 +11,14 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+describe("MANUS_API_KEY secret", () => {
+  it("is set in the environment", () => {
+    const key = process.env.MANUS_API_KEY;
+    expect(key, "MANUS_API_KEY must be set").toBeTruthy();
+    expect(key!.length, "MANUS_API_KEY must be at least 20 chars").toBeGreaterThanOrEqual(20);
+  });
+});
+
 describe("HUBBOT_API_KEY secret", () => {
   it("is set in the environment", () => {
     const key = process.env.HUBBOT_API_KEY;

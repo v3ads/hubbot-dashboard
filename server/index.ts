@@ -44,6 +44,19 @@ function writeRunData(data: object): void {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
 }
 
+// ── Load HubBot playbook ─────────────────────────────────────────
+function loadPlaybook(): string {
+  // Try production path first (alongside server binary), then dev path
+  const paths = [
+    path.resolve(__dirname, "hubbot_playbook.txt"),
+    path.resolve(__dirname, "..", "server", "hubbot_playbook.txt"),
+  ];
+  for (const p of paths) {
+    if (fs.existsSync(p)) return fs.readFileSync(p, "utf8");
+  }
+  return "";
+}
+
 // ── Server ───────────────────────────────────────────────────────
 async function startServer() {
   seedDataFile();
@@ -88,6 +101,60 @@ async function startServer() {
     } catch (err) {
       console.error("[HubBot] Failed to write run-data.json:", err);
       res.status(500).json({ error: "Failed to persist run data" });
+    }
+  });
+
+  // ── POST /api/run-now  (protected by HUBBOT_API_KEY — triggers a new HubBot run) ──
+  app.post("/api/run-now", async (req, res) => {
+    const apiKey = process.env.HUBBOT_API_KEY;
+    const provided = req.headers["x-hubbot-api-key"];
+
+    if (!apiKey || provided !== apiKey) {
+      res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+
+    const manusApiKey = process.env.MANUS_API_KEY;
+    if (!manusApiKey) {
+      res.status(500).json({ error: "MANUS_API_KEY not configured" });
+      return;
+    }
+
+    const playbook = loadPlaybook();
+    if (!playbook) {
+      res.status(500).json({ error: "HubBot playbook not found" });
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.manus.ai/v2/task.create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-manus-api-key": manusApiKey,
+        },
+        body: JSON.stringify({
+          title: "HubActually autonomous community admin (manual run)",
+          prompt: playbook,
+        }),
+      });
+
+      if (!response.ok) {
+        const errText = await response.text();
+        console.error("[HubBot] run-now: Manus API error", response.status, errText);
+        res.status(502).json({ error: `Manus API error: ${response.status}` });
+        return;
+      }
+
+      const result = await response.json() as { task?: { id?: string; task_url?: string } };
+      const taskId = result?.task?.id ?? "unknown";
+      const taskUrl = result?.task?.task_url ?? `https://manus.im/app/${taskId}`;
+
+      console.log("[HubBot] run-now: triggered task", taskId);
+      res.json({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() });
+    } catch (err) {
+      console.error("[HubBot] run-now: fetch error", err);
+      res.status(500).json({ error: "Failed to trigger HubBot run" });
     }
   });
 

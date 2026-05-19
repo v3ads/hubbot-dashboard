@@ -267,7 +267,70 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginRunData(), vitePluginStorageProxy()];
+function vitePluginRunNow(): Plugin {
+  const PLAYBOOK_PATHS = [
+    path.join(PROJECT_ROOT, "server", "hubbot_playbook.txt"),
+  ];
+  function loadPlaybook(): string {
+    for (const p of PLAYBOOK_PATHS) {
+      if (fs.existsSync(p)) return fs.readFileSync(p, "utf8");
+    }
+    return "";
+  }
+  return {
+    name: "manus-run-now",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/run-now", async (req, res) => {
+        if (req.method !== "POST") {
+          res.writeHead(405, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Method not allowed" }));
+          return;
+        }
+        const apiKey = process.env.HUBBOT_API_KEY;
+        const provided = (req as any).headers["x-hubbot-api-key"];
+        if (apiKey && provided !== apiKey) {
+          res.writeHead(401, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Unauthorized" }));
+          return;
+        }
+        const manusApiKey = process.env.MANUS_API_KEY;
+        if (!manusApiKey) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "MANUS_API_KEY not configured" }));
+          return;
+        }
+        const playbook = loadPlaybook();
+        if (!playbook) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "HubBot playbook not found" }));
+          return;
+        }
+        try {
+          const response = await fetch("https://api.manus.ai/v2/task.create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-manus-api-key": manusApiKey },
+            body: JSON.stringify({ title: "HubActually autonomous community admin (manual run)", prompt: playbook }),
+          });
+          if (!response.ok) {
+            res.writeHead(502, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ error: `Manus API error: ${response.status}` }));
+            return;
+          }
+          const result = await response.json() as { task?: { id?: string; task_url?: string } };
+          const taskId = result?.task?.id ?? "unknown";
+          const taskUrl = result?.task?.task_url ?? `https://manus.im/app/${taskId}`;
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() }));
+        } catch (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Failed to trigger HubBot run" }));
+        }
+      });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginRunData(), vitePluginStorageProxy(), vitePluginRunNow()];
 
 export default defineConfig({
   plugins,

@@ -13,10 +13,10 @@
   "experiments": null,
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663032099346/Jre6MKmEXmQu3GTxD9SCSm",
-    "access_key_id": "ASIAZV3A2ECZGU4MMCDA",
-    "secret_access_key": "7NIu4N5A0yrfn+g/WcZDodb5zRgetC2dIJlDOmDM",
-    "session_token": "IQoJb3JpZ2luX2VjEJz//////////wEaCXVzLWVhc3QtMSJHMEUCICexnUZ1bWAV11AbZyIsaSDJ6RHm6eDaP8dBD7ZUnMCmAiEAi6Ww8FbTiJqHVaoOamD+U6x2+zljtowv0qFz5Szs1MAq9gMIZRAEGgw2NjUzODYwOTg4NjYiDPGb5DwndxIbX3PY4yrTAy/wfE3UQrZqqm31ZQmnlgPmr1rXAz87kPpNE1weBdWhYbxJpJTasXlVnPNNgIIVMGl0QAcP5w9ep5aQhd8EOl5/ePELPGmA89AzytlYMeclg2CA2pcWQtiZTUi/uv/agr4r+NSHeu9UMoCrH0SN87Ksdid3cs6921L0PXZyCEqc8vm3JNqh0Jy2zgFoBEc5UuJbtyNX8zhlxBHnNBbgPbKUPiWs49QqGM8Z7acXuSE08Uppi91LY2wyD7t142MNJ1jLpV/qRQWyWNLjC11Z6jJYiYrAS/1az27vlpqcszS+Z+BJziljIf13bdZjAeGHdXk8dcqMcbFnE/0+qMvgdGsmlNtxFHgtBP649Iv80p0DJjN8yalM9AxzHGgLu41TKT2TM1a+juZ/i8+68qatLgXnakSxFYhans/rYLKQuAuVgfJJzW8BKQEXxa0TLC3A6KMBo8u8kdbUm80zpt/KbulphtanzWeTRLVKgScGhqx2thJOUnCblVqxr877MGOKp7lkuwnXhOss3JXoHd+SkhtyLwsbMOJw5BSdd+ryLIN4KISjM+UFVRisuhx1ZlWNdRh3DgjdSScWdGQM/RXZY/PJu0dX7ixOhHTQ/YFWCnDMaaBVMKvJmNAGOp0B2SZ9WXngfi4fzX13wNy6c+4MMXlbDwNtE2gAdSIclcm9+IZ2lzBrzGynJ1NJ+JRBl6tulm7FnY3TYahg621F7yXi05yOBevHjxCNspndds9vqx41l9fJseekP1klNg1d+GH8BplgonZWfu1ygLL15cmZNbLT3JIfRBbfHXVqLVaTdMpNr6iu0uoQa+mGfsFKY6BcwNGTaJQf1QPqog==",
-    "expiration": "2026-05-15T07:38:19.000Z"
+    "access_key_id": "ASIAZV3A2ECZCJAA3M5W",
+    "secret_access_key": "RT8acX4Q+Hxybz1dcA2a2HS79yfZd+eEMN83i7NH",
+    "session_token": "IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJGMEQCICzoNdd9Rua/8dgUcSS202TGaldqbNsVzh8je26cyRbyAiBgKGyVHV2TS0DuBUzffzexoYgPc/pREqE14CbAP1BalCr/Awjb//////////8BEAQaDDY2NTM4NjA5ODg2NiIMFGbiccCo18kgy4JqKtMDGSZWw2U42xdlZqji+qKiChWFkCbJ+ZU/oqGctdniEZAlngiQsZMG0soyH9wVUgL7q6oX+OX0gifLji2IvwJ3+ttDJ+OR6/cDkHQVk+xzfuW1lZttA6G9uUMCbPjPIrE06v0yC2KENdULg6iW+KAeBvchRczYj0Xc0XR+hIKa2oroWYHU7sUTiAFdCVUp8GVmcnkpy8Y3th2Ga0Ew2h0K69ixYmtmhAwlgK2fh46Bj8zxWiPp69K2+N3yVQkn1t1Pz3zqYwcFR0nKkJGm6sPahxEAbotBAq3PGXOgU4/OIq4u2wD85oHVVe7ET4gs8QusM/pznI1eMgRSd8ya2rgaHXVk45cUTAJ24qFBWc5Ss+/3yeQQqrVkcOCvIC/pXLsX2KtygdBlbllr0yUoIHMowSfWntYhYG23tpx1W9pcaIjmGqns/+O9HwWbBsOY+oaBbkvCLbRjAqX+b7YWZS0QF8zB08i2UQHO1NCpUF19ezRsCqdUBwzaE5YMxo3khqjVMMoFBl5km0u9+KALMJtNOHeETVZTkQq83XEJXWkeFuEawu9RWxmTizSrD4V/8DefpfVHzz8M2PLds5uv9LA0Wkb/I9N6DTMnFPYwroVtn7Tjz6ww/Mqy0AY6ngFFgW4g4ap0kX8Q2XMketmAACGs8F06kxbGMblEJZOFdBGR9dbvpagK9iKl8hk/p6WfuMiKPxCwCzkY39Q1+JtsRLsuLiyW0mu08wPdkUKjvLPUcxnfwri+IcfxnpQKWvnszN1U88CHCHHnta/RRalkbjYHQ/Dh2pVezZkYRmmZHXKDHYhxCabjvrTub3YA2MxnJI3CHrPcRZGhKSj8Uw==",
+    "expiration": "2026-05-20T06:01:32.000Z"
   },
   "name": "hubbot-dashboard",
   "path": "/home/ubuntu/hubbot-dashboard",
@@ -26,6 +26,7 @@
     "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
     "HUBBOT_API_KEY": "11cbad293c71652b95502766eca9c5ef",
     "JWT_SECRET": "29ZrhtmoytDMyHJpMqdFRU",
+    "MANUS_API_KEY": "sk-5XUVC0prUVRE4dwpNaheqPUwaxe3FJXRKQibouU9OP9q2at3nrMHD-pcvsjb_IUqbTcMYS5MLarMpZvf0eAS7kwl1vm3",
     "OAUTH_SERVER_URL": "https://api.manus.im",
     "OWNER_NAME": "Ayman Shalaby",
     "OWNER_OPEN_ID": "A4NZhGbPuYLZ4NtjizyHRm",

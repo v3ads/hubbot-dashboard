@@ -23,3 +23,7 @@
 - [x] Update post_run_data_to_dashboard.py to accumulate run_history (fetch existing history from API, prepend new entry, deduplicate by date, trim to 30 entries)
 - [x] Publish hub owners community post draft (skipped by user — marked complete)
 - [x] Verify HubBot schedule is active and running at 9 AM ET (confirmed active via manus-config schedule status)
+- [x] Run Now button in header (triggers new HubBot task via Manus API, shows task URL on success)
+- [x] Manual refresh button in header (re-fetches /api/run-data without page reload)
+- [x] Error/failed run drill-down in RunHistoryCard (click failed row to expand and see error details)
+- [x] Missed run history entries for May 15-19 (schedule was missing — mark as schedule_missing)
