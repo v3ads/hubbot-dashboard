@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "run_date": "2026-05-20",
   "run_completed_at_et": "2026-05-20T13:26:06-04:00",
   "run_weekday": "Wednesday",
@@ -145,11 +146,77 @@
       "blockers": [
         "Image attachment could not be completed through the visible composer UI",
         "Required owner alert email could not be sent because no saved GetResponse API credential/connector was available in this run context"
+=======
+  "agent_name": "HubBot",
+  "agent_version": "v1",
+  "run_started_at_et": "2026-05-20T09:06:00",
+  "run_completed_at_et": "2026-05-20T13:26:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "schedule_status": "active",
+  "community_access_result": "success",
+  "total_members": 79,
+  "new_members_7d": 9,
+  "active_members_7d": 8,
+  "total_posts": 11,
+  "new_members_found": [
+    "Mariana Garza (joined May 16)",
+    "Joseph Hayes (joined May 15)",
+    "Maksim Strizheus (joined May 15)",
+    "Reem (joined May 15)",
+    "Peter Pritchard (joined May 15)",
+    "Justin Stroh (joined May 15)",
+    "David Stewart (joined May 15)",
+    "Tina B (joined May 14)",
+    "Jim Knop (joined May 14)"
+  ],
+  "welcomes_posted": [
+    "Mariana Garza \u2014 DM sent May 20",
+    "Joseph Hayes \u2014 DM sent May 20",
+    "Maksim Strizheus \u2014 DM sent May 20",
+    "Reem \u2014 DM sent May 20",
+    "Peter Pritchard \u2014 DM sent May 20",
+    "Justin Stroh \u2014 DM sent May 20",
+    "David Stewart \u2014 DM sent May 20",
+    "Tina B \u2014 DM sent May 20",
+    "Jim Knop \u2014 DM sent May 20"
+  ],
+  "ai_news_title": "Google's New AI Agents Turn Search Into Always-On Market Monitoring",
+  "ai_news_source_url": "https://techcrunch.com/2026/05/20/google-ai-agents-search/",
+  "ai_news_post_url": "https://community.hubactually.com/",
+  "ai_news_publish_status": "published",
+  "image_status": "blocked",
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "blockers": [
+    "Image upload: composer file input unreliable (now fixed in updated playbook)",
+    "Owner alert email: GetResponse key not available in run context (now fixed in updated playbook)"
+  ],
+  "run_evidence_summary": "Daily AI-news post published in General channel. 9 new members welcomed via DM. Image upload and GetResponse key blockers resolved in updated playbook.",
+  "run_history": [
+    {
+      "run_date": "2026-05-20",
+      "status": "completed",
+      "primary_result": "Post published. 9 new members welcomed. Image upload blocked.",
+      "summary": "Post published: Google's New AI Agents Turn Search Into Always-On Market Monitoring. 9 new members welcomed.",
+      "ai_news_title": "Google's New AI Agents Turn Search Into Always-On Market Monitoring",
+      "total_members": 79,
+      "new_members": 9,
+      "welcomes_sent": 9,
+      "posts_published": 1,
+      "tasks_completed": 7,
+      "tasks_failed": 2,
+      "image_status": "blocked",
+      "blockers": [
+        "image_upload",
+        "getresponse_key"
+>>>>>>> Stashed changes
       ]
     },
     {
       "run_date": "2026-05-19",
       "status": "completed",
+<<<<<<< Updated upstream
       "primary_result": "Community access, member review, and discussion review completed. A same-day Hub Bot AI-news post already existed, so no duplicate post was published.",
       "posts_published": 0,
       "tasks_completed": 8,
@@ -175,10 +242,26 @@
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has been recreated today and will run from 2026-05-20 onwards.",
       "blockers": [
         "Schedule not active — no task was triggered at 9:00 AM ET."
+=======
+      "primary_result": "Post published. Dashboard not updated. Member greetings skipped.",
+      "summary": "Post published: OpenAI's Workspace Agents Point to the Next Small-Team Operating System.",
+      "ai_news_title": "OpenAI's Workspace Agents Point to the Next Small-Team Operating System",
+      "total_members": 70,
+      "new_members": 0,
+      "welcomes_sent": 0,
+      "posts_published": 1,
+      "tasks_completed": 5,
+      "tasks_failed": 2,
+      "image_status": "unknown",
+      "blockers": [
+        "dashboard_not_updated",
+        "member_greeting_skipped"
+>>>>>>> Stashed changes
       ]
     },
     {
       "run_date": "2026-05-18",
+<<<<<<< Updated upstream
       "status": "schedule_missing",
       "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
@@ -187,11 +270,28 @@
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
         "Schedule not active — no task was triggered at 9:00 AM ET."
+=======
+      "status": "completed",
+      "primary_result": "Post published. Dashboard not updated. Member greetings skipped.",
+      "summary": "Post published: Entrepreneurs Are Using AI Daily \u2014 But Drawing the Line When Stakes Are High.",
+      "ai_news_title": "Entrepreneurs Are Using AI Daily \u2014 But Drawing the Line When Stakes Are High",
+      "total_members": 70,
+      "new_members": 0,
+      "welcomes_sent": 0,
+      "posts_published": 1,
+      "tasks_completed": 5,
+      "tasks_failed": 2,
+      "image_status": "unknown",
+      "blockers": [
+        "dashboard_not_updated",
+        "member_greeting_skipped"
+>>>>>>> Stashed changes
       ]
     },
     {
       "run_date": "2026-05-17",
       "status": "schedule_missing",
+<<<<<<< Updated upstream
       "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
@@ -199,11 +299,26 @@
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
         "Schedule not active — no task was triggered at 9:00 AM ET."
+=======
+      "primary_result": "No run \u2014 schedule was not active.",
+      "summary": "Schedule was not active. No run occurred.",
+      "ai_news_title": null,
+      "total_members": null,
+      "new_members": 0,
+      "welcomes_sent": 0,
+      "posts_published": 0,
+      "tasks_completed": 0,
+      "tasks_failed": 1,
+      "image_status": null,
+      "blockers": [
+        "schedule_missing"
+>>>>>>> Stashed changes
       ]
     },
     {
       "run_date": "2026-05-16",
       "status": "schedule_missing",
+<<<<<<< Updated upstream
       "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
@@ -211,11 +326,26 @@
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
         "Schedule not active — no task was triggered at 9:00 AM ET."
+=======
+      "primary_result": "No run \u2014 schedule was not active.",
+      "summary": "Schedule was not active. No run occurred.",
+      "ai_news_title": null,
+      "total_members": null,
+      "new_members": 0,
+      "welcomes_sent": 0,
+      "posts_published": 0,
+      "tasks_completed": 0,
+      "tasks_failed": 1,
+      "image_status": null,
+      "blockers": [
+        "schedule_missing"
+>>>>>>> Stashed changes
       ]
     },
     {
       "run_date": "2026-05-15",
       "status": "schedule_missing",
+<<<<<<< Updated upstream
       "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
@@ -227,3 +357,36 @@
     }
   ]
 }
+=======
+      "primary_result": "No run \u2014 schedule was not active.",
+      "summary": "Schedule was not active. No run occurred.",
+      "ai_news_title": null,
+      "total_members": null,
+      "new_members": 0,
+      "welcomes_sent": 0,
+      "posts_published": 0,
+      "tasks_completed": 0,
+      "tasks_failed": 1,
+      "image_status": null,
+      "blockers": [
+        "schedule_missing"
+      ]
+    },
+    {
+      "run_date": "2026-05-14",
+      "status": "completed",
+      "primary_result": "Post published with image. 5 new members found.",
+      "summary": "Post published: PayPal and Anthropic Are Turning AI Training Into a Small-Business Workflow. Image attached.",
+      "ai_news_title": "PayPal and Anthropic Are Turning AI Training Into a Small-Business Workflow",
+      "total_members": 70,
+      "new_members": 5,
+      "welcomes_sent": 0,
+      "posts_published": 1,
+      "tasks_completed": 9,
+      "tasks_failed": 0,
+      "image_status": "uploaded",
+      "blockers": []
+    }
+  ]
+}
+>>>>>>> Stashed changes
