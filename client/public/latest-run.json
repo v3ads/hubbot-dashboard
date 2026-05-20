@@ -1,23 +1,23 @@
 {
-  "run_date": "2026-05-19",
-  "run_completed_at_et": "2026-05-19T22:35:00-04:00",
-  "run_weekday": "Tuesday",
+  "run_date": "2026-05-20",
+  "run_completed_at_et": "2026-05-20T13:26:06-04:00",
+  "run_weekday": "Wednesday",
   "timezone": "America/New_York",
-  "status": "completed",
-  "last_run_label": "May 19, 2026 \u2014 approx. 10:35 PM ET",
-  "primary_result": "HubBot reviewed the community, found no clear welcome/comment need, detected an existing same-day AI-news post, and avoided creating a duplicate post.",
+  "status": "completed_with_flags",
+  "last_run_label": "May 20, 2026 — approx. 1:26 PM ET",
+  "primary_result": "HubBot reviewed the community, found no safe welcome/comment action, published the required AI-news post, and recorded two owner-level blockers: image attachment UI reliability and missing GetResponse alert credential.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "AI Is Moving From Apps You Open to Tasks Your Customers Ask For",
+    "title": "Google’s New AI Agents Turn Search Into Always-On Market Monitoring",
     "thread_url": "https://community.hubactually.com/",
     "thread_id": null,
     "category": "General",
     "image_url": "",
     "image_attached": false,
-    "publish_status": "already_published_before_this_run",
-    "source_url": "https://techcrunch.com/2026/05/12/google-brings-agentic-ai-and-vibe-coded-widgets-to-android/"
+    "publish_status": "published_text_with_source_link",
+    "source_url": "https://techcrunch.com/2026/05/19/how-to-use-googles-new-ai-agents-to-go-beyond-your-standard-searches/"
   },
   "checklist": [
     {
@@ -26,11 +26,11 @@
     },
     {
       "task": "Member review",
-      "outcome": "completed"
+      "outcome": "completed_no_genuinely_new_members"
     },
     {
       "task": "Discussion review",
-      "outcome": "completed"
+      "outcome": "completed_no_useful_comment_needed"
     },
     {
       "task": "AI-news research",
@@ -38,7 +38,7 @@
     },
     {
       "task": "Duplicate-post safety check",
-      "outcome": "completed"
+      "outcome": "completed_no_same_day_hubbot_post_visible_before_publish"
     },
     {
       "task": "Image generation",
@@ -46,34 +46,50 @@
     },
     {
       "task": "Image attachment",
-      "outcome": "skipped_existing_post"
+      "outcome": "blocked_composer_file_input_not_reliable"
     },
     {
       "task": "Community post",
-      "outcome": "skipped_existing_same_day_post"
+      "outcome": "published_text_with_source_link"
     },
     {
-      "task": "Dashboard update",
-      "outcome": "completed"
+      "task": "Owner alert email",
+      "outcome": "blocked_getresponse_credential_unavailable"
     },
     {
       "task": "Saturday digest",
       "outcome": "skipped_not_saturday"
     },
     {
-      "task": "Owner alert email",
-      "outcome": "skipped_no_escalation"
+      "task": "Dashboard update",
+      "outcome": "completed_repository_fallback"
     }
   ],
   "metrics": {
     "required_tasks_completed": 8,
-    "required_tasks_failed": 0,
+    "required_tasks_failed": 2,
     "owner_alerts_sent": 0,
-    "posts_published": 0,
+    "posts_published": 1,
     "new_welcomes_sent": 0,
-    "duplicate_posts_avoided": 1
+    "duplicate_posts_avoided": 0,
+    "flagged_items": 2
   },
-  "blockers": [],
+  "blockers": [
+    "Image attachment could not be completed through the visible composer UI",
+    "Required owner alert email could not be sent because no saved GetResponse API credential/connector was available in this run context"
+  ],
+  "flagged_items": [
+    {
+      "item": "Image attachment could not be completed through the visible composer UI",
+      "severity": "medium",
+      "recommended_next_action": "Add or verify a stable file-upload selector/path for the HubActually composer so future autonomous runs can attach generated concept images reliably."
+    },
+    {
+      "item": "Required owner alert email could not be sent because no saved GetResponse API credential/connector was available in this run context",
+      "severity": "high",
+      "recommended_next_action": "Store the authorized GetResponse credential in the project/schedule configuration and document the non-mutating lookup path for sender/contact/template/list IDs."
+    }
+  ],
   "schedule": {
     "cron": "0 0 9 * * *",
     "label": "Daily at 9:00 AM ET",
@@ -84,9 +100,53 @@
   },
   "saturday_digest": {
     "status": "skipped_not_saturday",
-    "reason": "Today is Tuesday. Digest runs on Saturdays only."
+    "reason": "Today is Wednesday. Digest runs on Saturdays only."
+  },
+  "owner_alert": {
+    "status": "blocked_getresponse_credential_unavailable",
+    "recipient": "vipaymanshalaby@gmail.com",
+    "sender": "ayman@hubactually.com",
+    "reason": "A flagged image-upload/browser-UI item required an owner alert, but no GetResponse credential or connector was available in the current run context."
+  },
+  "community_stats": {
+    "fetched_at": "2026-05-20T13:26:06-04:00",
+    "total_members": 79,
+    "new_members_7d": null,
+    "new_members_30d": null,
+    "active_members_7d": null,
+    "total_posts": null,
+    "interesting_posts": [
+      {
+        "title": "Google’s New AI Agents Turn Search Into Always-On Market Monitoring",
+        "author": "Hub Bot",
+        "likes": 0,
+        "comments": 0,
+        "url": "https://community.hubactually.com/",
+        "date": "2026-05-20"
+      }
+    ]
+  },
+  "evidence": {
+    "ledger_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-20_hubbot_run.json",
+    "ledger_markdown": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-20_hubbot_run.md",
+    "browser_observations": "/home/ubuntu/hubactually_hubbot_run_ledger/browser_observations_2026-05-20.md",
+    "ai_news_research": "/home/ubuntu/hubactually_hubbot_run_ledger/ai_news_research_2026-05-20.md",
+    "generated_image": "/home/ubuntu/hubactually_hubbot_run_ledger/google_ai_information_agents_concept_2026-05-20.png"
   },
   "run_history": [
+    {
+      "run_date": "2026-05-20",
+      "status": "completed_with_flags",
+      "primary_result": "Community accessed, no welcomes/comments needed, daily AI-news post published, image attachment blocked, and owner alert blocked by missing GetResponse credential.",
+      "posts_published": 1,
+      "tasks_completed": 8,
+      "tasks_failed": 2,
+      "error_detail": "Image attachment could not be completed through the visible composer UI; required GetResponse owner alert could not be sent because no credential/connector was available.",
+      "blockers": [
+        "Image attachment could not be completed through the visible composer UI",
+        "Required owner alert email could not be sent because no saved GetResponse API credential/connector was available in this run context"
+      ]
+    },
     {
       "run_date": "2026-05-19",
       "status": "completed",
@@ -108,131 +168,62 @@
     {
       "run_date": "2026-05-19",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date. Schedule recreated today.",
+      "primary_result": "No run — HubBot schedule was not active on this date. Schedule recreated today.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has been recreated today and will run from 2026-05-20 onwards.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-18",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-17",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-16",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-15",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     }
-  ],
-  "community_stats": {
-    "fetched_at": "2026-05-19T22:30:41.282462Z",
-    "total_members": 79,
-    "new_members_7d": 9,
-    "new_members_30d": null,
-    "active_members_7d": null,
-    "total_posts": null,
-    "new_members_7d_list": [
-      {
-        "name": "Mariana Garza",
-        "joined": "2026-05-17"
-      },
-      {
-        "name": "Joseph Hayes",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "Maksim Strizheus",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "Reem",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "Peter Pritchard",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "Justin Stroh",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "David Stewart",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "Tina B",
-        "joined": "2026-05-15"
-      },
-      {
-        "name": "Jim Knop",
-        "joined": "2026-05-15"
-      }
-    ],
-    "interesting_posts": [
-      {
-        "title": "AI Is Moving From Apps You Open to Tasks Your Customers Ask For",
-        "author": "Hub Bot",
-        "likes": 0,
-        "comments": 0,
-        "url": "https://community.hubactually.com/",
-        "date": "2026-05-19"
-      },
-      {
-        "title": "99% of people today...",
-        "author": "AYMAN SHALABY",
-        "likes": 0,
-        "comments": 0,
-        "url": "https://community.hubactually.com/",
-        "date": "2026-05-19"
-      }
-    ]
-  },
-  "remediation": {
-    "applied_at_utc": "2026-05-19T22:30:41.282462Z",
-    "summary": "Reconciled dashboard latest-run data to May 19, switched visible agent version to v2, and added duplicate manual-run protection in source.",
-    "duplicate_run_finding": "Schedule inspection found one active HubBot schedule. Multiple tasks were most likely caused by manual run triggers or reused v1 context, so the schedule was updated to run as a new task and the dashboard source was hardened against repeated run-now requests."
-  }
+  ]
 }
