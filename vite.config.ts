@@ -268,12 +268,21 @@ function vitePluginStorageProxy(): Plugin {
 }
 
 function vitePluginRunNow(): Plugin {
+<<<<<<< Updated upstream
+=======
+  // DISABLED — manual run trigger removed; endpoint returns 404
+>>>>>>> Stashed changes
   return {
     name: "manus-run-now-disabled",
     configureServer(server: ViteDevServer) {
       server.middlewares.use("/api/run-now", (_req, res) => {
+<<<<<<< Updated upstream
         res.writeHead(410, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ error: "Manual HubBot runs are disabled from this dashboard. Use the daily schedule or create a one-off task intentionally." }));
+=======
+        res.writeHead(404, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Manual run trigger is disabled. HubBot runs on its autonomous daily schedule." }));
+>>>>>>> Stashed changes
       });
     },
   };

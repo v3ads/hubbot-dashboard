@@ -4,7 +4,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -92,9 +95,15 @@ async function startServer() {
     }
   });
 
+<<<<<<< Updated upstream
   // ── POST /api/run-now  (disabled; manual HubBot runs are intentionally not available from the dashboard) ──
   app.post("/api/run-now", (_req, res) => {
     res.status(410).json({ error: "Manual HubBot runs are disabled from this dashboard. Use the daily schedule or create a one-off task intentionally." });
+=======
+  // ── POST /api/run-now  (DISABLED — manual run trigger removed) ──
+  app.post("/api/run-now", (_req, res) => {
+    res.status(404).json({ error: "Manual run trigger is disabled. HubBot runs on its autonomous daily schedule." });
+>>>>>>> Stashed changes
   });
 
   // ── Static files ─────────────────────────────────────────────
