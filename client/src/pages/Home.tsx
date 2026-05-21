@@ -5,7 +5,7 @@
    Mobile: sidebar collapses to horizontal strip on small screens
    ============================================================ */
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────
 
@@ -547,89 +547,6 @@ function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
   );
 }
 
-// ── Run Now Button ────────────────────────────────────────────
-
-type RunNowState = "idle" | "triggering" | "success" | "error";
-
-function RunNowButton({ apiKey }: { apiKey: string }) {
-  const [state, setState] = useState<RunNowState>("idle");
-  const [taskUrl, setTaskUrl] = useState<string | null>(null);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastTriggerRef = useRef<number>(0);
-
-  const trigger = useCallback(async () => {
-    if (state === "triggering") return;
-    const now = Date.now();
-    if (now - lastTriggerRef.current < 10 * 60 * 1000) {
-      setErrorMsg("A HubBot run was just triggered. Please wait 10 minutes before triggering another one.");
-      setState("error");
-      timeoutRef.current = setTimeout(() => setState("idle"), 8000);
-      return;
-    }
-    lastTriggerRef.current = now;
-    setState("triggering");
-    setTaskUrl(null);
-    setErrorMsg(null);
-
-    try {
-      const resp = await fetch("/api/run-now", {
-        method: "POST",
-        headers: { "x-hubbot-api-key": apiKey },
-      });
-      const json = await resp.json();
-      if (resp.ok && json.ok) {
-        setTaskUrl(json.task_url ?? null);
-        setState("success");
-        // Reset to idle after 30s
-        timeoutRef.current = setTimeout(() => setState("idle"), 30000);
-      } else {
-        setErrorMsg(json.error ?? `HTTP ${resp.status}`);
-        setState("error");
-        timeoutRef.current = setTimeout(() => setState("idle"), 8000);
-      }
-    } catch (e) {
-      setErrorMsg(String(e));
-      setState("error");
-      timeoutRef.current = setTimeout(() => setState("idle"), 8000);
-    }
-  }, [state, apiKey]);
-
-  useEffect(() => () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }, []);
-
-  if (state === "success") {
-    return (
-      <span className="run-now-success">
-        ✓ run triggered
-        {taskUrl && (
-          <a href={taskUrl} target="_blank" rel="noopener noreferrer" className="run-now-task-link">
-            view task ↗
-          </a>
-        )}
-      </span>
-    );
-  }
-
-  if (state === "error") {
-    return (
-      <span className="run-now-error" title={errorMsg ?? undefined}>
-        ✗ {errorMsg ?? "error"}
-      </span>
-    );
-  }
-
-  return (
-    <button
-      className="run-now-btn"
-      onClick={trigger}
-      disabled={state === "triggering"}
-      title="Trigger a manual HubBot run now"
-    >
-      {state === "triggering" ? "triggering…" : "▶ run now"}
-    </button>
-  );
-}
-
 function EmptyState() {
   return (
     <div
@@ -658,10 +575,6 @@ function EmptyState() {
 }
 
 // ── Main Page ─────────────────────────────────────────────────
-
-// The HUBBOT_API_KEY is used client-side only for the Run Now button and refresh
-// (it's the same key used by HubBot to POST run data — not a secret from the browser's perspective)
-const HUBBOT_API_KEY = "11cbad293c71652b95502766eca9c5ef";
 
 export default function Home() {
   const [data, setData] = useState<RunData | null>(null);
@@ -707,8 +620,6 @@ export default function Home() {
           >
             {refreshing ? "↻" : "↻"}
           </button>
-          {/* Run Now button */}
-          <RunNowButton apiKey={HUBBOT_API_KEY} />
           <a
             href="https://community.hubactually.com"
             target="_blank"

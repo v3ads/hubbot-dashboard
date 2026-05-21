@@ -4,9 +4,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 
-const RUN_NOW_COOLDOWN_MS = 10 * 60 * 1000;
-let runNowInFlight = false;
-let lastRunNowTriggeredAt = 0;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -46,19 +43,6 @@ function readRunData(): object | null {
 
 function writeRunData(data: object): void {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
-}
-
-// ── Load HubBot playbook ─────────────────────────────────────────
-function loadPlaybook(): string {
-  // Try production path first (alongside server binary), then dev path
-  const paths = [
-    path.resolve(__dirname, "hubbot_playbook.txt"),
-    path.resolve(__dirname, "..", "server", "hubbot_playbook.txt"),
-  ];
-  for (const p of paths) {
-    if (fs.existsSync(p)) return fs.readFileSync(p, "utf8");
-  }
-  return "";
 }
 
 // ── Server ───────────────────────────────────────────────────────
@@ -108,67 +92,9 @@ async function startServer() {
     }
   });
 
-  // ── POST /api/run-now  (protected by HUBBOT_API_KEY — triggers a new HubBot run) ──
-  app.post("/api/run-now", async (req, res) => {
-    const apiKey = process.env.HUBBOT_API_KEY;
-    const provided = req.headers["x-hubbot-api-key"];
-
-    if (!apiKey || provided !== apiKey) {
-      res.status(401).json({ error: "Unauthorized" });
-      return;
-    }
-
-    const manusApiKey = process.env.MANUS_API_KEY;
-    if (!manusApiKey) {
-      res.status(500).json({ error: "MANUS_API_KEY not configured" });
-      return;
-    }
-
-    const playbook = loadPlaybook();
-    if (!playbook) {
-      res.status(500).json({ error: "HubBot playbook not found" });
-      return;
-    }
-
-    const now = Date.now();
-    if (runNowInFlight || now - lastRunNowTriggeredAt < RUN_NOW_COOLDOWN_MS) {
-      res.status(429).json({ error: "A HubBot run was triggered recently. Please wait before starting another one." });
-      return;
-    }
-
-    runNowInFlight = true;
-    try {
-      const response = await fetch("https://api.manus.ai/v2/task.create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-manus-api-key": manusApiKey,
-        },
-        body: JSON.stringify({
-          message: { content: playbook },
-        }),
-      });
-
-      if (!response.ok) {
-        const errText = await response.text();
-        console.error("[HubBot] run-now: Manus API error", response.status, errText);
-        res.status(502).json({ error: `Manus API error: ${response.status}` });
-        return;
-      }
-
-      const result = await response.json() as { ok?: boolean; task_id?: string; task_url?: string };
-      const taskId = result?.task_id ?? "unknown";
-      const taskUrl = result?.task_url ?? `https://manus.im/app/${taskId}`;
-
-      lastRunNowTriggeredAt = Date.now();
-      console.log("[HubBot] run-now: triggered task", taskId);
-      res.json({ ok: true, task_id: taskId, task_url: taskUrl, triggered_at: new Date().toISOString() });
-    } catch (err) {
-      console.error("[HubBot] run-now: fetch error", err);
-      res.status(500).json({ error: "Failed to trigger HubBot run" });
-    } finally {
-      runNowInFlight = false;
-    }
+  // ── POST /api/run-now  (disabled; manual HubBot runs are intentionally not available from the dashboard) ──
+  app.post("/api/run-now", (_req, res) => {
+    res.status(410).json({ error: "Manual HubBot runs are disabled from this dashboard. Use the daily schedule or create a one-off task intentionally." });
   });
 
   // ── Static files ─────────────────────────────────────────────

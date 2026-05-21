@@ -767,60 +767,6 @@
   }
 }
 
-/* ── Run Now Button ──────────────────────────────────────────── */
-.run-now-btn {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--terminal-green);
-  background: transparent;
-  border: 1px solid var(--terminal-green);
-  border-radius: 3px;
-  padding: 0.2rem 0.55rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms;
-}
-.run-now-btn:hover {
-  background: color-mix(in oklch, var(--terminal-green) 15%, transparent);
-}
-.run-now-btn:active {
-  transform: scale(0.97);
-}
-.run-now-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.run-now-success {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--terminal-green);
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  white-space: nowrap;
-}
-.run-now-task-link {
-  color: var(--terminal-dim);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1px;
-  font-size: 0.68rem;
-}
-.run-now-task-link:hover {
-  color: var(--terminal-green);
-}
-.run-now-error {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--terminal-red);
-  white-space: nowrap;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /* ── Refresh Button ──────────────────────────────────────────── */
 .refresh-btn {
   font-family: 'JetBrains Mono', monospace;
