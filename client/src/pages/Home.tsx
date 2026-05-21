@@ -307,6 +307,9 @@ function PostCard({ data }: { data: RunData }) {
 }
 
 function CommunityStatsCard({ stats }: { stats: NonNullable<RunData["community_stats"]> }) {
+  const newMembers7dList = stats.new_members_7d_list ?? [];
+  const interestingPosts = stats.interesting_posts ?? [];
+
   return (
     <div className="term-card card-enter" style={{ animationDelay: "120ms" }}>
       <div className="term-label" style={{ marginBottom: "0.85rem" }}>community stats</div>
@@ -334,12 +337,12 @@ function CommunityStatsCard({ stats }: { stats: NonNullable<RunData["community_s
       </div>
 
       {/* New members list */}
-      {stats.new_members_7d_list.length > 0 && (
+      {newMembers7dList.length > 0 && (
         <>
           <hr className="term-rule" />
           <div className="term-label" style={{ marginBottom: "0.5rem", fontSize: "0.72rem" }}>new members this week</div>
           <div className="new-members-list">
-            {stats.new_members_7d_list.map((m) => (
+            {newMembers7dList.map((m) => (
               <div key={m.name + m.joined} className="new-member-row">
                 <span className="new-member-name">{m.name}</span>
                 <span className="new-member-date">{m.joined}</span>
@@ -350,12 +353,12 @@ function CommunityStatsCard({ stats }: { stats: NonNullable<RunData["community_s
       )}
 
       {/* Recent posts */}
-      {stats.interesting_posts.length > 0 && (
+      {interestingPosts.length > 0 && (
         <>
           <hr className="term-rule" />
           <div className="term-label" style={{ marginBottom: "0.5rem", fontSize: "0.72rem" }}>recent posts</div>
           <div className="recent-posts-list">
-            {stats.interesting_posts.map((p) => (
+            {interestingPosts.map((p) => (
               <div key={p.url} className="recent-post-row">
                 <div className="recent-post-meta">
                   <span className="recent-post-date">{p.date}</span>
