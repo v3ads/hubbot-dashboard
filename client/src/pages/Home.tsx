@@ -547,10 +547,7 @@ function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
   );
 }
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 function EmptyState() {
   return (
     <div
