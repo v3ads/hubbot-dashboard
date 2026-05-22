@@ -31,3 +31,7 @@
 - [x] Fix TypeError crash: null guard for data.metrics in Sidebar component
 - [x] Rewrite run-data.json with correct NESTED schema (schedule, metrics, community_stats, published_post, checklist, run_history)
 - [x] Update post_run_data_to_dashboard.py to write nested schema format
+- [x] Investigate and fix duplicate HubBot posts (duplicate schedule on EAtvwYUBWJFjfwJ2VCgxfJ — user disabled it)
+- [x] Fix image attachment: replace unreliable browser composer UI approach in §3.6 with proven API-based upload + previewURL method
+- [x] Push updated playbook to active schedule task bYCs1GBUVTimSiWMUr4MSQ
+- [x] Update dashboard run-data.json with May 15–22 catch-up entries and push to live API
