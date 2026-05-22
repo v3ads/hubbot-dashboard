@@ -27,3 +27,7 @@
 - [x] Manual refresh button in header (re-fetches /api/run-data without page reload)
 - [x] Error/failed run drill-down in RunHistoryCard (click failed row to expand and see error details)
 - [x] Missed run history entries for May 15-19 (schedule was missing — mark as schedule_missing)
+- [x] Remove Run Now button from UI and disable /api/run-now endpoint (returns 404)
+- [x] Fix TypeError crash: null guard for data.metrics in Sidebar component
+- [x] Rewrite run-data.json with correct NESTED schema (schedule, metrics, community_stats, published_post, checklist, run_history)
+- [x] Update post_run_data_to_dashboard.py to write nested schema format
