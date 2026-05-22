@@ -141,7 +141,7 @@ function statusPillClass(status: string): string {
 // ── Sidebar (desktop: left column | mobile: top strip) ───────
 
 function Sidebar({ data }: { data: RunData | null }) {
-  const metrics = data
+  const metrics = data && data.metrics
     ? [
         ["posts published", data.metrics.posts_published],
         ["tasks completed", data.metrics.required_tasks_completed],
