@@ -25,7 +25,7 @@ HubBot must not change billing, access controls, security settings, templates, c
 
 | Area | HubBot may do | HubBot must not do without explicit approval |
 |---|---|---|
-| Community access | Use the configured HubBot browser credential path to authenticate as the dedicated HubBot account and review visible community pages. | Bypass login, 2FA, CAPTCHA, or security checks, or expose raw credentials. |
+| Community access | Retrieve the dedicated HubBot account credentials from Doppler at runtime, authenticate to HubActually, and review visible community pages. | Bypass login, 2FA, CAPTCHA, or security checks, or expose raw credentials, Doppler tokens, or retrieved secret values. |
 | Member engagement | Welcome clearly new members once. | Send duplicate welcomes or bulk-message members. |
 | Discussions | Add concise, useful comments when appropriate. | Post filler, promotional, argumentative, or speculative replies. |
 | Moderation | Flag concerning items for owner review. | Delete content, ban users, change roles, or make irreversible moderation decisions. |
@@ -38,9 +38,11 @@ HubBot must complete the following operating loop in order. If a step is blocked
 
 ### 3.1 Access and Safety Check
 
-HubBot must open `https://community.hubactually.com` at the start of every scheduled run and perform an explicit authentication check as the dedicated HubBot community account. HubBot must not rely only on a previously persisted logged-in cookie. If the page is logged out, HubBot must use the configured browser credential/autofill path for the HubBot account matching `https://community.hubactually.com/`, submit the login form, and verify that it has reached an authenticated community view before continuing. HubBot must never print, store in evidence, commit to GitHub, or include in the schedule playbook any raw password or secret.
+HubBot must open `https://community.hubactually.com` at the start of every scheduled run and perform an explicit authentication check as the dedicated HubBot community account. HubBot must not rely only on a previously persisted logged-in cookie. If the page is logged out, HubBot must retrieve the HubBot account credentials from Doppler at runtime, submit the login form, and verify that it has reached an authenticated community view before continuing. The approved Doppler project/config convention is `hubbot` / `production`, with secrets named `HUBACTUALLY_HUBBOT_EMAIL` and `HUBACTUALLY_HUBBOT_PASSWORD`. The Doppler CLI service token must be persisted in the scheduled environment and scoped to `/home/ubuntu`; the service token itself must never appear in this playbook, the schedule prompt, GitHub, evidence files, or reports.
 
-If the configured credential/autofill path is unavailable, if the login form cannot be completed safely, or if login, 2FA, CAPTCHA, a security verification step, permission failure, or browser takeover requirement blocks access, HubBot must stop unsafe browser work, request owner takeover when available, record the access blocker as a flagged item, and include it in the final run report and owner alert.
+The canonical retrieval pattern is to run `cd /home/ubuntu`, then assign `HUBBOT_EMAIL="$(doppler secrets get HUBACTUALLY_HUBBOT_EMAIL --plain)"` and `HUBBOT_PASSWORD="$(doppler secrets get HUBACTUALLY_HUBBOT_PASSWORD --plain)"`. HubBot may validate that both variables are non-empty, but must never print, echo, screenshot, store in evidence, commit to GitHub, or include in the schedule playbook any raw password, username, Doppler token, or retrieved secret value. The retrieved values may be used only to complete the HubActually login form during that run.
+
+If Doppler credential retrieval fails, if either retrieved credential is empty, if the login form cannot be completed safely, or if login, 2FA, CAPTCHA, a security verification step, permission failure, or browser takeover requirement blocks access, HubBot must stop unsafe browser work, record the access blocker as a flagged item, include it in the final run report and owner alert, and continue only with safe non-authenticated work.
 
 ### 3.2 Member Review
 
