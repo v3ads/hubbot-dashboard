@@ -48,21 +48,55 @@ def checklist_item(task: str, outcome: str) -> dict[str, str]:
     return {'task': task, 'outcome': outcome}
 
 
+def is_publish_success(status: str) -> bool:
+    """Return True for all durable success variants used by recovery and scheduled runs."""
+    return status == 'published' or status.startswith('published_')
+
+
+def is_existing_duplicate_skip(status: str) -> bool:
+    """Return True when the run correctly avoided a same-day duplicate post."""
+    return status in {'skipped_existing_same_day_post', 'skipped_with_existing_same_day_post'}
+
+
+def ledger_image_url(ledger: dict[str, Any]) -> str:
+    """Resolve the best available community image URL without requiring one exact field name."""
+    for key in ('image_url', 'image_uploaded_url', 'uploaded_image_url', 'ai_news_image_url'):
+        value = ledger.get(key)
+        if value:
+            return str(value)
+    evidence = ledger.get('evidence') or {}
+    if isinstance(evidence, dict):
+        for key in ('image_url', 'image_uploaded_url', 'uploaded_image_url', 'live_image_url'):
+            value = evidence.get(key)
+            if value:
+                return str(value)
+    return ''
+
+
+def image_is_attached(ledger: dict[str, Any]) -> bool:
+    status = normalize_status(ledger.get('image_status'))
+    if status in {'uploaded', 'attached', 'uploaded_and_live', 'live_verified', 'corrected_live', 'published_live'}:
+        return True
+    return bool(ledger_image_url(ledger)) and status not in {'blocked', 'rejected_for_quality', 'text_only'}
+
+
 def build_dashboard_payload(ledger: dict[str, Any], previous: dict[str, Any]) -> dict[str, Any]:
     completed = ledger.get('run_completed_at_et') or now_et().isoformat(timespec='seconds')
     date = (ledger.get('run_date') or completed[:10])
     blockers = ledger.get('blockers') or []
     flagged = ledger.get('flagged_items') or []
     publish_status = normalize_status(ledger.get('ai_news_publish_status'), 'blocked')
-    status = 'completed' if publish_status == 'published' and not blockers else ('completed_with_flags' if publish_status == 'published' else 'blocked_required_action')
+    publish_success = is_publish_success(publish_status)
+    duplicate_skip = is_existing_duplicate_skip(publish_status)
+    status = 'completed' if publish_success and not blockers else ('completed_with_flags' if publish_success or duplicate_skip else 'blocked_required_action')
     ai_title = ledger.get('ai_news_title') or 'Not published'
     post_url = ledger.get('ai_news_post_url')
     run_history = list(previous.get('run_history') or [])
     run_history.insert(0, {
         'run_date': date,
         'status': status,
-        'primary_result': ledger.get('run_evidence_summary') or ('Daily AI-news post published.' if publish_status == 'published' else 'Daily run blocked before required publishing completed.'),
-        'posts_published': 1 if publish_status == 'published' else 0,
+        'primary_result': ledger.get('run_evidence_summary') or ('Daily AI-news post published.' if publish_success else ('Existing same-day post detected; duplicate avoided.' if duplicate_skip else 'Daily run blocked before required publishing completed.')),
+        'posts_published': 1 if publish_success else 0,
         'tasks_completed': int(ledger.get('tasks_completed') or 0),
         'tasks_failed': int(ledger.get('tasks_failed') or len(blockers)),
         'error_detail': '; '.join(map(str, blockers)) if blockers else 'No unresolved blocker recorded.',
@@ -88,8 +122,8 @@ def build_dashboard_payload(ledger: dict[str, Any], previous: dict[str, Any]) ->
             'thread_url': post_url or 'https://community.hubactually.com/',
             'thread_id': ledger.get('ai_news_thread_id'),
             'category': 'General',
-            'image_url': ledger.get('image_url') or '',
-            'image_attached': normalize_status(ledger.get('image_status')) in {'uploaded', 'attached'},
+            'image_url': ledger_image_url(ledger),
+            'image_attached': image_is_attached(ledger),
             'publish_status': publish_status,
             'source_url': ledger.get('ai_news_source_url'),
             'supporting_url': ledger.get('ai_news_supporting_url'),
@@ -112,10 +146,10 @@ def build_dashboard_payload(ledger: dict[str, Any], previous: dict[str, Any]) ->
             checklist_item('Dashboard update', 'pending_finalizer'),
         ],
         'metrics': {
-            'required_tasks_completed': int(ledger.get('tasks_completed') or (1 if publish_status == 'published' else 0)),
+            'required_tasks_completed': int(ledger.get('tasks_completed') or (1 if publish_success else 0)),
             'required_tasks_failed': int(ledger.get('tasks_failed') or len(blockers)),
             'owner_alerts_sent': 1 if normalize_status(ledger.get('owner_alert_status')) == 'sent' else 0,
-            'posts_published': 1 if publish_status == 'published' else 0,
+            'posts_published': 1 if publish_success else 0,
             'new_welcomes_sent': len(ledger.get('welcomes_posted') or []),
             'duplicate_posts_avoided': 1 if publish_status == 'skipped_existing_same_day_post' else 0,
             'flagged_items': len(flagged),
