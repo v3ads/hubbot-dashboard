@@ -59,8 +59,9 @@ interface RunData {
     status: string;
   };
   saturday_digest?: {
-    status: string; // "sent" | "skipped_not_saturday" | "blocked"
+    status: string; // "sent" | "scheduled" | "skipped_not_saturday" | "blocked"
     sent_at_et?: string;
+    scheduled_for_et?: string;
     recipient_count?: number;
     subject?: string;
     reason?: string;
@@ -420,13 +421,20 @@ function BlockersCard({ blockers }: { blockers: string[] }) {
 
 function SaturdayDigestCard({ digest }: { digest: NonNullable<RunData["saturday_digest"]> }) {
   const isSent = digest.status === "sent";
+  const isScheduled = digest.status === "scheduled";
   const isBlocked = digest.status === "blocked";
-  const pillClass = isSent
+  const pillClass = isSent || isScheduled
     ? "status-pill status-pill-green"
     : isBlocked
     ? "status-pill status-pill-red"
     : "status-pill status-pill-dim";
-  const pillLabel = isSent ? "✓ sent" : isBlocked ? "✗ blocked" : "— skipped / not saturday";
+  const pillLabel = isSent
+    ? "✓ sent"
+    : isScheduled
+    ? "✓ scheduled"
+    : isBlocked
+    ? "✗ blocked"
+    : "— skipped / not saturday";
 
   return (
     <div className="term-card">
@@ -453,12 +461,23 @@ function SaturdayDigestCard({ digest }: { digest: NonNullable<RunData["saturday_
             {digest.sent_at_et}
           </div>
         )}
-        {!isSent && digest.reason && (
+        {isScheduled && digest.scheduled_for_et && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.85rem", color: "var(--foreground)" }}>
+            <span className="term-label" style={{ marginRight: "0.5rem" }}>scheduled for</span>
+            {digest.scheduled_for_et}
+          </div>
+        )}
+        {(isSent || isScheduled) && digest.reason && (
           <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.82rem", color: "var(--muted-foreground)" }}>
             {digest.reason}
           </div>
         )}
-        {!isSent && !digest.reason && (
+        {!isSent && !isScheduled && digest.reason && (
+          <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.82rem", color: "var(--muted-foreground)" }}>
+            {digest.reason}
+          </div>
+        )}
+        {!isSent && !isScheduled && !digest.reason && (
           <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.82rem", color: "var(--muted-foreground)" }}>
             Digest runs every Saturday at 10:00 AM ET.
           </div>
