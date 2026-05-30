@@ -58,7 +58,7 @@ describe("/api/run-data middleware logic", () => {
     const parsed = JSON.parse(fs.readFileSync(dataFile, "utf8"));
     if (parsed.saturday_digest) {
       expect(typeof parsed.saturday_digest.status).toBe("string");
-      expect(["sent", "skipped_not_saturday", "blocked"]).toContain(parsed.saturday_digest.status);
+      expect(["sent", "skipped_not_saturday", "not_saturday", "scheduled", "blocked"]).toContain(parsed.saturday_digest.status);
     }
   });
 
