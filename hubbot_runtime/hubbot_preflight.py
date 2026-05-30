@@ -24,6 +24,7 @@ from zoneinfo import ZoneInfo
 ET = ZoneInfo('America/New_York')
 DEFAULT_TOKEN_FILE = Path('/home/ubuntu/.config/hubbot/doppler_service_token')
 DEFAULT_GETRESPONSE_FILE = Path('/home/ubuntu/.config/hubbot/getresponse_api_key')
+DEFAULT_BREVO_FILE = Path('/home/ubuntu/.config/hubbot/brevo_api_key')
 DEFAULT_DASHBOARD_KEY_FILE = Path('/home/ubuntu/.config/hubbot/dashboard_api_key')
 DEFAULT_OUTPUT_DIR = Path('/home/ubuntu/hubactually_hubbot_run_ledger')
 DOPPLER_PROJECT = 'hubbot'
@@ -154,6 +155,36 @@ def validate_getresponse(key_file: Path) -> dict[str, Any]:
     return result
 
 
+def validate_brevo(key_file: Path) -> dict[str, Any]:
+    result: dict[str, Any] = {
+        'component': 'brevo_owner_alert_fallback',
+        'required': False,
+        'status': 'unknown',
+        'details': [],
+        'metadata': {'key_file': metadata(key_file), 'env_present': bool(os.environ.get('BREVO_API_KEY'))},
+    }
+    key = os.environ.get('BREVO_API_KEY') or read_secret_file(key_file)
+    if not key:
+        result['status'] = 'blocked_if_alert_required'
+        result['details'].append('No Brevo direct-email API key was available in environment or configured key file.')
+        result['remediation'] = f'Provide BREVO_API_KEY or create {key_file} with chmod 600 to enable the direct-email fallback.'
+        return result
+    req = urllib.request.Request('https://api.brevo.com/v3/account', headers={'api-key': key, 'accept': 'application/json'})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            result['status'] = 'passed' if 200 <= resp.status < 300 else 'warning'
+            result['details'].append(f'Brevo account endpoint responded with HTTP {resp.status}; direct single-recipient owner-alert fallback is available.')
+    except urllib.error.HTTPError as exc:
+        result['status'] = 'blocked_if_alert_required'
+        result['details'].append(f'Brevo account endpoint returned HTTP {exc.code}.')
+        result['remediation'] = 'Verify Brevo API key validity and sender-domain permissions.'
+    except Exception as exc:
+        result['status'] = 'blocked_if_alert_required'
+        result['details'].append(f'Brevo endpoint check failed: {type(exc).__name__}.')
+        result['remediation'] = 'Verify outbound network access and Brevo availability.'
+    return result
+
+
 def validate_dashboard(repo_root: Path, key_file: Path) -> dict[str, Any]:
     result: dict[str, Any] = {
         'component': 'dashboard_update',
@@ -237,6 +268,7 @@ def main() -> int:
     parser.add_argument('--output-dir', default=str(DEFAULT_OUTPUT_DIR))
     parser.add_argument('--token-file', default=str(DEFAULT_TOKEN_FILE))
     parser.add_argument('--getresponse-key-file', default=str(DEFAULT_GETRESPONSE_FILE))
+    parser.add_argument('--brevo-key-file', default=str(DEFAULT_BREVO_FILE))
     parser.add_argument('--dashboard-key-file', default=str(DEFAULT_DASHBOARD_KEY_FILE))
     args = parser.parse_args()
 
@@ -248,6 +280,7 @@ def main() -> int:
         validate_git_repo(Path(args.repo_root)),
         validate_doppler(Path(args.token_file)),
         validate_getresponse(Path(args.getresponse_key_file)),
+        validate_brevo(Path(args.brevo_key_file)),
         validate_dashboard(Path(args.repo_root), Path(args.dashboard_key_file)),
     ]
     hard_blockers = []
@@ -267,7 +300,7 @@ def main() -> int:
         'hard_blockers': hard_blockers,
         'warnings': warnings,
         'safe_to_publish_or_comment': not hard_blockers,
-        'safe_to_send_owner_alert_if_required': any(c['component'] == 'getresponse_owner_alert' and c['status'] == 'passed' for c in checks),
+        'safe_to_send_owner_alert_if_required': any(c['component'] in {'getresponse_owner_alert', 'brevo_owner_alert_fallback'} and c['status'] == 'passed' for c in checks),
     }
     json_path = output_dir / f'{date}_preflight.json'
     md_path = output_dir / f'{date}_preflight.md'

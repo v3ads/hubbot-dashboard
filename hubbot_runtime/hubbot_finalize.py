@@ -183,6 +183,47 @@ def build_dashboard_payload(ledger: dict[str, Any], previous: dict[str, Any]) ->
     return payload
 
 
+def owner_alert_required(ledger: dict[str, Any]) -> bool:
+    status = normalize_status(ledger.get('owner_alert_status'), 'unknown')
+    if status in {'sent', 'not_required'}:
+        return False
+    if ledger.get('owner_alert_required') is True:
+        return True
+    if ledger.get('new_members_found') or ledger.get('flagged_items') or ledger.get('blockers'):
+        return True
+    if int(ledger.get('tasks_failed') or 0) > 0:
+        return True
+    publish_status = normalize_status(ledger.get('ai_news_publish_status'), 'unknown')
+    if publish_status not in {'unknown', 'not_required'} and not (is_publish_success(publish_status) or is_existing_duplicate_skip(publish_status)):
+        return True
+    return False
+
+
+def run_owner_alert_fallback(ledger_path: Path, repo: Path) -> dict[str, Any]:
+    helper = repo / 'hubbot_runtime' / 'hubbot_owner_alert.py'
+    if not helper.exists():
+        return {'status': 'skipped_helper_missing', 'helper': str(helper)}
+    completed = subprocess.run(
+        ['python3.11', str(helper), '--ledger', str(ledger_path)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        check=False,
+        timeout=120,
+    )
+    parsed: dict[str, Any] = {}
+    try:
+        parsed = json.loads(completed.stdout or '{}')
+    except Exception:
+        parsed = {}
+    parsed.update({
+        'status': parsed.get('status') or ('completed' if completed.returncode == 0 else 'blocked'),
+        'returncode': completed.returncode,
+        'stderr_tail': (completed.stderr or '').strip().splitlines()[-1:] or [],
+    })
+    return parsed
+
+
 def post_dashboard(payload: dict[str, Any]) -> str:
     url = os.environ.get('HUBBOT_DASHBOARD_URL')
     key = os.environ.get('HUBBOT_API_KEY')
@@ -219,22 +260,32 @@ def main() -> int:
     parser.add_argument('--ledger', required=True, help='Path to HubBot JSON run ledger')
     parser.add_argument('--repo-root', default='/home/ubuntu/hubbot-dashboard')
     parser.add_argument('--commit', action='store_true', help='Commit and push repository fallback updates')
+    parser.add_argument('--skip-owner-alert', action='store_true', help='Do not invoke the owner-alert fallback helper before dashboard update')
     args = parser.parse_args()
     repo = Path(args.repo_root)
     ledger_path = Path(args.ledger)
     ledger = read_json(ledger_path, {})
+    owner_alert_fallback_status: dict[str, Any] = {'status': 'skipped_not_required'}
+    if not args.skip_owner_alert and owner_alert_required(ledger):
+        owner_alert_fallback_status = run_owner_alert_fallback(ledger_path, repo)
+        ledger = read_json(ledger_path, ledger)
     previous = read_json(repo / 'run-data.json', {})
     payload = build_dashboard_payload(ledger, previous)
+    evidence = payload.get('evidence') if isinstance(payload.get('evidence'), dict) else {}
+    evidence['owner_alert_fallback_status'] = owner_alert_fallback_status
+    payload['evidence'] = evidence
+    if payload.get('owner_alert'):
+        payload['owner_alert']['fallback_status'] = owner_alert_fallback_status.get('status')
     status = post_dashboard(payload)
     payload['checklist'] = [dict(item, outcome=('completed_' + status if item['task'] == 'Dashboard update' else item['outcome'])) for item in payload['checklist']]
     write_json(repo / 'run-data.json', payload)
     write_json(repo / 'client/public/latest-run.json', payload)
     LEDGER_DIR.mkdir(parents=True, exist_ok=True)
-    write_json(LEDGER_DIR / 'latest.json', {'latest_ledger_json': str(ledger_path), 'dashboard_update_status': status, 'updated_at_et': now_et().isoformat(timespec='seconds')})
+    write_json(LEDGER_DIR / 'latest.json', {'latest_ledger_json': str(ledger_path), 'dashboard_update_status': status, 'owner_alert_fallback_status': owner_alert_fallback_status.get('status'), 'updated_at_et': now_et().isoformat(timespec='seconds')})
     commit_status = 'not_requested'
     if args.commit and (repo / '.git').exists():
         commit_status = git_commit(repo, f"HubBot runtime/dashboard update {payload['run_date']}")
-    print(json.dumps({'dashboard_api_status': status, 'repo_files_updated': True, 'commit_status': commit_status, 'run_date': payload['run_date']}, indent=2))
+    print(json.dumps({'dashboard_api_status': status, 'repo_files_updated': True, 'commit_status': commit_status, 'run_date': payload['run_date'], 'owner_alert_fallback_status': owner_alert_fallback_status.get('status')}, indent=2))
     return 0
 
 

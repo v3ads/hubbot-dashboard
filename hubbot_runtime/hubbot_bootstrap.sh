@@ -18,6 +18,10 @@ if ! command -v doppler >/dev/null 2>&1; then
 fi
 mkdir -p /home/ubuntu/.config/hubbot
 chmod 700 /home/ubuntu/.config/hubbot
+chmod 755 "$REPO/hubbot_runtime/hubbot_preflight.py" "$REPO/hubbot_runtime/hubbot_finalize.py" "$REPO/hubbot_runtime/hubbot_publish_ai_news.py" "$REPO/hubbot_runtime/hubbot_owner_alert.py" 2>/dev/null || true
+if ! python3.11 -c 'import cryptography' >/dev/null 2>&1; then
+  sudo pip3 install cryptography >/tmp/hubbot_runtime_pip_cryptography.log 2>&1
+fi
 if [ -n "${DOPPLER_SERVICE_TOKEN:-}" ] && [ -z "${DOPPLER_TOKEN:-}" ]; then
   export DOPPLER_TOKEN="$DOPPLER_SERVICE_TOKEN"
 fi
