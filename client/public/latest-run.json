@@ -1,108 +1,142 @@
 {
-  "run_date": "2026-05-30",
-  "run_completed_at_et": "2026-05-30T09:46:00-04:00",
-  "run_weekday": "Saturday",
+  "run_date": "2026-05-31",
+  "run_completed_at_et": "2026-05-31T09:23:03-04:00",
+  "run_weekday": "Sunday",
   "timezone": "America/New_York",
-  "status": "completed_with_flags",
-  "last_run_label": "May 30, 2026 \u2014 approx. 9:46 AM ET",
-  "primary_result": "HubBot completed the May 30 scheduled run: authenticated, reviewed members and discussions, published the daily AI-news post, scheduled the Saturday digest for 10:00 AM ET, and applied the dashboard correction. Two exceptions remain recorded: image upload and owner-alert delivery.",
+  "status": "blocked_required_action",
+  "last_run_label": "2026-05-31 — blocked required action",
+  "primary_result": "HubBot v2 scheduled run was blocked before credential-backed community actions because the required Doppler service token was unavailable. Safe read-only evidence gathering completed, an unpublished AI-news draft was prepared from a current EY source, no community changes were made, and owner alert delivery was also blocked by missing email-provider credentials.",
   "community": "HubActually",
   "agent": "HubBot",
-  "agent_version": "v2 durable runtime corrected",
+  "agent_version": "v2",
   "published_post": {
-    "title": "Small-business AI is moving from chatbots to workflows",
+    "title": "AI ROI is becoming the founder’s next discipline",
     "thread_url": "https://community.hubactually.com/",
+    "thread_id": null,
     "category": "General",
     "image_url": "",
-    "image_attached": false
+    "image_attached": false,
+    "publish_status": "blocked_preflight_credentials_missing",
+    "source_url": "https://www.ey.com/en_gl/newsroom/2026/05/entrepreneurs-tighten-focus-on-disciplined-growth-and-ai-led-execution-as-capital-constraints-reshape-risk-outlook-ey-parthenon-study-finds",
+    "supporting_url": "https://www.jpmorganchase.com/institute/all-topics/business-growth-and-entrepreneurship/small-business-in-the-age-of-ai",
+    "draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_ai_news_draft.md",
+    "generated_image_path": null,
+    "published_at_utc": null,
+    "post_visible_after_submit": false,
+    "post_url_note": "No community post was submitted because preflight reported safe_to_publish_or_comment=false."
   },
   "checklist": [
     {
-      "task": "Authenticate HubBot community session",
+      "task": "Preflight",
+      "outcome": "blocked"
+    },
+    {
+      "task": "Community access",
+      "outcome": "read_only_observed_after_blocked_preflight"
+    },
+    {
+      "task": "Member review",
       "outcome": "completed"
     },
     {
-      "task": "Review member activity and welcomes",
+      "task": "Discussion review",
       "outcome": "completed"
     },
     {
-      "task": "Review recent discussions and moderation risks",
+      "task": "AI-news research",
       "outcome": "completed"
     },
     {
-      "task": "Research and publish daily AI-news post",
-      "outcome": "completed"
+      "task": "Image generation",
+      "outcome": "not_generated_publish_blocked_by_preflight"
     },
     {
-      "task": "Attach generated AI-news image",
-      "outcome": "failed"
+      "task": "Community post",
+      "outcome": "blocked_preflight_credentials_missing"
     },
     {
-      "task": "Post-publish QA",
-      "outcome": "completed"
+      "task": "Owner alert email",
+      "outcome": "blocked"
     },
     {
-      "task": "Schedule Saturday digest",
-      "outcome": "completed"
+      "task": "Saturday digest",
+      "outcome": "not_required_sunday"
     },
     {
-      "task": "Send owner alert for exceptions",
-      "outcome": "failed"
-    },
-    {
-      "task": "Update dashboard through durable v2 path",
-      "outcome": "completed"
+      "task": "Dashboard update",
+      "outcome": "completed_skipped_no_endpoint_or_key"
     }
   ],
   "metrics": {
-    "required_tasks_completed": 7,
-    "required_tasks_failed": 2,
+    "required_tasks_completed": 4,
+    "required_tasks_failed": 3,
     "owner_alerts_sent": 0,
-    "posts_published": 1,
+    "posts_published": 0,
     "new_welcomes_sent": 0,
     "duplicate_posts_avoided": 0,
     "flagged_items": 2
   },
   "blockers": [
-    "Image attachment could not be completed through the community composer uploader; AI-news post was published text-only.",
-    "Owner alert email was not delivered: GetResponse transactional email returned HTTP 403 for this account."
+    "Required Doppler service token is missing from environment and fallback file, so credential-backed community authentication could not be performed.",
+    "Preflight returned safe_to_publish_or_comment=false, so the required daily AI-news post was not published.",
+    "Owner alert was required because of the blocker, but preflight found no GetResponse or Brevo credential available for alert delivery."
   ],
   "schedule": {
     "cron": "0 0 9 * * *",
     "label": "Daily at 9:00 AM ET",
     "timezone": "America/New_York",
     "status": "active",
-    "version": "v2 durable runtime corrected",
-    "run_as_new_task": true,
-    "runtime": "server/hubbot_playbook.txt + hubbot_bootstrap.sh + hubbot_finalize.py"
+    "version": "v2",
+    "run_as_new_task": true
   },
   "saturday_digest": {
-    "status": "scheduled",
-    "scheduled_for_et": "2026-05-30T10:00:00 America/New_York",
-    "newsletter_id": "Vubor3",
-    "subject": "HubActually weekly community digest \u2014 2026-05-30",
-    "recipient_count": null
+    "status": "not_required_sunday",
+    "reason": "Run date is Sunday; Saturday digest scheduling is only required for Saturday runs."
   },
   "community_stats": {
-    "fetched_at": "2026-05-30T16:27:12.240874+00:00",
+    "fetched_at": "2026-05-31T09:23:03-04:00",
     "total_members": 79,
-    "new_members_7d": 0,
-    "new_members_30d": null,
-    "active_members_7d": null,
-    "total_posts": null,
+    "pending_approval": 0,
+    "online_now": 8,
     "new_members_7d_list": [],
     "interesting_posts": [
       {
         "title": "Small-business AI is moving from chatbots to workflows",
         "author": "Hub Bot",
-        "likes": 0,
+        "likes": 1,
         "comments": 0,
+        "views": 2,
         "url": "https://community.hubactually.com/",
         "date": "2026-05-30 09:16 ET"
+      },
+      {
+        "title": "AI adoption is becoming a small-business operating advantage",
+        "author": "Hub Bot",
+        "likes": 0,
+        "comments": 0,
+        "views": 2,
+        "url": "https://community.hubactually.com/",
+        "date": "2026-05-29 17:57 ET"
       }
     ]
   },
   "run_history": [
+    {
+      "run_date": "2026-05-31",
+      "status": "blocked_required_action",
+      "primary_result": "HubBot v2 scheduled run was blocked before credential-backed community actions because the required Doppler service token was unavailable. Safe read-only evidence gathering completed, an unpublished AI-news draft was prepared from a current EY source, no community changes were made, and owner alert delivery was also blocked by missing email-provider credentials.",
+      "posts_published": 0,
+      "tasks_completed": 4,
+      "tasks_failed": 3,
+      "error_detail": "Required Doppler service token is missing from environment and fallback file, so credential-backed community authentication could not be performed.; Preflight returned safe_to_publish_or_comment=false, so the required daily AI-news post was not published.; Owner alert was required because of the blocker, but preflight found no GetResponse or Brevo credential available for alert delivery.",
+      "blockers": [
+        "Required Doppler service token is missing from environment and fallback file, so credential-backed community authentication could not be performed.",
+        "Preflight returned safe_to_publish_or_comment=false, so the required daily AI-news post was not published.",
+        "Owner alert was required because of the blocker, but preflight found no GetResponse or Brevo credential available for alert delivery."
+      ],
+      "ai_news_title": "AI ROI is becoming the founder’s next discipline",
+      "ai_news_post_url": null
+    },
     {
       "run_date": "2026-05-30",
       "status": "completed_with_flags",
@@ -138,7 +172,7 @@
       "error_detail": "No unresolved blocker after Doppler-backed rerun. Direct topic URL capture remained limited to the authenticated community/latest view containing the title.",
       "blockers": [],
       "rerun_completed_at_et": "2026-05-26T15:52:36-04:00",
-      "ai_news_title": "Google\u2019s AI Search Agents Could Change How Customers Find You",
+      "ai_news_title": "Google’s AI Search Agents Could Change How Customers Find You",
       "ai_news_post_url": "https://community.hubactually.com/"
     },
     {
@@ -175,50 +209,92 @@
     {
       "run_date": "2026-05-18",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-17",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-16",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     },
     {
       "run_date": "2026-05-15",
       "status": "schedule_missing",
-      "primary_result": "No run \u2014 HubBot schedule was not active on this date.",
+      "primary_result": "No run — HubBot schedule was not active on this date.",
       "posts_published": 0,
       "tasks_completed": 0,
       "tasks_failed": 0,
       "error_detail": "The HubBot daily schedule was lost after the previous task session ended. The schedule has since been recreated and is now active.",
       "blockers": [
-        "Schedule not active \u2014 no task was triggered at 9:00 AM ET."
+        "Schedule not active — no task was triggered at 9:00 AM ET."
       ]
     }
-  ]
+  ],
+  "flagged_items": [
+    {
+      "issue": "hard_preflight_blocker",
+      "summary": "Doppler service token unavailable; publishing/commenting/welcoming intentionally blocked.",
+      "recommended_next_action": "Attach the Doppler connector/env secret or create /home/ubuntu/.config/hubbot/doppler_service_token with the read-only Doppler service token and chmod 600 it."
+    },
+    {
+      "issue": "owner_alert_delivery_blocked",
+      "summary": "No GetResponse or Brevo API key was available for the required owner alert.",
+      "recommended_next_action": "Provide GETRESPONSE_API_KEY or BREVO_API_KEY, or place the corresponding key file under /home/ubuntu/.config/hubbot/ with chmod 600."
+    }
+  ],
+  "owner_alert": {
+    "status": "blocked",
+    "recipient": "vipaymanshalaby@gmail.com",
+    "sender": "ayman@hubactually.com",
+    "reason": "No configured provider delivered the owner alert.",
+    "fallback_status": "blocked"
+  },
+  "evidence": {
+    "preflight_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_preflight.json",
+    "safe_community_observations_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_safe_community_observations.md",
+    "ai_news_draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_ai_news_draft.md",
+    "preflight_hard_blockers": [
+      "Doppler service token is missing from environment and the fallback file is missing or empty."
+    ],
+    "preflight_warnings": [
+      "No GetResponse API key was available in environment or configured key file.",
+      "No Brevo direct-email API key was available in environment or configured key file."
+    ],
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260531T092312-0400_owner_alert_result.json",
+    "owner_alert_fallback_status": {
+      "status": "blocked",
+      "provider": null,
+      "alert_required": true,
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260531T092312-0400_owner_alert_result.json",
+      "returncode": 2,
+      "stderr_tail": []
+    }
+  },
+  "ai_news_publish_status": "blocked_preflight_credentials_missing",
+  "ai_news_post_url": null
 }
