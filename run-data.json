@@ -1,29 +1,29 @@
 {
-  "run_date": "2026-05-31",
-  "run_completed_at_et": "2026-05-31T09:23:03-04:00",
-  "run_weekday": "Sunday",
+  "run_date": "2026-06-01",
+  "run_completed_at_et": "2026-06-01T09:09:33-04:00",
+  "run_weekday": "Monday",
   "timezone": "America/New_York",
   "status": "blocked_required_action",
-  "last_run_label": "2026-05-31 — blocked required action",
-  "primary_result": "HubBot v2 scheduled run was blocked before credential-backed community actions because the required Doppler service token was unavailable. Safe read-only evidence gathering completed, an unpublished AI-news draft was prepared from a current EY source, no community changes were made, and owner alert delivery was also blocked by missing email-provider credentials.",
+  "last_run_label": "2026-06-01 — blocked required action",
+  "primary_result": "Preflight blocked authenticated HubActually changes because Doppler credentials were unavailable. HubBot performed only safe observation and AI-news research, did not publish/comment/welcome/email manually, wrote durable evidence, and will invoke the durable finalizer for dashboard fallback update.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "AI ROI is becoming the founder’s next discipline",
+    "title": "AI is resetting what “efficient startup” means",
     "thread_url": "https://community.hubactually.com/",
     "thread_id": null,
     "category": "General",
     "image_url": "",
     "image_attached": false,
     "publish_status": "blocked_preflight_credentials_missing",
-    "source_url": "https://www.ey.com/en_gl/newsroom/2026/05/entrepreneurs-tighten-focus-on-disciplined-growth-and-ai-led-execution-as-capital-constraints-reshape-risk-outlook-ey-parthenon-study-finds",
-    "supporting_url": "https://www.jpmorganchase.com/institute/all-topics/business-growth-and-entrepreneurship/small-business-in-the-age-of-ai",
-    "draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_ai_news_draft.md",
+    "source_url": "https://www.cnbc.com/2026/06/01/ai-startup-valuations-pre-chatgpt.html",
+    "supporting_url": null,
+    "draft_path": null,
     "generated_image_path": null,
     "published_at_utc": null,
     "post_visible_after_submit": false,
-    "post_url_note": "No community post was submitted because preflight reported safe_to_publish_or_comment=false."
+    "post_url_note": null
   },
   "checklist": [
     {
@@ -32,7 +32,7 @@
     },
     {
       "task": "Community access",
-      "outcome": "read_only_observed_after_blocked_preflight"
+      "outcome": "blocked:_explicit_dedicated_hubbot_authentication_could_not_be_verified_because_doppler_credentials_were_unavailable;_only_non-mutating_observation_was_performed."
     },
     {
       "task": "Member review",
@@ -48,7 +48,7 @@
     },
     {
       "task": "Image generation",
-      "outcome": "not_generated_publish_blocked_by_preflight"
+      "outcome": "blocked"
     },
     {
       "task": "Community post",
@@ -60,7 +60,7 @@
     },
     {
       "task": "Saturday digest",
-      "outcome": "not_required_sunday"
+      "outcome": "not_saturday"
     },
     {
       "task": "Dashboard update",
@@ -68,18 +68,36 @@
     }
   ],
   "metrics": {
-    "required_tasks_completed": 4,
+    "required_tasks_completed": 0,
     "required_tasks_failed": 3,
     "owner_alerts_sent": 0,
     "posts_published": 0,
     "new_welcomes_sent": 0,
     "duplicate_posts_avoided": 0,
-    "flagged_items": 2
+    "flagged_items": 3
   },
   "blockers": [
-    "Required Doppler service token is missing from environment and fallback file, so credential-backed community authentication could not be performed.",
-    "Preflight returned safe_to_publish_or_comment=false, so the required daily AI-news post was not published.",
-    "Owner alert was required because of the blocker, but preflight found no GetResponse or Brevo credential available for alert delivery."
+    {
+      "type": "hard_preflight_blocker",
+      "component": "doppler_credentials",
+      "status": "blocked",
+      "detail": "Doppler service token is missing from environment and the fallback file is missing or empty, so dedicated HubBot authentication could not be explicitly verified.",
+      "recommended_next_action": "Restore the read-only Doppler service token at /home/ubuntu/.config/hubbot/doppler_service_token with chmod 600, or attach the equivalent scheduled environment secret."
+    },
+    {
+      "type": "owner_alert_delivery_blocker",
+      "component": "getresponse_owner_alert",
+      "status": "blocked_if_alert_required",
+      "detail": "No GetResponse API key was available in environment or configured key file; owner alert delivery is expected to be blocked unless the finalizer finds a supported fallback.",
+      "recommended_next_action": "Provide GETRESPONSE_API_KEY or /home/ubuntu/.config/hubbot/getresponse_api_key with chmod 600 for authorized HubActually owner alerts."
+    },
+    {
+      "type": "owner_alert_fallback_blocker",
+      "component": "brevo_owner_alert_fallback",
+      "status": "blocked_if_alert_required",
+      "detail": "No Brevo direct-email API key was available in environment or configured key file; direct-email fallback is expected to be blocked unless configured later.",
+      "recommended_next_action": "Provide BREVO_API_KEY or /home/ubuntu/.config/hubbot/brevo_api_key with chmod 600 if Brevo fallback should be available."
+    }
   ],
   "schedule": {
     "cron": "0 0 9 * * *",
@@ -90,8 +108,8 @@
     "run_as_new_task": true
   },
   "saturday_digest": {
-    "status": "not_required_sunday",
-    "reason": "Run date is Sunday; Saturday digest scheduling is only required for Saturday runs."
+    "status": "not_saturday",
+    "reason": "2026-06-01 in America/New_York is Monday."
   },
   "community_stats": {
     "fetched_at": "2026-05-31T09:23:03-04:00",
@@ -121,6 +139,40 @@
     ]
   },
   "run_history": [
+    {
+      "run_date": "2026-06-01",
+      "status": "blocked_required_action",
+      "primary_result": "Preflight blocked authenticated HubActually changes because Doppler credentials were unavailable. HubBot performed only safe observation and AI-news research, did not publish/comment/welcome/email manually, wrote durable evidence, and will invoke the durable finalizer for dashboard fallback update.",
+      "posts_published": 0,
+      "tasks_completed": 0,
+      "tasks_failed": 3,
+      "error_detail": "{'type': 'hard_preflight_blocker', 'component': 'doppler_credentials', 'status': 'blocked', 'detail': 'Doppler service token is missing from environment and the fallback file is missing or empty, so dedicated HubBot authentication could not be explicitly verified.', 'recommended_next_action': 'Restore the read-only Doppler service token at /home/ubuntu/.config/hubbot/doppler_service_token with chmod 600, or attach the equivalent scheduled environment secret.'}; {'type': 'owner_alert_delivery_blocker', 'component': 'getresponse_owner_alert', 'status': 'blocked_if_alert_required', 'detail': 'No GetResponse API key was available in environment or configured key file; owner alert delivery is expected to be blocked unless the finalizer finds a supported fallback.', 'recommended_next_action': 'Provide GETRESPONSE_API_KEY or /home/ubuntu/.config/hubbot/getresponse_api_key with chmod 600 for authorized HubActually owner alerts.'}; {'type': 'owner_alert_fallback_blocker', 'component': 'brevo_owner_alert_fallback', 'status': 'blocked_if_alert_required', 'detail': 'No Brevo direct-email API key was available in environment or configured key file; direct-email fallback is expected to be blocked unless configured later.', 'recommended_next_action': 'Provide BREVO_API_KEY or /home/ubuntu/.config/hubbot/brevo_api_key with chmod 600 if Brevo fallback should be available.'}",
+      "blockers": [
+        {
+          "type": "hard_preflight_blocker",
+          "component": "doppler_credentials",
+          "status": "blocked",
+          "detail": "Doppler service token is missing from environment and the fallback file is missing or empty, so dedicated HubBot authentication could not be explicitly verified.",
+          "recommended_next_action": "Restore the read-only Doppler service token at /home/ubuntu/.config/hubbot/doppler_service_token with chmod 600, or attach the equivalent scheduled environment secret."
+        },
+        {
+          "type": "owner_alert_delivery_blocker",
+          "component": "getresponse_owner_alert",
+          "status": "blocked_if_alert_required",
+          "detail": "No GetResponse API key was available in environment or configured key file; owner alert delivery is expected to be blocked unless the finalizer finds a supported fallback.",
+          "recommended_next_action": "Provide GETRESPONSE_API_KEY or /home/ubuntu/.config/hubbot/getresponse_api_key with chmod 600 for authorized HubActually owner alerts."
+        },
+        {
+          "type": "owner_alert_fallback_blocker",
+          "component": "brevo_owner_alert_fallback",
+          "status": "blocked_if_alert_required",
+          "detail": "No Brevo direct-email API key was available in environment or configured key file; direct-email fallback is expected to be blocked unless configured later.",
+          "recommended_next_action": "Provide BREVO_API_KEY or /home/ubuntu/.config/hubbot/brevo_api_key with chmod 600 if Brevo fallback should be available."
+        }
+      ],
+      "ai_news_title": "AI is resetting what “efficient startup” means",
+      "ai_news_post_url": null
+    },
     {
       "run_date": "2026-05-31",
       "status": "blocked_required_action",
@@ -257,14 +309,22 @@
   ],
   "flagged_items": [
     {
-      "issue": "hard_preflight_blocker",
-      "summary": "Doppler service token unavailable; publishing/commenting/welcoming intentionally blocked.",
-      "recommended_next_action": "Attach the Doppler connector/env secret or create /home/ubuntu/.config/hubbot/doppler_service_token with the read-only Doppler service token and chmod 600 it."
+      "category": "access",
+      "severity": "high",
+      "summary": "Dedicated HubBot authentication could not be explicitly verified because Doppler credentials were unavailable.",
+      "recommended_next_action": "Restore the Doppler token/credential path before the next scheduled run."
     },
     {
-      "issue": "owner_alert_delivery_blocked",
-      "summary": "No GetResponse or Brevo API key was available for the required owner alert.",
-      "recommended_next_action": "Provide GETRESPONSE_API_KEY or BREVO_API_KEY, or place the corresponding key file under /home/ubuntu/.config/hubbot/ with chmod 600."
+      "category": "publishing",
+      "severity": "high",
+      "summary": "Required daily AI-news post was blocked by preflight safety rules; no community publish/comment/welcome actions were attempted.",
+      "recommended_next_action": "Rerun after credential restoration; verify same-day duplicate guard before publishing."
+    },
+    {
+      "category": "email",
+      "severity": "medium",
+      "summary": "Owner alert is required because the required AI-news publish was blocked, but GetResponse and Brevo credentials were not available during preflight.",
+      "recommended_next_action": "Restore an approved owner-alert email path through GetResponse or the supported direct-email fallback."
     }
   ],
   "owner_alert": {
@@ -275,22 +335,18 @@
     "fallback_status": "blocked"
   },
   "evidence": {
-    "preflight_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_preflight.json",
-    "safe_community_observations_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_safe_community_observations.md",
-    "ai_news_draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-05-31_ai_news_draft.md",
-    "preflight_hard_blockers": [
-      "Doppler service token is missing from environment and the fallback file is missing or empty."
-    ],
-    "preflight_warnings": [
-      "No GetResponse API key was available in environment or configured key file.",
-      "No Brevo direct-email API key was available in environment or configured key file."
-    ],
-    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260531T092312-0400_owner_alert_result.json",
+    "preflight_json_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-01_preflight.json",
+    "preflight_markdown_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-01_preflight.md",
+    "safe_community_observation_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-01_safe_community_observation.md",
+    "ai_news_research_and_blocked_draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-01_ai_news_research_and_blocked_draft.md",
+    "markdown_run_ledger_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-01_hubbot_run.md",
+    "json_run_ledger_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-01_hubbot_run.json",
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260601T090947-0400_owner_alert_result.json",
     "owner_alert_fallback_status": {
       "status": "blocked",
       "provider": null,
       "alert_required": true,
-      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260531T092312-0400_owner_alert_result.json",
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260601T090947-0400_owner_alert_result.json",
       "returncode": 2,
       "stderr_tail": []
     }
