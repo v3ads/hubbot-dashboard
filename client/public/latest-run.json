@@ -1,11 +1,11 @@
 {
   "run_date": "2026-06-02",
-  "run_completed_at_et": "2026-06-02T09:04:05-04:00",
+  "run_completed_at_et": "2026-06-02T09:04:54-04:00",
   "run_weekday": "Tuesday",
   "timezone": "America/New_York",
   "status": "blocked_required_action",
   "last_run_label": "2026-06-02 — blocked required action",
-  "primary_result": "Durable runtime repository was refreshed and authoritative playbook loaded. Required preflight blocked on missing Doppler credentials, so no authenticated community changes, welcomes, comments, image upload, or AI-news publishing were attempted. Safe AI-news research and a draft were recorded.",
+  "primary_result": "Durable runtime repository was refreshed and authoritative playbook loaded. Required preflight blocked on missing Doppler credentials, so no authenticated community changes, welcomes, comments, image upload, or AI-news publishing were attempted. Safe AI-news research and a draft were recorded. Finalizer completed and updated/pushed dashboard repository fallback files; direct dashboard API posting was skipped because no endpoint/key was configured.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
@@ -98,6 +98,22 @@
     "recent_discussions_reviewed": "not_attempted_due_preflight_blocker"
   },
   "run_history": [
+    {
+      "run_date": "2026-06-02",
+      "status": "blocked_required_action",
+      "primary_result": "Durable runtime repository was refreshed and authoritative playbook loaded. Required preflight blocked on missing Doppler credentials, so no authenticated community changes, welcomes, comments, image upload, or AI-news publishing were attempted. Safe AI-news research and a draft were recorded. Finalizer completed and updated/pushed dashboard repository fallback files; direct dashboard API posting was skipped because no endpoint/key was configured.",
+      "posts_published": 0,
+      "tasks_completed": 3,
+      "tasks_failed": 3,
+      "error_detail": "Preflight blocked required Doppler credentials: service token was missing from the environment and fallback file, so HubActually authentication could not be verified safely.; Required daily AI-news publishing was blocked because authenticated HubBot community access could not be established after the required preflight blocker.; Owner alert email was required due the access/publishing blocker, but both GetResponse and configured direct-email fallback credentials were unavailable in preflight.",
+      "blockers": [
+        "Preflight blocked required Doppler credentials: service token was missing from the environment and fallback file, so HubActually authentication could not be verified safely.",
+        "Required daily AI-news publishing was blocked because authenticated HubBot community access could not be established after the required preflight blocker.",
+        "Owner alert email was required due the access/publishing blocker, but both GetResponse and configured direct-email fallback credentials were unavailable in preflight."
+      ],
+      "ai_news_title": "What small businesses can learn from the newest AI adoption data",
+      "ai_news_post_url": null
+    },
     {
       "run_date": "2026-06-02",
       "status": "blocked_required_action",
@@ -316,12 +332,15 @@
     ],
     "authenticated_changes_attempted": false,
     "secrets_exposed": false,
-    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260602T090423-0400_owner_alert_result.json",
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260602T090501-0400_owner_alert_result.json",
+    "dashboard_update_status": "skipped_no_endpoint_or_key",
+    "dashboard_repo_files_updated": true,
+    "dashboard_commit_status": "committed_pushed",
     "owner_alert_fallback_status": {
       "status": "blocked",
       "provider": null,
       "alert_required": true,
-      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260602T090423-0400_owner_alert_result.json",
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260602T090501-0400_owner_alert_result.json",
       "returncode": 2,
       "stderr_tail": []
     }
