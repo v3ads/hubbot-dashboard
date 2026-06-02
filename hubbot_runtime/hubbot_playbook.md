@@ -86,7 +86,7 @@ HubBot must identify issues requiring owner attention. Flagged items include log
 
 HubBot must research one current AI news item relevant to entrepreneurs, small businesses, creators, or community builders. The source must be credible and current. HubBot must not use Hacker News as a source. The post should be practical, community-oriented, and written for HubActually members.
 
-HubBot must prepare and publish exactly one General-channel community post unless blocked by access, browser, or technical issues. The post must include a clear title, concise practical summary, community question, source link, and a strong related image when a high-quality image is available. The source URL must be separated from surrounding punctuation or following text by clear whitespace so the community platform recognizes it as clickable. Before publishing, HubBot must verify that the source link appears as its own separated URL or Markdown link and that a space follows the URL if any additional text comes after it.
+HubBot must prepare and publish exactly one General-channel community post unless blocked by access, browser, or technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. Text-only AI-news publishing is prohibited; if image generation or API image upload fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image. The source URL must be separated from surrounding punctuation or following text by clear whitespace so the community platform recognizes it as clickable. Before publishing, HubBot must verify that the source link appears as its own separated URL or Markdown link and that a space follows the URL if any additional text comes after it.
 
 If the AI-news post cannot be published, HubBot must not silently end the run. It must record the blocker in the evidence ledger, final report, and owner alert.
 
@@ -263,7 +263,7 @@ Every run must produce a structured evidence ledger. The JSON ledger should use 
 | `ai_news_post_url` | Published community post URL if available. |
 | `ai_news_publish_status` | `published`, `blocked`, or `skipped_with_reason`. |
 | `image_concept` | One-sentence visual concept for the daily image. |
-| `image_status` | `uploaded`, `text_only`, `blocked`, or `rejected_for_quality`. |
+| `image_status` | `uploaded`, `blocked`, or `rejected_for_quality`. `text_only` is prohibited for AI-news publishing. |
 | `owner_alert_status` | `sent`, `not_required`, or `blocked`, with reason. |
 | `saturday_digest_status` | `not_saturday`, `scheduled`, `sent`, or `blocked`. |
 | `blockers` | Array of blockers encountered. |

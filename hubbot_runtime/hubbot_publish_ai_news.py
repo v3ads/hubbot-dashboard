@@ -15,6 +15,7 @@ import argparse
 import html
 import json
 import os
+import re
 import shutil
 import sqlite3
 import sys
@@ -62,6 +63,79 @@ def read_text_arg(value: str | None, path: str | None, *, default: str = '') -> 
 def text_to_html(text: str) -> str:
     paragraphs = [p.strip() for p in text.replace('\r\n', '\n').split('\n\n') if p.strip()]
     return ''.join(f'<p>{html.escape(p).replace(chr(10), "<br>")}</p>' for p in paragraphs)
+
+
+URL_RE = re.compile(r'https?://[^\s<)"\']+', re.I)
+PARAGRAPH_RE = re.compile(r'<p\b[^>]*>(.*?)</p>', re.I | re.S)
+TAG_RE = re.compile(r'<[^>]+>')
+
+
+def visible_text(fragment: str) -> str:
+    return html.unescape(TAG_RE.sub(' ', fragment)).replace('\xa0', ' ')
+
+
+def source_link_spacing_qa(body_html: str) -> dict[str, Any]:
+    """Verify that source links are isolated from following prose.
+
+    HubActually's rich-text feed has previously rendered a source URL and the
+    following community question as one run of text when the URL was not placed
+    in its own paragraph/line. Treat that as a publish blocker. A valid source
+    link is either a paragraph whose visible text is only an optional "Source:"
+    label plus a URL, or a paragraph that contains an anchor/URL and no other
+    post content after the URL.
+    """
+    urls = URL_RE.findall(body_html or '')
+    paragraphs = PARAGRAPH_RE.findall(body_html or '')
+    url_paragraphs: list[str] = []
+    failures: list[str] = []
+    for para in paragraphs or [body_html]:
+        if URL_RE.search(para):
+            url_paragraphs.append(para)
+            text_only = ' '.join(visible_text(para).split())
+            cleaned = re.sub(r'^Source\s*:\s*', '', text_only, flags=re.I).strip()
+            cleaned = re.sub(r'^Source\s+', '', cleaned, flags=re.I).strip()
+            cleaned = URL_RE.sub('', cleaned).strip(' .;:-–—|')
+            if cleaned:
+                failures.append('source URL paragraph contains additional non-source text')
+            if re.search(r'Community\s+question|Question\s*:', text_only, re.I):
+                failures.append('community question appears in the same paragraph as the source URL')
+    if not urls:
+        failures.append('no source URL found')
+    if not url_paragraphs:
+        failures.append('no paragraph or line containing the source URL found')
+    return {
+        'ok': not failures,
+        'source_url_count': len(urls),
+        'source_url_paragraph_count': len(url_paragraphs),
+        'failures': sorted(set(failures)),
+    }
+
+
+def prepublish_payload_qa(payload: dict[str, Any], body_html: str, image_url: str | None) -> dict[str, Any]:
+    payload_text = json.dumps(payload, ensure_ascii=False)
+    image_count = payload_text.count(image_url) if image_url else 0
+    link_qa = source_link_spacing_qa(body_html)
+    failures: list[str] = []
+    if not payload.get('title'):
+        failures.append('title missing')
+    if not image_url:
+        failures.append('image URL missing; text-only publishing is disabled')
+    if image_url and payload.get('previewURL') != image_url:
+        failures.append('uploaded image URL is not set as previewURL')
+    if payload.get('previewImage') is not None:
+        failures.append('previewImage must be null')
+    if payload.get('previewImages') not in ([], None):
+        failures.append('previewImages must be empty')
+    if image_url and image_count != 1:
+        failures.append(f'image URL appears {image_count} times in payload; expected exactly 1')
+    if not link_qa.get('ok'):
+        failures.extend(link_qa.get('failures') or ['source link spacing failed'])
+    return {
+        'ok': not failures,
+        'image_url_count_in_payload': image_count,
+        'source_link_spacing_qa': link_qa,
+        'failures': sorted(set(failures)),
+    }
 
 
 def locate_cookie_db(explicit: str | None) -> Path:
@@ -183,17 +257,26 @@ def create_thread(session: requests.Session, headers: dict[str, str], title: str
         'origin': BASE,
         'groupName': 'HubActually',
     }
-    duplicate_image_refs = 0
-    if image_url:
-        duplicate_image_refs = json.dumps(payload).count(image_url)
+    prepublish_qa = prepublish_payload_qa(payload, body_html, image_url)
+    duplicate_image_refs = prepublish_qa['image_url_count_in_payload']
     redacted_payload = dict(payload)
     redacted_payload['description'] = f'<html body omitted; {len(body_html)} chars>'
+    if not prepublish_qa.get('ok'):
+        return {
+            'status': 'blocked',
+            'ok': False,
+            'payload_redacted': redacted_payload,
+            'duplicate_image_reference_count': duplicate_image_refs,
+            'prepublish_qa': prepublish_qa,
+            'reason': 'pre-publish QA failed: image and source-link spacing are required',
+        }
     if dry_run:
         return {
             'status': 'dry_run_ready',
             'ok': True,
             'payload_redacted': redacted_payload,
             'duplicate_image_reference_count': duplicate_image_refs,
+            'prepublish_qa': prepublish_qa,
         }
     response = session.post(
         f'{BASE}/api/{PROJECT}/threads/create',
@@ -252,7 +335,7 @@ def main() -> int:
     parser.add_argument('--output-dir', default=str(DEFAULT_LEDGER_DIR))
     parser.add_argument('--ledger', help='Optional JSON ledger to update after a real publish.')
     parser.add_argument('--dry-run', action='store_true')
-    parser.add_argument('--no-text-only-fallback', action='store_true', help='Block instead of publishing text-only when image upload fails.')
+    parser.add_argument('--no-text-only-fallback', action='store_true', help='Deprecated: image is always required; retained for CLI compatibility.')
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
@@ -286,23 +369,28 @@ def main() -> int:
             result['auth_header_names'] = sorted(headers.keys())
             image_url = ''
             image_status = 'not_provided'
-            if args.image_path:
+            if not args.image_path:
+                result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': 'image path is required; text-only publishing is disabled'})
+            else:
                 upload = {'status': 'dry_run_skipped', 'ok': True, 'image_url': 'DRY_RUN_IMAGE_URL'} if args.dry_run else upload_image(session, headers, Path(args.image_path))
                 result['upload'] = upload
-                image_url = '' if args.dry_run else str(upload.get('image_url') or '')
+                image_url = 'DRY_RUN_IMAGE_URL' if args.dry_run else str(upload.get('image_url') or '')
                 image_status = 'uploaded' if upload.get('ok') else 'blocked'
-            if args.image_path and image_status == 'blocked' and args.no_text_only_fallback:
-                result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': 'image upload failed and text-only fallback was disabled'})
-            else:
-                create = create_thread(session, headers, title, body_html, image_url or ('DRY_RUN_IMAGE_URL' if args.dry_run and args.image_path else None), dry_run=args.dry_run)
-                result['create'] = create
-                result['status'] = create['status']
-                result['ai_news_publish_status'] = 'dry_run_ready' if args.dry_run else ('published' if create.get('ok') else 'blocked')
-                result['image_status'] = image_status if image_status != 'blocked' else 'text_only'
-                result['image_url'] = image_url
-                result['thread_id'] = create.get('thread_id')
-                result['post_url'] = create.get('post_url')
-                result['published_at_utc'] = now_utc() if create.get('ok') and not args.dry_run else None
+                if image_status == 'blocked':
+                    result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': 'image upload failed; text-only publishing is disabled'})
+                else:
+                    create = create_thread(session, headers, title, body_html, image_url, dry_run=args.dry_run)
+                    result['create'] = create
+                    result['prepublish_qa'] = create.get('prepublish_qa')
+                    result['status'] = create['status']
+                    result['ai_news_publish_status'] = 'dry_run_ready' if args.dry_run and create.get('ok') else ('published' if create.get('ok') else 'blocked')
+                    result['image_status'] = image_status if create.get('ok') else 'blocked'
+                    result['image_url'] = '' if args.dry_run else image_url
+                    result['thread_id'] = create.get('thread_id')
+                    result['post_url'] = create.get('post_url')
+                    result['published_at_utc'] = now_utc() if create.get('ok') and not args.dry_run else None
+                    if not create.get('ok'):
+                        result['reason'] = create.get('reason') or 'thread creation failed or pre-publish QA blocked publish'
         except Exception as exc:
             result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'reason': f'{type(exc).__name__}: {exc}'})
 
