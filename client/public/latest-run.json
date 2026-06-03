@@ -1,25 +1,25 @@
 {
-  "run_date": "2026-06-02",
-  "run_completed_at_et": "2026-06-02T09:04:54-04:00",
-  "run_weekday": "Tuesday",
+  "run_date": "2026-06-03",
+  "run_completed_at_et": "2026-06-03T09:04:39-04:00",
+  "run_weekday": "Wednesday",
   "timezone": "America/New_York",
   "status": "blocked_required_action",
-  "last_run_label": "2026-06-02 — blocked required action",
-  "primary_result": "Durable runtime repository was refreshed and authoritative playbook loaded. Required preflight blocked on missing Doppler credentials, so no authenticated community changes, welcomes, comments, image upload, or AI-news publishing were attempted. Safe AI-news research and a draft were recorded. Finalizer completed and updated/pushed dashboard repository fallback files; direct dashboard API posting was skipped because no endpoint/key was configured.",
+  "last_run_label": "2026-06-03 — blocked required action",
+  "primary_result": "Preflight was completed from the refreshed durable v2 runtime and blocked authenticated work because the Doppler credential source was missing. The public community landing page was reachable, safe AI-news research was completed, no authenticated community changes were made, and the required daily post was blocked and recorded.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "What small businesses can learn from the newest AI adoption data",
+    "title": "AI agents are changing the internet’s plumbing — and small businesses should plan for it",
     "thread_url": "https://community.hubactually.com/",
     "thread_id": null,
     "category": "General",
     "image_url": "",
     "image_attached": false,
     "publish_status": "blocked",
-    "source_url": "https://www.jpmorganchase.com/institute/all-topics/business-growth-and-entrepreneurship/small-business-in-the-age-of-ai",
-    "supporting_url": "https://www.scdailygazette.com/2026/06/01/how-ai-helps-sc-small-businesses-compete/",
-    "draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-02_ai_news_safe_draft.md",
+    "source_url": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
+    "supporting_url": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
+    "draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-03_safe_evidence_notes.md",
     "generated_image_path": null,
     "published_at_utc": null,
     "post_visible_after_submit": false,
@@ -32,7 +32,7 @@
     },
     {
       "task": "Community access",
-      "outcome": "blocked:_preflight_required_doppler_credentials_were_unavailable;_no_authenticated_community_changes_were_attempted"
+      "outcome": "blocked"
     },
     {
       "task": "Member review",
@@ -68,18 +68,18 @@
     }
   ],
   "metrics": {
-    "required_tasks_completed": 3,
+    "required_tasks_completed": 4,
     "required_tasks_failed": 3,
     "owner_alerts_sent": 0,
     "posts_published": 0,
     "new_welcomes_sent": 0,
     "duplicate_posts_avoided": 0,
-    "flagged_items": 2
+    "flagged_items": 3
   },
   "blockers": [
-    "Preflight blocked required Doppler credentials: service token was missing from the environment and fallback file, so HubActually authentication could not be verified safely.",
-    "Required daily AI-news publishing was blocked because authenticated HubBot community access could not be established after the required preflight blocker.",
-    "Owner alert email was required due the access/publishing blocker, but both GetResponse and configured direct-email fallback credentials were unavailable in preflight."
+    "Doppler service token is missing from environment and the fallback file is missing or empty.",
+    "Authenticated community access, member review, discussion review, same-day duplicate-post detection, welcome/comment actions, and required AI-news publishing were blocked by missing credential source.",
+    "Owner alert email is required but both GetResponse and Brevo fallback credentials were unavailable in preflight."
   ],
   "schedule": {
     "cron": "0 0 9 * * *",
@@ -91,13 +91,33 @@
   },
   "saturday_digest": {
     "status": "not_saturday",
-    "reason": "2026-06-02 is not a Saturday in America/New_York."
+    "reason": "Run date 2026-06-03 in America/New_York is Wednesday."
   },
   "community_stats": {
-    "members_reviewed": "not_attempted_due_preflight_blocker",
-    "recent_discussions_reviewed": "not_attempted_due_preflight_blocker"
+    "public_landing_page_reachable": true,
+    "public_member_count_visible": 79,
+    "public_group_status": "Private",
+    "authenticated_member_review": "blocked",
+    "authenticated_recent_discussion_review": "blocked",
+    "duplicate_same_day_post_check": "blocked"
   },
   "run_history": [
+    {
+      "run_date": "2026-06-03",
+      "status": "blocked_required_action",
+      "primary_result": "Preflight was completed from the refreshed durable v2 runtime and blocked authenticated work because the Doppler credential source was missing. The public community landing page was reachable, safe AI-news research was completed, no authenticated community changes were made, and the required daily post was blocked and recorded.",
+      "posts_published": 0,
+      "tasks_completed": 4,
+      "tasks_failed": 3,
+      "error_detail": "Doppler service token is missing from environment and the fallback file is missing or empty.; Authenticated community access, member review, discussion review, same-day duplicate-post detection, welcome/comment actions, and required AI-news publishing were blocked by missing credential source.; Owner alert email is required but both GetResponse and Brevo fallback credentials were unavailable in preflight.",
+      "blockers": [
+        "Doppler service token is missing from environment and the fallback file is missing or empty.",
+        "Authenticated community access, member review, discussion review, same-day duplicate-post detection, welcome/comment actions, and required AI-news publishing were blocked by missing credential source.",
+        "Owner alert email is required but both GetResponse and Brevo fallback credentials were unavailable in preflight."
+      ],
+      "ai_news_title": "AI agents are changing the internet’s plumbing — and small businesses should plan for it",
+      "ai_news_post_url": null
+    },
     {
       "run_date": "2026-06-02",
       "status": "blocked_required_action",
@@ -300,16 +320,19 @@
   ],
   "flagged_items": [
     {
-      "item": "Missing Doppler service token for HubActually HubBot credentials",
-      "severity": "high",
-      "evidence": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-02_preflight.md",
-      "recommended_next_action": "Restore the scheduled environment Doppler service token at /home/ubuntu/.config/hubbot/doppler_service_token or supported environment configuration, then rerun the scheduled workflow."
+      "type": "hard_access_blocker",
+      "summary": "Doppler service token is missing from environment and the fallback file is missing or empty.",
+      "recommended_next_action": "Restore the scheduled environment credential source by attaching the Doppler connector/env secret or creating /home/ubuntu/.config/hubbot/doppler_service_token with a read-only Doppler service token and chmod 600 permissions."
     },
     {
-      "item": "Owner-alert email path unavailable if alert required",
-      "severity": "medium",
-      "evidence": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-02_preflight.md",
-      "recommended_next_action": "Restore GetResponse API credentials or the configured direct-email fallback credential so HubBot can send required owner alerts on blocked runs."
+      "type": "owner_alert_blocker",
+      "summary": "Owner alert is required because a required daily step was blocked, but GetResponse and Brevo fallback credentials are unavailable.",
+      "recommended_next_action": "Provide GETRESPONSE_API_KEY or /home/ubuntu/.config/hubbot/getresponse_api_key for GetResponse owner alerts, or provide BREVO_API_KEY or /home/ubuntu/.config/hubbot/brevo_api_key for the direct-email fallback."
+    },
+    {
+      "type": "required_publish_blocker",
+      "summary": "Required daily AI-news post could not be published because preflight marked safe_to_publish_or_comment false and authenticated/API credentials were unavailable.",
+      "recommended_next_action": "After credential remediation, rerun HubBot v2 so it can authenticate, perform duplicate-post detection, generate/upload exactly one image, publish, and complete post-publish QA."
     }
   ],
   "owner_alert": {
@@ -321,26 +344,25 @@
   },
   "evidence": {
     "runtime_repo": "/home/ubuntu/hubbot-dashboard",
-    "authoritative_playbook_path": "/home/ubuntu/hubactually_hubbot_run_ledger/current_playbook.md",
-    "preflight_json_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-02_preflight.json",
-    "preflight_markdown_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-02_preflight.md",
-    "python311_runtime_note": "python3.11 command was made available as a compatibility alias to the system Python before rerunning preflight; no secrets were exposed.",
-    "safe_ai_news_draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-02_ai_news_safe_draft.md",
-    "research_sources_reviewed": [
-      "https://www.jpmorganchase.com/institute/all-topics/business-growth-and-entrepreneurship/small-business-in-the-age-of-ai",
-      "https://www.scdailygazette.com/2026/06/01/how-ai-helps-sc-small-businesses-compete/"
-    ],
-    "authenticated_changes_attempted": false,
-    "secrets_exposed": false,
-    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260602T090501-0400_owner_alert_result.json",
-    "dashboard_update_status": "skipped_no_endpoint_or_key",
-    "dashboard_repo_files_updated": true,
-    "dashboard_commit_status": "committed_pushed",
+    "authoritative_playbook_copy": "/home/ubuntu/hubactually_hubbot_run_ledger/current_playbook.md",
+    "preflight_json_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-03_preflight.json",
+    "preflight_markdown_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-03_preflight.md",
+    "safe_evidence_notes_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-03_safe_evidence_notes.md",
+    "community_public_url": "https://community.hubactually.com/",
+    "community_public_observation": "Public landing page reachable; page shows HubActually private group with 79 members and JOIN GROUP call to action.",
+    "ai_news_source_title": "The internet is being rebuilt for machines",
+    "ai_news_source_publisher": "TechCrunch",
+    "ai_news_source_date": "2026-05-28",
+    "supporting_source_title": "The Opportunities and Risks AI Presents for the Economy and Financial System",
+    "supporting_source_publisher": "Federal Reserve",
+    "supporting_source_date": "2026-05-27",
+    "python_runtime_note": "The bootstrap initially could not find python3.11 in this sandbox. A local python3.11 alias to /usr/bin/python3 was created, after which the required bootstrap/preflight command completed and produced the blocked preflight record.",
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260603T090544-0400_owner_alert_result.json",
     "owner_alert_fallback_status": {
       "status": "blocked",
       "provider": null,
       "alert_required": true,
-      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260602T090501-0400_owner_alert_result.json",
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260603T090544-0400_owner_alert_result.json",
       "returncode": 2,
       "stderr_tail": []
     }
