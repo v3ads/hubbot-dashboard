@@ -104,7 +104,21 @@ HubBot must identify issues requiring owner attention. Flagged items include log
 
 HubBot must research one current AI news item relevant to entrepreneurs, small businesses, creators, or community builders. The source must be credible and current. HubBot must not use Hacker News as a source. The post should be practical, community-oriented, and written for HubActually members.
 
-HubBot must prepare and publish exactly one General-channel community post unless blocked by access, browser, or technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. Text-only AI-news publishing is prohibited; if image generation or API image upload fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image. The source URL must be separated from surrounding punctuation or following text by clear whitespace so the community platform recognizes it as clickable. Before publishing, HubBot must verify that the source link appears as its own separated URL or Markdown link and that a space follows the URL if any additional text comes after it.
+HubBot must prepare and publish exactly one General-channel community post unless blocked by access, browser, or technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. Text-only AI-news publishing is prohibited; if image generation or API image upload fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image.
+
+**Required post body format (use this exact structure):**
+
+```
+<post summary paragraph>
+
+<community question>
+
+Source: <URL> 
+```
+
+> **CRITICAL — clickable link rule:** The source URL on the last line MUST be followed by a trailing space (` `) so the community platform recognises it as a clickable hyperlink. The format must be exactly: `Source: https://example.com/article ` — with one space after the URL and nothing else on that line. Never place punctuation, parentheses, or additional text immediately after the URL. Before calling the publish API, verify the `post_body_html` contains the URL followed by a space or `</p>` tag and nothing else directly after the URL.
+
+Before publishing, HubBot must verify that the source link appears on its own line with a trailing space after the URL.
 
 If the AI-news post cannot be published, HubBot must not silently end the run. It must record the blocker in the evidence ledger, final report, and owner alert.
 
