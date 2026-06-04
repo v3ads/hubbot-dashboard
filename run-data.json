@@ -1,38 +1,38 @@
 {
-  "run_date": "2026-06-03",
-  "run_completed_at_et": "2026-06-03T19:37:05-04:00",
-  "run_weekday": "Wednesday",
+  "run_date": "2026-06-04",
+  "run_completed_at_et": "2026-06-04T10:21:22-04:00",
+  "run_weekday": "Thursday",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-06-03 — completed",
-  "primary_result": "Daily HubBot run completed: community access succeeded; no new members, useful comments, or flagged items were found; the required AI-news post with a concept-led image was published and verified in General.",
+  "last_run_label": "2026-06-04 — completed",
+  "primary_result": "Community access succeeded; no new members were visible since the fallback cutoff; no comments were appropriate; the required AI-news post was published with an uploaded image at https://community.hubactually.com/e7b28948-373a-41bf-a15e-2888fd4ede58.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "Small businesses don’t need more AI tools — they need a 30-day scorecard",
-    "thread_url": "https://community.hubactually.com/",
+    "title": "AI can become the small-business back office, not the boss",
+    "thread_url": "https://community.hubactually.com/e7b28948-373a-41bf-a15e-2888fd4ede58",
     "thread_id": null,
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1780529686538.png",
+    "image_url": "",
     "image_attached": true,
     "publish_status": "published",
-    "source_url": "https://www.forbes.com/sites/terdawn-deboe/2026/05/29/34000-small-businesses-said-ai-is-working-the-data-says-otherwise/",
+    "source_url": "https://www.technologyreview.com/2026/06/02/1138227/how-small-businesses-can-leverage-ai/",
     "supporting_url": null,
     "draft_path": null,
     "generated_image_path": null,
-    "published_at_utc": "2026-06-03T23:36:00+00:00",
-    "post_visible_after_submit": true,
-    "post_url_note": "The API publish response did not expose a thread ID in the redacted result; the published post was verified as the newest Hub Bot item on the community feed."
+    "published_at_utc": null,
+    "post_visible_after_submit": false,
+    "post_url_note": null
   },
   "checklist": [
     {
       "task": "Preflight",
-      "outcome": "completed"
+      "outcome": "unknown"
     },
     {
       "task": "Community access",
-      "outcome": "success"
+      "outcome": "success_—_community_and_members_page_loaded_as_authenticated_hubbot/admin_session;_no_login,_captcha,_or_2fa_blocker_was_visible."
     },
     {
       "task": "Member review",
@@ -56,11 +56,11 @@
     },
     {
       "task": "Owner alert email",
-      "outcome": "not_required"
+      "outcome": "not_required_—_no_new_members,_flagged_items,_or_unrecovered_required-step_failures_remained_after_completion."
     },
     {
       "task": "Saturday digest",
-      "outcome": "not_required"
+      "outcome": "not_saturday"
     },
     {
       "task": "Dashboard update",
@@ -68,7 +68,7 @@
     }
   ],
   "metrics": {
-    "required_tasks_completed": 10,
+    "required_tasks_completed": 1,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
     "posts_published": 1,
@@ -86,8 +86,8 @@
     "run_as_new_task": true
   },
   "saturday_digest": {
-    "status": "not_required",
-    "reason": "2026-06-03 is Wednesday, not Saturday."
+    "status": "not_saturday",
+    "reason": null
   },
   "community_stats": {
     "public_landing_page_reachable": true,
@@ -98,6 +98,18 @@
     "duplicate_same_day_post_check": "blocked"
   },
   "run_history": [
+    {
+      "run_date": "2026-06-04",
+      "status": "completed",
+      "primary_result": "Community access succeeded; no new members were visible since the fallback cutoff; no comments were appropriate; the required AI-news post was published with an uploaded image at https://community.hubactually.com/e7b28948-373a-41bf-a15e-2888fd4ede58.",
+      "posts_published": 1,
+      "tasks_completed": 0,
+      "tasks_failed": 0,
+      "error_detail": "No unresolved blocker recorded.",
+      "blockers": [],
+      "ai_news_title": "AI can become the small-business back office, not the boss",
+      "ai_news_post_url": "https://community.hubactually.com/e7b28948-373a-41bf-a15e-2888fd4ede58"
+    },
     {
       "run_date": "2026-06-03",
       "status": "completed",
@@ -328,31 +340,23 @@
   ],
   "flagged_items": [],
   "owner_alert": {
-    "status": "not_required",
+    "status": "not_required_—_no_new_members,_flagged_items,_or_unrecovered_required-step_failures_remained_after_completion.",
     "recipient": "vipaymanshalaby@gmail.com",
     "sender": "ayman@hubactually.com",
-    "reason": "No new members requiring welcome, no flagged items, no unresolved blockers, and the required daily AI-news post was published and verified.",
+    "reason": null,
     "fallback_status": "skipped_not_required"
   },
   "evidence": {
-    "community_access_notes": "/home/ubuntu/hubbot_run/community_access_notes.md",
-    "member_review_notes": "/home/ubuntu/hubbot_run/member_review_notes.md",
-    "recent_community_review_notes": "/home/ubuntu/hubbot_run/recent_community_review_notes.md",
-    "ai_news_title_file": "/home/ubuntu/hubbot_run/2026-06-03_ai_news_title.txt",
-    "ai_news_body_file": "/home/ubuntu/hubbot_run/2026-06-03_ai_news_body.txt",
-    "ai_news_cover_image": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-03_ai_news_cover.png",
-    "ai_news_source_extract": "Forbes article extracted in task context on 2026-06-03.",
-    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260603T233447Z_api_ai_news_publisher_retry_main_channel_result.json",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1780529686538.png",
-    "browser_context_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260603T233600Z_browser_context_ai_news_publisher_result.json",
-    "publish_verification_notes": "/home/ubuntu/hubbot_run/publish_verification_notes.md",
-    "published_feed_verification_screenshot": "/home/ubuntu/screenshots/community_hubactuall_2026-06-03_23-36-17_7863.webp",
-    "api_publisher_retry_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260603T233447Z_api_ai_news_publisher_retry_main_channel_result.json",
-    "initial_api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260603T233342Z_api_ai_news_publisher_result.json",
+    "member_review_findings": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-04_browser_findings.md",
+    "ai_news_cover_image": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-04_ai_news_cover_v2.png",
+    "ai_news_post_text": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-04_ai_news_post.txt",
+    "publisher_result": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-04_refreshed_api_ai_news_publisher_result.json",
+    "initial_cookie_helper_blocked_result": "/home/ubuntu/hubactually_hubbot_run_ledger/20260604T141330Z_api_ai_news_publisher_result.json",
+    "api_probe_output": "/home/ubuntu/hubactually_hubbot_run_ledger/probe_hubactually_api_output2.txt",
     "owner_alert_fallback_status": {
       "status": "skipped_not_required"
     }
   },
   "ai_news_publish_status": "published",
-  "ai_news_post_url": "https://community.hubactually.com/"
+  "ai_news_post_url": "https://community.hubactually.com/e7b28948-373a-41bf-a15e-2888fd4ede58"
 }
