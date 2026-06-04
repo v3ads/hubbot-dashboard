@@ -257,7 +257,9 @@ For Saturday digests, HubBot must use recipient list `HubActually` and the saved
 
 ### 3.9 Dashboard Update
 
-After completing all community work, HubBot must update the HubBot dashboard by running the post-run data script. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the update script is at `/home/ubuntu/hubactually_hubbot_run_ledger/post_run_data_to_dashboard.py`. HubBot must run this script to push the run summary to the live dashboard. If the script fails, record it as a non-critical blocker and continue.
+After completing all community work, HubBot must update the HubBot dashboard by running the post-run data script. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the update script is at `/home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py` (available after bootstrap clones the repo). HubBot must run this script to push the run summary to the live dashboard. If the script fails, record it as a non-critical blocker and continue.
+
+The ledger directory for the script is `/home/ubuntu/hubactually_hubbot_run_ledger/`. Create it if it does not exist: `mkdir -p /home/ubuntu/hubactually_hubbot_run_ledger/`
 
 ## 4. Memory and State Rules
 
