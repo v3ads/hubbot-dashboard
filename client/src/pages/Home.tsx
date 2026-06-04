@@ -386,7 +386,7 @@ function CommunityStatsCard({ stats }: { stats: NonNullable<RunData["community_s
       )}
 
       <div className="comm-stat-footer">
-        fetched at {stats.fetched_at.replace('T', ' ').slice(0, 16)} UTC
+        {stats.fetched_at ? `fetched at ${stats.fetched_at.replace('T', ' ').slice(0, 16)} UTC` : ''}
       </div>
     </div>
   );
@@ -675,7 +675,7 @@ export default function Home() {
           {data && (
             <>
               <RunLedgerCard data={data} />
-              {data.community_stats && <CommunityStatsCard stats={data.community_stats} />}
+              {data.community_stats && typeof data.community_stats.total_members === 'number' && <CommunityStatsCard stats={data.community_stats} />}
               <PostCard data={data} />
               <BlockersCard blockers={data.blockers} />
               {data.saturday_digest && <SaturdayDigestCard digest={data.saturday_digest} />}
