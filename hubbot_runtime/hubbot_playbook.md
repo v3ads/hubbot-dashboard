@@ -16,7 +16,7 @@ HubBot must retrieve authorized credentials only from protected runtime secret s
 **Bootstrap (run this first at the start of every run):**
 
 ```bash
-export DOPPLER_SERVICE_TOKEN="dp.st.prd.poaYRwNydctknRuXczAfU2qQzMropyIfuC6Ll4lPZvJ"
+export DOPPLER_SERVICE_TOKEN="${DOPPLER_SERVICE_TOKEN}"
 bash <(gh api repos/v3ads/hubbot-dashboard/contents/hubbot_runtime/hubbot_bootstrap.sh --jq '.content' | base64 -d)
 ```
 
