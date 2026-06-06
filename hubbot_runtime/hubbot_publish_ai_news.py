@@ -20,6 +20,7 @@ import shutil
 import sqlite3
 import sys
 import tempfile
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -138,6 +139,167 @@ def prepublish_payload_qa(payload: dict[str, Any], body_html: str, image_url: st
     }
 
 
+
+STOPWORDS = {
+    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'how', 'in', 'into',
+    'is', 'it', 'of', 'on', 'or', 'that', 'the', 'this', 'to', 'with', 'without', 'your',
+    'you', 'hubactually', 'source', 'general', 'post', 'posts', 'community', 'business',
+    'businesses', 'small', 'ai', 'artificial', 'intelligence'
+}
+
+
+def normalize_url_for_duplicate(url: str) -> str:
+    """Normalize source URLs so tracking parameters do not bypass duplicate checks."""
+    cleaned = html.unescape(url or '').strip().rstrip('.,);]\'\"')
+    if not cleaned:
+        return ''
+    parts = urlsplit(cleaned)
+    query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True) if not k.lower().startswith(('utm_', 'fbclid', 'gclid'))]
+    netloc = parts.netloc.lower().removeprefix('www.')
+    path = re.sub(r'/+$', '', parts.path or '/')
+    return urlunsplit((parts.scheme.lower() or 'https', netloc, path, urlencode(query, doseq=True), ''))
+
+
+def normalize_text_for_duplicate(value: str) -> str:
+    value = html.unescape(value or '')
+    value = TAG_RE.sub(' ', value)
+    value = re.sub(r'[-_/]+', ' ', value.lower())
+    value = re.sub(r'[^a-z0-9\s]+', ' ', value)
+    return ' '.join(value.split())
+
+
+def duplicate_tokens(value: str) -> set[str]:
+    tokens: set[str] = set()
+    for token in normalize_text_for_duplicate(value).split():
+        if len(token) < 3 or token in STOPWORDS:
+            continue
+        if token.endswith('ies') and len(token) > 4:
+            token = token[:-3] + 'y'
+        elif token.endswith('s') and len(token) > 4:
+            token = token[:-1]
+        tokens.add(token)
+    return tokens
+
+
+def extract_source_urls(body_html: str) -> list[str]:
+    seen: set[str] = set()
+    urls: list[str] = []
+    for raw in URL_RE.findall(body_html or ''):
+        normalized = normalize_url_for_duplicate(raw)
+        if normalized and normalized not in seen:
+            seen.add(normalized)
+            urls.append(normalized)
+    return urls
+
+
+def extract_recent_text_candidates(raw_html: str) -> list[str]:
+    """Extract likely recent feed titles/text snippets without exposing cookies or secrets."""
+    raw_html = html.unescape(raw_html or '')
+    candidates: list[str] = []
+    candidates.extend(re.findall(r'>([^<>]{20,180})<', raw_html))
+    candidates.extend(re.findall(r'"([^"\\]{20,180})"', raw_html))
+    cleaned: list[str] = []
+    seen: set[str] = set()
+    for item in candidates:
+        item = ' '.join(TAG_RE.sub(' ', item).split())
+        if not item or len(item) < 20:
+            continue
+        low = item.lower()
+        if any(skip in low for skip in ['password', 'authorization', 'cookie', 'csrf', 'webpack', '__nuxt']):
+            continue
+        key = normalize_text_for_duplicate(item)
+        if key and key not in seen:
+            seen.add(key)
+            cleaned.append(item)
+    return cleaned[:500]
+
+
+def duplicate_post_guard(session: requests.Session, headers: dict[str, str], title: str, body_html: str) -> dict[str, Any]:
+    """Block publishing when the candidate matches a recent General-feed source, title, or topic.
+
+    The guard is intentionally conservative. If the recent feed cannot be read, publishing is blocked
+    because avoiding duplicate community posts is safer than guessing.
+    """
+    result: dict[str, Any] = {
+        'ok': False,
+        'status': 'blocked',
+        'candidate_source_urls': extract_source_urls(body_html),
+        'candidate_title_normalized': normalize_text_for_duplicate(title),
+        'matches': [],
+    }
+    try:
+        response = session.get(BASE + '/', headers=headers, timeout=30)
+    except Exception as exc:
+        result['reason'] = f'duplicate guard could not inspect recent feed: {type(exc).__name__}'
+        return result
+    result['http_status'] = response.status_code
+    if not response.ok or not response.text:
+        result['reason'] = f'duplicate guard could not inspect recent feed: HTTP {response.status_code}'
+        return result
+
+    raw = response.text
+    raw_urls = {normalize_url_for_duplicate(u) for u in URL_RE.findall(raw)}
+    raw_urls.discard('')
+    for source_url in result['candidate_source_urls']:
+        if source_url in raw_urls:
+            result['matches'].append({'type': 'same_source_url', 'value': source_url})
+
+    title_norm = result['candidate_title_normalized']
+    page_norm = normalize_text_for_duplicate(raw)
+    if title_norm and title_norm in page_norm:
+        result['matches'].append({'type': 'same_title', 'value': title})
+
+    title_tokens = duplicate_tokens(title)
+    body_tokens = duplicate_tokens(visible_text(body_html))
+    candidate_tokens = title_tokens | {t for t in body_tokens if t not in {'news', 'today', 'question', 'members'}}
+    semantic_matches: list[dict[str, Any]] = []
+    if len(candidate_tokens) >= 4:
+        for snippet in extract_recent_text_candidates(raw):
+            snippet_tokens = duplicate_tokens(snippet)
+            if not snippet_tokens:
+                continue
+            overlap = sorted(candidate_tokens & snippet_tokens)
+            score = len(overlap) / max(1, min(len(candidate_tokens), len(snippet_tokens)))
+            if len(overlap) >= 4 and score >= 0.40:
+                semantic_matches.append({
+                    'type': 'same_or_near_duplicate_topic',
+                    'overlap_score': round(score, 3),
+                    'overlap_terms': overlap[:12],
+                    'snippet': snippet[:180],
+                })
+    result['matches'].extend(semantic_matches[:5])
+    if result['matches']:
+        result['reason'] = 'duplicate guard blocked publish: candidate matches a recent source, title, or AI-news topic'
+        return result
+    result['ok'] = True
+    result['status'] = 'passed'
+    result['reason'] = 'no duplicate source, title, or near-duplicate topic found in recent feed'
+    return result
+
+
+def resolve_channel_id(session: requests.Session, headers: dict[str, str]) -> str | None:
+    """Resolve the live channel id from cookies or the community page state before creating a thread."""
+    cookie_value = session.cookies.get('channel_id')
+    if cookie_value:
+        return str(cookie_value)
+    try:
+        response = session.get(BASE + '/', headers=headers, timeout=30)
+    except Exception:
+        return None
+    if not response.ok:
+        return None
+    raw = html.unescape(response.text or '')
+    patterns = [
+        r'"channel_id"\s*:\s*"([^"\\]+)"',
+        r'"channelId"\s*:\s*"([^"\\]+)"',
+        r'"channel"\s*:\s*"([^"\\]+)"',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, raw)
+        if match:
+            return match.group(1)
+    return None
+
 def locate_cookie_db(explicit: str | None) -> Path:
     if explicit:
         path = Path(explicit)
@@ -240,7 +402,7 @@ def upload_image(session: requests.Session, headers: dict[str, str], image_path:
     }
 
 
-def create_thread(session: requests.Session, headers: dict[str, str], title: str, body_html: str, image_url: str | None, *, dry_run: bool) -> dict[str, Any]:
+def create_thread(session: requests.Session, headers: dict[str, str], title: str, body_html: str, image_url: str | None, *, dry_run: bool, channel_id: str | None = None) -> dict[str, Any]:
     payload: dict[str, Any] = {
         'title': title,
         'description': body_html,
@@ -253,11 +415,14 @@ def create_thread(session: requests.Session, headers: dict[str, str], title: str
         'scheduled': None,
         'mentions': [],
         'ruleKey': None,
-        'channel': session.cookies.get('channel_id'),
+        'channel': channel_id or session.cookies.get('channel_id'),
         'origin': BASE,
         'groupName': 'HubActually',
     }
     prepublish_qa = prepublish_payload_qa(payload, body_html, image_url)
+    if not payload.get('channel'):
+        prepublish_qa['ok'] = False
+        prepublish_qa.setdefault('failures', []).append('channel id missing; refusing to create thread without validated channel/auth context')
     duplicate_image_refs = prepublish_qa['image_url_count_in_payload']
     redacted_payload = dict(payload)
     redacted_payload['description'] = f'<html body omitted; {len(body_html)} chars>'
@@ -367,9 +532,17 @@ def main() -> int:
             result['cookie_db_found'] = True
             result['hubactually_cookie_names'] = sorted(cookies.keys())
             result['auth_header_names'] = sorted(headers.keys())
+            duplicate_guard = duplicate_post_guard(session, headers, title, body_html)
+            result['duplicate_guard'] = duplicate_guard
+            channel_id = resolve_channel_id(session, headers)
+            result['channel_id_resolved'] = bool(channel_id)
             image_url = ''
             image_status = 'not_provided'
-            if not args.image_path:
+            if not duplicate_guard.get('ok'):
+                result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': duplicate_guard.get('reason') or 'duplicate guard blocked publish'})
+            elif not channel_id:
+                result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': 'channel id could not be resolved; refusing to publish with invalid API payload'})
+            elif not args.image_path:
                 result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': 'image path is required; text-only publishing is disabled'})
             else:
                 upload = {'status': 'dry_run_skipped', 'ok': True, 'image_url': 'DRY_RUN_IMAGE_URL'} if args.dry_run else upload_image(session, headers, Path(args.image_path))
@@ -379,7 +552,7 @@ def main() -> int:
                 if image_status == 'blocked':
                     result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'image_status': 'blocked', 'reason': 'image upload failed; text-only publishing is disabled'})
                 else:
-                    create = create_thread(session, headers, title, body_html, image_url, dry_run=args.dry_run)
+                    create = create_thread(session, headers, title, body_html, image_url, dry_run=args.dry_run, channel_id=channel_id)
                     result['create'] = create
                     result['prepublish_qa'] = create.get('prepublish_qa')
                     result['status'] = create['status']

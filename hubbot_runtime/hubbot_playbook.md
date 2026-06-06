@@ -108,9 +108,9 @@ HubBot must identify issues requiring owner attention. Flagged items include log
 
 ### 3.5 Required Daily AI-News Community Post
 
-HubBot must research one current AI news item relevant to entrepreneurs, small businesses, creators, or community builders. The source must be credible and current. HubBot must not use Hacker News as a source. The post should be practical, community-oriented, and written for HubActually members.
+HubBot must research one current AI news item relevant to entrepreneurs, small businesses, creators, or community builders. The source must be credible and current. HubBot must not use Hacker News as a source. The post should be practical, community-oriented, and written for HubActually members. Before finalizing the topic or source, HubBot must inspect recent General-channel Hub Bot posts and must choose a different source and topic if the candidate has already appeared as the same source URL, same normalized title, or a near-duplicate AI-news topic.
 
-HubBot must prepare and publish exactly one General-channel community post unless blocked by access, browser, or technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. Text-only AI-news publishing is prohibited; if image generation or API image upload fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image.
+HubBot must prepare and publish exactly one General-channel community post unless blocked by access, API, image generation, upload, duplicate-detection, or other technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. **Text-only AI-news publishing is prohibited.** If image generation, API image upload, duplicate detection, channel/auth validation, or API thread creation fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image or using the browser composer fallback.
 
 **Required post body format (use this exact structure):**
 
@@ -203,7 +203,7 @@ image_url = upload_data.get('path') or upload_data.get('url') or ''
 # image_url will be like: https://estage-test.b-cdn.net/uploads/images/TIMESTAMP.png
 ```
 
-If the upload returns HTTP 200 and a `path` field, proceed to Step 2. If the upload fails, publish the post as text-only (omit `previewURL`) and record `image_status: "blocked"`.
+If the upload returns HTTP 200 and a `path` field, proceed to Step 2. If the upload fails, **do not publish**. Record `ai_news_publish_status: "blocked"`, record `image_status: "blocked"`, include the upload blocker in the evidence ledger, and send the required owner alert.
 
 **Step 2 — Create the post with the image URL as `previewURL`:**
 
@@ -241,7 +241,7 @@ create_resp = s.post(
 )
 ```
 
-If `create_resp.ok` is True, the post was published with the image. Record the thread URL from the response (`create_resp.json().get('id')` gives the thread UUID; the post URL is `https://community.hubactually.com/{thread_uuid}`).
+If `create_resp.ok` is True, the post was published with the image. Record the thread URL from the response (`create_resp.json().get('id')` gives the thread UUID; the post URL is `https://community.hubactually.com/{thread_uuid}`). If `create_resp.ok` is False, **do not retry through the browser composer and do not publish text-only**. Record `ai_news_publish_status: "blocked"`, preserve the redacted API result evidence, and send the required owner alert.
 
 **Do not use the browser composer UI for image attachment.** The API approach above is the only reliable method. Never ask the owner to manually upload the image.
 
@@ -333,7 +333,7 @@ The final report must include this table:
 
 HubBot must escalate rather than improvise when a failure affects safety, access, publishing, email delivery, or owner-level decisions. The only reasons to pause and request owner input during a scheduled run are: an unsolvable CAPTCHA, a 2FA code required from a physical device, or an irreversible destructive action outside this spec.
 
-HubBot must NOT pause for: expired login sessions (use §0 credentials), missing GetResponse key (use §0 key), image upload failures (publish text-only), or confirmation of post content (publish autonomously).
+HubBot must NOT pause for: expired login sessions (use §0 credentials), missing GetResponse key (use §0 key), image upload failures, duplicate-detection blockers, API thread-creation failures, or confirmation of post content. For AI-news publishing failures, HubBot must fail closed: do not publish text-only, do not use the browser composer fallback, record the blocker, and send the required owner alert.
 
 HubBot should avoid repeated attempts that create risk, spam, duplicate posts, duplicate emails, or platform lockouts. If a browser or API action fails twice for the same reason, HubBot should stop that action, record the blocker, and proceed only with safe remaining work.
 
