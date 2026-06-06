@@ -14,6 +14,7 @@ If preflight reports hard blockers, HubBot must not publish, comment, welcome, o
 | `hubbot_preflight.py` | Performs secret-safe checks for Doppler, GitHub/dashboard fallback, dashboard API, GetResponse, and Brevo direct-email fallback. |
 | `hubbot_publish_ai_news.py` | Uploads generated community images through the HubActually API and creates the daily General-channel AI-news thread without browser composer attachment. |
 | `hubbot_owner_alert.py` | Sends required single-recipient owner alerts through a non-mutating GetResponse path or the configured direct-email fallback. |
+| `hubbot_send_weekly_digest.py` | Sends or schedules the Saturday HubActually weekly digest through GetResponse using actual America/New_York time, recipient list `hubactually`, sender `ayman@hubactually.com`, and the saved `community` template. |
 | `hubbot_finalize.py` | Converts a run ledger into dashboard-compatible JSON, invokes the owner-alert helper when required, and updates `run-data.json` plus `client/public/latest-run.json`. |
 | `README.md` | Documents the permanent operating model. |
 
@@ -25,7 +26,9 @@ The scheduled playbook should use this sequence at the beginning and end of ever
 bash /home/ubuntu/hubbot-dashboard/hubbot_runtime/hubbot_bootstrap.sh
 ```
 
-The daily AI-news post should be published through the API helper after the title, body, and optional cover image are prepared. The helper records a redacted result file and can merge a real publish result back into the JSON ledger when `--ledger` is supplied.
+The daily AI-news post should be published through the API helper after the title, body, and cover image are prepared. The helper records a redacted result file and can merge a real publish result back into the JSON ledger when `--ledger` is supplied.
+
+On Saturdays, after community work is complete and before the dashboard update, run `hubbot_send_weekly_digest.py --ledger /path/to/run_ledger.json`. The helper uses the actual `America/New_York` date and time, not the nominal run date, to decide whether to send immediately, schedule for 10:00 AM Eastern, mark `not_saturday`, or block with evidence. It is fail-closed: missing GetResponse credentials, list/campaign, sender, template, or provider acceptance records `saturday_digest_status: blocked` instead of silently skipping the digest.
 
 At the end of the run, after the JSON ledger exists:
 

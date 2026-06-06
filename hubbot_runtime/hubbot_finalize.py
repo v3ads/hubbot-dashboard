@@ -11,6 +11,7 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 import urllib.error
 import urllib.request
 from datetime import datetime
@@ -199,6 +200,36 @@ def owner_alert_required(ledger: dict[str, Any]) -> bool:
     return False
 
 
+
+def run_weekly_digest(ledger_path: Path, repo: Path) -> dict[str, Any]:
+    """Run the Saturday digest helper before owner-alert/dashboard finalization.
+
+    The helper itself decides eligibility from the actual America/New_York time and
+    updates the ledger with sent, scheduled, not_saturday, dry_run_ready, or blocked.
+    """
+    helper = repo / 'hubbot_runtime' / 'hubbot_send_weekly_digest.py'
+    if not helper.exists():
+        return {'status': 'blocked', 'reason': f'weekly digest helper missing at {helper}'}
+    completed = subprocess.run(
+        [sys.executable, str(helper), '--ledger', str(ledger_path)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        check=False,
+        timeout=180,
+    )
+    parsed: dict[str, Any] = {'status': 'completed' if completed.returncode == 0 else 'blocked'}
+    for line in (completed.stdout or '').splitlines():
+        if line.startswith('weekly_digest_status='):
+            parsed['status'] = line.split('=', 1)[1].strip()
+        elif line.startswith('weekly_digest_result='):
+            parsed['result_path'] = line.split('=', 1)[1].strip()
+    parsed.update({
+        'returncode': completed.returncode,
+        'stderr_tail': (completed.stderr or '').strip().splitlines()[-1:] or [],
+    })
+    return parsed
+
 def run_owner_alert_fallback(ledger_path: Path, repo: Path) -> dict[str, Any]:
     helper = repo / 'hubbot_runtime' / 'hubbot_owner_alert.py'
     if not helper.exists():
@@ -261,10 +292,15 @@ def main() -> int:
     parser.add_argument('--repo-root', default='/home/ubuntu/hubbot-dashboard')
     parser.add_argument('--commit', action='store_true', help='Commit and push repository fallback updates')
     parser.add_argument('--skip-owner-alert', action='store_true', help='Do not invoke the owner-alert fallback helper before dashboard update')
+    parser.add_argument('--skip-weekly-digest', action='store_true', help='Do not invoke the Saturday weekly digest helper before dashboard update')
     args = parser.parse_args()
     repo = Path(args.repo_root)
     ledger_path = Path(args.ledger)
     ledger = read_json(ledger_path, {})
+    weekly_digest_status: dict[str, Any] = {'status': 'skipped_by_argument' if args.skip_weekly_digest else 'not_run'}
+    if not args.skip_weekly_digest:
+        weekly_digest_status = run_weekly_digest(ledger_path, repo)
+        ledger = read_json(ledger_path, ledger)
     owner_alert_fallback_status: dict[str, Any] = {'status': 'skipped_not_required'}
     if not args.skip_owner_alert and owner_alert_required(ledger):
         owner_alert_fallback_status = run_owner_alert_fallback(ledger_path, repo)
@@ -272,6 +308,7 @@ def main() -> int:
     previous = read_json(repo / 'run-data.json', {})
     payload = build_dashboard_payload(ledger, previous)
     evidence = payload.get('evidence') if isinstance(payload.get('evidence'), dict) else {}
+    evidence['weekly_digest_finalizer_status'] = weekly_digest_status
     evidence['owner_alert_fallback_status'] = owner_alert_fallback_status
     payload['evidence'] = evidence
     if payload.get('owner_alert'):
@@ -281,11 +318,11 @@ def main() -> int:
     write_json(repo / 'run-data.json', payload)
     write_json(repo / 'client/public/latest-run.json', payload)
     LEDGER_DIR.mkdir(parents=True, exist_ok=True)
-    write_json(LEDGER_DIR / 'latest.json', {'latest_ledger_json': str(ledger_path), 'dashboard_update_status': status, 'owner_alert_fallback_status': owner_alert_fallback_status.get('status'), 'updated_at_et': now_et().isoformat(timespec='seconds')})
+    write_json(LEDGER_DIR / 'latest.json', {'latest_ledger_json': str(ledger_path), 'dashboard_update_status': status, 'weekly_digest_status': weekly_digest_status.get('status'), 'owner_alert_fallback_status': owner_alert_fallback_status.get('status'), 'updated_at_et': now_et().isoformat(timespec='seconds')})
     commit_status = 'not_requested'
     if args.commit and (repo / '.git').exists():
         commit_status = git_commit(repo, f"HubBot runtime/dashboard update {payload['run_date']}")
-    print(json.dumps({'dashboard_api_status': status, 'repo_files_updated': True, 'commit_status': commit_status, 'run_date': payload['run_date'], 'owner_alert_fallback_status': owner_alert_fallback_status.get('status')}, indent=2))
+    print(json.dumps({'dashboard_api_status': status, 'repo_files_updated': True, 'commit_status': commit_status, 'run_date': payload['run_date'], 'weekly_digest_status': weekly_digest_status.get('status'), 'owner_alert_fallback_status': owner_alert_fallback_status.get('status')}, indent=2))
     return 0
 
 
