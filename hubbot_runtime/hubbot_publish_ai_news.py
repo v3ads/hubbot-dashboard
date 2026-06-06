@@ -20,6 +20,7 @@ import shutil
 import sqlite3
 import sys
 import tempfile
+import urllib.request
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -278,7 +279,15 @@ def duplicate_post_guard(session: requests.Session, headers: dict[str, str], tit
 
 
 def resolve_channel_id(session: requests.Session, headers: dict[str, str]) -> str | None:
-    """Resolve the live channel id from cookies or the community page state before creating a thread."""
+    """Resolve the live channel id from cookies or the community page state before creating a thread.
+
+    The HubActually frontend falls back to the literal channel value ``main`` when
+    no selected-channel object is present. Current authenticated page state often
+    stores existing General posts with ``channel`` as null, so the absence of a
+    page-state channel must not produce an invalid API payload. Returning ``main``
+    matches the shipped frontend bundle default and keeps the publisher fail-closed
+    for true read/auth failures while preventing a known null-channel regression.
+    """
     cookie_value = session.cookies.get('channel_id')
     if cookie_value:
         return str(cookie_value)
@@ -298,6 +307,8 @@ def resolve_channel_id(session: requests.Session, headers: dict[str, str]) -> st
         match = re.search(pattern, raw)
         if match:
             return match.group(1)
+    if 'HubActually' in raw and 'General' in raw:
+        return 'main'
     return None
 
 def locate_cookie_db(explicit: str | None) -> Path:
@@ -361,6 +372,35 @@ def get_hubactually_cookies(cookie_db: Path, output_dir: Path) -> dict[str, str]
     return cookies
 
 
+def get_live_browser_cookies() -> dict[str, str]:
+    """Read current HubActually cookies from the already-authenticated browser page via local CDP.
+
+    Values are returned only in memory and must never be logged. If CDP is unavailable,
+    the publisher falls back to the Chromium cookie database so scheduled runs remain
+    compatible with non-debug browser sessions.
+    """
+    try:
+        import websocket  # type: ignore
+        targets = json.loads(urllib.request.urlopen('http://127.0.0.1:9222/json', timeout=5).read().decode('utf-8'))
+        target = next((t for t in targets if 'community.hubactually.com' in str(t.get('url', ''))), None)
+        if not target or not target.get('webSocketDebuggerUrl'):
+            return {}
+        ws = websocket.create_connection(target['webSocketDebuggerUrl'], timeout=10, suppress_origin=True)
+        try:
+            seq = 1
+            expr = """(() => Object.fromEntries(document.cookie.split('; ').filter(Boolean).map(s => { const i=s.indexOf('='); return [decodeURIComponent(s.slice(0,i)), decodeURIComponent(s.slice(i+1))]; })))()"""
+            ws.send(json.dumps({'id': seq, 'method': 'Runtime.evaluate', 'params': {'expression': expr, 'returnByValue': True, 'awaitPromise': True}}))
+            while True:
+                msg = json.loads(ws.recv())
+                if msg.get('id') == seq:
+                    value = msg.get('result', {}).get('result', {}).get('value', {})
+                    return {str(k): str(v) for k, v in (value or {}).items() if v}
+        finally:
+            ws.close()
+    except Exception:
+        return {}
+
+
 def auth_headers(cookies: dict[str, str]) -> dict[str, str]:
     headers = {
         'Origin': BASE,
@@ -369,8 +409,7 @@ def auth_headers(cookies: dict[str, str]) -> dict[str, str]:
     }
     if cookies.get('community_estage_token'):
         headers['Estage-Authorization'] = cookies['community_estage_token']
-    if cookies.get('userTokenID'):
-        headers['Authorization'] = cookies['userTokenID']
+        headers['Authorization'] = cookies['community_estage_token']
     return headers
 
 
@@ -526,6 +565,13 @@ def main() -> int:
         try:
             cookie_db = locate_cookie_db(args.cookie_db)
             cookies = get_hubactually_cookies(cookie_db, output_dir)
+            live_cookies = get_live_browser_cookies()
+            if live_cookies:
+                cookies.update(live_cookies)
+                result['live_browser_cookies_used'] = True
+                result['live_browser_cookie_names'] = sorted(live_cookies.keys())
+            else:
+                result['live_browser_cookies_used'] = False
             session = requests.Session()
             session.cookies.update(cookies)
             headers = auth_headers(cookies)
