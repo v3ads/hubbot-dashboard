@@ -264,26 +264,29 @@ For Saturday digests, HubBot must use recipient list `HubActually` / `hubactuall
 
 ### 3.9 Dashboard Update
 
-After completing all community work, HubBot must update the HubBot dashboard by running the post-run data script. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the update script is at `/home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py` (available after bootstrap clones the repo). HubBot must run this script to push the run summary to the live dashboard. If the script fails, record it as a non-critical blocker and continue.
+After completing all community work, HubBot must POST the run summary directly to the dashboard API using `curl`. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the API key (`HUBBOT_API_KEY`) is injected by the Manus schedule prompt as an environment variable.
 
-**Required steps before running the dashboard update script:**
+**Required steps:**
 
-1. Ensure the ledger directory exists:
-   ```
-   mkdir -p /home/ubuntu/hubactually_hubbot_run_ledger/
-   ```
-
-2. Ensure `run-data.json` exists at the canonical ledger path. This file must be written by the run before calling the dashboard script. If the run data was written elsewhere, copy it:
-   ```
-   cp /path/to/run-data.json /home/ubuntu/hubactually_hubbot_run_ledger/run-data.json
-   ```
-
-3. Run the dashboard update script using `python3`:
-   ```
+1. Build the run data JSON payload from the run ledger and POST it directly:
+   ```bash
+   # The HUBBOT_API_KEY env var is set by the schedule prompt at task start
+   # Build the JSON payload from the run's evidence ledger and POST to the dashboard
    python3 /home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py
    ```
 
-The script searches `/home/ubuntu/hubactually_hubbot_run_ledger/` first. As long as `run-data.json` is in that directory, the dashboard will update correctly. The `HUBBOT_API_KEY` environment variable must be set (loaded via Doppler in the bootstrap step).
+2. If the Python script is unavailable (e.g. repo clone failed), POST directly with curl:
+   ```bash
+   curl -s -X POST https://hubbot.virtapreneur.com/api/run-data \
+     -H "Content-Type: application/json" \
+     -H "X-HubBot-Api-Key: $HUBBOT_API_KEY" \
+     -d "$RUN_DATA_JSON"
+   ```
+   where `$RUN_DATA_JSON` is the complete run data JSON string built from the evidence ledger.
+
+3. Verify the response contains `{"ok": true}`. If the POST fails, record it as a non-critical blocker and continue — do not let a dashboard update failure stop the run.
+
+**Important:** `HUBBOT_API_KEY` is injected by the Manus schedule prompt (not from Doppler). It must be set before calling this step. If it is not set, skip the dashboard update and record `dashboard_update_status: "blocked_missing_api_key"`.
 
 ## 4. Memory and State Rules
 
