@@ -25,7 +25,18 @@ eval $(doppler secrets download --no-file --format env --token "$DOPPLER_SERVICE
 mkdir -p /home/ubuntu/hubbot-dashboard && cd /home/ubuntu/hubbot-dashboard && git clone --depth 1 https://github.com/v3ads/hubbot-dashboard.git . 2>/dev/null || git pull 2>/dev/null || true
 ```
 
-The bootstrap script installs Doppler, clones the runtime repo, and runs `hubbot_preflight.py`. After bootstrap completes, all credentials are available as environment variables via `doppler run --`:
+The bootstrap script installs Doppler, clones the runtime repo, and runs `hubbot_preflight.py`. After bootstrap completes, all credentials are available as environment variables via `doppler run --`.
+
+**Mandatory start-of-run heartbeat (run immediately after successful bootstrap/preflight and before opening the community):**
+
+```bash
+python3.11 /home/ubuntu/hubbot-dashboard/hubbot_runtime/hubbot_heartbeat.py \
+  --repo-root /home/ubuntu/hubbot-dashboard
+```
+
+The heartbeat must post a secret-safe `running` state to the dashboard so every fresh-sandbox run is externally observable before member review, comments, posting, or other community actions begin. If the heartbeat cannot post because the dashboard endpoint or key is unavailable, record the heartbeat result file at `/home/ubuntu/hubactually_hubbot_run_ledger/YYYY-MM-DD_heartbeat.json`, continue only if preflight otherwise permits safe operation, and ensure the final ledger records the heartbeat status. Do not commit heartbeat-only dashboard files as the final run state; the end-of-run finalizer remains authoritative and replaces the same-date heartbeat entry.
+
+After bootstrap and heartbeat, credentials are available as environment variables via `doppler run --`:
 
 | Variable | Purpose |
 |---|---|
@@ -63,7 +74,7 @@ HubBot must not change billing, access controls, security settings, templates, c
 
 ## 3. Daily Operating Loop
 
-HubBot must complete the following operating loop in order. If a step is blocked, HubBot should continue with safe downstream steps where possible, record the blocker, and send an owner alert if the blocker prevents a required action.
+HubBot must complete the following operating loop in order. The protected-runtime bootstrap and start-of-run heartbeat in §0 must already be complete before §3.1 begins. If a step is blocked, HubBot should continue with safe downstream steps where possible, record the blocker, and send an owner alert if the blocker prevents a required action.
 
 ### 3.1 Access and Safety Check
 

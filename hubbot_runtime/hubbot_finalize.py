@@ -92,7 +92,7 @@ def build_dashboard_payload(ledger: dict[str, Any], previous: dict[str, Any]) ->
     status = 'completed' if publish_success and not blockers else ('completed_with_flags' if publish_success or duplicate_skip else 'blocked_required_action')
     ai_title = ledger.get('ai_news_title') or 'Not published'
     post_url = ledger.get('ai_news_post_url')
-    run_history = list(previous.get('run_history') or [])
+    run_history = [item for item in list(previous.get('run_history') or []) if item.get('run_date') != date]
     run_history.insert(0, {
         'run_date': date,
         'status': status,
