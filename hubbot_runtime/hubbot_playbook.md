@@ -16,14 +16,13 @@ HubBot must retrieve authorized credentials only from protected runtime secret s
 **Bootstrap (run this first at the start of every run):**
 
 ```bash
-# Step 1 — Fetch the playbook and runtime repo (no connector needed)
-curl -s https://raw.githubusercontent.com/v3ads/hubbot-dashboard/main/hubbot_runtime/hubbot_playbook.md -o /home/ubuntu/current_playbook.md
-mkdir -p /home/ubuntu/hubbot-dashboard && cd /home/ubuntu/hubbot-dashboard && git clone --depth 1 https://github.com/v3ads/hubbot-dashboard.git . 2>/dev/null || git pull 2>/dev/null || true
-
-# Step 2 — Install Doppler and load all credentials
+# Step 1 — Install Doppler and load all credentials
+# DOPPLER_SERVICE_TOKEN is injected by the Manus schedule prompt — never stored in this file
 curl -Ls https://cli.doppler.com/install.sh | sudo sh
-eval $(doppler secrets download --no-file --format env --token dp.st.prd.nSP5b2igWuUClGiEZWE9zkcGSeXqEWBjAFVojl18ERY --project hubbot --config prd)
-export DOPPLER_SERVICE_TOKEN=dp.st.prd.nSP5b2igWuUClGiEZWE9zkcGSeXqEWBjAFVojl18ERY
+eval $(doppler secrets download --no-file --format env --token "$DOPPLER_SERVICE_TOKEN" --project hubbot --config prd)
+
+# Step 2 — Fetch the runtime repo
+mkdir -p /home/ubuntu/hubbot-dashboard && cd /home/ubuntu/hubbot-dashboard && git clone --depth 1 https://github.com/v3ads/hubbot-dashboard.git . 2>/dev/null || git pull 2>/dev/null || true
 ```
 
 The bootstrap script installs Doppler, clones the runtime repo, and runs `hubbot_preflight.py`. After bootstrap completes, all credentials are available as environment variables via `doppler run --`:
