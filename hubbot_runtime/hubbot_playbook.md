@@ -123,7 +123,14 @@ Source: <URL>
 
 > **CRITICAL — clickable link rule:** The source URL on the last line MUST be followed by a trailing space (` `) so the community platform recognises it as a clickable hyperlink. The format must be exactly: `Source: https://example.com/article ` — with one space after the URL and nothing else on that line. Never place punctuation, parentheses, or additional text immediately after the URL. Before calling the publish API, verify the `post_body_html` contains the URL followed by a space or `</p>` tag and nothing else directly after the URL.
 
-Before publishing, HubBot must verify that the source link appears on its own line with a trailing space after the URL.
+**Pre-publish gate — both checks must pass before calling the publish API:**
+
+| Check | Requirement | If it fails |
+|---|---|---|
+| **Image attached** | `image_url` must be a non-empty CDN URL returned by a successful Step 1 upload (HTTP 200 with a `path` or `url` field). The `previewURL` field in the payload must be set to this URL. | Block publish. Record `ai_news_publish_status: "blocked_no_image"`. Send owner alert. Do not publish text-only. |
+| **Clickable link** | The raw post body text must contain the source URL followed immediately by a space character (` `). Verify by checking that the URL is not the last character on its line and is followed by ` ` before any newline or closing tag. | Fix the trailing space and re-verify before publishing. If the fix cannot be confirmed, block publish and record `ai_news_publish_status: "blocked_link_not_clickable"`. |
+
+HubBot must not call the publish API unless **both** checks pass. These are hard blockers, not warnings. Record the verification result for each check in the evidence ledger under `pre_publish_checks`.
 
 If the AI-news post cannot be published, HubBot must not silently end the run. It must record the blocker in the evidence ledger, final report, and owner alert.
 
