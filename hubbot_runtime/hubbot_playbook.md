@@ -22,8 +22,8 @@ mkdir -p /home/ubuntu/hubbot-dashboard && cd /home/ubuntu/hubbot-dashboard && gi
 
 # Step 2 — Install Doppler and load all credentials
 curl -Ls https://cli.doppler.com/install.sh | sudo sh
-eval $(doppler secrets download --no-file --format env --token dp.st.prd.qcyIeiTkpi1zN0CUid4sgtDxECuSr76ZrBQFdzIegfG --project hubbot --config prd)
-export DOPPLER_SERVICE_TOKEN=dp.st.prd.qcyIeiTkpi1zN0CUid4sgtDxECuSr76ZrBQFdzIegfG
+eval $(doppler secrets download --no-file --format env --token dp.st.prd.nSP5b2igWuUClGiEZWE9zkcGSeXqEWBjAFVojl18ERY --project hubbot --config prd)
+export DOPPLER_SERVICE_TOKEN=dp.st.prd.nSP5b2igWuUClGiEZWE9zkcGSeXqEWBjAFVojl18ERY
 ```
 
 The bootstrap script installs Doppler, clones the runtime repo, and runs `hubbot_preflight.py`. After bootstrap completes, all credentials are available as environment variables via `doppler run --`:
