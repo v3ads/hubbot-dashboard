@@ -12,8 +12,7 @@ import argparse
 import json
 import os
 import socket
-import urllib.error
-import urllib.request
+import requests
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -52,22 +51,16 @@ def post_dashboard(payload: dict[str, Any], dashboard_url: str) -> str:
     key = dashboard_api_key()
     if not dashboard_url or not key:
         return 'skipped_no_endpoint_or_key'
-    body = json.dumps(payload).encode('utf-8')
-    req = urllib.request.Request(
-        dashboard_url.rstrip('/') + '/api/run-data',
-        data=body,
-        method='POST',
-        headers={
-            'Content-Type': 'application/json',
-            'x-hubbot-api-key': key,
-        },
-    )
+    endpoint = dashboard_url.rstrip('/') + '/api/run-data'
     try:
-        with urllib.request.urlopen(req, timeout=25) as resp:
-            return f'posted_http_{resp.status}'
-    except urllib.error.HTTPError as exc:
-        return f'blocked_http_{exc.code}'
-    except Exception as exc:  # pragma: no cover - runtime environment dependent
+        response = requests.post(
+            endpoint,
+            json=payload,
+            headers={'X-HubBot-Api-Key': key},
+            timeout=25,
+        )
+        return f'posted_http_{response.status_code}' if response.ok else f'blocked_http_{response.status_code}'
+    except requests.RequestException as exc:  # pragma: no cover - runtime environment dependent
         return f'blocked_{type(exc).__name__}'
 
 
