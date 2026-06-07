@@ -155,23 +155,29 @@ HubBot must not default to a person sitting in front of a laptop with floating A
 
 When generating an image prompt, HubBot must include these requirements explicitly: `concept-led image`, `directly related to the title`, `specific visual metaphor`, `high-end editorial or product-marketing cover`, `small-business context`, `premium community post cover`, `no embedded text`, `not an infographic`, `not a slide`, `not a generic dashboard`, `not a person at a laptop by default`, and `not repetitive`. The image should be landscape format suitable for a community feed cover.
 
-**Image attachment and post creation procedure (browser composer):**
+**Image attachment and post creation procedure (API optional, browser fallback mandatory):**
 
-HubBot must use the authenticated HubActually browser composer for the daily AI-news post. The API-only publishing path is no longer authoritative because the thread-creation endpoint has shown inconsistent authorization behavior and can block a valid scheduled run after the image has already been generated. The browser composer is the required publishing surface because it matches the user-visible community workflow and lets HubBot verify the actual attached image before submission.
+HubBot may attempt the first-party API publisher once only when all required title, body, source-link, image, channel, and duplicate-detection checks are complete. The API path is an optional fast path, not an authorization gate and not a reason to stop the run. If the API publisher returns any non-success result, including HTTP 401/403, network failure, missing post URL, missing image confirmation, or any other clearly failed create response, HubBot must immediately continue autonomously with the authenticated HubActually browser composer. Do **not** ask the owner for authorization before using the browser composer; this playbook authorizes that fallback in advance.
 
-**Step 1 — Open the authenticated composer:**
+If the API result is ambiguous after a possible create attempt, such as a timeout after submission, HubBot must first search the authenticated General feed for the exact title to avoid duplicates. If the exact post is visible, record it as published. If no exact visible post is found, proceed with the browser composer fallback. The browser composer remains the required user-visible recovery surface because it lets HubBot verify the actual attached image before submission.
+
+**Step 1 — Optional API attempt and fallback decision:**
+
+Run the API publisher at most once if it is configured and safe to use. Record its result under `api_publish_attempt` in the evidence ledger. On success, verify the post is visible in the General feed or resulting thread page before marking the AI-news post as published. On any failed API result, record the API blocker and continue to Step 2 without pausing for owner input. Text-only publishing remains prohibited.
+
+**Step 2 — Open the authenticated composer:**
 
 Navigate to `https://community.hubactually.com`, confirm the Hub Bot session is authenticated, open the post composer, and select the **General** channel/category. If the session is expired, re-authenticate using the protected runtime credentials. If a CAPTCHA or physical-device 2FA challenge prevents access, record the blocker and send the required owner alert.
 
-**Step 2 — Fill the post content:**
+**Step 3 — Fill the post content:**
 
 Enter the exact approved title and body. Preserve the required body structure and verify that the source URL is followed by a trailing space. Do not add extra promotional language, unsupported claims, or punctuation immediately after the URL.
 
-**Step 3 — Attach the generated image:**
+**Step 4 — Attach the generated image:**
 
 Attach the generated concept-led image file through the browser composer. Wait until the composer shows the selected image as uploaded, attached, or previewed. If the image attachment fails, do not submit a text-only post. Record `ai_news_publish_status: "blocked_image_attachment"`, preserve the screenshot or browser findings in the evidence ledger where safe, and send the required owner alert.
 
-**Step 4 — Submit and verify:**
+**Step 5 — Submit and verify:**
 
 Submit the composer only after all pre-publish checks pass. After submission, verify the post is visible in the authenticated General feed or on the resulting thread page. Record the post title, visible URL or navigation context, image-attachment verification, and publication timestamp in the evidence ledger. If submission fails or visibility cannot be verified after a reasonable refresh, record `ai_news_publish_status: "blocked_submission_or_visibility"` and send the required owner alert.
 
@@ -285,9 +291,9 @@ The final report must include this table:
 
 HubBot must escalate rather than improvise when a failure affects safety, access, publishing, email delivery, or owner-level decisions. The only reasons to pause and request owner input during a scheduled run are: an unsolvable CAPTCHA, a 2FA code required from a physical device, or an irreversible destructive action outside this spec.
 
-HubBot must NOT pause for: expired login sessions (use §0 credentials), missing GetResponse key (use §0 key), image-generation failures, browser image-attachment failures, duplicate-detection blockers, browser submission failures, or confirmation of post content. For AI-news publishing failures, HubBot must fail closed: do not publish text-only, record the blocker, and send the required owner alert.
+HubBot must NOT pause for: expired login sessions (use §0 credentials), missing GetResponse key (use §0 key), image-generation failures, API publishing failures, browser image-attachment failures, duplicate-detection blockers, browser submission failures, or confirmation of post content. If the AI-news API publisher fails, HubBot must autonomously continue through the authenticated browser-composer fallback described in §3.6 without asking for owner authorization. If the browser-composer fallback also fails, HubBot must fail closed: do not publish text-only, record the blocker, and send the required owner alert.
 
-HubBot should avoid repeated attempts that create risk, spam, duplicate posts, duplicate emails, or platform lockouts. If a browser or API action fails twice for the same reason, HubBot should stop that action, record the blocker, and proceed only with safe remaining work.
+HubBot should avoid repeated attempts that create risk, spam, duplicate posts, duplicate emails, or platform lockouts. The API publisher may be attempted at most once for the daily AI-news post before falling back to the browser composer. If a browser action fails twice for the same reason, HubBot should stop that action, record the blocker, and proceed only with safe remaining work.
 
 ## 8. Success Criteria
 

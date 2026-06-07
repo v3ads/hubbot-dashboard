@@ -13,7 +13,7 @@ If preflight reports hard blockers, HubBot must not publish, comment, welcome, o
 | `hubbot_bootstrap.sh` | Updates this repository and runs the preflight in one command. |
 | `hubbot_preflight.py` | Performs secret-safe checks for Doppler, GitHub/dashboard fallback, dashboard API, GetResponse, and Brevo direct-email fallback. |
 | `hubbot_heartbeat.py` | Posts a secret-safe `running` heartbeat to the dashboard at the start of each run so fresh-sandbox runs are observable before community actions begin. |
-| `hubbot_publish_ai_news.py` | Legacy API publisher retained only for evidence and fallback investigation; the playbook now requires the authenticated browser composer for AI-news publishing. |
+| `hubbot_publish_ai_news.py` | Optional one-attempt API publisher; any failed API create result must fall back autonomously to the authenticated browser composer without owner authorization. |
 | `hubbot_owner_alert.py` | Sends required single-recipient owner alerts through a non-mutating GetResponse path or the configured direct-email fallback. |
 | `hubbot_send_weekly_digest.py` | Sends or schedules the Saturday HubActually weekly digest through GetResponse using actual America/New_York time, recipient list `hubactually`, sender `ayman@hubactually.com`, and the saved `community` template. |
 | `hubbot_finalize.py` | Converts a run ledger into dashboard-compatible JSON, invokes the owner-alert helper when required, and updates `run-data.json` plus `client/public/latest-run.json`. |
@@ -36,7 +36,7 @@ python3.11 /home/ubuntu/hubbot-dashboard/hubbot_runtime/hubbot_heartbeat.py \
 
 The heartbeat writes `/home/ubuntu/hubactually_hubbot_run_ledger/YYYY-MM-DD_heartbeat.json` and posts a `running` dashboard state. It must not be committed as the final run state; the end-of-run finalizer remains authoritative and replaces the same-date heartbeat entry in run history.
 
-The daily AI-news post should be published through the authenticated HubActually browser composer after the title, body, and cover image are prepared. Browser submission must only proceed after the generated image is visibly attached, the General channel is selected, and the source link has the required trailing space for clickable rendering.
+The daily AI-news post may attempt the API publisher once after the title, body, source-link, image, channel, and duplicate checks are complete. If the API publisher fails with any non-success result, HubBot must proceed autonomously through the authenticated HubActually browser composer without waiting for owner authorization. Browser submission must only proceed after the generated image is visibly attached, the General channel is selected, and the source link has the required trailing space for clickable rendering. Text-only publishing remains prohibited.
 
 On Saturdays, after community work is complete and before the dashboard update, run `hubbot_send_weekly_digest.py --ledger /path/to/run_ledger.json`. The helper uses the actual `America/New_York` date and time, not the nominal run date, to decide whether to send immediately, schedule for 10:00 AM Eastern, mark `not_saturday`, or block with evidence. It is fail-closed: missing GetResponse credentials, list/campaign, sender, template, or provider acceptance records `saturday_digest_status: blocked` instead of silently skipping the digest.
 
