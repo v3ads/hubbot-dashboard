@@ -109,7 +109,7 @@ HubBot must identify issues requiring owner attention. Flagged items include log
 
 HubBot must research one current AI news item relevant to entrepreneurs, small businesses, creators, or community builders. The source must be credible and current. HubBot must not use Hacker News as a source. The post should be practical, community-oriented, and written for HubActually members. Before finalizing the topic or source, HubBot must inspect recent General-channel Hub Bot posts and must choose a different source and topic if the candidate has already appeared as the same source URL, same normalized title, or a near-duplicate AI-news topic.
 
-HubBot must prepare and publish exactly one General-channel community post unless blocked by access, API, image generation, upload, duplicate-detection, or other technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. **Text-only AI-news publishing is prohibited.** If image generation, API image upload, duplicate detection, channel/auth validation, or API thread creation fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image or using the browser composer fallback.
+HubBot must prepare and publish exactly one General-channel community post unless blocked by access, browser composer, image generation, image attachment, duplicate-detection, or other technical issues. The post must include a clear title, concise practical summary, community question, source link, and exactly one strong related concept-led image. **Text-only AI-news publishing is prohibited.** The required publishing path is the authenticated HubActually browser composer. If image generation, browser image attachment, duplicate detection, channel selection, or final post submission fails, HubBot must block publishing, record the blocker, and send the required owner alert rather than publishing without an image.
 
 **Required post body format (use this exact structure):**
 
@@ -121,16 +121,18 @@ HubBot must prepare and publish exactly one General-channel community post unles
 Source: <URL> 
 ```
 
-> **CRITICAL — clickable link rule:** The source URL on the last line MUST be followed by a trailing space (` `) so the community platform recognises it as a clickable hyperlink. The format must be exactly: `Source: https://example.com/article ` — with one space after the URL and nothing else on that line. Never place punctuation, parentheses, or additional text immediately after the URL. Before calling the publish API, verify the `post_body_html` contains the URL followed by a space or `</p>` tag and nothing else directly after the URL.
+> **CRITICAL — clickable link rule:** The source URL on the last line MUST be followed by a trailing space (` `) so the community platform recognises it as a clickable hyperlink. The format must be exactly: `Source: https://example.com/article ` — with one space after the URL and nothing else on that line. Never place punctuation, parentheses, or additional text immediately after the URL. Before submitting the browser composer, verify the raw body text in the composer contains the URL followed by a space and nothing else directly after the URL.
 
-**Pre-publish gate — both checks must pass before calling the publish API:**
+**Pre-publish gate — all checks must pass before submitting the browser composer:**
 
 | Check | Requirement | If it fails |
 |---|---|---|
-| **Image attached** | `image_url` must be a non-empty CDN URL returned by a successful Step 1 upload (HTTP 200 with a `path` or `url` field). The `previewURL` field in the payload must be set to this URL. | Block publish. Record `ai_news_publish_status: "blocked_no_image"`. Send owner alert. Do not publish text-only. |
-| **Clickable link** | The raw post body text must contain the source URL followed immediately by a space character (` `). Verify by checking that the URL is not the last character on its line and is followed by ` ` before any newline or closing tag. | Fix the trailing space and re-verify before publishing. If the fix cannot be confirmed, block publish and record `ai_news_publish_status: "blocked_link_not_clickable"`. |
+| **Image generated** | A title-specific, concept-led image file must exist locally and must be suitable for the post. | Block publish. Record `ai_news_publish_status: "blocked_no_image"`. Send owner alert. Do not publish text-only. |
+| **Image attached in composer** | The browser composer must show the selected image as attached, uploaded, or previewed before submission. | Block publish. Record `ai_news_publish_status: "blocked_image_attachment"`. Send owner alert. Do not publish text-only. |
+| **Clickable link** | The raw post body text must contain the source URL followed immediately by a space character (` `). Verify by checking that the URL is not the last character on its line and is followed by ` ` before any newline. | Fix the trailing space and re-verify before publishing. If the fix cannot be confirmed, block publish and record `ai_news_publish_status: "blocked_link_not_clickable"`. |
+| **Channel and author** | The composer must be creating a General-channel post from the authenticated Hub Bot account/session. | Block publish. Record `ai_news_publish_status: "blocked_wrong_channel_or_author"`. Send owner alert. |
 
-HubBot must not call the publish API unless **both** checks pass. These are hard blockers, not warnings. Record the verification result for each check in the evidence ledger under `pre_publish_checks`.
+HubBot must not submit the browser composer unless **all** checks pass. These are hard blockers, not warnings. Record the verification result for each check in the evidence ledger under `pre_publish_checks`.
 
 If the AI-news post cannot be published, HubBot must not silently end the run. It must record the blocker in the evidence ledger, final report, and owner alert.
 
@@ -142,114 +144,25 @@ HubBot must not default to a person sitting in front of a laptop with floating A
 
 When generating an image prompt, HubBot must include these requirements explicitly: `concept-led image`, `directly related to the title`, `specific visual metaphor`, `high-end editorial or product-marketing cover`, `small-business context`, `premium community post cover`, `no embedded text`, `not an infographic`, `not a slide`, `not a generic dashboard`, `not a person at a laptop by default`, and `not repetitive`. The image should be landscape format suitable for a community feed cover.
 
-**Image upload and post creation procedure (API-based, proven):**
+**Image attachment and post creation procedure (browser composer):**
 
-HubBot must NOT use the browser composer UI to attach images. The browser-based upload approach is unreliable. Instead, HubBot must use the durable helper `/home/ubuntu/hubbot-dashboard/hubbot_runtime/hubbot_publish_ai_news.py` to upload the image and create the post through the first-party API. The helper extracts authenticated HubActually cookies from the scheduled browser profile without printing them, uploads the generated image to `/api/56382/upload`, creates the General-channel thread through `/api/56382/threads/create`, uses the uploaded CDN URL only as `previewURL`, and writes redacted JSON evidence to the run ledger directory.
+HubBot must use the authenticated HubActually browser composer for the daily AI-news post. The API-only publishing path is no longer authoritative because the thread-creation endpoint has shown inconsistent authorization behavior and can block a valid scheduled run after the image has already been generated. The browser composer is the required publishing surface because it matches the user-visible community workflow and lets HubBot verify the actual attached image before submission.
 
-**Step 1 — Upload the image via API:**
+**Step 1 — Open the authenticated composer:**
 
-After generating the image and saving it locally (e.g. `/home/ubuntu/hubactually_hubbot_run_ledger/YYYY-MM-DD_ai_news_cover.png`), upload it using the community API:
+Navigate to `https://community.hubactually.com`, confirm the Hub Bot session is authenticated, open the post composer, and select the **General** channel/category. If the session is expired, re-authenticate using the protected runtime credentials. If a CAPTCHA or physical-device 2FA challenge prevents access, record the blocker and send the required owner alert.
 
-```python
-import hashlib, shutil, sqlite3, requests, json
-from pathlib import Path
-from Crypto.Cipher import AES
+**Step 2 — Fill the post content:**
 
-BASE = 'https://community.hubactually.com'
-PROJECT = '56382'
-ROOT = Path('/home/ubuntu/hubactually_hubbot_run_ledger')
+Enter the exact approved title and body. Preserve the required body structure and verify that the source URL is followed by a trailing space. Do not add extra promotional language, unsupported claims, or punctuation immediately after the URL.
 
-def unpad(d):
-    n = d[-1]
-    return d[:-n] if 1 <= n <= 16 and d.endswith(bytes([n]) * n) else d
+**Step 3 — Attach the generated image:**
 
-def dec(host, enc):
-    key = hashlib.pbkdf2_hmac('sha1', b'peanuts', b'saltysalt', 1, dklen=16)
-    raw = unpad(AES.new(key, AES.MODE_CBC, b' ' * 16).decrypt(
-        enc[3:] if enc.startswith(b'v10') else enc))
-    hh = hashlib.sha256(host.encode()).digest()
-    raw = raw[32:] if raw.startswith(hh) else raw
-    return raw.decode('utf-8', 'replace')
+Attach the generated concept-led image file through the browser composer. Wait until the composer shows the selected image as uploaded, attached, or previewed. If the image attachment fails, do not submit a text-only post. Record `ai_news_publish_status: "blocked_image_attachment"`, preserve the screenshot or browser findings in the evidence ledger where safe, and send the required owner alert.
 
-def get_cookies():
-    shutil.copy2('/home/ubuntu/.browser_data_dir/Default/Cookies', ROOT / 'Cookies.copy')
-    conn = sqlite3.connect(ROOT / 'Cookies.copy')
-    cookies = {}
-    for host, name, val, enc in conn.execute(
-        "select host_key,name,value,encrypted_value from cookies where host_key like '%hubactually%'"
-    ):
-        if not val and enc:
-            val = dec(host, bytes(enc))
-        cookies[name] = val
-    conn.close()
-    return cookies
+**Step 4 — Submit and verify:**
 
-cookies = get_cookies()
-s = requests.Session()
-s.cookies.update(cookies)
-auth_headers = {
-    'Origin': BASE,
-    'Referer': BASE + '/',
-    'User-Agent': 'Mozilla/5.0',
-    'Estage-Authorization': cookies.get('community_estage_token', ''),
-    'Authorization': cookies.get('userTokenID', ''),
-}
-
-# Upload image
-image_path = ROOT / 'YYYY-MM-DD_ai_news_cover.png'  # use today's generated image path
-with open(image_path, 'rb') as f:
-    upload_resp = s.post(
-        f'{BASE}/api/{PROJECT}/upload',
-        headers={k: v for k, v in auth_headers.items() if k != 'Content-Type'},
-        files={'image': (image_path.name, f, 'image/png')},
-        timeout=60,
-    )
-upload_data = upload_resp.json()
-image_url = upload_data.get('path') or upload_data.get('url') or ''
-# image_url will be like: https://estage-test.b-cdn.net/uploads/images/TIMESTAMP.png
-```
-
-If the upload returns HTTP 200 and a `path` field, proceed to Step 2. If the upload fails, **do not publish**. Record `ai_news_publish_status: "blocked"`, record `image_status: "blocked"`, include the upload blocker in the evidence ledger, and send the required owner alert.
-
-**Step 2 — Create the post with the image URL as `previewURL`:**
-
-```python
-CATEGORY = {
-    'id': '4496ab4b-8529-4a7e-9a31-588fe414d9b0',
-    'name': 'General',
-    'permissions': 'anyone',
-    'order': 0,
-    'createdAt': '2026-03-10T15:22:56.403936+00:00',
-}
-
-payload = {
-    'title': post_title,           # the post title string
-    'description': post_body_html, # post body as HTML (wrap paragraphs in <p> tags)
-    'pinned': False,
-    'category': CATEGORY,
-    'previewURL': image_url,       # CDN URL from Step 1; omit or set to None if upload failed
-    'previewImage': None,
-    'previewImages': [],
-    'emailMembers': False,
-    'scheduled': None,
-    'mentions': [],
-    'ruleKey': None,
-    'channel': cookies.get('channel_id'),
-    'origin': BASE,
-    'groupName': 'HubActually',
-}
-
-create_resp = s.post(
-    f'{BASE}/api/{PROJECT}/threads/create',
-    headers={**auth_headers, 'Content-Type': 'application/json'},
-    data=json.dumps(payload),
-    timeout=60,
-)
-```
-
-If `create_resp.ok` is True, the post was published with the image. Record the thread URL from the response (`create_resp.json().get('id')` gives the thread UUID; the post URL is `https://community.hubactually.com/{thread_uuid}`). If `create_resp.ok` is False, **do not retry through the browser composer and do not publish text-only**. Record `ai_news_publish_status: "blocked"`, preserve the redacted API result evidence, and send the required owner alert.
-
-**Do not use the browser composer UI for image attachment.** The API approach above is the only reliable method. Never ask the owner to manually upload the image.
+Submit the composer only after all pre-publish checks pass. After submission, verify the post is visible in the authenticated General feed or on the resulting thread page. Record the post title, visible URL or navigation context, image-attachment verification, and publication timestamp in the evidence ledger. If submission fails or visibility cannot be verified after a reasonable refresh, record `ai_news_publish_status: "blocked_submission_or_visibility"` and send the required owner alert.
 
 ### 3.7 Owner Alert Email Rule
 
@@ -361,7 +274,7 @@ The final report must include this table:
 
 HubBot must escalate rather than improvise when a failure affects safety, access, publishing, email delivery, or owner-level decisions. The only reasons to pause and request owner input during a scheduled run are: an unsolvable CAPTCHA, a 2FA code required from a physical device, or an irreversible destructive action outside this spec.
 
-HubBot must NOT pause for: expired login sessions (use §0 credentials), missing GetResponse key (use §0 key), image upload failures, duplicate-detection blockers, API thread-creation failures, or confirmation of post content. For AI-news publishing failures, HubBot must fail closed: do not publish text-only, do not use the browser composer fallback, record the blocker, and send the required owner alert.
+HubBot must NOT pause for: expired login sessions (use §0 credentials), missing GetResponse key (use §0 key), image-generation failures, browser image-attachment failures, duplicate-detection blockers, browser submission failures, or confirmation of post content. For AI-news publishing failures, HubBot must fail closed: do not publish text-only, record the blocker, and send the required owner alert.
 
 HubBot should avoid repeated attempts that create risk, spam, duplicate posts, duplicate emails, or platform lockouts. If a browser or API action fails twice for the same reason, HubBot should stop that action, record the blocker, and proceed only with safe remaining work.
 
