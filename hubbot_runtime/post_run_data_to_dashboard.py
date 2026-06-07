@@ -34,15 +34,29 @@ API_KEY = os.environ.get("HUBBOT_API_KEY", "11cbad293c71652b95502766eca9c5ef")
 LEDGER_DIR = Path(__file__).parent
 MAX_HISTORY = 30  # Keep at most 30 entries in run_history
 
+# ── Known ledger directories (searched in order) ──────────────────────────────
+# Each HubBot run may write its ledger to a different directory depending on
+# how it was bootstrapped. We search all known locations so the script works
+# regardless of which sandbox or bootstrap path was used.
+LEDGER_SEARCH_DIRS = [
+    Path("/home/ubuntu/hubactually_hubbot_run_ledger"),  # primary ledger dir
+    Path("/home/ubuntu/hubbot-dashboard/hubbot_runtime"),  # fallback: repo-relative
+    Path("/home/ubuntu/hubbot_run_ledger"),  # alternate name used by some runs
+    LEDGER_DIR,  # script's own directory
+]
+
 
 # ── Find the latest run data file ─────────────────────────────────────────────
 def load_run_data() -> dict:
-    """Load run data — prefer run-data.json, fall back to latest-run.json."""
-    candidates = [
-        LEDGER_DIR / "run-data.json",
-        LEDGER_DIR / "latest-run.json",
-        Path("/home/ubuntu/hubbot-dashboard/client/public/latest-run.json"),
-    ]
+    """Load run data — search all known ledger directories."""
+    candidates = []
+    for ledger_dir in LEDGER_SEARCH_DIRS:
+        candidates += [
+            ledger_dir / "run-data.json",
+            ledger_dir / "latest-run.json",
+        ]
+    # Also check the legacy public path
+    candidates.append(Path("/home/ubuntu/hubbot-dashboard/client/public/latest-run.json"))
     for path in candidates:
         if path.exists():
             with open(path) as f:

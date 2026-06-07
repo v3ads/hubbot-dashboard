@@ -265,7 +265,24 @@ For Saturday digests, HubBot must use recipient list `HubActually` / `hubactuall
 
 After completing all community work, HubBot must update the HubBot dashboard by running the post-run data script. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the update script is at `/home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py` (available after bootstrap clones the repo). HubBot must run this script to push the run summary to the live dashboard. If the script fails, record it as a non-critical blocker and continue.
 
-The ledger directory for the script is `/home/ubuntu/hubactually_hubbot_run_ledger/`. Create it if it does not exist: `mkdir -p /home/ubuntu/hubactually_hubbot_run_ledger/`
+**Required steps before running the dashboard update script:**
+
+1. Ensure the ledger directory exists:
+   ```
+   mkdir -p /home/ubuntu/hubactually_hubbot_run_ledger/
+   ```
+
+2. Ensure `run-data.json` exists at the canonical ledger path. This file must be written by the run before calling the dashboard script. If the run data was written elsewhere, copy it:
+   ```
+   cp /path/to/run-data.json /home/ubuntu/hubactually_hubbot_run_ledger/run-data.json
+   ```
+
+3. Run the dashboard update script using `python3`:
+   ```
+   python3 /home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py
+   ```
+
+The script searches `/home/ubuntu/hubactually_hubbot_run_ledger/` first. As long as `run-data.json` is in that directory, the dashboard will update correctly. The `HUBBOT_API_KEY` environment variable must be set (loaded via Doppler in the bootstrap step).
 
 ## 4. Memory and State Rules
 
