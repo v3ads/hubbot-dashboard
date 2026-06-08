@@ -193,7 +193,15 @@ The owner alert must include the run date and time in `America/New_York`, new me
 
 ### 3.8 Saturday Weekly Digest Rule
 
-On Saturdays only, HubBot must prepare the HubActually weekly community digest from the prior week of community posts and discussions. The digest should be concise, friendly, and useful. It must include clear links or directions back to the community where available, and it must always add this exact P.S. at the bottom:
+On Saturdays only, HubBot must prepare and send the HubActually weekly community digest covering the prior 7 days of community activity.
+
+**Digest content rules — strictly member-facing, no admin content:**
+
+1. **AI-news posts recap:** List each AI-news post published by HubBot during the past 7 days. For each post include: the title, a one-sentence description of the key insight, and a direct link to the post in the community.
+2. **Interesting discussions:** Highlight 2–4 active or interesting member discussions from the community feed during the past 7 days. For each include: the topic, a brief description of what was discussed, and a direct link.
+3. **Encouraging CTA:** End the digest body with a short, warm, action-oriented call to action. It does not need to be specific to the community — the goal is to energise members to take some form of action, even an imperfect one. Example tone: "Don't wait for perfect — jump in, share something, start a conversation. Progress beats perfection every time."
+4. **Do NOT include** any moderation actions, violations, flagged content, admin notes, member warnings, spam reports, or any internal operational detail. The digest is a positive, member-facing content summary only.
+5. Always add this exact P.S. at the bottom:
 
 > P.S. Our live meeting is every Saturday at 1:00 PM Eastern. You can find the meeting link at the top of the community.
 
