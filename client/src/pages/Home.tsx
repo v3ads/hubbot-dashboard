@@ -175,14 +175,14 @@ function Sidebar({ data }: { data: RunData | null }) {
       <div className="sidebar-section">
         <div className="term-label sidebar-section-title">schedule</div>
         <div className="term-value" style={{ fontSize: "0.78rem", marginBottom: "0.2rem" }}>
-          {data?.schedule.label ?? "Daily at 9:00 AM ET"}
+          {data?.schedule?.label ?? "Daily at 9:00 AM ET"}
         </div>
         <div className="sidebar-cron">
-          {data?.schedule.cron ?? "0 0 9 * * *"}
+          {data?.schedule?.cron ?? "0 0 9 * * *"}
         </div>
         <div style={{ marginTop: "0.4rem" }}>
-          <span className={data?.schedule.status === "active" ? "status-pill status-pill-green" : "status-pill status-pill-amber"}>
-            {data?.schedule.status ?? "active"}
+          <span className={data?.schedule?.status === "active" ? "status-pill status-pill-green" : "status-pill status-pill-amber"}>
+            {data?.schedule?.status ?? "active"}
           </span>
         </div>
       </div>
@@ -694,7 +694,7 @@ export default function Home() {
           </span>
         )}
         <span className="footer-text footer-cron">
-          {data?.schedule.cron ?? "0 0 9 * * *"} · {data?.schedule.timezone ?? "America/New_York"}
+          {data?.schedule?.cron ?? "0 0 9 * * *"} · {data?.schedule?.timezone ?? "America/New_York"}
         </span>
       </footer>
     </div>
