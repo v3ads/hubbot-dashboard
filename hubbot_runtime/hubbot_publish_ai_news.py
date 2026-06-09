@@ -145,7 +145,15 @@ STOPWORDS = {
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'how', 'in', 'into',
     'is', 'it', 'of', 'on', 'or', 'that', 'the', 'this', 'to', 'with', 'without', 'your',
     'you', 'hubactually', 'source', 'general', 'post', 'posts', 'community', 'business',
-    'businesses', 'small', 'ai', 'artificial', 'intelligence'
+    'businesses', 'small', 'ai', 'artificial', 'intelligence',
+    # Common English function/filler words that cause false-positive topic matches
+    'about', 'after', 'all', 'also', 'but', 'can', 'day', 'days', 'did', 'do', 'does',
+    'even', 'get', 'got', 'has', 'have', 'her', 'him', 'his', 'if', 'its', 'just',
+    'know', 'like', 'make', 'more', 'most', 'much', 'need', 'new', 'not', 'now',
+    'one', 'only', 'our', 'out', 'over', 'own', 'same', 'see', 'she', 'so', 'some',
+    'than', 'their', 'them', 'then', 'there', 'they', 'time', 'tool', 'tools', 'up',
+    'use', 'used', 'using', 'was', 'way', 'we', 'were', 'what', 'when', 'where',
+    'which', 'who', 'will', 'would', 'yet'
 }
 
 
