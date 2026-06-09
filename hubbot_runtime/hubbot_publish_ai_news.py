@@ -563,19 +563,48 @@ def main() -> int:
         result.update({'status': 'blocked', 'ai_news_publish_status': 'blocked', 'reason': 'title and body are required'})
     else:
         try:
-            cookie_db = locate_cookie_db(args.cookie_db)
-            cookies = get_hubactually_cookies(cookie_db, output_dir)
-            live_cookies = get_live_browser_cookies()
-            if live_cookies:
-                cookies.update(live_cookies)
-                result['live_browser_cookies_used'] = True
-                result['live_browser_cookie_names'] = sorted(live_cookies.keys())
-            else:
+            # Prefer the injected env-var token (set in Doppler) over the browser cookie DB.
+            # This is the permanent fix for scheduled runs which start in a fresh sandbox
+            # with no browser cookies present.
+            env_token = os.environ.get('COMMUNITY_ESTAGE_TOKEN', '').strip()
+            # Fallback: fetch the token from the HubBot dashboard API
+            # (used when the env var is not set but HUBBOT_API_KEY + HUBBOT_DASHBOARD_URL are available)
+            if not env_token:
+                dashboard_url = os.environ.get('HUBBOT_DASHBOARD_URL', 'https://hubbot-dashboard.manus.space').rstrip('/')
+                hubbot_api_key = os.environ.get('HUBBOT_API_KEY', '').strip()
+                if hubbot_api_key:
+                    try:
+                        resp = requests.get(
+                            f'{dashboard_url}/api/community-token',
+                            headers={'x-hubbot-api-key': hubbot_api_key},
+                            timeout=10,
+                        )
+                        if resp.ok:
+                            env_token = resp.json().get('token', '').strip()
+                            if env_token:
+                                result['cookie_source_detail'] = 'dashboard_api'
+                    except Exception as fetch_exc:
+                        result['dashboard_token_fetch_error'] = f'{type(fetch_exc).__name__}: {fetch_exc}'
+            if env_token:
+                cookies: dict[str, str] = {'community_estage_token': env_token}
+                result['cookie_source'] = 'env_var_or_dashboard'
+                result['cookie_db_found'] = False
                 result['live_browser_cookies_used'] = False
+            else:
+                cookie_db = locate_cookie_db(args.cookie_db)
+                cookies = get_hubactually_cookies(cookie_db, output_dir)
+                live_cookies = get_live_browser_cookies()
+                if live_cookies:
+                    cookies.update(live_cookies)
+                    result['live_browser_cookies_used'] = True
+                    result['live_browser_cookie_names'] = sorted(live_cookies.keys())
+                else:
+                    result['live_browser_cookies_used'] = False
+                result['cookie_source'] = 'browser_db'
+                result['cookie_db_found'] = True
             session = requests.Session()
             session.cookies.update(cookies)
             headers = auth_headers(cookies)
-            result['cookie_db_found'] = True
             result['hubactually_cookie_names'] = sorted(cookies.keys())
             result['auth_header_names'] = sorted(headers.keys())
             duplicate_guard = duplicate_post_guard(session, headers, title, body_html)

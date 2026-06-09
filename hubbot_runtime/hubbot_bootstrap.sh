@@ -25,4 +25,13 @@ fi
 if [ -n "${DOPPLER_SERVICE_TOKEN:-}" ] && [ -z "${DOPPLER_TOKEN:-}" ]; then
   export DOPPLER_TOKEN="$DOPPLER_SERVICE_TOKEN"
 fi
+# Export COMMUNITY_ESTAGE_TOKEN from Doppler so the publish script can authenticate
+# directly via the API without needing browser cookies (permanent fix for fresh-sandbox runs).
+if [ -n "${DOPPLER_TOKEN:-}" ] && [ -z "${COMMUNITY_ESTAGE_TOKEN:-}" ]; then
+  _ct=$(doppler secrets get COMMUNITY_ESTAGE_TOKEN --project hubbot --config prd --plain 2>/dev/null || true)
+  if [ -n "$_ct" ]; then
+    export COMMUNITY_ESTAGE_TOKEN="$_ct"
+  fi
+  unset _ct
+fi
 python3.11 "$REPO/hubbot_runtime/hubbot_preflight.py" --repo-root "$REPO"

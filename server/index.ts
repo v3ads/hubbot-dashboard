@@ -96,6 +96,26 @@ async function startServer() {
     res.status(404).json({ error: "Manual run trigger is disabled. HubBot runs on its autonomous daily schedule." });
   });
 
+  // ── GET /api/community-token  (protected by HUBBOT_API_KEY) ─────
+  // Returns the COMMUNITY_ESTAGE_TOKEN for use by the scheduled HubBot task.
+  // This is the permanent fix for scheduled runs that start in a fresh sandbox
+  // with no browser cookies — the token is stored securely as a webdev secret.
+  app.get("/api/community-token", (req, res) => {
+    const apiKey = process.env.HUBBOT_API_KEY;
+    const provided = req.headers["x-hubbot-api-key"];
+    if (!apiKey || provided !== apiKey) {
+      res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+    const token = process.env.COMMUNITY_ESTAGE_TOKEN || "";
+    if (!token) {
+      res.status(404).json({ error: "COMMUNITY_ESTAGE_TOKEN not configured" });
+      return;
+    }
+    res.setHeader("Cache-Control", "no-store");
+    res.json({ token });
+  });
+
   // ── Static files ─────────────────────────────────────────────
   const staticPath =
     process.env.NODE_ENV === "production"
