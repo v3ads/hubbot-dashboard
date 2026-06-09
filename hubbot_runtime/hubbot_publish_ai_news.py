@@ -64,7 +64,15 @@ def read_text_arg(value: str | None, path: str | None, *, default: str = '') -> 
 
 def text_to_html(text: str) -> str:
     paragraphs = [p.strip() for p in text.replace('\r\n', '\n').split('\n\n') if p.strip()]
-    return ''.join(f'<p>{html.escape(p).replace(chr(10), "<br>")}</p>' for p in paragraphs)
+    parts = []
+    for p in paragraphs:
+        escaped = html.escape(p).replace(chr(10), '<br>')
+        # The Estage platform auto-links plain-text URLs only when followed by a space.
+        # Append a trailing space inside every paragraph that contains a URL.
+        if 'http://' in p or 'https://' in p:
+            escaped = escaped + ' '
+        parts.append(f'<p>{escaped}</p>')
+    return ''.join(parts)
 
 
 URL_RE = re.compile(r'https?://[^\s<)"\']+', re.I)
