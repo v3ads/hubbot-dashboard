@@ -15,9 +15,11 @@ import argparse
 import html
 import json
 import os
+import random
 import re
 import shutil
 import sqlite3
+import string
 import sys
 import tempfile
 import urllib.request
@@ -133,14 +135,16 @@ def prepublish_payload_qa(payload: dict[str, Any], body_html: str, image_url: st
         failures.append('title missing')
     if not image_url:
         failures.append('image URL missing; text-only publishing is disabled')
-    if image_url and payload.get('previewURL') != image_url:
-        failures.append('uploaded image URL is not set as previewURL')
+    # The platform displays images via previewImages array, not previewURL.
+    # Verify previewImages contains the uploaded image URL.
+    preview_images = payload.get('previewImages') or []
+    preview_image_urls = [img.get('url', '') for img in preview_images if isinstance(img, dict)]
+    if image_url and image_url not in preview_image_urls:
+        failures.append('uploaded image URL is not in previewImages array')
     if payload.get('previewImage') is not None:
         failures.append('previewImage must be null')
-    if payload.get('previewImages') not in ([], None):
-        failures.append('previewImages must be empty')
-    if image_url and image_count != 1:
-        failures.append(f'image URL appears {image_count} times in payload; expected exactly 1')
+    if payload.get('previewURL') not in (None, ''):
+        failures.append('previewURL must be empty; use previewImages instead')
     if not link_qa.get('ok'):
         failures.extend(link_qa.get('failures') or ['source link spacing failed'])
     return {
@@ -460,15 +464,21 @@ def upload_image(session: requests.Session, headers: dict[str, str], image_path:
     }
 
 
+def _make_image_id(length: int = 20) -> str:
+    """Generate a Cloudinary-style alphanumeric ID matching the platform's format."""
+    chars = string.ascii_lowercase + string.digits
+    return ''.join(random.choices(chars, k=length))
+
+
 def create_thread(session: requests.Session, headers: dict[str, str], title: str, body_html: str, image_url: str | None, *, dry_run: bool, channel_id: str | None = None) -> dict[str, Any]:
     payload: dict[str, Any] = {
         'title': title,
         'description': body_html,
         'pinned': False,
         'category': GENERAL_CATEGORY,
-        'previewURL': image_url or None,
+        'previewURL': '',
         'previewImage': None,
-        'previewImages': [],
+        'previewImages': [{'id': _make_image_id(), 'url': image_url, 'type': 'image'}] if image_url else [],
         'emailMembers': False,
         'scheduled': None,
         'mentions': [],
