@@ -511,7 +511,7 @@ function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
     try {
       const resp = await fetch("/api/rerun", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-hubbot-api-key": "" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ run_date }),
       });
       if (resp.ok) {

@@ -35,8 +35,8 @@
 - [x] Fix image attachment: replace unreliable browser composer UI approach in §3.6 with proven API-based upload + previewURL method
 - [x] Push updated playbook to active schedule task bYCs1GBUVTimSiWMUr4MSQ
 - [x] Update dashboard run-data.json with May 15–22 catch-up entries and push to live API
-- [ ] Add POST /api/run-history endpoint to upsert individual run entries by date
-- [ ] Add GET /api/run-history endpoint to return all run history entries  
-- [ ] Add POST /api/rerun endpoint to trigger a manual catch-up run for a specific date
-- [ ] Build RunHistoryLedger component showing all runs with status badges and Fix & Re-run button
-- [ ] Backfill run history for June 7-12 with correct statuses (posts ran but dashboard wasn't updated)
+- [x] Add POST /api/run-history endpoint to upsert individual run entries by date
+- [x] Add GET /api/run-history endpoint to return all run history entries  
+- [x] Add POST /api/rerun endpoint to trigger a manual catch-up run for a specific date
+- [x] Build RunHistoryLedger component showing all runs with status badges and Fix & Re-run button
+- [x] Backfill run history for June 7-12 with correct statuses (posts ran but dashboard wasn't updated)
