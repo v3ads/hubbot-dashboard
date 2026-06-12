@@ -10,20 +10,11 @@
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "AI News: Google is putting search agents inside everyday workflows",
-    "thread_url": null,
-    "thread_id": null,
-    "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1780771661318.png",
-    "image_attached": true,
-    "publish_status": "published",
-    "source_url": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
-    "supporting_url": null,
-    "draft_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-06_ai_news_body.txt",
-    "generated_image_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-06-06_google_search_agents_cover.png",
-    "published_at_utc": "2026-06-06T18:47:43+00:00",
-    "post_visible_after_submit": true,
-    "post_url_note": "The create API returned HTTP 200 but did not expose a thread ID or URL; authenticated feed verification confirmed visibility."
+    "title": "ChatGPT Is Becoming a Super App \u2014 Here Is What That Means for Your Business",
+    "thread_url": "https://community.hubactually.com/d4a5179a-573d-4748-b9fd-ee1d4076e4e6",
+    "category": "general",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1781255746964.jpg",
+    "image_attached": true
   },
   "checklist": [
     {
