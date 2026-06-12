@@ -17,12 +17,14 @@ interface ChecklistItem {
 interface RunHistoryEntry {
   run_date: string;
   status: string;
-  primary_result: string;
-  posts_published: number;
-  tasks_completed: number;
-  tasks_failed: number;
+  primary_result?: string;
+  summary?: string;
+  posts_published?: number;
+  tasks_completed?: number;
+  tasks_failed?: number;
   error_detail?: string;
   blockers?: string[];
+  latest_post?: { title?: string; url?: string };
 }
 
 interface RunData {
@@ -131,11 +133,11 @@ function RelativeTime({ iso, fallback }: { iso: string; fallback?: string }) {
   return <>{label}</>;
 }
 
-function statusPillClass(status: string): string {
+function statusPillClass(status: string, tasksFailed?: number): string {
   if (status === "completed") return "status-pill status-pill-green";
-  if (status === "blocked") return "status-pill status-pill-red";
-  if (status === "schedule_missing") return "status-pill status-pill-amber";
-  if (status === "running") return "status-pill status-pill-amber";
+  if (status === "failed" || status === "blocked") return "status-pill status-pill-red";
+  if (tasksFailed !== undefined && tasksFailed > 0) return "status-pill status-pill-red";
+  if (status === "schedule_missing" || status === "stalled" || status === "running") return "status-pill status-pill-amber";
   return "status-pill status-pill-dim";
 }
 
@@ -491,8 +493,36 @@ function SaturdayDigestCard({ digest }: { digest: NonNullable<RunData["saturday_
 
 function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+  const [rerunState, setRerunState] = useState<Record<string, "idle" | "loading" | "done" | "error">>({});
 
   if (!history.length) return null;
+
+  const needsRerun = (run: RunHistoryEntry) =>
+    run.status === "failed" ||
+    run.status === "stalled" ||
+    run.status === "running" ||
+    run.status === "blocked" ||
+    run.status === "schedule_missing" ||
+    (run.tasks_failed !== undefined && run.tasks_failed > 0);
+
+  const handleRerun = async (run_date: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setRerunState((s) => ({ ...s, [run_date]: "loading" }));
+    try {
+      const resp = await fetch("/api/rerun", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-hubbot-api-key": "" },
+        body: JSON.stringify({ run_date }),
+      });
+      if (resp.ok) {
+        setRerunState((s) => ({ ...s, [run_date]: "done" }));
+      } else {
+        setRerunState((s) => ({ ...s, [run_date]: "error" }));
+      }
+    } catch {
+      setRerunState((s) => ({ ...s, [run_date]: "error" }));
+    }
+  };
 
   return (
     <div className="term-card">
@@ -502,38 +532,47 @@ function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
       </div>
       <div className="run-history-list">
         {history.map((run, i) => {
-          const hasFailed = run.status === "failed" || run.tasks_failed > 0 || run.status === "blocked" || run.status === "schedule_missing";
+          const hasFailed = needsRerun(run);
           const isExpanded = expandedIdx === i;
-          const hasDetail = hasFailed && (run.error_detail || (run.blockers && run.blockers.length > 0) || run.status === "schedule_missing");
+          const hasDetail = run.error_detail || (run.blockers && run.blockers.length > 0) || run.status === "schedule_missing" || run.summary;
+          const rState = rerunState[run.run_date] || "idle";
+          const label = run.primary_result || run.summary || "";
 
           return (
             <div key={i}>
               <div
                 className={`run-history-row ${hasDetail ? "run-history-row-clickable" : ""}`}
                 onClick={() => hasDetail ? setExpandedIdx(isExpanded ? null : i) : undefined}
-                title={hasDetail ? (isExpanded ? "Click to collapse" : "Click to see error details") : undefined}
+                title={hasDetail ? (isExpanded ? "Click to collapse" : "Click to see details") : undefined}
               >
                 <div className="run-history-date">{run.run_date}</div>
-                <div className={`status-pill ${
-                  run.status === "completed" ? "status-pill-green" :
-                  run.status === "schedule_missing" ? "status-pill-amber" :
-                  run.status === "blocked" ? "status-pill-red" :
-                  run.tasks_failed > 0 ? "status-pill-red" :
-                  "status-pill-amber"
-                }`}>{run.status === "schedule_missing" ? "⚠ no schedule" : run.status}</div>
-                <div className="run-history-result">{run.primary_result}</div>
-                <div className="run-history-metrics">
-                  {run.status !== "schedule_missing" && (
-                    <>
-                      <span>{run.posts_published} post{run.posts_published !== 1 ? "s" : ""}</span>
-                      <span>{run.tasks_completed} done</span>
-                    </>
+                <div className={statusPillClass(run.status, run.tasks_failed)}>{
+                  run.status === "schedule_missing" ? "⚠ no schedule" :
+                  run.status === "stalled" ? "stalled" :
+                  run.status
+                }</div>
+                <div className="run-history-result" style={{ flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{label}</div>
+                <div className="run-history-metrics" style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
+                  {run.posts_published !== undefined && run.status !== "schedule_missing" && (
+                    <span>{run.posts_published} post{run.posts_published !== 1 ? "s" : ""}</span>
                   )}
-                  {run.tasks_failed > 0 && <span style={{ color: "var(--terminal-red)" }}>{run.tasks_failed} failed</span>}
+                  {run.tasks_failed !== undefined && run.tasks_failed > 0 && (
+                    <span style={{ color: "var(--terminal-red)" }}>{run.tasks_failed} failed</span>
+                  )}
                   {hasDetail && (
-                    <span className="run-history-expand-hint" style={{ color: "var(--terminal-amber, #f59e0b)", marginLeft: "0.3rem" }}>
-                      {isExpanded ? "▲ hide" : "▼ details"}
+                    <span className="run-history-expand-hint" style={{ color: "var(--terminal-amber, #f59e0b)" }}>
+                      {isExpanded ? "▲" : "▼"}
                     </span>
+                  )}
+                  {hasFailed && (
+                    <button
+                      className="rerun-btn"
+                      onClick={(e) => handleRerun(run.run_date, e)}
+                      disabled={rState === "loading" || rState === "done"}
+                      title={"Trigger catch-up run for " + run.run_date}
+                    >
+                      {rState === "loading" ? "..." : rState === "done" ? "✓ queued" : rState === "error" ? "✗ retry" : "Fix & Re-run"}
+                    </button>
                   )}
                 </div>
               </div>
@@ -541,8 +580,11 @@ function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
                 <div className="run-history-detail">
                   {run.status === "schedule_missing" && (
                     <div className="run-history-detail-msg">
-                      <span style={{ color: "var(--terminal-amber, #f59e0b)" }}>⚠</span> HubBot schedule was not active on this date. The schedule has since been recreated and is now active.
+                      <span style={{ color: "var(--terminal-amber, #f59e0b)" }}>⚠</span> HubBot schedule was not active on this date.
                     </div>
+                  )}
+                  {run.summary && (
+                    <div className="run-history-detail-msg" style={{ color: "var(--terminal-dim)" }}>{run.summary}</div>
                   )}
                   {run.error_detail && (
                     <div className="run-history-detail-msg">
@@ -557,6 +599,16 @@ function RunHistoryCard({ history }: { history: RunHistoryEntry[] }) {
                           <span style={{ color: "var(--terminal-red)" }}>✗</span> {b}
                         </div>
                       ))}
+                    </div>
+                  )}
+                  {rState === "done" && (
+                    <div className="run-history-detail-msg" style={{ color: "var(--terminal-green)" }}>
+                      ✓ Catch-up run queued for {run.run_date}. Check back in a few minutes.
+                    </div>
+                  )}
+                  {rState === "error" && (
+                    <div className="run-history-detail-msg" style={{ color: "var(--terminal-red)" }}>
+                      ✗ Failed to queue catch-up run. Check MANUS_API_KEY configuration.
                     </div>
                   )}
                 </div>

@@ -829,3 +829,32 @@
   gap: 0.4rem;
   align-items: flex-start;
 }
+
+/* Fix & Re-run button */
+.rerun-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  border: 1px solid var(--terminal-amber, #f59e0b);
+  background: color-mix(in oklch, var(--terminal-amber, #f59e0b) 12%, transparent);
+  color: var(--terminal-amber, #f59e0b);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 120ms ease-out, transform 100ms ease-out;
+  flex-shrink: 0;
+}
+.rerun-btn:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--terminal-amber, #f59e0b) 22%, transparent);
+}
+.rerun-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.rerun-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+  border-color: var(--terminal-dim);
+  color: var(--terminal-dim);
+  background: transparent;
+}
