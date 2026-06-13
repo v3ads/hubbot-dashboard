@@ -40,3 +40,6 @@
 - [x] Add POST /api/rerun endpoint to trigger a manual catch-up run for a specific date
 - [x] Build RunHistoryLedger component showing all runs with status badges and Fix & Re-run button
 - [x] Backfill run history for June 7-12 with correct statuses (posts ran but dashboard wasn't updated)
+- [ ] Normalize run-data schema in playbook: always post checklist as array, community as string
+- [ ] Add coercion layer in post_run_data_to_dashboard.py to enforce normalized schema
+- [ ] Update Doppler HUBBOT_PLAYBOOK with §3.9 schema contract

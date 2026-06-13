@@ -123,6 +123,75 @@ def build_merged_history(new_data: dict, existing_history: list) -> list:
     return merged
 
 
+# ── Schema normalization (safety net) ────────────────────────────────────────
+def normalize_payload(data: dict) -> dict:
+    """
+    Coerce the run-data payload into the canonical dashboard schema.
+
+    The scheduled run agent sometimes posts ad-hoc JSON that deviates from the
+    normalized shape expected by the dashboard UI.  This function fixes the two
+    most common deviations before the payload is sent:
+
+    1. `community` — must be a plain string (e.g. "HubActually").
+       If it arrives as an object, extract the most useful string value.
+
+    2. `checklist` — must be an array of {task, outcome} objects.
+       If it arrives as a flat dict (e.g. {"preflight": True, ...}), convert
+       each key/value pair into the canonical object shape.
+
+    3. `metrics` — must be an object with the dashboard-facing key names.
+       Remap common aliases (e.g. "tasks" → "required_tasks_completed").
+    """
+    # 1. Normalize `community`
+    community = data.get("community")
+    if isinstance(community, dict):
+        # Prefer an explicit "name" key, fall back to the access status, then default
+        data["community"] = (
+            community.get("name")
+            or community.get("community_name")
+            or community.get("access")
+            or "HubActually"
+        )
+    elif not isinstance(community, str) or not community:
+        data["community"] = "HubActually"
+
+    # 2. Normalize `checklist`
+    checklist = data.get("checklist")
+    if isinstance(checklist, dict):
+        # Convert flat dict to array of {task, outcome} objects
+        converted = []
+        for key, val in checklist.items():
+            task_name = key.replace("_", " ").title()
+            if val is True:
+                outcome = "completed"
+            elif val is False:
+                outcome = "failed"
+            else:
+                outcome = str(val).strip() or "unknown"
+            converted.append({"task": task_name, "outcome": outcome})
+        data["checklist"] = converted
+        print(f"[dashboard] Coerced checklist from flat dict ({len(converted)} items) to array")
+    elif not isinstance(checklist, list):
+        data["checklist"] = []
+
+    # 3. Normalize `metrics` key names
+    metrics = data.get("metrics")
+    if isinstance(metrics, dict):
+        # Remap common aliases to the canonical dashboard key names
+        alias_map = {
+            "tasks_completed": "required_tasks_completed",
+            "tasks_failed": "required_tasks_failed",
+            "alerts_sent": "owner_alerts_sent",
+            "welcomes_sent": "new_welcomes_sent",
+        }
+        for alias, canonical in alias_map.items():
+            if alias in metrics and canonical not in metrics:
+                metrics[canonical] = metrics.pop(alias)
+        data["metrics"] = metrics
+
+    return data
+
+
 # ── Post to dashboard ─────────────────────────────────────────────────────────
 def post_to_dashboard(data: dict) -> bool:
     """POST run data to the dashboard API. Returns True on success."""
@@ -156,7 +225,10 @@ if __name__ == "__main__":
         # 3. Merge and update run_history in the payload
         data["run_history"] = build_merged_history(data, existing_history)
 
-        # 4. POST the merged payload to the dashboard
+        # 4. Normalize schema (coerce community to string, checklist to array)
+        data = normalize_payload(data)
+
+        # 5. POST the merged payload to the dashboard
         success = post_to_dashboard(data)
         sys.exit(0 if success else 1)
     except Exception as e:

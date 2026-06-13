@@ -209,18 +209,24 @@ For Saturday digests, HubBot must use recipient list `HubActually` / `hubactuall
 
 ### 3.9 Dashboard Update
 
-After completing all community work, HubBot must POST the run summary directly to the dashboard API using `curl`. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the API key (`HUBBOT_API_KEY`) is injected by the Manus schedule prompt as an environment variable.
+After completing all community work, HubBot must POST the run summary directly to the dashboard API. The dashboard is hosted at `https://hubbot.virtapreneur.com` and the API key (`HUBBOT_API_KEY`) is injected by the Manus schedule prompt as an environment variable.
 
 **Required steps:**
 
-1. Build the run data JSON payload from the run ledger and POST it directly:
+1. Run the finalizer to build and POST the normalized dashboard payload:
    ```bash
-   # The HUBBOT_API_KEY env var is set by the schedule prompt at task start
-   # Build the JSON payload from the run's evidence ledger and POST to the dashboard
+   python3 /home/ubuntu/hubbot-dashboard/hubbot_runtime/hubbot_finalize.py \
+     --ledger /home/ubuntu/hubactually_hubbot_run_ledger/YYYY-MM-DD_hubbot_run.json \
+     --repo-root /home/ubuntu/hubbot-dashboard
+   ```
+   Replace `YYYY-MM-DD` with the actual run date. The finalizer reads the JSON ledger, builds the normalized payload, POSTs to the dashboard API, and writes `run-data.json` locally.
+
+2. If the finalizer is unavailable, fall back to `post_run_data_to_dashboard.py`:
+   ```bash
    python3 /home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py
    ```
 
-2. If the Python script is unavailable (e.g. repo clone failed), POST directly with curl:
+3. If both Python scripts are unavailable (e.g. repo clone failed), POST directly with curl:
    ```bash
    curl -s -X POST https://hubbot.virtapreneur.com/api/run-data \
      -H "Content-Type: application/json" \
@@ -229,9 +235,53 @@ After completing all community work, HubBot must POST the run summary directly t
    ```
    where `$RUN_DATA_JSON` is the complete run data JSON string built from the evidence ledger.
 
-3. Verify the response contains `{"ok": true}`. If the POST fails, record it as a non-critical blocker and continue — do not let a dashboard update failure stop the run.
+4. Verify the response contains `{"ok": true}`. If the POST fails, record it as a non-critical blocker and continue — do not let a dashboard update failure stop the run.
 
 **Important:** `HUBBOT_API_KEY` is injected by the Manus schedule prompt (not from Doppler). It must be set before calling this step. If it is not set, skip the dashboard update and record `dashboard_update_status: "blocked_missing_api_key"`.
+
+**Required run-data schema contract — all dashboard POSTs must conform to this shape:**
+
+The dashboard API accepts only the following normalized field shapes. Any POST that deviates from this contract will cause rendering errors in the dashboard UI.
+
+| Field | Required type | Correct example | Wrong (do not post) |
+|---|---|---|---|
+| `community` | Plain string | `"HubActually"` | `{"access": "success", ...}` |
+| `checklist` | Array of `{task, outcome}` objects | `[{"task": "Preflight", "outcome": "completed"}, ...]` | `{"preflight": true, "community_access": true, ...}` |
+| `metrics` | Object with named keys | `{"required_tasks_completed": 8, "required_tasks_failed": 0, "owner_alerts_sent": 0, "posts_published": 1, "new_welcomes_sent": 0}` | `{"tasks": 8, "failed": 0}` |
+| `published_post.thread_url` | String URL | `"https://community.hubactually.com/abc-123"` | `null` or omitted |
+
+**`checklist` array — required tasks in order:**
+
+The `checklist` array must always contain exactly these 10 items in this order, each as `{"task": "<name>", "outcome": "<status>"}`. Valid outcome values are: `completed`, `completed_<detail>`, `published`, `published_<detail>`, `failed`, `blocked`, `not_required`, `skipped_not_saturday`, `unknown`, or any descriptive snake_case string.
+
+```json
+[
+  {"task": "Preflight",          "outcome": "completed"},
+  {"task": "Community access",   "outcome": "completed"},
+  {"task": "Member review",      "outcome": "completed_no_new_members"},
+  {"task": "Discussion review",  "outcome": "completed_no_action_required"},
+  {"task": "AI-news research",   "outcome": "completed"},
+  {"task": "Image generation",   "outcome": "completed_uploaded"},
+  {"task": "Community post",     "outcome": "published_and_verified_visible"},
+  {"task": "Owner alert email",  "outcome": "not_required"},
+  {"task": "Saturday digest",    "outcome": "skipped_not_saturday"},
+  {"task": "Dashboard update",   "outcome": "completed"}
+]
+```
+
+**`metrics` object — required keys:**
+
+```json
+{
+  "required_tasks_completed": 8,
+  "required_tasks_failed": 0,
+  "owner_alerts_sent": 0,
+  "posts_published": 1,
+  "new_welcomes_sent": 0
+}
+```
+
+The `post_run_data_to_dashboard.py` fallback script includes a coercion layer that automatically converts a flat-dict `checklist` to the array format and an object-shaped `community` to a plain string. However, HubBot should always produce the normalized shape directly rather than relying on coercion.
 
 ## 4. Memory and State Rules
 
