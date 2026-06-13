@@ -35,7 +35,7 @@ interface RunData {
   status: string;
   last_run_label: string;
   primary_result: string;
-  community: string;
+  community: string | { access?: string; new_members?: number; welcomes_posted?: number; comments_added?: number; flagged_items?: number };
   agent: string;
   agent_version?: string;
   published_post: {
@@ -45,14 +45,17 @@ interface RunData {
     image_url: string;
     image_attached: boolean;
   };
-  checklist: ChecklistItem[];
+  checklist: ChecklistItem[] | Record<string, boolean | string>;
   metrics: {
-    required_tasks_completed: number;
-    required_tasks_failed: number;
-    owner_alerts_sent: number;
-    posts_published: number;
-    new_welcomes_sent: number;
-  };
+    required_tasks_completed?: number;
+    required_tasks_failed?: number;
+    owner_alerts_sent?: number;
+    posts_published?: number;
+    new_welcomes_sent?: number;
+    new_members?: number;
+    welcomes_posted?: number;
+    comments_added?: number;
+  } | null;
   blockers: string[];
   schedule: {
     cron: string;
@@ -144,13 +147,14 @@ function statusPillClass(status: string, tasksFailed?: number): string {
 // ── Sidebar (desktop: left column | mobile: top strip) ───────
 
 function Sidebar({ data }: { data: RunData | null }) {
-  const metrics = data && data.metrics
+  const m = (data?.metrics && typeof data.metrics === 'object') ? data.metrics : null;
+  const metrics = m
     ? [
-        ["posts published", data.metrics.posts_published],
-        ["tasks completed", data.metrics.required_tasks_completed],
-        ["tasks failed", data.metrics.required_tasks_failed],
-        ["alerts sent", data.metrics.owner_alerts_sent],
-        ["welcomes sent", data.metrics.new_welcomes_sent],
+        ["posts published", m.posts_published ?? 0],
+        ["tasks completed", m.required_tasks_completed ?? 0],
+        ["tasks failed", m.required_tasks_failed ?? 0],
+        ["alerts sent", m.owner_alerts_sent ?? 0],
+        ["welcomes sent", m.new_welcomes_sent ?? m.welcomes_posted ?? 0],
       ]
     : [];
 
@@ -166,7 +170,7 @@ function Sidebar({ data }: { data: RunData | null }) {
         <div className="sidebar-community-label">
           <span className="term-label">community</span>
           <span className="term-value sidebar-community-value">
-            {data?.community ?? "HubActually"}
+            {typeof data?.community === "string" ? data.community : "HubActually"}
           </span>
         </div>
       </div>
@@ -260,14 +264,28 @@ function RunLedgerCard({ data }: { data: RunData }) {
 
       {/* Checklist — 2 cols on desktop, 1 col on mobile */}
       <div className="checklist-grid">
-        {data.checklist.map((item) => (
-          <div key={item.task} className="checklist-row">
-            <span className="checklist-task">{item.task}</span>
-            <span className={outcomeClass(item.outcome)} style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
-              {outcomeLabel(item.outcome)}
-            </span>
-          </div>
-        ))}
+        {Array.isArray(data.checklist)
+          ? data.checklist.map((item) => (
+              <div key={item.task} className="checklist-row">
+                <span className="checklist-task">{item.task}</span>
+                <span className={outcomeClass(item.outcome)} style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
+                  {outcomeLabel(item.outcome)}
+                </span>
+              </div>
+            ))
+          : Object.entries(data.checklist as Record<string, boolean | string>).map(([key, val]) => {
+              const outcome = val === true ? "completed" : val === false ? "failed" : String(val);
+              const label = key.replace(/_/g, " ");
+              return (
+                <div key={key} className="checklist-row">
+                  <span className="checklist-task">{label}</span>
+                  <span className={outcomeClass(outcome)} style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
+                    {outcomeLabel(outcome)}
+                  </span>
+                </div>
+              );
+            })
+        }
       </div>
     </div>
   );
