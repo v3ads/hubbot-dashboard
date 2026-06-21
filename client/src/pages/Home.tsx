@@ -293,6 +293,7 @@ function RunLedgerCard({ data }: { data: RunData }) {
 
 function PostCard({ data }: { data: RunData }) {
   const post = data.published_post;
+  if (!post) return null;
   return (
     <div className="term-card card-enter" style={{ animationDelay: "40ms" }}>
       <div className="term-label" style={{ marginBottom: "0.75rem" }}>daily ai-news post</div>
@@ -746,7 +747,7 @@ export default function Home() {
             <>
               <RunLedgerCard data={data} />
               {data.community_stats && typeof data.community_stats.total_members === 'number' && <CommunityStatsCard stats={data.community_stats} />}
-              <PostCard data={data} />
+              {data.published_post && <PostCard data={data} />}
               <BlockersCard blockers={data.blockers} />
               {data.saturday_digest && <SaturdayDigestCard digest={data.saturday_digest} />}
               {data.run_history && data.run_history.length > 0 && <RunHistoryCard history={data.run_history} />}
