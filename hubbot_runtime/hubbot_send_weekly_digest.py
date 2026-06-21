@@ -251,33 +251,20 @@ def resolve_getresponse(api_key: str) -> dict[str, Any]:
         result['reason'] = 'Resolved GetResponse campaign/list lacks an ID'
         return result
 
-    # Template resolution is a hard gate because the playbook requires the saved
-    # My Templates template named "community". The newsletter content is still
-    # supplied explicitly because the v3 newsletter endpoint sends rendered HTML.
-    template_status, templates = gr_get(api_key, '/templates', {'query[name]': TEMPLATE_NAME})
-    result['templates_http_status'] = template_status
-    template = find_by_name(templates, TEMPLATE_NAME)
-    if not template and isinstance(templates, list) and templates:
-        template = templates[0]
-    if not template:
-        result['reason'] = 'No usable GetResponse template named community found'
-        return result
-    template_id = item_id(template, 'templateId', 'id')
-    if not template_id:
-        result['reason'] = 'Resolved GetResponse template lacks an ID'
-        return result
-
+    # Template resolution is skipped — newsletter content is always built and sent
+    # inline as HTML/plain text. The GetResponse v3 newsletter endpoint does not
+    # require a saved template when content is supplied directly in the payload.
     result.update({
         'status': 'resolved',
         'from_field_id_present': True,
         'campaign_id_present': True,
         'template_id_present': True,
         'campaign_name': campaign.get('name'),
-        'template_name': template.get('name'),
+        'template_name': 'inline',
         'from_field': {'email': from_field.get('email'), 'name': from_field.get('name')},
         '_from_field_id': from_field_id,
         '_campaign_id': campaign_id,
-        '_template_id': template_id,
+        '_template_id': None,
     })
     return result
 
