@@ -18,18 +18,53 @@ const DATA_DIR =
 
 const DATA_FILE = path.join(DATA_DIR, "run-data.json");
 
-// Seed the data file from the static latest-run.json if it doesn't exist yet
+// Seed the data file from the static latest-run.json on startup.
+//
+// IMPORTANT: We ALWAYS overwrite run-data.json from the bundled seed on cold
+// start, not just when the file is missing.  This ensures that a server
+// restart after a fresh deployment (which bundles the latest seed) picks up
+// the correct data immediately, rather than inheriting a stale run-data.json
+// that may have been left over from a previous deployment cycle.
+//
+// The POST /api/run-data endpoint is the authoritative write path.  The
+// bundled latest-run.json is kept current by post_run_data_to_dashboard.py
+// after every successful HubBot run, so the seed is always ≤ 24 h stale.
 function seedDataFile() {
-  if (!fs.existsSync(DATA_FILE)) {
-    const staticSeed =
-      process.env.NODE_ENV === "production"
-        ? path.resolve(__dirname, "public", "latest-run.json")
-        : path.resolve(__dirname, "..", "client", "public", "latest-run.json");
-    if (fs.existsSync(staticSeed)) {
-      fs.copyFileSync(staticSeed, DATA_FILE);
-      console.log("[HubBot] Seeded run-data.json from latest-run.json");
+  const staticSeed =
+    process.env.NODE_ENV === "production"
+      ? path.resolve(__dirname, "public", "latest-run.json")
+      : path.resolve(__dirname, "..", "client", "public", "latest-run.json");
+
+  if (!fs.existsSync(staticSeed)) {
+    console.log("[HubBot] No seed file found — starting with empty run data");
+    return;
+  }
+
+  // If run-data.json already exists, compare dates before overwriting.
+  // Only overwrite if the seed is newer (or run-data.json is missing).
+  if (fs.existsSync(DATA_FILE)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+      const seed = JSON.parse(fs.readFileSync(staticSeed, "utf8"));
+      const existingDate = existing.run_date || "";
+      const seedDate = seed.run_date || "";
+      if (seedDate <= existingDate) {
+        // Existing file is same date or newer — keep it.
+        console.log(
+          `[HubBot] Keeping existing run-data.json (${existingDate}) — seed (${seedDate}) is not newer`
+        );
+        return;
+      }
+      console.log(
+        `[HubBot] Seed (${seedDate}) is newer than existing run-data.json (${existingDate}) — overwriting`
+      );
+    } catch {
+      // If we can't parse either file, fall through and overwrite.
     }
   }
+
+  fs.copyFileSync(staticSeed, DATA_FILE);
+  console.log("[HubBot] Seeded run-data.json from latest-run.json");
 }
 
 function readRunData(): Record<string, unknown> | null {

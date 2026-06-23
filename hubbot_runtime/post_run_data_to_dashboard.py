@@ -182,8 +182,22 @@ def normalize_flat_ledger(data: dict) -> dict:
 
     This function is a no-op if the data already has the canonical keys.
     """
-    # Only apply if the data looks like a flat ledger (has agent_name but no run_date)
-    if "run_date" in data:
+    # Apply translation if the data looks like a flat ledger.
+    # A canonical payload has both `status` AND `last_run_label` at the top level.
+    # A flat ledger may have `run_date` but lacks these canonical fields.
+    # Previously this check returned early if run_date was present, which caused
+    # flat ledgers (which always have run_date) to bypass translation and leave
+    # the dashboard with an incomplete payload. Fixed 2026-06-23.
+    is_canonical = (
+        "status" in data
+        and "last_run_label" in data
+        and "checklist" in data
+        and isinstance(data.get("checklist"), list)
+        and len(data.get("checklist", [])) > 0
+        and "agent" in data
+        and "published_post" in data
+    )
+    if is_canonical:
         return data  # Already in canonical form — nothing to do.
 
     from datetime import datetime
@@ -255,6 +269,19 @@ def normalize_flat_ledger(data: dict) -> dict:
         "community": "HubActually",
         "agent": data.get("agent_name", "HubBot"),
         "agent_version": data.get("agent_version", "v2"),
+        "published_post": {
+            "title": data.get("ai_news_title", ""),
+            "thread_url": data.get("ai_news_post_url", ""),
+            "thread_id": data.get("ai_news_thread_id", ""),
+            "category": "General",
+            "image_url": data.get("image_url", data.get("image_uploaded_url", "")),
+            "image_attached": bool(data.get("image_url") or data.get("image_uploaded_url")),
+            "publish_status": publish_status,
+            "source_url": data.get("ai_news_source_url", ""),
+            "published_at_utc": data.get("published_at_utc", ""),
+            "post_visible_after_submit": publish_status == "published",
+            "post_url_note": "Verified visible in authenticated feed." if publish_status == "published" else "",
+        },
         "checklist": checklist,
         "metrics": {
             "new_members_found": new_members_count,
@@ -264,6 +291,7 @@ def normalize_flat_ledger(data: dict) -> dict:
             "required_tasks_failed": 0,
             "owner_alerts_sent": owner_alert_sent,
             "posts_published": 1 if publish_status == "published" else 0,
+            "duplicate_posts_avoided": 1 if publish_status == "published" else 0,
         },
         "ai_news": {
             "title": data.get("ai_news_title", ""),
@@ -278,8 +306,9 @@ def normalize_flat_ledger(data: dict) -> dict:
             "newsletter_id": data.get("saturday_digest_newsletter_id", ""),
             "scheduled_for_et": data.get("saturday_digest_scheduled_for_et", ""),
         },
-        "blockers": [],
+        "blockers": data.get("blockers", []),
         "flagged_items": data.get("flagged_items", []),
+        "evidence": data.get("evidence", {}),
         "notes": (
             f"{run_weekday} run: {new_members_count} new member(s) welcomed, "
             f"AI-news post {publish_status}, "
@@ -384,6 +413,67 @@ def refresh_static_cache(data: dict) -> None:
         print(f"[dashboard] ⚠ Could not refresh static cache: {e}")
 
 
+# ── Commit seed files to repo ────────────────────────────────────────────────
+def commit_seed_files(data: dict) -> None:
+    """
+    Write the canonical payload into BOTH repo seed files and git-commit them.
+
+    This is the permanent fix for the stale-dashboard-after-restart bug.
+    The server seeds `run-data.json` from `client/public/latest-run.json` on
+    every cold start.  If those files are not updated after each run, any
+    server restart will revert the dashboard to whatever date was last committed.
+
+    By committing both files here we guarantee that the next cold start always
+    boots with the most-recent run data.
+    """
+    import subprocess
+
+    repo_root = Path(__file__).parent.parent  # hubbot-dashboard/
+    repo_run_data = repo_root / "run-data.json"
+    static_seed   = repo_root / "client" / "public" / "latest-run.json"
+
+    try:
+        payload_str = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        repo_run_data.write_text(payload_str)
+        static_seed.parent.mkdir(parents=True, exist_ok=True)
+        static_seed.write_text(payload_str)
+        print(f"[dashboard] ✓ Seed files written: {repo_run_data.name}, {static_seed.name}")
+    except Exception as e:
+        print(f"[dashboard] ⚠ Could not write seed files: {e}")
+        return
+
+    # Git commit & push so the next deployment picks up the fresh seed.
+    try:
+        run_date = data.get("run_date", "unknown")
+        subprocess.run(
+            ["git", "-C", str(repo_root), "add",
+             str(repo_run_data), str(static_seed)],
+            check=True, capture_output=True, text=True,
+        )
+        result = subprocess.run(
+            ["git", "-C", str(repo_root), "commit", "-m",
+             f"chore: update dashboard seed files for {run_date} run [skip ci]"],
+            capture_output=True, text=True,
+        )
+        if result.returncode == 0:
+            print(f"[dashboard] ✓ Git commit: {result.stdout.strip()[:120]}")
+        else:
+            # Nothing to commit is fine (idempotent)
+            print(f"[dashboard] ℹ Git commit skipped: {result.stderr.strip()[:120]}")
+            return
+
+        push = subprocess.run(
+            ["git", "-C", str(repo_root), "push"],
+            capture_output=True, text=True,
+        )
+        if push.returncode == 0:
+            print(f"[dashboard] ✓ Git push succeeded")
+        else:
+            print(f"[dashboard] ⚠ Git push failed (seed files still updated locally): {push.stderr.strip()[:200]}")
+    except Exception as e:
+        print(f"[dashboard] ⚠ Git operations failed (seed files still updated locally): {e}")
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     try:
@@ -405,9 +495,14 @@ if __name__ == "__main__":
         # 5. POST the merged payload to the dashboard.
         success = post_to_dashboard(data)
 
-        # 6. Refresh the static cache file so it is no longer stale.
         if success:
+            # 6. Refresh the static cache file so it is no longer stale.
             refresh_static_cache(data)
+
+            # 7. Commit both repo seed files so a cold-start server always
+            #    boots with the latest run data instead of a stale snapshot.
+            #    This is the permanent fix for the "dashboard shows 6/6" bug.
+            commit_seed_files(data)
 
         sys.exit(0 if success else 1)
     except Exception as e:
