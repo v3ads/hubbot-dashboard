@@ -9,8 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ── Data store path ─────────────────────────────────────────────
-// In production the server writes to a persistent file alongside the binary.
-// In dev it writes to the project root so it is easy to inspect.
+// File is used as a local cache / fallback only.
+// TiDB (DATABASE_URL) is the primary persistent store.
 const DATA_DIR =
   process.env.NODE_ENV === "production"
     ? path.resolve(__dirname)
@@ -18,56 +18,80 @@ const DATA_DIR =
 
 const DATA_FILE = path.join(DATA_DIR, "run-data.json");
 
-// Seed the data file from the static latest-run.json on startup.
-//
-// IMPORTANT: We ALWAYS overwrite run-data.json from the bundled seed on cold
-// start, not just when the file is missing.  This ensures that a server
-// restart after a fresh deployment (which bundles the latest seed) picks up
-// the correct data immediately, rather than inheriting a stale run-data.json
-// that may have been left over from a previous deployment cycle.
-//
-// The POST /api/run-data endpoint is the authoritative write path.  The
-// bundled latest-run.json is kept current by post_run_data_to_dashboard.py
-// after every successful HubBot run, so the seed is always ≤ 24 h stale.
-function seedDataFile() {
-  const staticSeed =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public", "latest-run.json")
-      : path.resolve(__dirname, "..", "client", "public", "latest-run.json");
+// ── TiDB helpers ─────────────────────────────────────────────────
+// We use the raw `mysql2` package which is available in the Manus WebDev
+// Node runtime.  We import it dynamically so the server still starts if the
+// package is missing (file fallback takes over).
 
-  if (!fs.existsSync(staticSeed)) {
-    console.log("[HubBot] No seed file found — starting with empty run data");
-    return;
+let dbPool: import("mysql2/promise").Pool | null = null;
+
+async function getDbPool(): Promise<import("mysql2/promise").Pool | null> {
+  if (dbPool) return dbPool;
+  const dbUrl = process.env.DATABASE_URL;
+  if (!dbUrl) return null;
+  try {
+    const mysql = await import("mysql2/promise");
+    // Parse mysql://user:pass@host:port/db
+    const m = dbUrl.match(/mysql:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/([^?]+)/);
+    if (!m) return null;
+    const [, user, password, host, portStr, database] = m;
+    dbPool = mysql.createPool({
+      host,
+      user,
+      password,
+      database,
+      port: parseInt(portStr, 10),
+      ssl: { rejectUnauthorized: false },
+      waitForConnections: true,
+      connectionLimit: 5,
+      connectTimeout: 10000,
+    });
+    // Ensure the kv table exists
+    await dbPool.execute(`
+      CREATE TABLE IF NOT EXISTS hubbot_kv (
+        k VARCHAR(64) NOT NULL PRIMARY KEY,
+        v MEDIUMTEXT NOT NULL,
+        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )
+    `);
+    console.log("[HubBot] TiDB connected — using database as primary store");
+    return dbPool;
+  } catch (err) {
+    console.warn("[HubBot] TiDB unavailable, falling back to file store:", err);
+    dbPool = null;
+    return null;
   }
-
-  // If run-data.json already exists, compare dates before overwriting.
-  // Only overwrite if the seed is newer (or run-data.json is missing).
-  if (fs.existsSync(DATA_FILE)) {
-    try {
-      const existing = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
-      const seed = JSON.parse(fs.readFileSync(staticSeed, "utf8"));
-      const existingDate = existing.run_date || "";
-      const seedDate = seed.run_date || "";
-      if (seedDate <= existingDate) {
-        // Existing file is same date or newer — keep it.
-        console.log(
-          `[HubBot] Keeping existing run-data.json (${existingDate}) — seed (${seedDate}) is not newer`
-        );
-        return;
-      }
-      console.log(
-        `[HubBot] Seed (${seedDate}) is newer than existing run-data.json (${existingDate}) — overwriting`
-      );
-    } catch {
-      // If we can't parse either file, fall through and overwrite.
-    }
-  }
-
-  fs.copyFileSync(staticSeed, DATA_FILE);
-  console.log("[HubBot] Seeded run-data.json from latest-run.json");
 }
 
-function readRunData(): Record<string, unknown> | null {
+async function dbRead(): Promise<Record<string, unknown> | null> {
+  try {
+    const pool = await getDbPool();
+    if (!pool) return null;
+    const [rows] = await pool.execute("SELECT v FROM hubbot_kv WHERE k = 'run_data'") as [Array<{v: string}>, unknown];
+    if (!rows.length) return null;
+    return JSON.parse(rows[0].v);
+  } catch {
+    return null;
+  }
+}
+
+async function dbWrite(data: object): Promise<boolean> {
+  try {
+    const pool = await getDbPool();
+    if (!pool) return false;
+    await pool.execute(
+      "INSERT INTO hubbot_kv (k, v, updated_at) VALUES ('run_data', ?, NOW()) ON DUPLICATE KEY UPDATE v = VALUES(v), updated_at = NOW()",
+      [JSON.stringify(data)]
+    );
+    return true;
+  } catch (err) {
+    console.warn("[HubBot] DB write failed:", err);
+    return false;
+  }
+}
+
+// ── File helpers (fallback) ───────────────────────────────────────
+function fileRead(): Record<string, unknown> | null {
   try {
     if (!fs.existsSync(DATA_FILE)) return null;
     return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
@@ -76,8 +100,68 @@ function readRunData(): Record<string, unknown> | null {
   }
 }
 
-function writeRunData(data: object): void {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
+function fileWrite(data: object): void {
+  try {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
+  } catch (err) {
+    console.warn("[HubBot] File write failed:", err);
+  }
+}
+
+// ── Seed on startup ───────────────────────────────────────────────
+// On cold start: load from DB first. If DB is empty, seed from the bundled
+// latest-run.json and write it to DB so future restarts also get it from DB.
+async function seedOnStartup(): Promise<void> {
+  const staticSeed =
+    process.env.NODE_ENV === "production"
+      ? path.resolve(__dirname, "public", "latest-run.json")
+      : path.resolve(__dirname, "..", "client", "public", "latest-run.json");
+
+  // 1. Try DB first
+  const dbData = await dbRead();
+  if (dbData) {
+    console.log(`[HubBot] Loaded run data from DB (run_date: ${dbData.run_date})`);
+    // Also sync to local file cache
+    fileWrite(dbData);
+    return;
+  }
+
+  // 2. DB empty — try local file
+  const fileData = fileRead();
+  if (fileData && fileData.run_date) {
+    console.log(`[HubBot] DB empty — seeding from local file (run_date: ${fileData.run_date})`);
+    await dbWrite(fileData);
+    return;
+  }
+
+  // 3. Try bundled seed
+  if (fs.existsSync(staticSeed)) {
+    try {
+      const seedData = JSON.parse(fs.readFileSync(staticSeed, "utf8"));
+      console.log(`[HubBot] Seeding from bundled latest-run.json (run_date: ${seedData.run_date})`);
+      fileWrite(seedData);
+      await dbWrite(seedData);
+    } catch (err) {
+      console.warn("[HubBot] Failed to read seed file:", err);
+    }
+  }
+}
+
+// ── Unified read/write ────────────────────────────────────────────
+async function readRunData(): Promise<Record<string, unknown> | null> {
+  // DB first, file fallback
+  const dbData = await dbRead();
+  if (dbData) return dbData;
+  return fileRead();
+}
+
+async function writeRunData(data: object): Promise<void> {
+  // Write to DB (primary) and file (cache)
+  const dbOk = await dbWrite(data);
+  fileWrite(data);
+  if (!dbOk) {
+    console.warn("[HubBot] DB write failed — data saved to file only");
+  }
 }
 
 // ── Auth helper ──────────────────────────────────────────────────
@@ -93,7 +177,7 @@ function checkApiKey(req: express.Request, res: express.Response): boolean {
 
 // ── Server ───────────────────────────────────────────────────────
 async function startServer() {
-  seedDataFile();
+  await seedOnStartup();
 
   const app = express();
   const server = createServer(app);
@@ -101,8 +185,8 @@ async function startServer() {
   app.use(express.json({ limit: "2mb" }));
 
   // ── GET /api/run-data  (public — no auth needed) ──────────────
-  app.get("/api/run-data", (_req, res) => {
-    const data = readRunData();
+  app.get("/api/run-data", async (_req, res) => {
+    const data = await readRunData();
     if (!data) {
       res.status(404).json({ error: "No run data available yet." });
       return;
@@ -112,7 +196,7 @@ async function startServer() {
   });
 
   // ── POST /api/run-data  (protected by HUBBOT_API_KEY) ─────────
-  app.post("/api/run-data", (req, res) => {
+  app.post("/api/run-data", async (req, res) => {
     if (!checkApiKey(req, res)) return;
 
     const body = req.body;
@@ -122,18 +206,17 @@ async function startServer() {
     }
 
     try {
-      writeRunData(body);
-      console.log("[HubBot] run-data.json updated at", new Date().toISOString());
+      await writeRunData(body);
+      console.log("[HubBot] run data updated at", new Date().toISOString());
       res.json({ ok: true, updated_at: new Date().toISOString() });
     } catch (err) {
-      console.error("[HubBot] Failed to write run-data.json:", err);
+      console.error("[HubBot] Failed to write run data:", err);
       res.status(500).json({ error: "Failed to persist run data" });
     }
   });
 
   // ── POST /api/run-history  (upsert a single run entry by date) ──
-  // Body: { run_date: "2026-06-12", status: "failed"|"completed"|"stalled"|"running", summary?: string, checklist?: object, latest_post?: object, blockers?: array }
-  app.post("/api/run-history", (req, res) => {
+  app.post("/api/run-history", async (req, res) => {
     if (!checkApiKey(req, res)) return;
 
     const entry = req.body;
@@ -143,30 +226,23 @@ async function startServer() {
     }
 
     try {
-      const data = readRunData() || {};
+      const data = (await readRunData()) || {};
       const history: Record<string, unknown>[] = Array.isArray(data.run_history)
         ? (data.run_history as Record<string, unknown>[])
         : [];
 
-      // Upsert: replace existing entry for this date, or prepend new one
       const idx = history.findIndex((h) => h.run_date === entry.run_date);
-      const newEntry = {
-        ...entry,
-        recorded_at: new Date().toISOString(),
-      };
+      const newEntry = { ...entry, recorded_at: new Date().toISOString() };
       if (idx >= 0) {
         history[idx] = newEntry;
       } else {
         history.unshift(newEntry);
       }
 
-      // Keep sorted newest-first and trim to 60 entries
-      history.sort((a, b) =>
-        String(b.run_date).localeCompare(String(a.run_date))
-      );
+      history.sort((a, b) => String(b.run_date).localeCompare(String(a.run_date)));
       const trimmed = history.slice(0, 60);
 
-      writeRunData({ ...data, run_history: trimmed });
+      await writeRunData({ ...data, run_history: trimmed });
       console.log("[HubBot] run-history upserted for", entry.run_date);
       res.json({ ok: true, run_date: entry.run_date });
     } catch (err) {
@@ -176,15 +252,9 @@ async function startServer() {
   });
 
   // ── POST /api/rerun  (trigger a catch-up run for a specific date) ──
-  // Body: { run_date: "2026-06-12" }
-  // Creates a Manus task via the Manus API to run HubBot for the given date.
-  // This endpoint is also accessible without an API key for dashboard UI use (owner-only dashboard).
   app.post("/api/rerun", (req, res) => {
-    // Allow both authenticated (API key) and unauthenticated (dashboard UI) access
-    // since the dashboard is owner-only and the operation is non-destructive
     const apiKey = process.env.HUBBOT_API_KEY;
     const provided = req.headers["x-hubbot-api-key"];
-    // If a key is provided, it must match; if none provided, allow (owner dashboard)
     if (provided && apiKey && provided !== apiKey) {
       res.status(401).json({ error: "Unauthorized" });
       return;
@@ -205,10 +275,7 @@ async function startServer() {
     const projectId = "5QxQCU6iNAWbRVxntRM63p";
     const prompt = `HUBBOT CATCH-UP RUN for ${run_date}.\n\nThe scheduled HubBot run for ${run_date} did not complete successfully. Please run the full HubBot daily playbook now as a catch-up run for ${run_date}. Follow the HUBBOT_PLAYBOOK exactly. This is a manual catch-up triggered from the dashboard.`;
 
-    const payload = JSON.stringify({
-      project_id: projectId,
-      prompt,
-    });
+    const payload = JSON.stringify({ project_id: projectId, prompt });
 
     const options = {
       hostname: "api.manus.im",
@@ -249,7 +316,7 @@ async function startServer() {
     apiReq.end();
   });
 
-  // ── POST /api/run-now  (DISABLED — manual run trigger removed) ──
+  // ── POST /api/run-now  (DISABLED) ──
   app.post("/api/run-now", (_req, res) => {
     res.status(404).json({ error: "Manual run trigger is disabled. Use /api/rerun with a run_date." });
   });
@@ -274,7 +341,6 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing — serve index.html for all non-API routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });
