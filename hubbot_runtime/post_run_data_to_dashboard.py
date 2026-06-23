@@ -445,6 +445,34 @@ def commit_seed_files(data: dict) -> None:
     # Git commit & push so the next deployment picks up the fresh seed.
     try:
         run_date = data.get("run_date", "unknown")
+
+        # Fetch a fresh GitHub PAT from Doppler so we always use a valid token.
+        # The GITHUB_PAT in Doppler should be a classic PAT (ghp_...) with repo scope.
+        doppler_token = os.environ.get("DOPPLER_SERVICE_TOKEN", "")
+        github_pat = ""
+        if doppler_token:
+            try:
+                pat_result = subprocess.run(
+                    ["doppler", "secrets", "get", "GITHUB_PAT", "--plain",
+                     "--token", doppler_token, "--project", "hubbot", "--config", "prd"],
+                    capture_output=True, text=True, timeout=15,
+                )
+                github_pat = pat_result.stdout.strip()
+                if github_pat:
+                    print(f"[dashboard] ✓ Fetched fresh GitHub PAT from Doppler (prefix: {github_pat[:8]}...)")
+                else:
+                    print(f"[dashboard] ⚠ Doppler returned empty PAT")
+            except Exception as e:
+                print(f"[dashboard] ⚠ Could not fetch PAT from Doppler: {e}")
+
+        # Update the remote URL with the fresh token if we have one
+        if github_pat:
+            subprocess.run(
+                ["git", "-C", str(repo_root), "remote", "set-url", "origin",
+                 f"https://x-access-token:{github_pat}@github.com/v3ads/hubbot-dashboard.git"],
+                capture_output=True, text=True,
+            )
+
         subprocess.run(
             ["git", "-C", str(repo_root), "add",
              str(repo_run_data), str(static_seed)],
