@@ -163,7 +163,12 @@ If the API result is ambiguous after a possible create attempt, such as a timeou
 
 **Step 1 — Optional API attempt and fallback decision:**
 
-Run the API publisher at most once if it is configured and safe to use. Record its result under `api_publish_attempt` in the evidence ledger. On success, verify the post is visible in the General feed or resulting thread page before marking the AI-news post as published. On any failed API result, record the API blocker and continue to Step 2 without pausing for owner input. Text-only publishing remains prohibited.
+Run the API publisher at most once if it is configured and safe to use. **The required API publisher is `hubbot_publish_ai_news.py`** — do NOT write a custom publisher script. Custom scripts have caused two confirmed post-quality defects:
+
+1. **Square image defect:** Custom scripts that use `previewURL` instead of `previewImages[]` cause the image to render as a small square thumbnail in the feed instead of a full landscape cover. `hubbot_publish_ai_news.py` uses `previewImages[]` correctly.
+2. **Unclickable link defect:** Custom scripts that write the source URL as plain text in the HTML body produce an unclickable URL. `hubbot_publish_ai_news.py` wraps the source URL in an `<a href>` anchor tag so it is always clickable.
+
+Run `hubbot_publish_ai_news.py` with the correct arguments. Record its result under `api_publish_attempt` in the evidence ledger. On success, verify the post is visible in the General feed or resulting thread page before marking the AI-news post as published. On any failed API result, record the API blocker and continue to Step 2 without pausing for owner input. Text-only publishing remains prohibited.
 
 **Step 2 — Open the authenticated composer:**
 
