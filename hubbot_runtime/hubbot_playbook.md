@@ -213,18 +213,13 @@ After completing all community work, HubBot must POST the run summary directly t
 
 **Required steps:**
 
-1. Run the finalizer to build and POST the normalized dashboard payload:
-   ```bash
-   python3 /home/ubuntu/hubbot-dashboard/hubbot_runtime/hubbot_finalize.py \
-     --ledger /home/ubuntu/hubactually_hubbot_run_ledger/YYYY-MM-DD_hubbot_run.json \
-     --repo-root /home/ubuntu/hubbot-dashboard
-   ```
-   Replace `YYYY-MM-DD` with the actual run date. The finalizer reads the JSON ledger, builds the normalized payload, POSTs to the dashboard API, and writes `run-data.json` locally.
-
-2. If the finalizer is unavailable, fall back to `post_run_data_to_dashboard.py`:
+1. Run the correct dashboard update script (`post_run_data_to_dashboard.py`) to build and POST the normalized dashboard payload. This script bypasses WAF/CDN restrictions that block direct HTTP posts from other scripts.
    ```bash
    python3 /home/ubuntu/hubbot-dashboard/hubbot_runtime/post_run_data_to_dashboard.py
    ```
+   This script automatically finds the latest date-stamped JSON ledger, normalizes the payload, POSTs to the dashboard API, and writes the required cache files locally.
+
+2. **Critical fallback:** Do NOT use `hubbot_finalize.py` for the dashboard POST, as it will be blocked with a 403 Forbidden error by the WAF.
 
 3. If both Python scripts are unavailable (e.g. repo clone failed), POST directly with curl:
    ```bash
@@ -235,7 +230,7 @@ After completing all community work, HubBot must POST the run summary directly t
    ```
    where `$RUN_DATA_JSON` is the complete run data JSON string built from the evidence ledger.
 
-4. Verify the response contains `{"ok": true}`. If the POST fails, record it as a non-critical blocker and continue — do not let a dashboard update failure stop the run.
+4. Verify the response. If the POST fails (e.g. 403 Forbidden, 500 Error), **you MUST record it as a blocker in the `blockers[]` array** of the evidence ledger. This ensures the failure triggers the required owner alert email. Do not let a dashboard update failure stop the run, but it MUST be flagged for the owner.
 
 **Important:** `HUBBOT_API_KEY` is injected by the Manus schedule prompt (not from Doppler). It must be set before calling this step. If it is not set, skip the dashboard update and record `dashboard_update_status: "blocked_missing_api_key"`.
 
