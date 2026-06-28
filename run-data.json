@@ -1,24 +1,24 @@
 {
-  "run_date": "2026-06-26",
-  "run_completed_at_et": "2026-06-26T05:30:00-04:00",
-  "run_weekday": "Friday",
+  "run_date": "2026-06-28",
+  "run_completed_at_et": "2026-06-28 05:12:00 EDT",
+  "run_weekday": "",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-06-26 — completed",
+  "last_run_label": "2026-06-28 — completed",
   "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
-  "agent_version": "v2",
+  "agent_version": "v1",
   "published_post": {
-    "title": "Meta's New AI Creative Tools Let Every Marketer Build Brand-Consistent Ads at Scale",
-    "thread_url": "https://community.hubactually.com/0b9b97f3-8022-47ad-b1b0-f412892c3726",
-    "thread_id": "",
+    "title": "77% of Small Businesses Now Use AI Regularly — Here Is What the Data Says About Where They Are Starting",
+    "thread_url": "https://community.hubactually.com/9bee83a8-71ce-45f1-83b1-61d29362ddbb",
+    "thread_id": "9bee83a8-71ce-45f1-83b1-61d29362ddbb",
     "category": "General",
-    "image_url": "",
-    "image_attached": false,
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1782637770814.png",
+    "image_attached": true,
     "publish_status": "published",
-    "source_url": "https://www.facebook.com/business/news/cannes-2026-cross-ai-threshold",
-    "published_at_utc": "",
+    "source_url": "https://www.idahostatesman.com/news/business/article316267046.html",
+    "published_at_utc": "2026-06-28T09:09:32+00:00",
     "post_visible_after_submit": true,
     "post_url_note": "Verified visible in authenticated feed."
   },
@@ -45,7 +45,7 @@
     },
     {
       "task": "Saturday Digest",
-      "outcome": "skipped_not_saturday"
+      "outcome": "not_saturday"
     },
     {
       "task": "Dashboard Update",
@@ -63,26 +63,29 @@
     "duplicate_posts_avoided": 1
   },
   "ai_news": {
-    "title": "Meta's New AI Creative Tools Let Every Marketer Build Brand-Consistent Ads at Scale",
-    "source_url": "https://www.facebook.com/business/news/cannes-2026-cross-ai-threshold",
+    "title": "77% of Small Businesses Now Use AI Regularly — Here Is What the Data Says About Where They Are Starting",
+    "source_url": "https://www.idahostatesman.com/news/business/article316267046.html",
     "publish_status": "published",
     "image_status": "uploaded",
-    "community_url": "https://community.hubactually.com/0b9b97f3-8022-47ad-b1b0-f412892c3726"
+    "community_url": "https://community.hubactually.com/9bee83a8-71ce-45f1-83b1-61d29362ddbb"
   },
   "new_members": [],
   "saturday_digest": {
-    "status": "skipped_not_saturday",
+    "status": "not_saturday",
     "newsletter_id": "",
     "scheduled_for_et": ""
   },
   "blockers": [],
   "flagged_items": [],
-  "evidence": {},
-  "notes": "Friday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
+  "evidence": {
+    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260628T090932Z_api_ai_news_publisher_result.json",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1782637770814.png"
+  },
+  "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
     {
-      "run_date": "2026-06-26",
-      "run_weekday": "Friday",
+      "run_date": "2026-06-28",
+      "run_weekday": "",
       "status": "completed",
       "primary_result": "published",
       "posts_published": 1,
