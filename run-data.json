@@ -1,24 +1,24 @@
 {
-  "run_date": "2026-06-28",
-  "run_completed_at_et": "2026-06-28 05:12:00 EDT",
+  "run_date": "2026-06-29",
+  "run_completed_at_et": "2026-06-29T05:13:00 EDT",
   "run_weekday": "",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-06-28 — completed",
+  "last_run_label": "2026-06-29 — completed",
   "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
-  "agent_version": "v1",
+  "agent_version": "v2",
   "published_post": {
-    "title": "77% of Small Businesses Now Use AI Regularly — Here Is What the Data Says About Where They Are Starting",
-    "thread_url": "https://community.hubactually.com/9bee83a8-71ce-45f1-83b1-61d29362ddbb",
-    "thread_id": "9bee83a8-71ce-45f1-83b1-61d29362ddbb",
+    "title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
+    "thread_url": null,
+    "thread_id": null,
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1782637770814.png",
-    "image_attached": true,
+    "image_url": "",
+    "image_attached": false,
     "publish_status": "published",
-    "source_url": "https://www.idahostatesman.com/news/business/article316267046.html",
-    "published_at_utc": "2026-06-28T09:09:32+00:00",
+    "source_url": "https://product.beehiiv.com/p/write-access-is-here",
+    "published_at_utc": "",
     "post_visible_after_submit": true,
     "post_url_note": "Verified visible in authenticated feed."
   },
@@ -41,7 +41,7 @@
     },
     {
       "task": "Owner Alert",
-      "outcome": "not_required"
+      "outcome": "not required"
     },
     {
       "task": "Saturday Digest",
@@ -63,11 +63,11 @@
     "duplicate_posts_avoided": 1
   },
   "ai_news": {
-    "title": "77% of Small Businesses Now Use AI Regularly — Here Is What the Data Says About Where They Are Starting",
-    "source_url": "https://www.idahostatesman.com/news/business/article316267046.html",
+    "title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
+    "source_url": "https://product.beehiiv.com/p/write-access-is-here",
     "publish_status": "published",
     "image_status": "uploaded",
-    "community_url": "https://community.hubactually.com/9bee83a8-71ce-45f1-83b1-61d29362ddbb"
+    "community_url": null
   },
   "new_members": [],
   "saturday_digest": {
@@ -77,12 +77,19 @@
   },
   "blockers": [],
   "flagged_items": [],
-  "evidence": {
-    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260628T090932Z_api_ai_news_publisher_result.json",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1782637770814.png"
-  },
-  "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
+  "evidence": {},
+  "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not required.",
   "run_history": [
+    {
+      "run_date": "2026-06-29",
+      "run_weekday": "",
+      "status": "completed",
+      "primary_result": "published",
+      "posts_published": 1,
+      "tasks_completed": 7,
+      "tasks_failed": 0,
+      "new_members_found": 0
+    },
     {
       "run_date": "2026-06-28",
       "run_weekday": "",
