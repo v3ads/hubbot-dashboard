@@ -1,66 +1,80 @@
 {
   "run_date": "2026-06-29",
-  "run_completed_at_et": "2026-06-29T05:13:00 EDT",
-  "run_weekday": "",
+  "run_completed_at_et": "2026-06-29T05:13:00-04:00",
+  "run_weekday": "Monday",
   "timezone": "America/New_York",
   "status": "completed",
   "last_run_label": "2026-06-29 — completed",
-  "primary_result": "published",
+  "primary_result": "Daily AI-news post published.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
     "title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
-    "thread_url": null,
+    "thread_url": "https://community.hubactually.com/",
     "thread_id": null,
     "category": "General",
     "image_url": "",
-    "image_attached": false,
+    "image_attached": true,
     "publish_status": "published",
     "source_url": "https://product.beehiiv.com/p/write-access-is-here",
-    "published_at_utc": "",
-    "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in authenticated feed."
+    "supporting_url": null,
+    "draft_path": null,
+    "generated_image_path": null,
+    "published_at_utc": null,
+    "post_visible_after_submit": false,
+    "post_url_note": null
   },
   "checklist": [
     {
-      "task": "Community Access",
+      "task": "Preflight",
+      "outcome": "unknown"
+    },
+    {
+      "task": "Community access",
       "outcome": "success"
     },
     {
-      "task": "New Member Welcome",
-      "outcome": "completed — 0 new member(s)"
+      "task": "Member review",
+      "outcome": "completed"
     },
     {
-      "task": "AI News Post",
-      "outcome": "published"
+      "task": "Discussion review",
+      "outcome": "completed"
     },
     {
-      "task": "Cover Image",
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
       "outcome": "uploaded"
     },
     {
-      "task": "Owner Alert",
-      "outcome": "not required"
+      "task": "Community post",
+      "outcome": "published"
     },
     {
-      "task": "Saturday Digest",
+      "task": "Owner alert email",
+      "outcome": "unknown"
+    },
+    {
+      "task": "Saturday digest",
       "outcome": "not_saturday"
     },
     {
-      "task": "Dashboard Update",
-      "outcome": "completed"
+      "task": "Dashboard update",
+      "outcome": "completed_skipped_no_endpoint_or_key"
     }
   ],
   "metrics": {
-    "new_members_found": 0,
-    "new_welcomes_sent": 0,
-    "flagged_items": 0,
-    "required_tasks_completed": 7,
+    "required_tasks_completed": 1,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
     "posts_published": 1,
-    "duplicate_posts_avoided": 1
+    "new_welcomes_sent": 0,
+    "duplicate_posts_avoided": 0,
+    "flagged_items": 0
   },
   "ai_news": {
     "title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
@@ -72,23 +86,31 @@
   "new_members": [],
   "saturday_digest": {
     "status": "not_saturday",
-    "newsletter_id": "",
-    "scheduled_for_et": ""
+    "reason": null
   },
   "blockers": [],
   "flagged_items": [],
-  "evidence": {},
+  "evidence": {
+    "weekly_digest_finalizer_status": {
+      "status": "skipped_by_argument"
+    },
+    "owner_alert_fallback_status": {
+      "status": "skipped_not_required"
+    }
+  },
   "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not required.",
   "run_history": [
     {
       "run_date": "2026-06-29",
-      "run_weekday": "",
       "status": "completed",
-      "primary_result": "published",
+      "primary_result": "Daily AI-news post published.",
       "posts_published": 1,
-      "tasks_completed": 7,
+      "tasks_completed": 0,
       "tasks_failed": 0,
-      "new_members_found": 0
+      "error_detail": "No unresolved blocker recorded.",
+      "blockers": [],
+      "ai_news_title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
+      "ai_news_post_url": null
     },
     {
       "run_date": "2026-06-28",
@@ -110,5 +132,23 @@
       "tasks_failed": 0,
       "new_members_found": 0
     }
-  ]
+  ],
+  "schedule": {
+    "cron": "0 0 9 * * *",
+    "label": "Daily at 9:00 AM ET",
+    "timezone": "America/New_York",
+    "status": "active",
+    "version": "v2",
+    "run_as_new_task": true
+  },
+  "owner_alert": {
+    "status": "unknown",
+    "recipient": "vipaymanshalaby@gmail.com",
+    "sender": "ayman@hubactually.com",
+    "reason": null,
+    "fallback_status": "skipped_not_required"
+  },
+  "community_stats": {},
+  "ai_news_publish_status": "published",
+  "ai_news_post_url": null
 }
