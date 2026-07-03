@@ -1,31 +1,31 @@
 {
-  "run_date": "2026-06-29",
-  "run_completed_at_et": "2026-06-29T05:13:00-04:00",
-  "run_weekday": "Monday",
+  "run_date": "2026-07-03",
+  "run_completed_at_et": "",
+  "run_weekday": "",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-06-29 — completed",
-  "primary_result": "published",
+  "last_run_label": "2026-07-03 — completed",
+  "primary_result": "unknown",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
-    "thread_url": null,
-    "thread_id": null,
+    "title": "",
+    "thread_url": "",
+    "thread_id": "",
     "category": "General",
     "image_url": "",
     "image_attached": false,
-    "publish_status": "published",
-    "source_url": "https://product.beehiiv.com/p/write-access-is-here",
+    "publish_status": "",
+    "source_url": "",
     "published_at_utc": "",
-    "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in authenticated feed."
+    "post_visible_after_submit": false,
+    "post_url_note": ""
   },
   "checklist": [
     {
       "task": "Community Access",
-      "outcome": "success"
+      "outcome": "unknown"
     },
     {
       "task": "New Member Welcome",
@@ -33,15 +33,15 @@
     },
     {
       "task": "AI News Post",
-      "outcome": "published"
+      "outcome": "unknown"
     },
     {
       "task": "Cover Image",
-      "outcome": "uploaded"
+      "outcome": "unknown"
     },
     {
       "task": "Owner Alert",
-      "outcome": "not required"
+      "outcome": "not_required"
     },
     {
       "task": "Saturday Digest",
@@ -49,7 +49,7 @@
     },
     {
       "task": "Dashboard Update",
-      "outcome": "completed"
+      "outcome": "pending"
     }
   ],
   "metrics": {
@@ -59,15 +59,15 @@
     "required_tasks_completed": 7,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
-    "posts_published": 1,
-    "duplicate_posts_avoided": 1
+    "posts_published": 0,
+    "duplicate_posts_avoided": 0
   },
   "ai_news": {
-    "title": "beehiiv Just Let You Run Your Entire Newsletter Through Claude — No Clicking Required",
-    "source_url": "https://product.beehiiv.com/p/write-access-is-here",
-    "publish_status": "published",
-    "image_status": "uploaded",
-    "community_url": null
+    "title": "",
+    "source_url": "",
+    "publish_status": "",
+    "image_status": "",
+    "community_url": "https://community.hubactually.com"
   },
   "new_members": [],
   "saturday_digest": {
@@ -77,9 +77,21 @@
   },
   "blockers": [],
   "flagged_items": [],
-  "evidence": {},
-  "notes": "Monday run: 0 new member(s) welcomed, AI-news post published, owner alert not required.",
+  "evidence": {
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260703T051551-0400_weekly_digest_result.json"
+  },
+  "notes": " run: 0 new member(s) welcomed, AI-news post , owner alert not_required.",
   "run_history": [
+    {
+      "run_date": "2026-07-03",
+      "run_weekday": "",
+      "status": "completed",
+      "primary_result": "unknown",
+      "posts_published": 0,
+      "tasks_completed": 7,
+      "tasks_failed": 0,
+      "new_members_found": 0
+    },
     {
       "run_date": "2026-06-29",
       "run_weekday": "Monday",
