@@ -1,31 +1,31 @@
 {
   "run_date": "2026-07-03",
-  "run_completed_at_et": "",
+  "run_completed_at_et": "2026-07-03 05:16 EDT",
   "run_weekday": "",
   "timezone": "America/New_York",
   "status": "completed",
   "last_run_label": "2026-07-03 — completed",
-  "primary_result": "unknown",
+  "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "",
-    "thread_url": "",
-    "thread_id": "",
+    "title": "You Can Now Build a Phone Agent for Your Business in Under 2 Minutes — No Code Required",
+    "thread_url": "https://community.hubactually.com",
+    "thread_id": null,
     "category": "General",
-    "image_url": "",
-    "image_attached": false,
-    "publish_status": "",
-    "source_url": "",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783070054992.jpg",
+    "image_attached": true,
+    "publish_status": "published",
+    "source_url": "https://x.ai/news/grok-voice-agent-builder",
     "published_at_utc": "",
-    "post_visible_after_submit": false,
-    "post_url_note": ""
+    "post_visible_after_submit": true,
+    "post_url_note": "Verified visible in authenticated feed."
   },
   "checklist": [
     {
       "task": "Community Access",
-      "outcome": "unknown"
+      "outcome": "completed"
     },
     {
       "task": "New Member Welcome",
@@ -33,11 +33,11 @@
     },
     {
       "task": "AI News Post",
-      "outcome": "unknown"
+      "outcome": "published"
     },
     {
       "task": "Cover Image",
-      "outcome": "unknown"
+      "outcome": "uploaded"
     },
     {
       "task": "Owner Alert",
@@ -59,14 +59,14 @@
     "required_tasks_completed": 7,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
-    "posts_published": 0,
-    "duplicate_posts_avoided": 0
+    "posts_published": 1,
+    "duplicate_posts_avoided": 1
   },
   "ai_news": {
-    "title": "",
-    "source_url": "",
-    "publish_status": "",
-    "image_status": "",
+    "title": "You Can Now Build a Phone Agent for Your Business in Under 2 Minutes — No Code Required",
+    "source_url": "https://x.ai/news/grok-voice-agent-builder",
+    "publish_status": "published",
+    "image_status": "uploaded",
     "community_url": "https://community.hubactually.com"
   },
   "new_members": [],
@@ -80,14 +80,14 @@
   "evidence": {
     "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260703T051551-0400_weekly_digest_result.json"
   },
-  "notes": " run: 0 new member(s) welcomed, AI-news post , owner alert not_required.",
+  "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
     {
       "run_date": "2026-07-03",
       "run_weekday": "",
       "status": "completed",
-      "primary_result": "unknown",
-      "posts_published": 0,
+      "primary_result": "published",
+      "posts_published": 1,
       "tasks_completed": 7,
       "tasks_failed": 0,
       "new_members_found": 0
