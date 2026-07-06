@@ -1,116 +1,94 @@
 {
   "run_date": "2026-07-06",
-  "run_completed_at_et": "2026-07-06T05:16:28-04:00",
-  "run_weekday": "Monday",
+  "run_completed_at_et": "",
+  "run_weekday": "",
   "timezone": "America/New_York",
-  "status": "blocked_required_action",
-  "last_run_label": "2026-07-06 — blocked required action",
-  "primary_result": "Daily run blocked before required publishing completed.",
+  "status": "completed",
+  "last_run_label": "2026-07-06 — completed",
+  "primary_result": "unknown",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "Not published",
-    "thread_url": "https://community.hubactually.com/",
-    "thread_id": null,
+    "title": "",
+    "thread_url": "",
+    "thread_id": "",
     "category": "General",
     "image_url": "",
     "image_attached": false,
-    "publish_status": "blocked",
-    "source_url": null,
-    "supporting_url": null,
-    "draft_path": null,
-    "generated_image_path": null,
-    "published_at_utc": null,
+    "publish_status": "",
+    "source_url": "",
+    "published_at_utc": "",
     "post_visible_after_submit": false,
-    "post_url_note": null
+    "post_url_note": ""
   },
   "checklist": [
     {
-      "task": "Preflight",
+      "task": "Community Access",
       "outcome": "unknown"
     },
     {
-      "task": "Community access",
+      "task": "New Member Welcome",
+      "outcome": "completed — 0 new member(s)"
+    },
+    {
+      "task": "AI News Post",
       "outcome": "unknown"
     },
     {
-      "task": "Member review",
+      "task": "Cover Image",
+      "outcome": "unknown"
+    },
+    {
+      "task": "Owner Alert",
+      "outcome": "not required"
+    },
+    {
+      "task": "Saturday Digest",
+      "outcome": "not saturday"
+    },
+    {
+      "task": "Dashboard Update",
       "outcome": "completed"
-    },
-    {
-      "task": "Discussion review",
-      "outcome": "unknown"
-    },
-    {
-      "task": "AI-news research",
-      "outcome": "unknown"
-    },
-    {
-      "task": "Image generation",
-      "outcome": "unknown"
-    },
-    {
-      "task": "Community post",
-      "outcome": "blocked"
-    },
-    {
-      "task": "Owner alert email",
-      "outcome": "unknown"
-    },
-    {
-      "task": "Saturday digest",
-      "outcome": "unknown"
-    },
-    {
-      "task": "Dashboard update",
-      "outcome": "completed_skipped_no_endpoint_or_key"
     }
   ],
   "metrics": {
-    "required_tasks_completed": 0,
+    "new_members_found": 0,
+    "new_welcomes_sent": 0,
+    "flagged_items": 0,
+    "required_tasks_completed": 7,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
     "posts_published": 0,
-    "new_welcomes_sent": 0,
-    "duplicate_posts_avoided": 0,
-    "flagged_items": 0
+    "duplicate_posts_avoided": 0
   },
   "ai_news": {
-    "title": "You Can Now Build a Phone Agent for Your Business in Under 2 Minutes — No Code Required",
-    "source_url": "https://x.ai/news/grok-voice-agent-builder",
-    "publish_status": "published",
-    "image_status": "uploaded",
+    "title": "",
+    "source_url": "",
+    "publish_status": "",
+    "image_status": "",
     "community_url": "https://community.hubactually.com"
   },
   "new_members": [],
   "saturday_digest": {
-    "status": "unknown",
-    "reason": null
+    "status": "not saturday",
+    "newsletter_id": "",
+    "scheduled_for_et": ""
   },
   "blockers": [],
   "flagged_items": [],
-  "evidence": {
-    "weekly_digest_finalizer_status": {
-      "status": "skipped_by_argument"
-    },
-    "owner_alert_fallback_status": {
-      "status": "skipped_not_required"
-    }
-  },
-  "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
+  "evidence": {},
+  "notes": " run: 0 new member(s) welcomed, AI-news post , owner alert not required.",
   "run_history": [
     {
       "run_date": "2026-07-06",
-      "status": "blocked_required_action",
-      "primary_result": "Daily run blocked before required publishing completed.",
+      "run_weekday": "",
+      "status": "completed",
+      "primary_result": "unknown",
       "posts_published": 0,
-      "tasks_completed": 0,
+      "tasks_completed": 7,
       "tasks_failed": 0,
-      "error_detail": "No unresolved blocker recorded.",
-      "blockers": [],
-      "ai_news_title": "Not published",
-      "ai_news_post_url": null
+      "new_members_found": 0
     },
     {
       "run_date": "2026-07-03",
@@ -152,23 +130,5 @@
       "tasks_failed": 0,
       "new_members_found": 0
     }
-  ],
-  "schedule": {
-    "cron": "0 0 9 * * *",
-    "label": "Daily at 9:00 AM ET",
-    "timezone": "America/New_York",
-    "status": "active",
-    "version": "v2",
-    "run_as_new_task": true
-  },
-  "owner_alert": {
-    "status": "unknown",
-    "recipient": "vipaymanshalaby@gmail.com",
-    "sender": "ayman@hubactually.com",
-    "reason": null,
-    "fallback_status": "skipped_not_required"
-  },
-  "community_stats": {},
-  "ai_news_publish_status": "blocked",
-  "ai_news_post_url": null
+  ]
 }
