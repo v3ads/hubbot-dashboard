@@ -1,66 +1,80 @@
 {
-  "run_date": "2026-07-03",
-  "run_completed_at_et": "2026-07-03 05:16 EDT",
-  "run_weekday": "",
+  "run_date": "2026-07-06",
+  "run_completed_at_et": "2026-07-06T05:16:28-04:00",
+  "run_weekday": "Monday",
   "timezone": "America/New_York",
-  "status": "completed",
-  "last_run_label": "2026-07-03 — completed",
-  "primary_result": "published",
+  "status": "blocked_required_action",
+  "last_run_label": "2026-07-06 — blocked required action",
+  "primary_result": "Daily run blocked before required publishing completed.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "You Can Now Build a Phone Agent for Your Business in Under 2 Minutes — No Code Required",
-    "thread_url": "https://community.hubactually.com",
+    "title": "Not published",
+    "thread_url": "https://community.hubactually.com/",
     "thread_id": null,
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783070054992.jpg",
-    "image_attached": true,
-    "publish_status": "published",
-    "source_url": "https://x.ai/news/grok-voice-agent-builder",
-    "published_at_utc": "",
-    "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in authenticated feed."
+    "image_url": "",
+    "image_attached": false,
+    "publish_status": "blocked",
+    "source_url": null,
+    "supporting_url": null,
+    "draft_path": null,
+    "generated_image_path": null,
+    "published_at_utc": null,
+    "post_visible_after_submit": false,
+    "post_url_note": null
   },
   "checklist": [
     {
-      "task": "Community Access",
+      "task": "Preflight",
+      "outcome": "unknown"
+    },
+    {
+      "task": "Community access",
+      "outcome": "unknown"
+    },
+    {
+      "task": "Member review",
       "outcome": "completed"
     },
     {
-      "task": "New Member Welcome",
-      "outcome": "completed — 0 new member(s)"
+      "task": "Discussion review",
+      "outcome": "unknown"
     },
     {
-      "task": "AI News Post",
-      "outcome": "published"
+      "task": "AI-news research",
+      "outcome": "unknown"
     },
     {
-      "task": "Cover Image",
-      "outcome": "uploaded"
+      "task": "Image generation",
+      "outcome": "unknown"
     },
     {
-      "task": "Owner Alert",
-      "outcome": "not_required"
+      "task": "Community post",
+      "outcome": "blocked"
     },
     {
-      "task": "Saturday Digest",
-      "outcome": "not_saturday"
+      "task": "Owner alert email",
+      "outcome": "unknown"
     },
     {
-      "task": "Dashboard Update",
-      "outcome": "completed"
+      "task": "Saturday digest",
+      "outcome": "unknown"
+    },
+    {
+      "task": "Dashboard update",
+      "outcome": "completed_skipped_no_endpoint_or_key"
     }
   ],
   "metrics": {
-    "new_members_found": 0,
-    "new_welcomes_sent": 0,
-    "flagged_items": 0,
-    "required_tasks_completed": 7,
+    "required_tasks_completed": 0,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
-    "posts_published": 1,
-    "duplicate_posts_avoided": 1
+    "posts_published": 0,
+    "new_welcomes_sent": 0,
+    "duplicate_posts_avoided": 0,
+    "flagged_items": 0
   },
   "ai_news": {
     "title": "You Can Now Build a Phone Agent for Your Business in Under 2 Minutes — No Code Required",
@@ -71,17 +85,33 @@
   },
   "new_members": [],
   "saturday_digest": {
-    "status": "not_saturday",
-    "newsletter_id": "",
-    "scheduled_for_et": ""
+    "status": "unknown",
+    "reason": null
   },
   "blockers": [],
   "flagged_items": [],
   "evidence": {
-    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260703T051551-0400_weekly_digest_result.json"
+    "weekly_digest_finalizer_status": {
+      "status": "skipped_by_argument"
+    },
+    "owner_alert_fallback_status": {
+      "status": "skipped_not_required"
+    }
   },
   "notes": " run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
+    {
+      "run_date": "2026-07-06",
+      "status": "blocked_required_action",
+      "primary_result": "Daily run blocked before required publishing completed.",
+      "posts_published": 0,
+      "tasks_completed": 0,
+      "tasks_failed": 0,
+      "error_detail": "No unresolved blocker recorded.",
+      "blockers": [],
+      "ai_news_title": "Not published",
+      "ai_news_post_url": null
+    },
     {
       "run_date": "2026-07-03",
       "run_weekday": "",
@@ -122,5 +152,23 @@
       "tasks_failed": 0,
       "new_members_found": 0
     }
-  ]
+  ],
+  "schedule": {
+    "cron": "0 0 9 * * *",
+    "label": "Daily at 9:00 AM ET",
+    "timezone": "America/New_York",
+    "status": "active",
+    "version": "v2",
+    "run_as_new_task": true
+  },
+  "owner_alert": {
+    "status": "unknown",
+    "recipient": "vipaymanshalaby@gmail.com",
+    "sender": "ayman@hubactually.com",
+    "reason": null,
+    "fallback_status": "skipped_not_required"
+  },
+  "community_stats": {},
+  "ai_news_publish_status": "blocked",
+  "ai_news_post_url": null
 }
