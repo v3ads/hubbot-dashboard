@@ -1,0 +1,94 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_date": "2026-07-07",
+  "run_started_at_et": "2026-07-07T05:04:50-04:00",
+  "run_completed_at_et": "2026-07-07T05:12:38-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "success",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": "From Tool to Workforce: Small Business Owners Are Now Managing Teams of AI Agents",
+  "ai_news_source_url": "https://www.entrepreneur.com/business-news/small-business-owners-are-now-overseeing-entire-teams-of-ai-agents",
+  "ai_news_post_url": "https://community.hubactually.com (visible in General feed, Jul 7 2026)",
+  "ai_news_publish_status": "published",
+  "image_concept": "Solo entrepreneur as conductor of a luminous AI agent network \u2014 glowing interconnected nodes representing autonomous tasks surrounding a calm business owner at a modern desk",
+  "image_status": "uploaded",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1783415462528.png",
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "skipped_not_saturday",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "pre_publish_checks": {
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass"
+  },
+  "run_evidence_summary": "Post published and verified visible in General feed: 'From Tool to Workforce: Small Business Owners Are Now Managing Teams of AI Agents'. Image uploaded to CDN. Source: entrepreneur.com. No new members. No flagged items. Today is Tuesday \u2014 Saturday digest not required.",
+  "checklist": [
+    {
+      "task": "Preflight",
+      "outcome": "completed"
+    },
+    {
+      "task": "Community access",
+      "outcome": "completed"
+    },
+    {
+      "task": "Member review",
+      "outcome": "completed_no_new_members"
+    },
+    {
+      "task": "Discussion review",
+      "outcome": "completed_no_action_required"
+    },
+    {
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
+      "outcome": "completed_uploaded"
+    },
+    {
+      "task": "Community post",
+      "outcome": "published_and_verified_visible"
+    },
+    {
+      "task": "Owner alert email",
+      "outcome": "not_required"
+    },
+    {
+      "task": "Saturday digest",
+      "outcome": "skipped_not_saturday"
+    },
+    {
+      "task": "Dashboard update",
+      "outcome": "pending"
+    }
+  ],
+  "metrics": {
+    "required_tasks_completed": 8,
+    "required_tasks_failed": 0,
+    "owner_alerts_sent": 0,
+    "posts_published": 1,
+    "new_welcomes_sent": 0
+  },
+  "community": "HubActually",
+  "published_post": {
+    "title": "From Tool to Workforce: Small Business Owners Are Now Managing Teams of AI Agents",
+    "thread_url": "https://community.hubactually.com (visible in General feed)",
+    "thread_id": "",
+    "category": "General",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783415462528.png",
+    "image_attached": true,
+    "publish_status": "published",
+    "source_url": "https://www.entrepreneur.com/business-news/small-business-owners-are-now-overseeing-entire-teams-of-ai-agents",
+    "published_at_utc": "2026-07-07T09:11:04+00:00",
+    "post_visible_after_submit": true
+  }
+}
