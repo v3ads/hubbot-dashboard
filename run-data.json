@@ -1,23 +1,23 @@
 {
-  "run_date": "2026-07-07",
-  "run_completed_at_et": "2026-07-07T05:12:38-04:00",
-  "run_weekday": "Tuesday",
+  "run_date": "2026-07-10",
+  "run_completed_at_et": "2026-07-10T05:12:00-04:00",
+  "run_weekday": "Friday",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-07-07 — completed",
+  "last_run_label": "2026-07-10 — completed",
   "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "From Tool to Workforce: Small Business Owners Are Now Managing Teams of AI Agents",
-    "thread_url": "https://community.hubactually.com (visible in General feed, Jul 7 2026)",
+    "title": "Two-Thirds of Small Businesses Now Use AI — But 70% Say They Need Better Skills to Unlock the Real Value",
+    "thread_url": null,
     "thread_id": "",
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783415462528.png",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783674592773.png",
     "image_attached": true,
     "publish_status": "published",
-    "source_url": "https://www.entrepreneur.com/business-news/small-business-owners-are-now-overseeing-entire-teams-of-ai-agents",
+    "source_url": "https://www.thryv.com/blog/ai-for-small-business-2026-report/",
     "published_at_utc": "",
     "post_visible_after_submit": true,
     "post_url_note": "Verified visible in authenticated feed."
@@ -49,7 +49,7 @@
     },
     {
       "task": "Dashboard Update",
-      "outcome": "completed"
+      "outcome": "pending"
     }
   ],
   "metrics": {
@@ -63,11 +63,11 @@
     "duplicate_posts_avoided": 1
   },
   "ai_news": {
-    "title": "From Tool to Workforce: Small Business Owners Are Now Managing Teams of AI Agents",
-    "source_url": "https://www.entrepreneur.com/business-news/small-business-owners-are-now-overseeing-entire-teams-of-ai-agents",
+    "title": "Two-Thirds of Small Businesses Now Use AI — But 70% Say They Need Better Skills to Unlock the Real Value",
+    "source_url": "https://www.thryv.com/blog/ai-for-small-business-2026-report/",
     "publish_status": "published",
     "image_status": "uploaded",
-    "community_url": "https://community.hubactually.com (visible in General feed, Jul 7 2026)"
+    "community_url": null
   },
   "new_members": [],
   "saturday_digest": {
@@ -78,8 +78,18 @@
   "blockers": [],
   "flagged_items": [],
   "evidence": {},
-  "notes": "Tuesday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
+  "notes": "Friday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
+    {
+      "run_date": "2026-07-10",
+      "run_weekday": "Friday",
+      "status": "completed",
+      "primary_result": "published",
+      "posts_published": 1,
+      "tasks_completed": 7,
+      "tasks_failed": 0,
+      "new_members_found": 0
+    },
     {
       "run_date": "2026-07-07",
       "run_weekday": "Tuesday",
