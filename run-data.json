@@ -1,6 +1,6 @@
 {
   "run_date": "2026-07-12",
-  "run_completed_at_et": "2026-07-12T05:21:29-04:00",
+  "run_completed_at_et": "2026-07-12T05:22:42-04:00",
   "run_weekday": "Sunday",
   "timezone": "America/New_York",
   "status": "completed",
@@ -49,7 +49,7 @@
     },
     {
       "task": "Dashboard Update",
-      "outcome": "completed_pending_post_verification"
+      "outcome": "posted_http_200_and_repository_cache_pushed"
     }
   ],
   "metrics": {
@@ -83,6 +83,8 @@
     "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T091611Z_api_ai_news_publisher_result.json",
     "working_notes_path": "/home/ubuntu/hubbot_run_working_notes.md",
     "feed_verification_screenshot": "/home/ubuntu/screenshots/community_hubactuall_2026-07-12_09-19-44_1118.webp",
+    "dashboard_update_log": "/home/ubuntu/hubbot_dashboard_post_stdout.log",
+    "dashboard_repository_commit": "b3f00a7",
     "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T052056-0400_weekly_digest_result.json",
     "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T052107-0400_owner_alert_result.json"
   },
