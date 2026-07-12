@@ -1,23 +1,23 @@
 {
-  "run_date": "2026-07-10",
-  "run_completed_at_et": "2026-07-10T05:12:00-04:00",
-  "run_weekday": "Friday",
+  "run_date": "2026-07-12",
+  "run_completed_at_et": "2026-07-12T05:21:29-04:00",
+  "run_weekday": "Sunday",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-07-10 — completed",
+  "last_run_label": "2026-07-12 — completed",
   "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "Two-Thirds of Small Businesses Now Use AI — But 70% Say They Need Better Skills to Unlock the Real Value",
-    "thread_url": null,
+    "title": "The WTO Is Backing AI Tools That Help Small Businesses Sell Across Borders",
+    "thread_url": "https://community.hubactually.com/7a380592-79af-4072-af97-f76fcf2fe808",
     "thread_id": "",
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783674592773.png",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783847769116.png",
     "image_attached": true,
     "publish_status": "published",
-    "source_url": "https://www.thryv.com/blog/ai-for-small-business-2026-report/",
+    "source_url": "https://www.wto.org/english/forums_e/business_e/sbc_winners26_e.htm",
     "published_at_utc": "",
     "post_visible_after_submit": true,
     "post_url_note": "Verified visible in authenticated feed."
@@ -25,7 +25,7 @@
   "checklist": [
     {
       "task": "Community Access",
-      "outcome": "success"
+      "outcome": "success — authenticated Hub Bot session; no CAPTCHA or physical-device 2FA"
     },
     {
       "task": "New Member Welcome",
@@ -45,11 +45,11 @@
     },
     {
       "task": "Saturday Digest",
-      "outcome": "skipped_not_saturday"
+      "outcome": "not_saturday"
     },
     {
       "task": "Dashboard Update",
-      "outcome": "pending"
+      "outcome": "completed_pending_post_verification"
     }
   ],
   "metrics": {
@@ -63,23 +63,41 @@
     "duplicate_posts_avoided": 1
   },
   "ai_news": {
-    "title": "Two-Thirds of Small Businesses Now Use AI — But 70% Say They Need Better Skills to Unlock the Real Value",
-    "source_url": "https://www.thryv.com/blog/ai-for-small-business-2026-report/",
+    "title": "The WTO Is Backing AI Tools That Help Small Businesses Sell Across Borders",
+    "source_url": "https://www.wto.org/english/forums_e/business_e/sbc_winners26_e.htm",
     "publish_status": "published",
     "image_status": "uploaded",
-    "community_url": null
+    "community_url": "https://community.hubactually.com/7a380592-79af-4072-af97-f76fcf2fe808"
   },
   "new_members": [],
   "saturday_digest": {
-    "status": "skipped_not_saturday",
+    "status": "not_saturday",
     "newsletter_id": "",
     "scheduled_for_et": ""
   },
   "blockers": [],
   "flagged_items": [],
-  "evidence": {},
-  "notes": "Friday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
+  "evidence": {
+    "heartbeat_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-12_heartbeat.json",
+    "preflight_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-12_preflight.json",
+    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T091611Z_api_ai_news_publisher_result.json",
+    "working_notes_path": "/home/ubuntu/hubbot_run_working_notes.md",
+    "feed_verification_screenshot": "/home/ubuntu/screenshots/community_hubactuall_2026-07-12_09-19-44_1118.webp",
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T052056-0400_weekly_digest_result.json",
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T052107-0400_owner_alert_result.json"
+  },
+  "notes": "Sunday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
+    {
+      "run_date": "2026-07-12",
+      "run_weekday": "Sunday",
+      "status": "completed",
+      "primary_result": "published",
+      "posts_published": 1,
+      "tasks_completed": 7,
+      "tasks_failed": 0,
+      "new_members_found": 0
+    },
     {
       "run_date": "2026-07-10",
       "run_weekday": "Friday",
