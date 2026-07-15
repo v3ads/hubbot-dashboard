@@ -1,66 +1,80 @@
 {
-  "run_date": "2026-07-12",
-  "run_completed_at_et": "2026-07-12T05:22:42-04:00",
-  "run_weekday": "Sunday",
+  "run_date": "2026-07-15",
+  "run_completed_at_et": "2026-07-15T09:11:23-04:00",
+  "run_weekday": "Wednesday",
   "timezone": "America/New_York",
-  "status": "completed",
-  "last_run_label": "2026-07-12 — completed",
-  "primary_result": "published",
+  "status": "completed_with_flags",
+  "last_run_label": "2026-07-15 — completed with flags",
+  "primary_result": "Preflight and heartbeat succeeded; authenticated community access was verified; no new members were found using the seven-day fallback cutoff; no discussion response was warranted; the existing July 15 Hub Bot AI-news post, source link, General channel, and live image were verified; a duplicate post was correctly avoided.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "The WTO Is Backing AI Tools That Help Small Businesses Sell Across Borders",
-    "thread_url": "https://community.hubactually.com/7a380592-79af-4072-af97-f76fcf2fe808",
-    "thread_id": "",
+    "title": "The Fed Says AI Could Level the Field for Small Businesses — or Widen the Gap",
+    "thread_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f",
+    "thread_id": "d0fe2fe6-5127-4126-904a-287e1a5d9d8f",
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1783847769116.png",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784112401333.webp",
     "image_attached": true,
-    "publish_status": "published",
-    "source_url": "https://www.wto.org/english/forums_e/business_e/sbc_winners26_e.htm",
-    "published_at_utc": "",
+    "publish_status": "skipped_existing_same_day_post",
+    "source_url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
+    "supporting_url": null,
+    "draft_path": null,
+    "generated_image_path": null,
+    "published_at_utc": null,
     "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in authenticated feed."
+    "post_url_note": "An already-live Hub Bot post for 2026-07-15 was verified in General; a second post was not created to preserve the exactly-one-post requirement."
   },
   "checklist": [
     {
-      "task": "Community Access",
-      "outcome": "success — authenticated Hub Bot session; no CAPTCHA or physical-device 2FA"
+      "task": "Preflight",
+      "outcome": "passed"
     },
     {
-      "task": "New Member Welcome",
-      "outcome": "completed — 0 new member(s)"
+      "task": "Community access",
+      "outcome": "accessible_authenticated"
     },
     {
-      "task": "AI News Post",
-      "outcome": "published"
+      "task": "Member review",
+      "outcome": "completed"
     },
     {
-      "task": "Cover Image",
-      "outcome": "uploaded"
+      "task": "Discussion review",
+      "outcome": "completed"
     },
     {
-      "task": "Owner Alert",
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
+      "outcome": "live_verified"
+    },
+    {
+      "task": "Community post",
+      "outcome": "skipped_existing_same_day_post"
+    },
+    {
+      "task": "Owner alert email",
       "outcome": "not_required"
     },
     {
-      "task": "Saturday Digest",
+      "task": "Saturday digest",
       "outcome": "not_saturday"
     },
     {
-      "task": "Dashboard Update",
-      "outcome": "posted_http_200_and_repository_cache_pushed"
+      "task": "Dashboard update",
+      "outcome": "completed_blocked_http_403"
     }
   ],
   "metrics": {
-    "new_members_found": 0,
-    "new_welcomes_sent": 0,
-    "flagged_items": 0,
     "required_tasks_completed": 7,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
-    "posts_published": 1,
-    "duplicate_posts_avoided": 1
+    "posts_published": 0,
+    "new_welcomes_sent": 0,
+    "duplicate_posts_avoided": 1,
+    "flagged_items": 0
   },
   "ai_news": {
     "title": "The WTO Is Backing AI Tools That Help Small Businesses Sell Across Borders",
@@ -72,24 +86,45 @@
   "new_members": [],
   "saturday_digest": {
     "status": "not_saturday",
-    "newsletter_id": "",
-    "scheduled_for_et": ""
+    "reason": "Actual America/New_York date is not Saturday; digest is not allowed."
   },
   "blockers": [],
   "flagged_items": [],
   "evidence": {
-    "heartbeat_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-12_heartbeat.json",
-    "preflight_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-12_preflight.json",
-    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T091611Z_api_ai_news_publisher_result.json",
-    "working_notes_path": "/home/ubuntu/hubbot_run_working_notes.md",
-    "feed_verification_screenshot": "/home/ubuntu/screenshots/community_hubactuall_2026-07-12_09-19-44_1118.webp",
-    "dashboard_update_log": "/home/ubuntu/hubbot_dashboard_post_stdout.log",
-    "dashboard_repository_commit": "b3f00a7",
-    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T052056-0400_weekly_digest_result.json",
-    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260712T052107-0400_owner_alert_result.json"
+    "preflight_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-15_preflight.json",
+    "heartbeat_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-15_heartbeat.json",
+    "working_notes": "/home/ubuntu/hubbot_working_notes.md",
+    "members_page": "https://community.hubactually.com/members",
+    "hub_bot_profile": "https://community.hubactually.com/profile/26049",
+    "live_post_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f",
+    "live_image_url": "https://estage-test.b-cdn.net/uploads/images/1784112401333.webp",
+    "source_url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
+    "member_cutoff_basis": "No previous latest.json ledger existed in the fresh sandbox, so the seven-day fallback cutoff of 2026-07-08 was applied. The newest member joined 2026-06-15.",
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260715T091222-0400_weekly_digest_result.json",
+    "weekly_digest_finalizer_status": {
+      "status": "not_saturday",
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260715T091222-0400_weekly_digest_result.json",
+      "returncode": 0,
+      "stderr_tail": []
+    },
+    "owner_alert_fallback_status": {
+      "status": "skipped_not_required"
+    }
   },
   "notes": "Sunday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
+    {
+      "run_date": "2026-07-15",
+      "status": "completed_with_flags",
+      "primary_result": "Preflight and heartbeat succeeded; authenticated community access was verified; no new members were found using the seven-day fallback cutoff; no discussion response was warranted; the existing July 15 Hub Bot AI-news post, source link, General channel, and live image were verified; a duplicate post was correctly avoided.",
+      "posts_published": 0,
+      "tasks_completed": 7,
+      "tasks_failed": 0,
+      "error_detail": "No unresolved blocker recorded.",
+      "blockers": [],
+      "ai_news_title": "The Fed Says AI Could Level the Field for Small Businesses — or Widen the Gap",
+      "ai_news_post_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f"
+    },
     {
       "run_date": "2026-07-12",
       "run_weekday": "Sunday",
@@ -170,5 +205,27 @@
       "tasks_failed": 0,
       "new_members_found": 0
     }
-  ]
+  ],
+  "schedule": {
+    "cron": "0 0 9 * * *",
+    "label": "Daily at 9:00 AM ET",
+    "timezone": "America/New_York",
+    "status": "active",
+    "version": "v2",
+    "run_as_new_task": true
+  },
+  "owner_alert": {
+    "status": "not_required",
+    "recipient": "vipaymanshalaby@gmail.com",
+    "sender": "ayman@hubactually.com",
+    "reason": "No new members, unresolved blockers, moderation flags, or required-task failures were found.",
+    "fallback_status": "skipped_not_required"
+  },
+  "community_stats": {
+    "total_members": 81,
+    "pending_approval": 0,
+    "online_now": 9
+  },
+  "ai_news_publish_status": "skipped_existing_same_day_post",
+  "ai_news_post_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f"
 }
