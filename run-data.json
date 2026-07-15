@@ -3,9 +3,9 @@
   "run_completed_at_et": "2026-07-15T09:11:23-04:00",
   "run_weekday": "Wednesday",
   "timezone": "America/New_York",
-  "status": "completed_with_flags",
-  "last_run_label": "2026-07-15 — completed_with_flags",
-  "primary_result": "skipped_existing_same_day_post",
+  "status": "completed",
+  "last_run_label": "2026-07-15 — completed",
+  "primary_result": "Existing same-day post verified; duplicate avoided.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
@@ -19,8 +19,8 @@
     "publish_status": "skipped_existing_same_day_post",
     "source_url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
     "published_at_utc": "",
-    "post_visible_after_submit": false,
-    "post_url_note": ""
+    "post_visible_after_submit": true,
+    "post_url_note": "Verified visible in the authenticated General feed; no duplicate was created."
   },
   "checklist": [
     {
@@ -60,7 +60,7 @@
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
     "posts_published": 0,
-    "duplicate_posts_avoided": 0
+    "duplicate_posts_avoided": 1
   },
   "ai_news": {
     "title": "The Fed Says AI Could Level the Field for Small Businesses — or Widen the Gap",
@@ -94,8 +94,8 @@
     {
       "run_date": "2026-07-15",
       "run_weekday": "Wednesday",
-      "status": "completed_with_flags",
-      "primary_result": "skipped_existing_same_day_post",
+      "status": "completed",
+      "primary_result": "Existing same-day post verified; duplicate avoided.",
       "posts_published": 0,
       "tasks_completed": 7,
       "tasks_failed": 0,
