@@ -1,31 +1,31 @@
 {
-  "run_date": "2026-07-15",
-  "run_completed_at_et": "2026-07-15T09:11:23-04:00",
-  "run_weekday": "Wednesday",
+  "run_date": "2026-07-17",
+  "run_completed_at_et": "2026-07-17T05:11:00-04:00",
+  "run_weekday": "Friday",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-07-15 — completed",
-  "primary_result": "Existing same-day post verified; duplicate avoided.",
+  "last_run_label": "2026-07-17 — completed",
+  "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "The Fed Says AI Could Level the Field for Small Businesses — or Widen the Gap",
-    "thread_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f",
-    "thread_id": "d0fe2fe6-5127-4126-904a-287e1a5d9d8f",
+    "title": "AI on Main Street: Start With the Bottleneck, Not the Tool",
+    "thread_url": "https://community.hubactually.com/32363e51-f3e8-4455-afc0-18c2d9965e63",
+    "thread_id": null,
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784112401333.webp",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784279367136.png",
     "image_attached": true,
-    "publish_status": "skipped_existing_same_day_post",
-    "source_url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
-    "published_at_utc": "",
+    "publish_status": "published",
+    "source_url": "https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=407478",
+    "published_at_utc": "2026-07-17T09:09:29+00:00",
     "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in the authenticated General feed; no duplicate was created."
+    "post_url_note": "Verified visible in authenticated feed."
   },
   "checklist": [
     {
       "task": "Community Access",
-      "outcome": "accessible_authenticated"
+      "outcome": "success"
     },
     {
       "task": "New Member Welcome",
@@ -33,11 +33,11 @@
     },
     {
       "task": "AI News Post",
-      "outcome": "skipped_existing_same_day_post"
+      "outcome": "published"
     },
     {
       "task": "Cover Image",
-      "outcome": "live_verified"
+      "outcome": "uploaded"
     },
     {
       "task": "Owner Alert",
@@ -59,15 +59,15 @@
     "required_tasks_completed": 7,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
-    "posts_published": 0,
+    "posts_published": 1,
     "duplicate_posts_avoided": 1
   },
   "ai_news": {
-    "title": "The Fed Says AI Could Level the Field for Small Businesses — or Widen the Gap",
-    "source_url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
-    "publish_status": "skipped_existing_same_day_post",
-    "image_status": "live_verified",
-    "community_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f"
+    "title": "AI on Main Street: Start With the Bottleneck, Not the Tool",
+    "source_url": "https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=407478",
+    "publish_status": "published",
+    "image_status": "uploaded",
+    "community_url": "https://community.hubactually.com/32363e51-f3e8-4455-afc0-18c2d9965e63"
   },
   "new_members": [],
   "saturday_digest": {
@@ -78,19 +78,27 @@
   "blockers": [],
   "flagged_items": [],
   "evidence": {
-    "preflight_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-15_preflight.json",
-    "heartbeat_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-15_heartbeat.json",
-    "working_notes": "/home/ubuntu/hubbot_working_notes.md",
-    "members_page": "https://community.hubactually.com/members",
-    "hub_bot_profile": "https://community.hubactually.com/profile/26049",
-    "live_post_url": "https://community.hubactually.com/d0fe2fe6-5127-4126-904a-287e1a5d9d8f",
-    "live_image_url": "https://estage-test.b-cdn.net/uploads/images/1784112401333.webp",
-    "source_url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
-    "member_cutoff_basis": "No previous latest.json ledger existed in the fresh sandbox, so the seven-day fallback cutoff of 2026-07-08 was applied. The newest member joined 2026-06-15.",
-    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260715T091222-0400_weekly_digest_result.json"
+    "preflight_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_preflight.json",
+    "heartbeat_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_heartbeat.json",
+    "browser_review_notes": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_browser_review_notes.md",
+    "title_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_news_title.txt",
+    "body_html_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_news_body.html",
+    "generated_image_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_main_street_cover.png",
+    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260717T090929Z_api_ai_news_publisher_result.json",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784279367136.png"
   },
-  "notes": "Wednesday run: 0 new member(s) welcomed, AI-news post skipped_existing_same_day_post, owner alert not_required.",
+  "notes": "Friday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
   "run_history": [
+    {
+      "run_date": "2026-07-17",
+      "run_weekday": "Friday",
+      "status": "completed",
+      "primary_result": "published",
+      "posts_published": 1,
+      "tasks_completed": 7,
+      "tasks_failed": 0,
+      "new_members_found": 0
+    },
     {
       "run_date": "2026-07-15",
       "run_weekday": "Wednesday",
