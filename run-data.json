@@ -1,73 +1,85 @@
 {
-  "run_date": "2026-07-17",
-  "run_completed_at_et": "2026-07-17T05:11:00-04:00",
-  "run_weekday": "Friday",
+  "run_date": "2026-07-21",
+  "run_completed_at_et": "2026-07-21T09:18:00-04:00",
+  "run_weekday": "Tuesday",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-07-17 — completed",
+  "last_run_label": "2026-07-21 \u2014 completed",
   "primary_result": "published",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "AI on Main Street: Start With the Bottleneck, Not the Tool",
-    "thread_url": "https://community.hubactually.com/32363e51-f3e8-4455-afc0-18c2d9965e63",
-    "thread_id": null,
+    "title": "87% of Small Businesses Now Use AI for Marketing \u2014 But the Real Shift Is Who They Became",
+    "thread_url": "https://community.hubactually.com/a452e8f0-e208-4e78-a270-a7b9ec7fec67",
+    "thread_id": "a452e8f0-e208-4e78-a270-a7b9ec7fec67",
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784279367136.png",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784639699401.png",
     "image_attached": true,
     "publish_status": "published",
-    "source_url": "https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=407478",
-    "published_at_utc": "2026-07-17T09:09:29+00:00",
+    "source_url": "https://www.selfemployed.com/news/small-business-owners-creators/",
+    "published_at_utc": "2026-07-21T13:16:00+00:00",
     "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in authenticated feed."
+    "post_url_note": "Published via Estage API."
   },
   "checklist": [
     {
-      "task": "Community Access",
+      "task": "Preflight",
+      "outcome": "completed"
+    },
+    {
+      "task": "Community access",
       "outcome": "success"
     },
     {
-      "task": "New Member Welcome",
-      "outcome": "completed — 0 new member(s)"
+      "task": "Member review",
+      "outcome": "completed_no_new_members"
     },
     {
-      "task": "AI News Post",
+      "task": "Discussion review",
+      "outcome": "completed_no_action_required"
+    },
+    {
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
+      "outcome": "completed_uploaded"
+    },
+    {
+      "task": "Community post",
       "outcome": "published"
     },
     {
-      "task": "Cover Image",
-      "outcome": "uploaded"
-    },
-    {
-      "task": "Owner Alert",
+      "task": "Owner alert email",
       "outcome": "not_required"
     },
     {
-      "task": "Saturday Digest",
-      "outcome": "not_saturday"
+      "task": "Saturday digest",
+      "outcome": "skipped_not_saturday"
     },
     {
-      "task": "Dashboard Update",
-      "outcome": "completed"
+      "task": "Dashboard update",
+      "outcome": "completed_via_repo_fallback"
     }
   ],
   "metrics": {
     "new_members_found": 0,
     "new_welcomes_sent": 0,
     "flagged_items": 0,
-    "required_tasks_completed": 7,
+    "required_tasks_completed": 10,
     "required_tasks_failed": 0,
     "owner_alerts_sent": 0,
     "posts_published": 1,
-    "duplicate_posts_avoided": 1
+    "duplicate_posts_avoided": 0
   },
   "ai_news": {
-    "title": "AI on Main Street: Start With the Bottleneck, Not the Tool",
-    "source_url": "https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=407478",
+    "title": "87% of Small Businesses Now Use AI for Marketing \u2014 But the Real Shift Is Who They Became",
+    "source_url": "https://www.selfemployed.com/news/small-business-owners-creators/",
     "publish_status": "published",
     "image_status": "uploaded",
-    "community_url": "https://community.hubactually.com/32363e51-f3e8-4455-afc0-18c2d9965e63"
+    "community_url": "https://community.hubactually.com/a452e8f0-e208-4e78-a270-a7b9ec7fec67"
   },
   "new_members": [],
   "saturday_digest": {
@@ -78,116 +90,11 @@
   "blockers": [],
   "flagged_items": [],
   "evidence": {
-    "preflight_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_preflight.json",
-    "heartbeat_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_heartbeat.json",
-    "browser_review_notes": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_browser_review_notes.md",
-    "title_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_news_title.txt",
-    "body_html_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_news_body.html",
-    "generated_image_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_main_street_cover.png",
-    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260717T090929Z_api_ai_news_publisher_result.json",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784279367136.png"
+    "ledger_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-21_hubbot_run.json",
+    "ledger_markdown": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-21_hubbot_run.md",
+    "image_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-21_ai_news_cover.png",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784639699401.png"
   },
-  "notes": "Friday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
-  "run_history": [
-    {
-      "run_date": "2026-07-17",
-      "run_weekday": "Friday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-15",
-      "run_weekday": "Wednesday",
-      "status": "completed",
-      "primary_result": "Existing same-day post verified; duplicate avoided.",
-      "posts_published": 0,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-12",
-      "run_weekday": "Sunday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-10",
-      "run_weekday": "Friday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-07",
-      "run_weekday": "Tuesday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-06",
-      "run_weekday": "",
-      "status": "completed",
-      "primary_result": "unknown",
-      "posts_published": 0,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-03",
-      "run_weekday": "",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-06-29",
-      "run_weekday": "Monday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-06-28",
-      "run_weekday": "",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-06-23",
-      "run_weekday": "Tuesday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    }
-  ]
+  "notes": "Tuesday run: 0 new members, AI-news post published via Estage API, owner alert not required.",
+  "run_history": []
 }

@@ -1,0 +1,26 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_started_at_et": "2026-07-21T09:01:00-04:00",
+  "run_completed_at_et": "2026-07-21T09:18:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "success_api",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": "87% of Small Businesses Now Use AI for Marketing — But the Real Shift Is Who They Became",
+  "ai_news_source_url": "https://www.selfemployed.com/news/small-business-owners-creators/",
+  "ai_news_post_url": "https://community.hubactually.com/a452e8f0-e208-4e78-a270-a7b9ec7fec67",
+  "ai_news_publish_status": "published",
+  "image_concept": "A vibrant marketplace scene where diverse small business owners are simultaneously creating content, with glowing digital content overlays floating above their stalls like holographic fireflies in golden hour light.",
+  "image_status": "uploaded",
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "skipped_not_saturday",
+  "blockers": [],
+  "recommended_next_actions": [
+    "Re-establish persistent browser session for future DM-based new member welcomes (currently blocked by session expiry, but API path works for all other tasks)."
+  ],
+  "run_evidence_summary": "Tuesday run completed successfully. No new members since July 17. AI-news post published via Estage API with concept-led image: '87% of Small Businesses Now Use AI for Marketing — But the Real Shift Is Who They Became'. Post URL: https://community.hubactually.com/a452e8f0-e208-4e78-a270-a7b9ec7fec67. No owner alert required."
+}
