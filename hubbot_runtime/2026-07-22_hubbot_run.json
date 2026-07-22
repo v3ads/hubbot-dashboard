@@ -1,0 +1,37 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_started_at_et": "2026-07-22T09:00:00-04:00",
+  "run_completed_at_et": "2026-07-22T09:20:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": {
+    "status": "success",
+    "details": "Headless API accessible via COMMUNITY_ESTAGE_TOKEN. Browser session verified: profile avatar visible, no login prompt."
+  },
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": "OpenAI Launches a Small Business Program \u2014 And 10 Million Are Already Using ChatGPT Work",
+  "ai_news_source_url": "https://9to5mac.com/2026/07/21/openai-launches-small-business-program-as-it-touts-10m-chatgpt-work-and-codex-users/",
+  "ai_news_post_url": "https://community.hubactually.com/9bdb328b-cacb-4c34-833b-98d61ff304a2",
+  "ai_news_publish_status": "published",
+  "image_concept": "A vibrant modern workshop where human hands and luminous digital tools blend, symbolizing AI as a creative amplifier for small business owners, in warm amber and teal tones.",
+  "image_status": "uploaded",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1784725811287.png",
+  "pre_publish_checks": {
+    "image_generated": true,
+    "image_attached": true,
+    "clickable_link": true,
+    "channel_and_author": true,
+    "duplicate_guard": true
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "blockers": [],
+  "recommended_next_actions": [
+    "Community engagement remains low (zero replies on all recent Hub Bot posts). Consider prompting discussion more directly in the community question or resharing the GPTs page."
+  ],
+  "run_evidence_summary": "Post published to General channel with concept-led image. No new members found since July 15. No comments or flagged items. Browser session healthy. No owner alert required."
+}
