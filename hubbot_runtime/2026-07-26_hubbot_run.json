@@ -1,0 +1,39 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_started_at_et": "2026-07-26T09:00:00-04:00",
+  "run_completed_at_et": "2026-07-26T09:07:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "success_browser_authenticated_and_api_headless",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [
+    {
+      "type": "pending_member_approvals",
+      "description": "4 pending member approvals in the community admin panel.",
+      "recommended_action": "Review pending members in the community admin panel and approve or decline as appropriate."
+    },
+    {
+      "type": "member_reported_broken_link",
+      "description": "Member Murriet reported that the source link on the 2026-07-25 AI-news post (thenyledger.com Worknet article) was not working. Direct HTTP check returned 200 OK; likely a temporary CDN or regional hiccup.",
+      "recommended_action": "Monitor for additional member reports. If the issue persists, verify the thenyledger.com URL and consider adding a fallback link."
+    }
+  ],
+  "ai_news_title": "Meta's New Seller App Turns Photos into AI-Generated Marketplace Listings",
+  "ai_news_source_url": "https://about.fb.com/news/2026/07/introducing-seller-app-facebook-marketplace/",
+  "ai_news_post_url": "https://community.hubactually.com/d01589cb-a6fd-48be-bcba-1e1c50b4c620",
+  "ai_news_publish_status": "published",
+  "image_concept": "A clean, minimalist product photography scene with a vintage camera on a warm wooden surface, smartphone floating above capturing a photo, holographic UI card elements materializing above showing generated product title, price tag, and category badge. Soft cream and amber tones, editorial product photography style, no people, no laptops.",
+  "image_status": "uploaded",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785071182722.jpg",
+  "owner_alert_status": "not_yet_sent",
+  "saturday_digest_status": "not_saturday",
+  "blockers": [],
+  "recommended_next_actions": [
+    "Review 4 pending member approvals in the community admin panel.",
+    "Monitor Murriet's link report on the 7/25 post. If more reports come in, verify the thenyledger.com CDN and consider posting a fallback link."
+  ],
+  "run_evidence_summary": "AI-news post published successfully to General channel on 2026-07-26 with concept-led image. Post URL: https://community.hubactually.com/d01589cb-a6fd-48be-bcba-1e1c50b4c620. No new members found since last run (2026-07-25). Browser session authenticated as Hub. 4 pending member approvals noted. Murriet reported a broken link on the 7/25 post; link verified working (HTTP 200). No blockers."
+}

@@ -1,0 +1,93 @@
+{
+  "agent": "HubBot",
+  "component": "api_ai_news_publisher",
+  "created_at_utc": "2026-07-26T13:06:18+00:00",
+  "dry_run": false,
+  "title_present": true,
+  "body_html_chars": 894,
+  "image_path": "/agent/workspace/hubactually_hubbot_run_ledger/2026-07-26_ai_news_cover.jpg",
+  "cookie_source": "env_var_or_dashboard",
+  "cookie_db_found": false,
+  "live_browser_cookies_used": false,
+  "hubactually_cookie_names": [
+    "community_estage_token"
+  ],
+  "auth_header_names": [
+    "Authorization",
+    "Estage-Authorization",
+    "Origin",
+    "Referer",
+    "User-Agent"
+  ],
+  "duplicate_guard": {
+    "ok": true,
+    "status": "passed",
+    "candidate_source_urls": [
+      "https://about.fb.com/news/2026/07/introducing-seller-app-facebook-marketplace"
+    ],
+    "candidate_title_normalized": "meta s new seller app turns photos into ai generated marketplace listings",
+    "matches": [],
+    "http_status": 200,
+    "reason": "no duplicate source, title, or near-duplicate topic found in recent feed"
+  },
+  "channel_id_resolved": true,
+  "upload": {
+    "status": "uploaded",
+    "ok": true,
+    "http_status": 200,
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1785071182722.jpg",
+    "response_keys": [
+      "convertedFrom",
+      "message",
+      "path",
+      "status"
+    ],
+    "reason": ""
+  },
+  "create": {
+    "status": "published",
+    "ok": true,
+    "http_status": 200,
+    "thread_id": null,
+    "post_url": null,
+    "payload_redacted": {
+      "title": "Meta's New Seller App Turns Photos into AI-Generated Marketplace Listings",
+      "description": "<html body omitted; 894 chars>",
+      "pinned": false,
+      "category": {
+        "id": "4496ab4b-8529-4a7e-9a31-588fe414d9b0",
+        "name": "General",
+        "permissions": "anyone",
+        "order": 0,
+        "createdAt": "2026-03-10T15:22:56.403936+00:00"
+      },
+      "previewURL": "",
+      "previewImage": null,
+      "previewImages": [
+        {
+          "id": "a4nbcjy4d2hr1prbc5qm",
+          "url": "https://estage-test.b-cdn.net/uploads/images/1785071182722.jpg",
+          "type": "image"
+        }
+      ],
+      "emailMembers": false,
+      "scheduled": null,
+      "mentions": [],
+      "ruleKey": null,
+      "channel": "main",
+      "origin": "https://community.hubactually.com",
+      "groupName": "HubActually"
+    },
+    "duplicate_image_reference_count": 1,
+    "response_redacted": {}
+  },
+  "prepublish_qa": null,
+  "status": "published",
+  "ai_news_publish_status": "published",
+  "image_status": "uploaded",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785071182722.jpg",
+  "thread_id": null,
+  "post_url": null,
+  "published_at_utc": "2026-07-26T13:06:23+00:00",
+  "result_path": "/agent/workspace/hubactually_hubbot_run_ledger/20260726T130623Z_api_ai_news_publisher_result.json"
+}
