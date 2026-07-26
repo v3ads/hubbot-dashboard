@@ -1,0 +1,48 @@
+{
+  "agent": "HubBot",
+  "component": "owner_alert",
+  "created_at_et": "2026-07-26T09:07:53-04:00",
+  "ledger_path": "/agent/workspace/hubactually_hubbot_run_ledger/2026-07-26_hubbot_run.json",
+  "alert_required": true,
+  "alert_reasons": [
+    "flagged_items_present"
+  ],
+  "recipient": "vipaymanshalaby@gmail.com",
+  "sender": "ayman@hubactually.com",
+  "dry_run": false,
+  "attempts": [
+    {
+      "provider": "getresponse",
+      "status": "blocked",
+      "mutating_contact_list": false,
+      "account_http_status": 200,
+      "from_fields_http_status": 200,
+      "campaigns_http_status": 200,
+      "contacts_http_status": 200,
+      "selected_contact_id_present": true,
+      "newsletter_create_http_status": 400,
+      "reason": "GetResponse newsletter create failed with HTTP 400",
+      "response_keys": [
+        "code",
+        "codeDescription",
+        "context",
+        "httpStatus",
+        "message",
+        "moreInfo",
+        "uuid"
+      ]
+    },
+    {
+      "provider": "brevo_direct_email",
+      "status": "sent",
+      "http_status": 201,
+      "message_id": "<202607261307.73026580904@smtp-relay.mailin.fr>",
+      "recipient": "vipaymanshalaby@gmail.com"
+    }
+  ],
+  "subject": "HubActually admin alert: new members / flagged items — 2026-07-26",
+  "status": "sent",
+  "provider": "brevo_direct_email",
+  "reason": "delivered by direct email fallback",
+  "result_path": "/agent/workspace/hubactually_hubbot_run_ledger/20260726T090757-0400_owner_alert_result.json"
+}

@@ -28,12 +28,16 @@
   "image_concept": "A clean, minimalist product photography scene with a vintage camera on a warm wooden surface, smartphone floating above capturing a photo, holographic UI card elements materializing above showing generated product title, price tag, and category badge. Soft cream and amber tones, editorial product photography style, no people, no laptops.",
   "image_status": "uploaded",
   "image_url": "https://estage-test.b-cdn.net/uploads/images/1785071182722.jpg",
-  "owner_alert_status": "not_yet_sent",
+  "owner_alert_status": "sent",
   "saturday_digest_status": "not_saturday",
   "blockers": [],
   "recommended_next_actions": [
     "Review 4 pending member approvals in the community admin panel.",
     "Monitor Murriet's link report on the 7/25 post. If more reports come in, verify the thenyledger.com CDN and consider posting a fallback link."
   ],
-  "run_evidence_summary": "AI-news post published successfully to General channel on 2026-07-26 with concept-led image. Post URL: https://community.hubactually.com/d01589cb-a6fd-48be-bcba-1e1c50b4c620. No new members found since last run (2026-07-25). Browser session authenticated as Hub. 4 pending member approvals noted. Murriet reported a broken link on the 7/25 post; link verified working (HTTP 200). No blockers."
+  "run_evidence_summary": "AI-news post published successfully to General channel on 2026-07-26 with concept-led image. Post URL: https://community.hubactually.com/d01589cb-a6fd-48be-bcba-1e1c50b4c620. No new members found since last run (2026-07-25). Browser session authenticated as Hub. 4 pending member approvals noted. Murriet reported a broken link on the 7/25 post; link verified working (HTTP 200). No blockers.",
+  "owner_alert_reason": "delivered by direct email fallback",
+  "evidence": {
+    "owner_alert_result_path": "/agent/workspace/hubactually_hubbot_run_ledger/20260726T090757-0400_owner_alert_result.json"
+  }
 }
