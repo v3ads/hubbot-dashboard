@@ -1,11 +1,11 @@
 {
-  "latest_run_date": "2026-07-26",
-  "latest_run_file": "2026-07-26_hubbot_run.json",
+  "latest_run_date": "2026-07-27",
+  "latest_run_file": "2026-07-27_hubbot_run.json",
   "status": "published",
-  "post_url": "https://community.hubactually.com/d01589cb-a6fd-48be-bcba-1e1c50b4c620",
-  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785071182722.jpg",
-  "new_members": 0,
-  "welcomes": 0,
+  "post_url": "https://community.hubactually.com/8db5be35-afc1-4150-af12-ebbfa2380faf",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785158293736.png",
+  "new_members": 4,
+  "welcomes": 4,
   "blockers": 0,
   "digest_status": "not_saturday"
 }

@@ -1,0 +1,103 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_started_at_et": "2026-07-27T09:03:00-04:00",
+  "run_completed_at_et": "2026-07-27T09:25:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "success_browser_authenticated_and_api_headless",
+  "new_members_found": [
+    {
+      "name": "ROMAN Deluna",
+      "id": "4544",
+      "join_date": "2026-07-25T18:29:58.839Z",
+      "description": ""
+    },
+    {
+      "name": "Naresh Pema",
+      "id": "72",
+      "join_date": "2026-07-24T08:05:22.169Z",
+      "description": ""
+    },
+    {
+      "name": "Raul Toro",
+      "id": "11829",
+      "join_date": "2026-07-22T20:12:59.343Z",
+      "description": ""
+    },
+    {
+      "name": "Isabella Jo",
+      "id": "5417",
+      "join_date": "2026-07-22T02:06:44.018Z",
+      "description": "An Estage colleague! Interested in all that is out there..."
+    }
+  ],
+  "welcomes_posted": [
+    {
+      "member": "ROMAN Deluna",
+      "member_id": "4544",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-27T09:07:00-04:00"
+    },
+    {
+      "member": "Naresh Pema",
+      "member_id": "72",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-27T09:10:00-04:00"
+    },
+    {
+      "member": "Raul Toro",
+      "member_id": "11829",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-27T09:14:00-04:00"
+    },
+    {
+      "member": "Isabella Jo",
+      "member_id": "5417",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-27T09:17:00-04:00"
+    }
+  ],
+  "comments_added": [],
+  "flagged_items": [
+    {
+      "type": "ambiguous_post_support_or_spam",
+      "description": "Member Digital Joe posted a one-word thread titled 'bot' with body text 'doesn't seem to be working' and no comments. Could be a support request about a bot not functioning, or a low-quality/spam test post. No other context or follow-up visible.",
+      "recommended_action": "Owner should reach out to Digital Joe to clarify whether they need help with a bot or automation tool, or if this was an accidental post."
+    }
+  ],
+  "ai_news_title": "Access Bank Launches AI-Powered SME App to Help Small Businesses Scale",
+  "ai_news_source_url": "https://independent.ng/access-bank-unveils-ai-powered-sme-app-urges-small-businesses-to-embrace-digital-transformation/",
+  "ai_news_post_url": "https://community.hubactually.com/8db5be35-afc1-4150-af12-ebbfa2380faf",
+  "ai_news_publish_status": "published",
+  "image_concept": "A premium editorial photography scene of a small African business marketplace. A sleek smartphone sits on a polished wooden counter displaying holographic AI business interface elements floating above it — glowing translucent panels showing inventory charts, pricing dashboards, and customer analytics. Warm golden-hour sunlight streaming through the scene, amber and teal color palette. No people visible, no text or letters embedded in the image, cinematic depth of field, concept-led visual metaphor for AI-powered small business transformation. High-end product marketing cover aesthetic, clean and sophisticated.",
+  "image_status": "uploaded",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785158293736.png",
+  "pre_publish_checks": {
+    "image_generated": "passed",
+    "image_uploaded": "passed",
+    "image_attached": "passed",
+    "clickable_link": "passed",
+    "channel_general": "passed",
+    "author_hub_bot": "passed",
+    "duplicate_check": "passed"
+  },
+  "api_publish_attempt": {
+    "attempted": true,
+    "result": "success",
+    "thread_id": "8db5be35-afc1-4150-af12-ebbfa2380faf"
+  },
+  "owner_alert_status": "pending",
+  "saturday_digest_status": "not_saturday",
+  "blockers": [],
+  "recommended_next_actions": [
+    "Reach out to Digital Joe to clarify the 'bot' post — determine if they need help with a bot/automation tool or if it was an accidental post.",
+    "Monitor new members ROMAN, Naresh, Raul, and Isabella for engagement in the General feed.",
+    "Consider pinning a welcome/getting-started post for new members who may be unsure how to engage."
+  ],
+  "run_evidence_summary": "AI-news post published successfully via API to General channel on 2026-07-27. Post URL: https://community.hubactually.com/8db5be35-afc1-4150-af12-ebbfa2380faf. 4 new members found and welcomed via browser DM: ROMAN Deluna (joined 7/25), Naresh Pema (joined 7/24), Raul Toro (joined 7/22), Isabella Jo (joined 7/22). 1 flagged item: Digital Joe's ambiguous 'bot' post. No comments needed. No blockers. Monday — Saturday digest not applicable."
+}
