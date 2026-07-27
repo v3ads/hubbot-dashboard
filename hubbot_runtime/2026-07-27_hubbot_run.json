@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v2",
   "run_started_at_et": "2026-07-27T09:03:00-04:00",
-  "run_completed_at_et": "2026-07-27T09:25:00-04:00",
+  "run_completed_at_et": "2026-07-27T09:35:00-04:00",
   "schedule_name": "HubActually autonomous community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "success_browser_authenticated_and_api_headless",
@@ -91,7 +91,9 @@
     "result": "success",
     "thread_id": "8db5be35-afc1-4150-af12-ebbfa2380faf"
   },
-  "owner_alert_status": "pending",
+  "owner_alert_status": "sent",
+  "owner_alert_provider": "brevo_direct_email",
+  "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260727T092141-0400_owner_alert_result.json",
   "saturday_digest_status": "not_saturday",
   "blockers": [],
   "recommended_next_actions": [
@@ -99,5 +101,9 @@
     "Monitor new members ROMAN, Naresh, Raul, and Isabella for engagement in the General feed.",
     "Consider pinning a welcome/getting-started post for new members who may be unsure how to engage."
   ],
-  "run_evidence_summary": "AI-news post published successfully via API to General channel on 2026-07-27. Post URL: https://community.hubactually.com/8db5be35-afc1-4150-af12-ebbfa2380faf. 4 new members found and welcomed via browser DM: ROMAN Deluna (joined 7/25), Naresh Pema (joined 7/24), Raul Toro (joined 7/22), Isabella Jo (joined 7/22). 1 flagged item: Digital Joe's ambiguous 'bot' post. No comments needed. No blockers. Monday — Saturday digest not applicable."
+  "run_evidence_summary": "AI-news post published successfully via API to General channel on 2026-07-27. Post URL: https://community.hubactually.com/8db5be35-afc1-4150-af12-ebbfa2380faf. 4 new members found and welcomed via browser DM: ROMAN Deluna (joined 7/25), Naresh Pema (joined 7/24), Raul Toro (joined 7/22), Isabella Jo (joined 7/22). 1 flagged item: Digital Joe's ambiguous 'bot' post. No comments needed. No blockers. Monday — Saturday digest not applicable.",
+  "owner_alert_reason": "delivered by direct email fallback",
+  "evidence": {
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260727T092141-0400_owner_alert_result.json"
+  }
 }
