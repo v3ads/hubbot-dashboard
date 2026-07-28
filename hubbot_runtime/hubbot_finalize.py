@@ -235,7 +235,7 @@ def run_owner_alert_fallback(ledger_path: Path, repo: Path) -> dict[str, Any]:
     if not helper.exists():
         return {'status': 'skipped_helper_missing', 'helper': str(helper)}
     completed = subprocess.run(
-        ['python3.11', str(helper), '--ledger', str(ledger_path)],
+        [sys.executable, str(helper), '--ledger', str(ledger_path)],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,

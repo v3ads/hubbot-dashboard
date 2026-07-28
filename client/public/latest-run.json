@@ -1,193 +1,156 @@
 {
-  "run_date": "2026-07-17",
-  "run_completed_at_et": "2026-07-17T05:11:00-04:00",
-  "run_weekday": "Friday",
+  "run_date": "2026-07-28",
+  "run_completed_at_et": "2026-07-28T09:25:00-04:00",
+  "run_weekday": "Tuesday",
   "timezone": "America/New_York",
   "status": "completed",
-  "last_run_label": "2026-07-17 — completed",
-  "primary_result": "published",
+  "last_run_label": "2026-07-28 — completed",
+  "primary_result": "Published OpenAI ChatGPT for Small Business AI-news post with concept-led origami-flight image; welcomed 1 new member (Tony Nash) via browser DM; answered Digital Joe's support post with clarifying questions; 86 members total, 0 pending; no blockers.",
   "community": "HubActually",
   "agent": "HubBot",
   "agent_version": "v2",
   "published_post": {
-    "title": "AI on Main Street: Start With the Bottleneck, Not the Tool",
-    "thread_url": "https://community.hubactually.com/32363e51-f3e8-4455-afc0-18c2d9965e63",
-    "thread_id": null,
+    "title": "OpenAI Launches ChatGPT for Small Business: Free Training, AI Academies, and Partner Tools",
+    "thread_url": "https://community.hubactually.com/2ccbe5fa-3692-4743-9a51-9a90943447a6",
+    "thread_id": "2ccbe5fa-3692-4743-9a51-9a90943447a6",
     "category": "General",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784279367136.png",
+    "image_url": "https://estage-test.b-cdn.net/uploads/images/1785244564326.png",
     "image_attached": true,
     "publish_status": "published",
-    "source_url": "https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=407478",
-    "published_at_utc": "2026-07-17T09:09:29+00:00",
+    "source_url": "https://openai.com/index/introducing-chatgpt-small-business-program/",
+    "supporting_url": null,
+    "draft_path": null,
+    "generated_image_path": "/agent/hubbot_work/ai_news_image.png",
+    "published_at_utc": null,
     "post_visible_after_submit": true,
-    "post_url_note": "Verified visible in authenticated feed."
+    "post_url_note": null
   },
   "checklist": [
     {
-      "task": "Community Access",
-      "outcome": "success"
+      "task": "Preflight",
+      "outcome": "completed"
     },
     {
-      "task": "New Member Welcome",
-      "outcome": "completed — 0 new member(s)"
+      "task": "Community access",
+      "outcome": "authenticated_browser_session_and_api_token_ok"
     },
     {
-      "task": "AI News Post",
+      "task": "Member review",
+      "outcome": "completed"
+    },
+    {
+      "task": "Discussion review",
+      "outcome": "completed"
+    },
+    {
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
+      "outcome": "uploaded_and_live"
+    },
+    {
+      "task": "Community post",
       "outcome": "published"
     },
     {
-      "task": "Cover Image",
-      "outcome": "uploaded"
+      "task": "Owner alert email",
+      "outcome": "sent"
     },
     {
-      "task": "Owner Alert",
-      "outcome": "not_required"
-    },
-    {
-      "task": "Saturday Digest",
+      "task": "Saturday digest",
       "outcome": "not_saturday"
     },
     {
-      "task": "Dashboard Update",
-      "outcome": "completed"
+      "task": "Dashboard update",
+      "outcome": "completed_skipped_no_endpoint_or_key"
     }
   ],
   "metrics": {
-    "new_members_found": 0,
-    "new_welcomes_sent": 0,
-    "flagged_items": 0,
-    "required_tasks_completed": 7,
+    "required_tasks_completed": 8,
     "required_tasks_failed": 0,
-    "owner_alerts_sent": 0,
+    "owner_alerts_sent": 1,
     "posts_published": 1,
-    "duplicate_posts_avoided": 1
+    "new_welcomes_sent": 1,
+    "duplicate_posts_avoided": 0,
+    "flagged_items": 1
   },
   "ai_news": {
-    "title": "AI on Main Street: Start With the Bottleneck, Not the Tool",
-    "source_url": "https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=407478",
+    "title": "87% of Small Businesses Now Use AI for Marketing — But the Real Shift Is Who They Became",
+    "source_url": "https://www.selfemployed.com/news/small-business-owners-creators/",
     "publish_status": "published",
     "image_status": "uploaded",
-    "community_url": "https://community.hubactually.com/32363e51-f3e8-4455-afc0-18c2d9965e63"
+    "community_url": "https://community.hubactually.com/a452e8f0-e208-4e78-a270-a7b9ec7fec67"
   },
   "new_members": [],
   "saturday_digest": {
     "status": "not_saturday",
-    "newsletter_id": "",
-    "scheduled_for_et": ""
+    "reason": "Actual America/New_York date is not Saturday; digest is not allowed."
   },
   "blockers": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "type": "member_support_request",
+      "member": "Digital Joe",
+      "item": "Post titled 'bot' (26 Jul 2026, 5:07 pm): 'doesn't seem to be working' — 0 comments, 6 views/reactions at review time. Unclear whether it refers to a community bot or a member-built bot.",
+      "recommended_action": "Owner should check Digital Joe's post for his reply to Hub Bot's clarifying questions and help troubleshoot or direct him to the right resource.",
+      "link_context": "General feed, post by Digital Joe dated 26 Jul 2026"
+    }
+  ],
   "evidence": {
-    "preflight_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_preflight.json",
-    "heartbeat_json": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_heartbeat.json",
-    "browser_review_notes": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_browser_review_notes.md",
-    "title_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_news_title.txt",
-    "body_html_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_news_body.html",
-    "generated_image_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-17_ai_main_street_cover.png",
-    "api_publisher_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260717T090929Z_api_ai_news_publisher_result.json",
-    "image_url": "https://estage-test.b-cdn.net/uploads/images/1784279367136.png"
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260728T092028-0400_weekly_digest_result.json",
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260728T092032-0400_owner_alert_result.json",
+    "weekly_digest_finalizer_status": {
+      "status": "not_saturday",
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260728T092028-0400_weekly_digest_result.json",
+      "returncode": 0,
+      "stderr_tail": []
+    },
+    "owner_alert_fallback_status": {
+      "status": "sent",
+      "provider": "brevo_direct_email",
+      "alert_required": true,
+      "result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260728T092032-0400_owner_alert_result.json",
+      "returncode": 0,
+      "stderr_tail": []
+    }
   },
-  "notes": "Friday run: 0 new member(s) welcomed, AI-news post published, owner alert not_required.",
+  "notes": "Tuesday run: 0 new members, AI-news post published via Estage API, owner alert not required.",
   "run_history": [
     {
-      "run_date": "2026-07-17",
-      "run_weekday": "Friday",
+      "run_date": "2026-07-28",
       "status": "completed",
-      "primary_result": "published",
+      "primary_result": "Published OpenAI ChatGPT for Small Business AI-news post with concept-led origami-flight image; welcomed 1 new member (Tony Nash) via browser DM; answered Digital Joe's support post with clarifying questions; 86 members total, 0 pending; no blockers.",
       "posts_published": 1,
-      "tasks_completed": 7,
+      "tasks_completed": 8,
       "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-15",
-      "run_weekday": "Wednesday",
-      "status": "completed",
-      "primary_result": "Existing same-day post verified; duplicate avoided.",
-      "posts_published": 0,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-12",
-      "run_weekday": "Sunday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-10",
-      "run_weekday": "Friday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-07",
-      "run_weekday": "Tuesday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-06",
-      "run_weekday": "",
-      "status": "completed",
-      "primary_result": "unknown",
-      "posts_published": 0,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-07-03",
-      "run_weekday": "",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-06-29",
-      "run_weekday": "Monday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-06-28",
-      "run_weekday": "",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
-    },
-    {
-      "run_date": "2026-06-23",
-      "run_weekday": "Tuesday",
-      "status": "completed",
-      "primary_result": "published",
-      "posts_published": 1,
-      "tasks_completed": 7,
-      "tasks_failed": 0,
-      "new_members_found": 0
+      "error_detail": "No unresolved blocker recorded.",
+      "blockers": [],
+      "ai_news_title": "OpenAI Launches ChatGPT for Small Business: Free Training, AI Academies, and Partner Tools",
+      "ai_news_post_url": "https://community.hubactually.com/2ccbe5fa-3692-4743-9a51-9a90943447a6"
     }
-  ]
+  ],
+  "schedule": {
+    "cron": "0 0 9 * * *",
+    "label": "Daily at 9:00 AM ET",
+    "timezone": "America/New_York",
+    "status": "active",
+    "version": "v2",
+    "run_as_new_task": true
+  },
+  "owner_alert": {
+    "status": "sent",
+    "recipient": "vipaymanshalaby@gmail.com",
+    "sender": "ayman@hubactually.com",
+    "reason": "delivered by direct email fallback",
+    "fallback_status": "sent"
+  },
+  "community_stats": {
+    "total_members": 86,
+    "pending_members": 0,
+    "source": "GET /api/56382/members"
+  },
+  "ai_news_publish_status": "published",
+  "ai_news_post_url": "https://community.hubactually.com/2ccbe5fa-3692-4743-9a51-9a90943447a6"
 }

@@ -1,0 +1,91 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_date": "2026-07-28",
+  "run_started_at_et": "2026-07-28T09:01:00-04:00",
+  "run_completed_at_et": "2026-07-28T09:25:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "preflight_status": "completed",
+  "community_access_result": "authenticated_browser_session_and_api_token_ok",
+  "new_members_found": [
+    {
+      "name": "Tony Nash",
+      "id": "58435",
+      "join_date": "2026-07-28T03:58:32.704Z",
+      "role": "member",
+      "approved": true,
+      "description": ""
+    }
+  ],
+  "welcomes_posted": [
+    {
+      "member": "Tony Nash",
+      "member_id": "58435",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-28T09:07:00-04:00",
+      "verified": "message_bubble_visible_in_conversation"
+    }
+  ],
+  "comments_added": [
+    {
+      "post_author": "Digital Joe",
+      "post_title": "bot",
+      "post_date": "2026-07-26",
+      "comment_summary": "Asked clarifying questions about which bot is failing and what error appears; offered to pass along for proper attention.",
+      "timestamp_et": "2026-07-28T09:12:00-04:00",
+      "verified": "comment_visible_under_post_as_hub_bot"
+    }
+  ],
+  "flagged_items": [
+    {
+      "type": "member_support_request",
+      "member": "Digital Joe",
+      "item": "Post titled 'bot' (26 Jul 2026, 5:07 pm): 'doesn't seem to be working' — 0 comments, 6 views/reactions at review time. Unclear whether it refers to a community bot or a member-built bot.",
+      "recommended_action": "Owner should check Digital Joe's post for his reply to Hub Bot's clarifying questions and help troubleshoot or direct him to the right resource.",
+      "link_context": "General feed, post by Digital Joe dated 26 Jul 2026"
+    }
+  ],
+  "ai_news_title": "OpenAI Launches ChatGPT for Small Business: Free Training, AI Academies, and Partner Tools",
+  "ai_news_source_url": "https://openai.com/index/introducing-chatgpt-small-business-program/",
+  "ai_news_post_url": "https://community.hubactually.com/2ccbe5fa-3692-4743-9a51-9a90943447a6",
+  "ai_news_thread_id": "2ccbe5fa-3692-4743-9a51-9a90943447a6",
+  "ai_news_publish_status": "published",
+  "api_publish_attempt": "success_first_try_via_approved_hubbot_publish_ai_news_functions",
+  "image_concept": "A small neighborhood bakery owner watches her routine work objects lift off the counter and soar as a spiral of glowing origami paper airplanes out the open door — AI lifting the many hats off a one-person business.",
+  "image_status": "uploaded_and_live",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785244564326.png",
+  "generated_image_path": "/agent/hubbot_work/ai_news_image.png",
+  "post_visible_after_submit": true,
+  "pre_publish_checks": {
+    "image_generated": "pass_concept_led_landscape_no_embedded_text_v3",
+    "image_attached": "pass_previewimages_full_landscape_cover_verified_on_thread_page",
+    "clickable_link": "pass_source_url_wrapped_in_a_href_verified_in_dom",
+    "channel_and_author": "pass_general_channel_as_hub_bot"
+  },
+  "duplicate_check": "compared_against_2026-07-24_to_2026-07-27_posts_crownz_worknet_meta_seller_access_bank_no_overlap",
+  "owner_alert_status": "sent",
+  "owner_alert_required": true,
+  "owner_alert_reason": "delivered by direct email fallback",
+  "saturday_digest_status": "not_saturday",
+  "saturday_digest_reason": "Actual America/New_York date is not Saturday; digest is not allowed.",
+  "dashboard_update_status": "pending",
+  "community_stats": {
+    "total_members": 86,
+    "pending_members": 0,
+    "source": "GET /api/56382/members"
+  },
+  "tasks_completed": 8,
+  "tasks_failed": 0,
+  "blockers": [],
+  "recommended_next_actions": [
+    "Owner: monitor Digital Joe's post for his answer to Hub Bot's clarifying questions and assist with the failing bot.",
+    "No other action required — run completed all required steps."
+  ],
+  "run_evidence_summary": "Published OpenAI ChatGPT for Small Business AI-news post with concept-led origami-flight image; welcomed 1 new member (Tony Nash) via browser DM; answered Digital Joe's support post with clarifying questions; 86 members total, 0 pending; no blockers.",
+  "evidence": {
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260728T092028-0400_weekly_digest_result.json",
+    "owner_alert_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260728T092032-0400_owner_alert_result.json"
+  }
+}
