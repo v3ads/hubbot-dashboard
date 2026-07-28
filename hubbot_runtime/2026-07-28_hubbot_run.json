@@ -70,7 +70,7 @@
   "owner_alert_reason": "delivered by direct email fallback",
   "saturday_digest_status": "not_saturday",
   "saturday_digest_reason": "Actual America/New_York date is not Saturday; digest is not allowed.",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "community_stats": {
     "total_members": 86,
     "pending_members": 0,
