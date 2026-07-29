@@ -1,11 +1,13 @@
 {
-  "latest_run_date": "2026-07-28",
-  "latest_run_file": "2026-07-28_hubbot_run.json",
-  "status": "published",
-  "post_url": "https://community.hubactually.com/2ccbe5fa-3692-4743-9a51-9a90943447a6",
-  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785244564326.png",
-  "new_members": 1,
-  "welcomes": 1,
-  "blockers": 0,
-  "digest_status": "not_saturday"
+  "run_date": "2026-07-29",
+  "run_completed_at_et": "2026-07-29T09:25:00-04:00",
+  "status": "completed",
+  "ai_news_publish_status": "published",
+  "new_members_found": [
+    "Atajan Toyliyev"
+  ],
+  "welcomes_posted": [
+    "Atajan Toyliyev"
+  ],
+  "ledger_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-29_hubbot_run.json"
 }

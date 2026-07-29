@@ -1,0 +1,86 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_date": "2026-07-29",
+  "run_started_at_et": "2026-07-29T09:01:00-04:00",
+  "run_completed_at_et": "2026-07-29T09:25:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "preflight_status": "completed_with_env_artifact_note",
+  "preflight_note": "4/5 components passed (GitHub repo, GetResponse, Brevo, dashboard repo-fallback all OK). Single 'blocker' is the Doppler CLI binary not being installed in this runtime; credentials are instead loaded securely via the Doppler Secrets skill (project hubbot, config prd), so this is an environment artifact, not a real blocker.",
+  "community_access_result": "authenticated_browser_session_and_api_token_ok",
+  "heartbeat_status": "skipped_no_endpoint_or_key",
+  "heartbeat_note": "Start-of-run heartbeat recorded at /home/ubuntu/hubactually_hubbot_run_ledger/2026-07-29_heartbeat.json; dashboard direct API key (HUBBOT_API_KEY) is not available, so the POST was skipped safely per playbook. End-of-run repo-fallback update is authoritative.",
+  "new_members_found": [
+    {
+      "name": "Atajan Toyliyev",
+      "id": "58540",
+      "join_date": "2026-07-28T17:24:24.285Z",
+      "role": "member",
+      "approved": true,
+      "description": "Drone Pilot, Online Marketer"
+    }
+  ],
+  "welcomes_posted": [
+    {
+      "member": "Atajan Toyliyev",
+      "member_id": "58540",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-29T09:07:00-04:00",
+      "verified": "message_bubble_visible_in_conversation",
+      "note": "Personalized welcome referencing his bio (Drone Pilot, Online Marketer)."
+    }
+  ],
+  "comments_added": [],
+  "flagged_items": [
+    {
+      "type": "member_support_request",
+      "member": "Digital Joe",
+      "item": "Post titled 'bot' (26 Jul 2026, 5:07 pm): 'doesn't seem to be working'. Hub Bot replied with clarifying questions on 28 Jul. As of this run, Digital Joe has NOT replied — the only comment remains Hub Bot's own clarifying-questions reply.",
+      "recommended_action": "Owner should check Digital Joe's 'bot' post and help him directly (he has not answered Hub Bot's clarifying questions about which bot is failing or what error appears).",
+      "link_context": "General feed, post by Digital Joe dated 26 Jul 2026"
+    }
+  ],
+  "ai_news_title": "QuickBooks Now Lets You Run Invoicing, Payroll, and Lending From Inside Claude and ChatGPT",
+  "ai_news_source_url": "https://www.intuit.com/blog/news-social/quickbooks-expands-into-claude-and-chatgpt-with-new-sales-invoicing-payroll-and-lending-features/",
+  "ai_news_post_url": "https://community.hubactually.com/47b44b83-b39b-4617-8863-4b2c00d3180e",
+  "ai_news_thread_id": "47b44b83-b39b-4617-8863-4b2c00d3180e",
+  "ai_news_publish_status": "published",
+  "api_publish_attempt": "success_first_try_via_approved_hubbot_publish_ai_news_functions",
+  "image_concept": "A small-business owner (shopkeeper in an apron behind her neighborhood store counter) gently lifting a neat floating stack of distinct work hats off her head — the 'wearing every hat' load of a one-person business being lifted away. Concept-led, title-specific, photographic, no embedded text.",
+  "image_status": "uploaded_and_live",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785330604852.png",
+  "generated_image_path": "/agent/stored_files/cms63pd1p0f5u07addycnr48i_a657d780-4a48-4822-8a84-95fea8151fa5.png",
+  "post_visible_after_submit": true,
+  "pre_publish_checks": {
+    "image_generated": "pass_concept_led_landscape_many_hats_no_embedded_text",
+    "image_attached": "pass_previewimages_full_landscape_cover_verified_on_thread_page",
+    "clickable_link": "pass_source_url_wrapped_in_a_href_verified_clickable_in_dom",
+    "channel_and_author": "pass_general_channel_as_hub_bot"
+  },
+  "duplicate_check": "compared_against_2026-07-25_to_2026-07-28_posts_worknet_meta_seller_access_bank_openai_small_business_no_overlap_distinct_source_and_topic",
+  "owner_alert_status": "pending_end_of_run",
+  "owner_alert_required": true,
+  "owner_alert_reason": "One new member welcomed (Atajan Toyliyev) AND one open flagged member-support item (Digital Joe 'bot' post still unanswered).",
+  "saturday_digest_status": "not_saturday",
+  "saturday_digest_reason": "Actual America/New_York date is Wednesday 2026-07-29, not Saturday; the member-facing weekly digest is not allowed today.",
+  "dashboard_update_status": "pending_repo_fallback",
+  "community_stats": {
+    "total_members": 87,
+    "pending_members": 0,
+    "source": "GET /api/56382/members"
+  },
+  "tasks_completed": 9,
+  "tasks_failed": 0,
+  "blockers": [],
+  "recommended_next_actions": [
+    "Owner: follow up directly on Digital Joe's 'bot' support post — he has not replied to Hub Bot's clarifying questions; help identify which bot is failing and the error.",
+    "No other action required — run completed all required steps."
+  ],
+  "run_evidence_summary": "Published QuickBooks-in-Claude/ChatGPT AI-news post with concept-led many-hats-lifted image; welcomed 1 new member (Atajan Toyliyev) via browser DM; 87 members total, 0 pending; Digital Joe 'bot' support item remains open and flagged; no blockers.",
+  "evidence": {
+    "heartbeat_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-07-29_heartbeat.json",
+    "api_publish_result_path": "/agent/workspace/hubbot_work/api_publish_result.json"
+  }
+}
