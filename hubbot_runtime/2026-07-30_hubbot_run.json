@@ -1,0 +1,113 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v2",
+  "run_date": "2026-07-30",
+  "run_started_at_et": "2026-07-30T09:01:00-04:00",
+  "run_completed_at_et": "2026-07-30T09:31:56.089979-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "preflight_status": "completed",
+  "preflight_note": "Doppler Secrets skill loaded all 8 expected secrets (hubbot/prd) in-process; repo cloned with all runtime helpers; heartbeat recorded locally (dashboard direct API not authenticatable - no HUBBOT_API_KEY).",
+  "community_access_result": "success_authenticated_browser_session_and_estage_api_token_ok_with_intermittency",
+  "heartbeat_status": "recorded_locally_post_skipped_no_endpoint_or_key",
+  "new_members_found": [
+    {
+      "name": "Anna Whakaruru",
+      "join_date": "2026-07-29",
+      "role": "member",
+      "description": "Kia ora from Aotearoa New Zealand.",
+      "source": "browser_members_page_newest_first_total_89"
+    },
+    {
+      "name": "Terry Zheng",
+      "join_date": "2026-07-29",
+      "role": "member",
+      "description": "Founder | APG Connect | apgconnect.com - helping entrepreneurs gain clarity, niche & authentic voice, signature programs, collaborations.",
+      "source": "browser_members_page_newest_first_total_89"
+    }
+  ],
+  "members_review_note": "GET /api/56382/members returned 401 (intermittent auth; worked 07-29). Member review completed via authenticated browser members page (89 members, newest first). Cutoff: 2026-07-29T09:25 ET (previous run completion). Atajan Toyliyev (07-28) already welcomed in the 07-29 run.",
+  "welcomes_posted": [
+    {
+      "member": "Anna Whakaruru",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-30T09:10:00-04:00",
+      "verified": "message_bubble_visible_with_delivered_tick",
+      "note": "Personalized welcome referencing Aotearoa New Zealand; conversation was empty before send (no duplicate)."
+    },
+    {
+      "member": "Terry Zheng",
+      "status": "sent",
+      "method": "browser_dm",
+      "timestamp_et": "2026-07-30T09:12:00-04:00",
+      "verified": "message_bubble_visible_with_delivered_tick",
+      "note": "Personalized welcome referencing APG Connect and his bio; conversation was empty before send (no duplicate)."
+    }
+  ],
+  "comments_added": [],
+  "discussion_review_note": "Digital Joe 'bot' support post (07-26) has a new reply from AYMAN SHALABY (07-29 13:16Z): 'Joe, elaborate a bit.. what's not working?' Owner is engaging personally; no additional Hub Bot comment needed. No other new member discussions required a reply.",
+  "flagged_items": [
+    {
+      "type": "api_intermittency",
+      "item": "Estage API auth instability: GET /api/56382/members returns 401 (worked 07-29), and the first threads/create attempt 401'd while an identical retry minutes later succeeded. Upload and threads read endpoints work throughout.",
+      "recommended_action": "Owner: consider rotating COMMUNITY_ESTAGE_TOKEN or checking Estage token/session expiry policy; today's publish succeeded on retry but member review had to fall back to the browser."
+    },
+    {
+      "type": "browser_automation_gap",
+      "item": "BrowserUpload cannot target the Estage composer's hidden file inputs (composer-new-post-uploader and the title-adjacent image input) - the tool resolves them as non-file-input elements, so browser-composer image attachment is currently impossible.",
+      "recommended_action": "Owner: none urgent (API publisher path works), but if the API path fails hard on a future day, browser-composer image attach is not a working fallback today."
+    },
+    {
+      "type": "member_support_request",
+      "member": "Digital Joe",
+      "item": "'bot' post ('doesn't seem to be working', 07-26) still has no answer from Joe; Hub Bot asked clarifying questions 07-28 and AYMAN SHALABY personally asked Joe to elaborate on 07-29.",
+      "recommended_action": "Owner is already engaging personally - keep on watch; no automation action."
+    }
+  ],
+  "ai_news_title": "Vendasta's New AI Employees Now Run Weekly Social Media and Blog Content for Local Small Businesses",
+  "ai_news_source_url": "https://www.accessnewswire.com/newsroom/en/real-estate/vendasta-unveils-autonomous-ai-employees-to-scale-organic-search-and-social-marketing-f-1197799",
+  "ai_news_post_url": "https://community.hubactually.com/df26cd44-d442-4376-8bb6-c3a8bc9de77a",
+  "ai_news_thread_id": "df26cd44-d442-4376-8bb6-c3a8bc9de77a",
+  "ai_news_publish_status": "published",
+  "api_publish_attempt": "first_attempt_image_upload_ok_create_401; browser_composer_fallback_drafted_but_image_attachment_blocked; second_attempt_with_fresh_doppler_load_success_threadId_df26cd44",
+  "image_concept": "A small independent plant shop at dusk; a copper watering can shaped like a friendly robot gently watering a grid of blank paper cards sprouting like seedlings from an open garden planner - the always-on weekly content cadence being tended automatically. Landscape, photorealistic editorial cover, zero embedded text.",
+  "image_status": "uploaded_and_live",
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1785417346283.png",
+  "generated_image_path": "/agent/stored_files/cms7jc0xs0g1k07adlm0zydnl_18d8badc-b0b8-4c65-b218-52ef0f7c6984.png",
+  "post_visible_after_submit": true,
+  "pre_publish_checks": {
+    "image_generated": "pass_concept_led_landscape_no_embedded_text_verified",
+    "image_attached": "pass_previewimages_full_landscape_cover_verified_on_thread_api_and_page",
+    "clickable_link": "pass_source_url_wrapped_in_a_href_verified_in_thread_description",
+    "channel_and_author": "pass_general_channel_as_hub_bot_verified"
+  },
+  "duplicate_check": "compared_against_2026-07-22_to_2026-07-29_hub_bot_posts_quickbooks_openai_smb_access_bank_meta_seller_worknet_crownz_vibe_coding_openai_smb_program_no_overlap_distinct_source_and_topic",
+  "owner_alert_status": "pending_end_of_run_send",
+  "owner_alert_required": true,
+  "owner_alert_reason": "Two new members welcomed (Anna, Terry) AND flagged items (Estage API intermittency, browser-upload gap, Digital Joe support watch).",
+  "saturday_digest_status": "not_saturday",
+  "saturday_digest_reason": "Actual America/New_York date is Thursday 2026-07-30; the member-facing weekly digest is only allowed on Saturdays.",
+  "dashboard_update_status": "pending_repo_fallback",
+  "community_stats": {
+    "total_members": 89,
+    "source": "browser_members_page (members API 401)"
+  },
+  "tasks_completed": 9,
+  "tasks_failed": 0,
+  "blockers": [],
+  "recommended_next_actions": [
+    "Owner: consider rotating COMMUNITY_ESTAGE_TOKEN - intermittent 401s on /members and first create attempt (publish succeeded on retry).",
+    "Owner: continue engaging Digital Joe on the 'bot' support post - he has not answered either clarifying question.",
+    "Platform note: BrowserUpload-to-Estage-composer gap means the API publisher is currently the only working image-attach path; watch publish days closely."
+  ],
+  "run_evidence_summary": "Published Vendasta AI Employees AI-news post with concept-led text-free landscape image (thread df26cd44 verified live with cover + clickable source); welcomed 2 new members (Anna Whakaruru, Terry Zheng) via verified browser DMs; 89 members total; Digital Joe support item on watch with owner engaging personally; Estage API intermittency and browser-upload gap flagged; no hard blockers.",
+  "evidence": {
+    "heartbeat_result_path": "~/hubactually_hubbot_run_ledger/2026-07-30_heartbeat.json",
+    "api_publish_result_paths": [
+      "/tmp/hubbot_run/api_publish_result.json",
+      "/tmp/hubbot_run/api_publish_result2.json"
+    ],
+    "member_review_source": "browser members page + /tmp/hubbot_run/posts_review.json"
+  }
+}
