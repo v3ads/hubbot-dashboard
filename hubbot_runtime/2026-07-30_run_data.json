@@ -37,7 +37,7 @@
     },
     {
       "task": "Owner alert email",
-      "outcome": "pending"
+      "outcome": "sent_brevo_direct_email"
     },
     {
       "task": "Saturday digest",
@@ -51,7 +51,7 @@
   "metrics": {
     "required_tasks_completed": 9,
     "required_tasks_failed": 0,
-    "owner_alerts_sent": 0,
+    "owner_alerts_sent": 1,
     "posts_published": 1,
     "new_welcomes_sent": 2
   },
@@ -73,6 +73,6 @@
   ],
   "blockers": [],
   "saturday_digest_status": "not_saturday",
-  "owner_alert_status": "pending",
+  "owner_alert_status": "sent_via_brevo_direct_email",
   "notes": "Published Vendasta AI Employees AI-news post with concept-led text-free landscape image (thread df26cd44 verified live with cover + clickable source); welcomed 2 new members (Anna Whakaruru, Terry Zheng) via verified browser DMs; 89 members total; Digital Joe support item on watch with owner engaging personally; Estage API intermittency and browser-upload gap flagged; no hard blockers."
 }
