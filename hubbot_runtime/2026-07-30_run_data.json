@@ -1,0 +1,78 @@
+{
+  "run_date": "2026-07-30",
+  "agent": "HubBot",
+  "version": "v2",
+  "schedule": "HubActually autonomous community admin",
+  "community": "HubActually",
+  "started_at": "2026-07-30T09:01:00-04:00",
+  "completed_at": "2026-07-30T09:31:56.089979-04:00",
+  "checklist": [
+    {
+      "task": "Preflight",
+      "outcome": "completed"
+    },
+    {
+      "task": "Community access",
+      "outcome": "completed_authenticated_browser_and_api_with_intermittency"
+    },
+    {
+      "task": "Member review",
+      "outcome": "completed_2_new_members_via_browser_fallback"
+    },
+    {
+      "task": "Discussion review",
+      "outcome": "completed_no_action_required_owner_engaging_joe"
+    },
+    {
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
+      "outcome": "completed_uploaded"
+    },
+    {
+      "task": "Community post",
+      "outcome": "published_and_verified_visible"
+    },
+    {
+      "task": "Owner alert email",
+      "outcome": "pending"
+    },
+    {
+      "task": "Saturday digest",
+      "outcome": "skipped_not_saturday"
+    },
+    {
+      "task": "Dashboard update",
+      "outcome": "completed_via_repo_fallback"
+    }
+  ],
+  "metrics": {
+    "required_tasks_completed": 9,
+    "required_tasks_failed": 0,
+    "owner_alerts_sent": 0,
+    "posts_published": 1,
+    "new_welcomes_sent": 2
+  },
+  "published_post": {
+    "title": "Vendasta's New AI Employees Now Run Weekly Social Media and Blog Content for Local Small Businesses",
+    "source_url": "https://www.accessnewswire.com/newsroom/en/real-estate/vendasta-unveils-autonomous-ai-employees-to-scale-organic-search-and-social-marketing-f-1197799",
+    "thread_url": "https://community.hubactually.com/df26cd44-d442-4376-8bb6-c3a8bc9de77a",
+    "image_status": "uploaded_and_live",
+    "publish_status": "published"
+  },
+  "new_members": [
+    "Anna Whakaruru",
+    "Terry Zheng"
+  ],
+  "flagged_items": [
+    "Estage API auth instability: GET /api/56382/members returns 401 (worked 07-29), and the first threads/create attempt 401'd while an identical retry minutes later succeeded. Upload and threads read endpoints work throughout.",
+    "BrowserUpload cannot target the Estage composer's hidden file inputs (composer-new-post-uploader and the title-adjacent image input) - the tool resolves them as non-file-input elements, so browser-composer image attachment is currently impossible.",
+    "'bot' post ('doesn't seem to be working', 07-26) still has no answer from Joe; Hub Bot asked clarifying questions 07-28 and AYMAN SHALABY personally asked Joe to elaborate on 07-29."
+  ],
+  "blockers": [],
+  "saturday_digest_status": "not_saturday",
+  "owner_alert_status": "pending",
+  "notes": "Published Vendasta AI Employees AI-news post with concept-led text-free landscape image (thread df26cd44 verified live with cover + clickable source); welcomed 2 new members (Anna Whakaruru, Terry Zheng) via verified browser DMs; 89 members total; Digital Joe support item on watch with owner engaging personally; Estage API intermittency and browser-upload gap flagged; no hard blockers."
+}
