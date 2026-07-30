@@ -14,5 +14,6 @@
   "ai_news_post_url": "https://community.hubactually.com/df26cd44-d442-4376-8bb6-c3a8bc9de77a",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending_repo_fallback"
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "owner_alert_status": "sent_via_brevo_direct_email"
 }
