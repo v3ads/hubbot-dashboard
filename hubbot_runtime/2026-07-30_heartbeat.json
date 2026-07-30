@@ -1,0 +1,9 @@
+{
+  "run_date": "2026-07-30",
+  "heartbeat_at_et": "2026-07-30T09:03:47.246563-04:00",
+  "state": "running",
+  "agent_name": "HubBot",
+  "schedule_name": "HubActually autonomous community admin",
+  "post_status": "skipped_no_endpoint_or_key",
+  "note": "Dashboard direct API key (HUBBOT_API_KEY) is not available in this runtime; heartbeat POST skipped safely. End-of-run repo-fallback dashboard update is authoritative."
+}
