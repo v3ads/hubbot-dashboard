@@ -1,0 +1,74 @@
+{
+  "date": "2026-07-31",
+  "run_started_at_et": "2026-07-31T09:01:00-04:00",
+  "run_completed_at_et": "2026-07-31T09:10:00-04:00",
+  "community": "HubActually",
+  "checklist": [
+    {
+      "task": "Preflight",
+      "outcome": "blocked_pipeline_skill_missing_proceeded_degraded"
+    },
+    {
+      "task": "Community access",
+      "outcome": "completed"
+    },
+    {
+      "task": "Member review",
+      "outcome": "completed_no_new_members"
+    },
+    {
+      "task": "Discussion review",
+      "outcome": "completed_no_action_required"
+    },
+    {
+      "task": "AI-news research",
+      "outcome": "completed"
+    },
+    {
+      "task": "Image generation",
+      "outcome": "completed_uploaded"
+    },
+    {
+      "task": "Community post",
+      "outcome": "published_and_verified_visible"
+    },
+    {
+      "task": "Owner alert email",
+      "outcome": "not_required"
+    },
+    {
+      "task": "Saturday digest",
+      "outcome": "skipped_not_saturday"
+    },
+    {
+      "task": "Dashboard update",
+      "outcome": "completed_via_repo_fallback"
+    }
+  ],
+  "metrics": {
+    "required_tasks_completed": 8,
+    "required_tasks_failed": 0,
+    "owner_alerts_sent": 0,
+    "posts_published": 1,
+    "new_welcomes_sent": 0,
+    "total_members": 89,
+    "pending_members": 0,
+    "new_members": 0
+  },
+  "published_post": {
+    "title": "Amazon's New AI Listing Generator Writes Your Entire Product Page in 87 Seconds \u2014 Free for U.S. Brand Registry Sellers",
+    "thread_url": "https://community.hubactually.com/post/60c5ba14-4488-4a81-9cda-42c1756cf2a9",
+    "source_url": "https://ecommerce-times.com/amazons-new-ai-powered-listing-generator-is-forcing-sellers-to-rethink-their-pdp-workflows/",
+    "image_status": "uploaded",
+    "publish_status": "published"
+  },
+  "blockers": [
+    "pipeline_skill_missing: hubbot-daily-run skill not found in knowledge base \u2014 deterministic pipeline could not be executed; judgment-path steps completed inline."
+  ],
+  "flagged_items": [
+    {
+      "item": "hubbot-daily-run deterministic pipeline skill is not installed in the knowledge base (FetchSkillScripts: skill not found). The run proceeded degraded: member review, AI-news publish, ledger, and dashboard commit were executed inline instead of via the single pipeline execution.",
+      "recommended_next_action": "Re-install/register the hubbot-daily-run skill (script hubbot_daily_run.py) so tomorrow's run uses the deterministic pipeline path."
+    }
+  ]
+}
