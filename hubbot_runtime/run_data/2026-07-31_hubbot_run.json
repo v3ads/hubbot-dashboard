@@ -1,0 +1,40 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v1",
+  "run_started_at_et": "2026-07-31T09:01:00-04:00",
+  "run_completed_at_et": "2026-07-31T09:10:00-04:00",
+  "schedule_name": "HubActually autonomous community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "success \u2014 Estage API (members + threads) responded 200 via COMMUNITY_ESTAGE_TOKEN",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [
+    {
+      "item": "hubbot-daily-run deterministic pipeline skill is not installed in the knowledge base (FetchSkillScripts: skill not found). The run proceeded degraded: member review, AI-news publish, ledger, and dashboard commit were executed inline instead of via the single pipeline execution.",
+      "recommended_next_action": "Re-install/register the hubbot-daily-run skill (script hubbot_daily_run.py) so tomorrow's run uses the deterministic pipeline path."
+    }
+  ],
+  "ai_news_title": "Amazon's New AI Listing Generator Writes Your Entire Product Page in 87 Seconds \u2014 Free for U.S. Brand Registry Sellers",
+  "ai_news_source_url": "https://ecommerce-times.com/amazons-new-ai-powered-listing-generator-is-forcing-sellers-to-rethink-their-pdp-workflows/",
+  "ai_news_post_url": "https://community.hubactually.com/post/60c5ba14-4488-4a81-9cda-42c1756cf2a9",
+  "ai_news_publish_status": "published",
+  "image_concept": "A minimalist e-commerce product detail page assembling mid-air like precision typesetting \u2014 floating product photo card snapping into place while copy blocks and keyword tiles magnetically align, over a warm off-white backdrop with an Amazon-orange accent light sweep.",
+  "image_status": "uploaded",
+  "pre_publish_checks": {
+    "image_generated": "pass \u2014 concept-led landscape image generated and inspected (no embedded text)",
+    "image_attached": "pass \u2014 API upload returned image id 1785503137122; thread GET verifies previewImages populated",
+    "clickable_link": "pass \u2014 source URL wrapped in <a href> anchor on its own paragraph with trailing space, per approved publisher",
+    "channel_and_author": "pass \u2014 General category 4496ab4b-8529-4a7e-9a31-588fe414d9b0 via COMMUNITY_ESTAGE_TOKEN"
+  },
+  "owner_alert_status": "not_required \u2014 no new members, no failed required step; pipeline-skill gap flagged here in ledger only",
+  "saturday_digest_status": "not_saturday",
+  "blockers": [
+    "pipeline_skill_missing: hubbot-daily-run skill not found in knowledge base \u2014 deterministic pipeline could not be executed; judgment-path steps completed inline."
+  ],
+  "recommended_next_actions": [
+    "Re-install the hubbot-daily-run skill so the deterministic pipeline resumes.",
+    "No action needed on members (0 new, 0 pending of 89 total)."
+  ],
+  "run_evidence_summary": "AI-news post PUBLISHED to General via approved Estage API publisher and verified by thread GET (threadId 60c5ba14-4488-4a81-9cda-42c1756cf2a9, previewImages attached). Member review: 89 members, 0 new, 0 pending. Ledger written locally and committed to v3ads/hubbot-dashboard via GitHub REST."
+}
