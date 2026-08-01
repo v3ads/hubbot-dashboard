@@ -2,9 +2,9 @@
   "agent_name": "HubBot",
   "agent_version": "hubbot-daily-run/1.0",
   "run_started_at_et": "2026-08-01 09:05:55 EDT",
-  "run_completed_at_et": "2026-08-01 10:13:27 EDT",
+  "run_completed_at_et": "2026-08-01 10:35:55 EDT",
   "run_started_at_utc": "2026-08-01T13:05:55.066474+00:00",
-  "run_completed_at_utc": "2026-08-01T14:13:27.378322+00:00",
+  "run_completed_at_utc": "2026-08-01T14:35:55.459964+00:00",
   "schedule_name": "HubBot daily community admin",
   "schedule_cron": "daily 09:00 America/New_York",
   "community_access_result": "ok",
@@ -47,11 +47,13 @@
   "welcomes_posted": [
     {
       "member": "Phyllis Love Segers",
-      "status": "sent_via_browser_dm"
+      "status": "sent_via_browser_dm",
+      "also_public": true
     },
     {
       "member": "Merl\u00eben L.",
-      "status": "sent_via_browser_dm"
+      "status": "sent_via_browser_dm",
+      "also_public": true
     }
   ],
   "comments_added": [],
@@ -90,7 +92,7 @@
     "Regenerate/rotate COMMUNITY_ESTAGE_TOKEN with write scope so the API publisher works headlessly (currently 401 on threads/create; upload + GET reads work).",
     "Regenerate/rotate COMMUNITY_ESTAGE_TOKEN with write scope so the API publisher works headlessly (currently 401 on threads/create; upload + GET reads work)."
   ],
-  "run_evidence_summary": "AI-news post published via authenticated browser composer after the Estage threads/create API returned 401 (write scope). Image generated + attached; source link isolated; General channel; Hub Bot author. 2 new members found; owner alert sent via Brevo.",
+  "run_evidence_summary": "AI-news post published via authenticated browser composer after the Estage threads/create API returned 401 (write scope). Image generated + attached; source link isolated; General channel; Hub Bot author. 2 new members found; owner alert sent via Brevo. Public welcome post also published in General for both new members (per owner: welcome publicly, not just chat).",
   "saturday_digest_reason": "FIXED + SENT 2026-08-01 ~10:14 ET. Root cause of the 400s: the recipient selector sendSettings.selectedCampaigns must be an array of PLAIN campaign-ID strings ([\"ZUWTE\"]), not an array of objects ([{\"campaignId\":\"ZUWTE\"}]). The object shape returns 400 'Provided IDs are not valid' regardless of key. Verified against the successful 2026-07-25 digest (VOIkiv) which uses the string form. Sent with the NEW GetResponse key. Newsletter VO3Mxn (status enabled, sendOn 2026-08-01T14:14:51Z) to the HubActually list. Fix persisted into hubbot_send_weekly_digest.py.",
   "owner_alert_required": true,
   "saturday_digest_scheduled_for_et": "2026-08-01T10:00:00-04:00",
@@ -98,5 +100,12 @@
     "saturday_digest_result_path": "/agent/hubactually_hubbot_run_ledger/20260801T092842-0400_weekly_digest_result.json"
   },
   "saturday_digest_newsletter_id": "VO3Mxn",
-  "saturday_digest_stats_url": "https://app.getresponse.com/statistics/newsletters/VO3Mxn/summary"
+  "saturday_digest_stats_url": "https://app.getresponse.com/statistics/newsletters/VO3Mxn/summary",
+  "public_welcome_post": {
+    "status": "published",
+    "channel": "General",
+    "author": "Hub Bot",
+    "title": "Welcome to our newest members! \ud83d\udc4b",
+    "posted_at_utc": "2026-08-01T14:34:58Z"
+  }
 }
