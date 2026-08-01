@@ -280,7 +280,10 @@ def build_newsletter_payload(subject: str, html_body: str, text_body: str, resol
         'subject': subject,
         'fromField': {'fromFieldId': resolution['_from_field_id']},
         'content': {'html': html_body, 'plain': text_body},
-        'sendSettings': {'selectedCampaigns': [{'campaignId': resolution['_campaign_id']}]},
+    # GetResponse v3 expects recipient selectors as arrays of plain ID strings,
+    # NOT arrays of {campaignId: ...} objects (that shape returns 400 "Provided IDs
+    # are not valid"). Mirrors the structure of a successfully-sent digest.
+    'sendSettings': {'selectedCampaigns': [resolution['_campaign_id']]},
     }
     # GetResponse v3 accepts a scheduled send timestamp on newsletter creation in
     # accounts where scheduling is enabled. If the provider rejects this field,
