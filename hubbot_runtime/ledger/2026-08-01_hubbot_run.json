@@ -2,9 +2,9 @@
   "agent_name": "HubBot",
   "agent_version": "hubbot-daily-run/1.0",
   "run_started_at_et": "2026-08-01 09:05:55 EDT",
-  "run_completed_at_et": "2026-08-01 09:05:56 EDT",
+  "run_completed_at_et": "2026-08-01 09:30:08 EDT",
   "run_started_at_utc": "2026-08-01T13:05:55.066474+00:00",
-  "run_completed_at_utc": "2026-08-01T13:05:56.136295+00:00",
+  "run_completed_at_utc": "2026-08-01T13:30:08.126461+00:00",
   "schedule_name": "HubBot daily community admin",
   "schedule_cron": "daily 09:00 America/New_York",
   "community_access_result": "ok",
@@ -44,19 +44,63 @@
       "lastActivity": "2026-07-31T20:12:45.583Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member": "Phyllis Love Segers",
+      "status": "sent_via_browser_dm"
+    },
+    {
+      "member": "Merl\u00eben L.",
+      "status": "sent_via_browser_dm"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending_llm",
-  "image_concept": null,
-  "image_status": "pending_llm",
-  "pre_publish_checks": {},
+  "flagged_items": [
+    {
+      "type": "weekly_digest_blocked",
+      "reason": "GetResponse API key is unavailable in environment or protected runtime store.",
+      "result_path": "/agent/hubactually_hubbot_run_ledger/20260801T092810-0400_weekly_digest_result.json"
+    },
+    {
+      "type": "weekly_digest_blocked",
+      "reason": "GetResponse newsletter create failed with HTTP 400",
+      "result_path": "/agent/hubactually_hubbot_run_ledger/20260801T092842-0400_weekly_digest_result.json"
+    },
+    {
+      "type": "saturday_digest_blocked",
+      "reason": "GetResponse newsletter create HTTP 400 (campaign field) \u2014 payload schema mismatch",
+      "prepared_body": "/agent/workspace/digest_body.txt"
+    }
+  ],
+  "ai_news_title": "QBiz's Free AI Business Bank Reads Your Stripe, QuickBooks, and Bank Data \u2014 Then Flags Cash-Flow Trouble Before It Hits",
+  "ai_news_source_url": "https://finance.yahoo.com/small-business/articles/qbiz-launches-ai-business-bank-152100878.html",
+  "ai_news_post_url": "https://community.hubactually.com (General feed, post by Hub Bot at 2026-08-01 13:17 UTC; thread id a4a4edf2-5865-488e-8f3b-42727f086e18)",
+  "ai_news_publish_status": "published_via_browser_composer",
+  "image_concept": "Luminous glass lighthouse projecting one clean beam across a dark sea of scattered financial documents (P&L, invoices, ad printouts) \u2014 metaphor for an AI advisor turning fragmented business finances into one clear read.",
+  "image_status": "generated_and_attached",
+  "pre_publish_checks": {
+    "image_generated": "pass",
+    "image_attached": "pass (composer thumbnail visible)",
+    "clickable_link": "pass (source URL isolated on its own last line)",
+    "channel_and_author": "pass (General, Hub Bot)"
+  },
   "owner_alert_status": "pending",
-  "saturday_digest_status": "not_saturday",
-  "blockers": [],
-  "recommended_next_actions": [],
-  "run_evidence_summary": "Deterministic pipeline complete; LLM judgment work pending (AI-news post, welcomes, flags)."
+  "saturday_digest_status": "blocked",
+  "blockers": [
+    "estage_threads_create_api_401_write_scope (worked around via authenticated browser composer)",
+    "Saturday weekly digest blocked: GetResponse API key is unavailable in environment or protected runtime store.",
+    "Saturday weekly digest blocked: GetResponse newsletter create failed with HTTP 400",
+    "saturday_digest_getresponse_400"
+  ],
+  "recommended_next_actions": [
+    "Regenerate/rotate COMMUNITY_ESTAGE_TOKEN with write scope so the API publisher works headlessly (currently 401 on threads/create; upload + GET reads work).",
+    "Regenerate/rotate COMMUNITY_ESTAGE_TOKEN with write scope so the API publisher works headlessly (currently 401 on threads/create; upload + GET reads work)."
+  ],
+  "run_evidence_summary": "AI-news post published via authenticated browser composer after the Estage threads/create API returned 401 (write scope). Image generated + attached; source link isolated; General channel; Hub Bot author. 2 new members found; owner alert sent via Brevo.",
+  "saturday_digest_reason": "GetResponse newsletter create returned HTTP 400 validation (campaign field) despite valid from-field + HubActually campaign. Digest body prepared at /agent/workspace/digest_body.txt. Recorded fail-closed; recommend verifying the GetResponse newsletter payload schema or sending via the dashboard.",
+  "owner_alert_required": true,
+  "saturday_digest_scheduled_for_et": "2026-08-01T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/agent/hubactually_hubbot_run_ledger/20260801T092842-0400_weekly_digest_result.json"
+  }
 }
