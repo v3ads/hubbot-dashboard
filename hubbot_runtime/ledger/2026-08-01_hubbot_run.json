@@ -2,9 +2,9 @@
   "agent_name": "HubBot",
   "agent_version": "hubbot-daily-run/1.0",
   "run_started_at_et": "2026-08-01 09:05:55 EDT",
-  "run_completed_at_et": "2026-08-01 09:30:08 EDT",
+  "run_completed_at_et": "2026-08-01 10:09:35 EDT",
   "run_started_at_utc": "2026-08-01T13:05:55.066474+00:00",
-  "run_completed_at_utc": "2026-08-01T13:30:08.126461+00:00",
+  "run_completed_at_utc": "2026-08-01T14:09:35.425472+00:00",
   "schedule_name": "HubBot daily community admin",
   "schedule_cron": "daily 09:00 America/New_York",
   "community_access_result": "ok",
@@ -70,6 +70,11 @@
       "type": "saturday_digest_blocked",
       "reason": "GetResponse newsletter create HTTP 400 (campaign field) \u2014 payload schema mismatch",
       "prepared_body": "/agent/workspace/digest_body.txt"
+    },
+    {
+      "type": "saturday_digest_blocked",
+      "reason": "GetResponse API key denied newsletter recipient selection on all campaigns (account-side scope/plan issue)",
+      "prepared_body": "/agent/workspace/digest_body.txt"
     }
   ],
   "ai_news_title": "QBiz's Free AI Business Bank Reads Your Stripe, QuickBooks, and Bank Data \u2014 Then Flags Cash-Flow Trouble Before It Hits",
@@ -97,7 +102,7 @@
     "Regenerate/rotate COMMUNITY_ESTAGE_TOKEN with write scope so the API publisher works headlessly (currently 401 on threads/create; upload + GET reads work)."
   ],
   "run_evidence_summary": "AI-news post published via authenticated browser composer after the Estage threads/create API returned 401 (write scope). Image generated + attached; source link isolated; General channel; Hub Bot author. 2 new members found; owner alert sent via Brevo.",
-  "saturday_digest_reason": "GetResponse newsletter create returned HTTP 400 validation (campaign field) despite valid from-field + HubActually campaign. Digest body prepared at /agent/workspace/digest_body.txt. Recorded fail-closed; recommend verifying the GetResponse newsletter payload schema or sending via the dashboard.",
+  "saturday_digest_reason": "DIAGNOSED 2026-08-01 ~10:10 ET: GetResponse POST /newsletters rejects EVERY recipient selector (selectedCampaigns / selectedContacts) on EVERY campaign (HubActually ZUWTE, Cynthia Followup i3fTq) with 'Provided IDs are not valid' \u2014 even though those campaigns send fine via the dashboard. Ruled out payload shape (top-level campaign, replyTo, flags, editor, hand-built JSON) and campaign/contact validity. Root cause is account-side: the GetResponse API key likely lacks newsletter recipient-selection scope, or the free plan blocks API-triggered broadcast sends. Brevo fallback not viable (hubactually list 0 subscribers; ~296 credits). RECOMMEND: send prepared digest manually from GetResponse dashboard (body at /agent/workspace/digest_body.txt), or regenerate GetResponse API key with full permissions.",
   "owner_alert_required": true,
   "saturday_digest_scheduled_for_et": "2026-08-01T10:00:00-04:00",
   "evidence": {
