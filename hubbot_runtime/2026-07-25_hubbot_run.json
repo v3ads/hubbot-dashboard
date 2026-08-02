@@ -11,7 +11,7 @@
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Worknet Launches AI-Native Platform That Runs a Full Business in 48 Hours",
-  "ai_news_source_url": "https://thenyledger.com/markets/worknet-launches-ai-native-platform-to-build-and-run-a-full-business-in-48-hours/",
+  "ai_news_source_url": "https://www.usatoday.com/press-release/story/37849/worknet-launches-ai-native-business-operations-platform/",
   "ai_news_post_url": "https://community.hubactually.com/14b80e8b-2029-46ba-8372-72555e5021f8",
   "ai_news_publish_status": "published",
   "image_concept": "Six luminous, translucent AI agent orbs floating in a circular formation above a clean wooden desk surface, each orb glowing with a distinct warm hue (gold, teal, amber, coral, sage, cream). The orbs represent business functions connected by delicate light threads. Premium editorial product cover, no person, no laptop, no text. Warm natural light, elegant, sophisticated.",
@@ -20,5 +20,12 @@
   "saturday_digest_status": "scheduled",
   "blockers": [],
   "recommended_next_actions": [],
-  "run_evidence_summary": "AI-news post published successfully to General channel on 2026-07-25 with concept-led image (https://estage-test.b-cdn.net/uploads/images/1784984794669.png). No new members found since last run (2026-07-24). Saturday digest scheduled for 10:00 AM ET via GetResponse (newsletterId: VOIkiv). Browser session authenticated successfully. Community accessed via headless API (members, posts) and authenticated browser. No comments required. No flagged items. No blockers."
+  "run_evidence_summary": "AI-news post published successfully to General channel on 2026-07-25 with concept-led image (https://estage-test.b-cdn.net/uploads/images/1784984794669.png). No new members found since last run (2026-07-24). Saturday digest scheduled for 10:00 AM ET via GetResponse (newsletterId: VOIkiv). Browser session authenticated successfully. Community accessed via headless API (members, posts) and authenticated browser. No comments required. No flagged items. No blockers. SOURCE LINK FIXED 2026-08-02: thenyledger.com URL returned ERR_CONNECTION_CLOSED for end users (reported by member Murriet 2026-07-26; confirmed by owner). Source URL repointed to the same Worknet press release syndicated at usatoday.com. Post body updated via Estage API PUT; verified live.",
+  "ai_news_source_url_original": "https://thenyledger.com/markets/worknet-launches-ai-native-platform-to-build-and-run-a-full-business-in-48-hours/",
+  "ai_news_source_url_fix": {
+    "fixed_at_et": "2026-08-02T17:12:00-04:00",
+    "reason": "thenyledger.com ERR_CONNECTION_CLOSED for end users",
+    "reported_by": "member Murriet (2026-07-26), confirmed by owner 2026-08-02",
+    "new_url": "https://www.usatoday.com/press-release/story/37849/worknet-launches-ai-native-business-operations-platform/"
+  }
 }
