@@ -1,8 +1,7 @@
 {
-  "run_date": "2026-08-01",
-  "run_started_at_utc": "2026-08-01T13:05:55.066474+00:00",
-  "run_completed_at_utc": "2026-08-01T13:05:56.136295+00:00",
+  "run_date": "2026-08-02",
+  "run_started_at_utc": "2026-08-02T13:03:50.363012+00:00",
   "status": "pipeline_complete_llm_pending",
-  "json": "2026-08-01_hubbot_run.json",
-  "md": "2026-08-01_hubbot_run.md"
+  "json": "2026-08-02_hubbot_run.json",
+  "md": "2026-08-02_hubbot_run.md"
 }
