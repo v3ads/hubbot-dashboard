@@ -57,3 +57,11 @@
 
 ## Recommended Next Actions
 - None
+
+
+## Source Link Fix (2026-08-02)
+
+SOURCE LINK FIXED 2026-08-02: thenyledger.com URL returned ERR_CONNECTION_CLOSED for end users (reported by member Murriet 2026-07-26; confirmed by owner). Source URL repointed to the same Worknet press release syndicated at usatoday.com. Post body updated via Estage API PUT; verified live.
+
+- Original source: https://thenyledger.com/markets/worknet-launches-ai-native-platform-to-build-and-run-a-full-business-in-48-hours/
+- New source: https://www.usatoday.com/press-release/story/37849/worknet-launches-ai-native-business-operations-platform/
