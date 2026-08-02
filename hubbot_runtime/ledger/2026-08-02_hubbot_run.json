@@ -1,0 +1,36 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "hubbot-daily-run/1.0-inline",
+  "run_date": "2026-08-02",
+  "run_started_at_et": "2026-08-02 09:03:50 EDT",
+  "run_completed_at_et": null,
+  "run_started_at_utc": "2026-08-02T13:03:50.363012+00:00",
+  "run_completed_at_utc": null,
+  "schedule_name": "HubBot daily community admin",
+  "schedule_cron": "daily 09:00 America/New_York",
+  "community_access_result": "ok",
+  "new_members_found": [
+    {
+      "id": "673",
+      "name": "Phyllis Love Segers",
+      "email": "ploves4552@gmail.com",
+      "joined": "2026-08-01T11:01:53.201Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": null,
+  "image_concept": null,
+  "image_status": null,
+  "pre_publish_checks": {},
+  "owner_alert_status": "pending",
+  "saturday_digest_status": null,
+  "blockers": [],
+  "recommended_next_actions": [],
+  "run_evidence_summary": null,
+  "owner_alert_required": false
+}
