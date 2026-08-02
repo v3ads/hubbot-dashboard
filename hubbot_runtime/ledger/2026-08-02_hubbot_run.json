@@ -3,9 +3,9 @@
   "agent_version": "hubbot-daily-run/1.0-inline",
   "run_date": "2026-08-02",
   "run_started_at_et": "2026-08-02 09:03:50 EDT",
-  "run_completed_at_et": null,
+  "run_completed_at_et": "2026-08-02 09:17:27 EDT",
   "run_started_at_utc": "2026-08-02T13:03:50.363012+00:00",
-  "run_completed_at_utc": null,
+  "run_completed_at_utc": "2026-08-02T13:17:27.517081+00:00",
   "schedule_name": "HubBot daily community admin",
   "schedule_cron": "daily 09:00 America/New_York",
   "community_access_result": "ok",
@@ -17,20 +17,46 @@
       "joined": "2026-08-01T11:01:53.201Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member": "Phyllis Love Segers",
+      "status": "sent_via_browser_dm",
+      "also_public": true
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": null,
-  "image_concept": null,
-  "image_status": null,
-  "pre_publish_checks": {},
+  "flagged_items": [
+    {
+      "type": "discussion_comment_blocked",
+      "reason": "Browser automation returned repeated internal server errors on the Estage comment rich-text editor (4 attempts) while trying to comment on Ayman's 'AI Doesn't Take the Blame. You Do.' thread.",
+      "recommended_action": "Optional engagement only; no owner action needed. Retry next run."
+    }
+  ],
+  "ai_news_title": "New AI Runs Your Google Business Profile for You \u2014 Posts, Review Replies, and Block-by-Block Local Rank Tracking",
+  "ai_news_source_url": "https://lifestyle.theroguemag.com/story/735201/myads-guru-launches-ai-powered-google-business-profile-management-platform/",
+  "ai_news_post_url": "https://community.hubactually.com/d617c903-f4a8-4729-bc0c-d7f8ede816fd",
+  "ai_news_publish_status": "published_via_api",
+  "image_concept": "A small local storefront rendered as a glowing neon map pin on a dark city grid, light spreading outward to illuminate blocks one-by-one (GeoGrid), with review stars/chat bubbles answered by a beam of light (AI review responder).",
+  "image_status": "generated_and_attached",
+  "pre_publish_checks": {
+    "image_generated": "pass",
+    "image_attached": "pass (previewImages[] verified live)",
+    "clickable_link": "pass (source URL in <a href> anchor)",
+    "channel_and_author": "pass (General, Hub Bot)"
+  },
   "owner_alert_status": "pending",
-  "saturday_digest_status": null,
-  "blockers": [],
+  "saturday_digest_status": "not_saturday",
+  "blockers": [
+    "discussion_comment_browser_internal_error (optional step, non-blocking)"
+  ],
   "recommended_next_actions": [],
-  "run_evidence_summary": null,
-  "owner_alert_required": false
+  "run_evidence_summary": "Pipeline ok (no blockers). 1 new member (Phyllis Love Segers) welcomed via browser DM + public post. AI-news post (MyAds.Guru / Google Business Profile AI) PUBLISHED via Estage API with generated image + clickable source link, verified live (General, Hub Bot). Discussion comment on Ayman's post blocked by browser internal server errors (optional step). Saturday digest: not_saturday. Ledger committed to repo.",
+  "owner_alert_required": true,
+  "public_welcome_post": {
+    "status": "published",
+    "channel": "General",
+    "author": "Hub Bot",
+    "title": "Welcome to our newest member! \ud83d\udc4b",
+    "thread_id": "2cd2ac2c-2c45-478c-9296-d49569d21d1b"
+  }
 }
