@@ -1,7 +1,17 @@
 {
   "run_date": "2026-08-02",
-  "run_started_at_utc": "2026-08-02T13:03:50.363012+00:00",
-  "status": "pipeline_complete_llm_pending",
+  "run_completed_at_utc": "2026-08-02T13:17:27.517081+00:00",
+  "status": "completed_ai_news_published",
   "json": "2026-08-02_hubbot_run.json",
-  "md": "2026-08-02_hubbot_run.md"
+  "md": "2026-08-02_hubbot_run.md",
+  "ai_news_post_url": "https://community.hubactually.com/d617c903-f4a8-4729-bc0c-d7f8ede816fd",
+  "ai_news_publish_status": "published_via_api",
+  "new_members_found": [
+    "Phyllis Love Segers"
+  ],
+  "welcomes_posted": [
+    "Phyllis Love Segers"
+  ],
+  "saturday_digest_status": "not_saturday",
+  "owner_alert_status": "sent_via_brevo"
 }
