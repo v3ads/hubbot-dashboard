@@ -1,19 +1,13 @@
 {
-  "latest_file": "/agent/hubactually_hubbot_run_ledger/2026-07-30_hubbot_run.json",
-  "run_file": "/agent/hubactually_hubbot_run_ledger/2026-07-30_hubbot_run.json",
-  "run_completed_at_et": "2026-07-30T09:31:56.089979-04:00",
-  "status": "completed_ai_news_published",
-  "new_members_found": [
-    "Anna Whakaruru",
-    "Terry Zheng"
-  ],
-  "welcomes_posted": [
-    "Anna Whakaruru",
-    "Terry Zheng"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/df26cd44-d442-4376-8bb6-c3a8bc9de77a",
-  "ai_news_publish_status": "published",
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-03_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-03_hubbot_run.json",
+  "run_completed_at_et": "2026-08-03T12:41:24-04:00",
+  "status": "in_progress",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo_direct_email"
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
