@@ -1,0 +1,113 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-04T09:02:14-04:00",
+  "run_completed_at_et": "2026-08-04T09:15:13-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 5 new since 2026-07-28",
+  "new_members_found": [
+    {
+      "id": "673",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-01T11:01:53.201Z",
+      "lastActivity": "2026-08-01T16:55:52.135Z"
+    },
+    {
+      "id": "2384",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-31T20:12:45.254Z",
+      "lastActivity": "2026-07-31T20:12:45.583Z"
+    },
+    {
+      "id": "7595",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-30T02:31:15.111Z",
+      "lastActivity": "2026-08-02T15:30:41.147Z"
+    },
+    {
+      "id": "3542",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-29T17:33:50.299Z",
+      "lastActivity": "2026-07-31T02:54:07.515Z"
+    },
+    {
+      "id": "58540",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-28T17:24:24.285Z",
+      "lastActivity": null
+    }
+  ],
+  "welcomes_posted": [
+    {
+      "member": "Phyllis Love Segers",
+      "id": "673",
+      "dm_status": "sent",
+      "public_post_status": "covered_2026-08-02"
+    },
+    {
+      "member": "Merlên L.",
+      "id": "2384",
+      "dm_status": "previously_sent",
+      "public_post_status": "pending_not_needed_duplicate_risk"
+    },
+    {
+      "member": "Anna Whakaruru",
+      "id": "7595",
+      "dm_status": "previously_sent",
+      "public_post_status": "covered_2026-08-03"
+    },
+    {
+      "member": "Terry Zheng",
+      "id": "3542",
+      "dm_status": "previously_sent",
+      "public_post_status": "covered_2026-08-03"
+    },
+    {
+      "member": "Atajan Toyliyev",
+      "id": "58540",
+      "dm_status": "previously_sent",
+      "public_post_status": "pending_not_needed_duplicate_risk"
+    }
+  ],
+  "comments_added": [],
+  "flagged_items": [
+    {
+      "item": "Hub Bot promo post 'Newbies Freindly....' (Aug 2) has a title typo ('Freindly' -> 'Friendly')",
+      "recommended_action": "Owner may want to edit the title for polish; low priority."
+    }
+  ],
+  "ai_news_title": "Anthropic's Claude Cowork puts an AI admin assistant in every entrepreneur's hands",
+  "ai_news_source_url": "https://cioinfluence.com/cloud/opsin-adds-support-for-claude-cowork/",
+  "ai_news_post_url": "https://community.hubactually.com/79632d7e-697e-4779-b793-6947c7624d29",
+  "ai_news_publish_status": "published",
+  "image_concept": "Wooden workbench: ordinary paperwork and file folders on the left, the same papers transforming into neatly self-organizing glowing index cards on the right — an invisible assistant quietly re-sorting office admin work.",
+  "image_status": "attached",
+  "pre_publish_checks": {
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "source_reachable": "pass",
+    "channel_and_author": "pass"
+  },
+  "publish_recovery_note": "Finalize published with empty previewImages + empty body (pipeline upload parser misses the Estage 'path' key). Repaired in-thread via authenticated Estage API: PUT previewImages (id/url/type) + PUT description (body with trailing-space <a href> source link). Verified live: image renders, body 1053 chars, General channel, Hub Bot author.",
+  "owner_alert_status": "sent_via_brevo",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "blockers": [],
+  "recommended_next_actions": [
+    "No pending welcomes — all 5 new members DM'd; public welcomes covered by Aug 2-3 posts.",
+    "Consider editing the 'Newbies Freindly....' title typo."
+  ],
+  "status": "complete"
+}
