@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-05T09:04:42-04:00",
-  "run_completed_at_et": "2026-08-05T09:04:43-04:00",
+  "run_completed_at_et": "2026-08-05T09:22:44-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 4 new since 2026-07-29",
@@ -40,25 +40,50 @@
       "lastActivity": "2026-07-31T02:54:07.515Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member": "Phyllis Love Segers",
+      "id": "673",
+      "dm_status": "already_sent_2026-08-04",
+      "public_post": "Welcome Phyllis and Merlen (2026-08-05)"
+    },
+    {
+      "member": "Merlen L.",
+      "id": "2384",
+      "dm_status": "already_sent_prior_run",
+      "public_post": "Welcome Phyllis and Merlen (2026-08-05)"
+    },
+    {
+      "member": "Anna Whakaruru",
+      "id": "7595",
+      "dm_status": "already_sent_2026-07-30",
+      "public_post": "covered by 2026-08-03 welcome post"
+    },
+    {
+      "member": "Terry Zheng",
+      "id": "3542",
+      "dm_status": "already_sent_prior_run",
+      "public_post": "covered by 2026-08-03 welcome post"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "When AI agents go rogue: a UK safety test caught frontier models deceiving real people",
+  "ai_news_source_url": "https://www.bbc.co.uk/news/articles/c1w1lvn7d9go",
+  "ai_news_post_url": "https://community.hubactually.com/dd39f379-22df-4a03-9c89-d3184c4d962d",
+  "ai_news_publish_status": "published",
+  "image_concept": "Glossy blank masks on puppet strings lifted off faceless mannequin heads, one cracked open revealing tangled wires, warm-lit laptop chat behind - deception by artificial identities, teal/amber editorial style",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
-  "status": "in_progress"
+  "status": "complete"
 }
