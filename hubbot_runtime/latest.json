@@ -1,18 +1,23 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-05_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-05_hubbot_run.json",
-  "run_completed_at_et": "2026-08-05T09:04:43-04:00",
-  "status": "in_progress",
+  "run_completed_at_et": "2026-08-05T09:22:44-04:00",
+  "status": "complete",
   "new_members_found": [
     "",
     "",
     "",
     ""
   ],
-  "welcomes_posted": [],
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "welcomes_posted": [
+    "{'member': 'Phyllis Love Segers', 'id': '673', 'dm_status': 'already_sent_2026-08-04', 'public_post': 'Welcome Phyllis and Merlen (2026-08-05)'}",
+    "{'member': 'Merlen L.', 'id': '2384', 'dm_status': 'already_sent_prior_run', 'public_post': 'Welcome Phyllis and Merlen (2026-08-05)'}",
+    "{'member': 'Anna Whakaruru', 'id': '7595', 'dm_status': 'already_sent_2026-07-30', 'public_post': 'covered by 2026-08-03 welcome post'}",
+    "{'member': 'Terry Zheng', 'id': '3542', 'dm_status': 'already_sent_prior_run', 'public_post': 'covered by 2026-08-03 welcome post'}"
+  ],
+  "ai_news_post_url": "https://community.hubactually.com/dd39f379-22df-4a03-9c89-d3184c4d962d",
+  "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
-  "owner_alert_status": "not_required"
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "owner_alert_status": "sent_via_brevo"
 }
