@@ -1,0 +1,64 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-05T09:04:42-04:00",
+  "run_completed_at_et": "2026-08-05T09:04:43-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 4 new since 2026-07-29",
+  "new_members_found": [
+    {
+      "id": "673",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-01T11:01:53.201Z",
+      "lastActivity": "2026-08-01T16:55:52.135Z"
+    },
+    {
+      "id": "2384",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-31T20:12:45.254Z",
+      "lastActivity": "2026-07-31T20:12:45.583Z"
+    },
+    {
+      "id": "7595",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-30T02:31:15.111Z",
+      "lastActivity": "2026-08-02T15:30:41.147Z"
+    },
+    {
+      "id": "3542",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-07-29T17:33:50.299Z",
+      "lastActivity": "2026-07-31T02:54:07.515Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "status": "in_progress"
+}
