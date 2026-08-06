@@ -1,8 +1,8 @@
 # HubBot Run — 2026-08-06
 
 - **Started:** 2026-08-06T09:04:20-04:00
-- **Completed:** 2026-08-06T09:04:21-04:00
-- **Status:** in_progress
+- **Completed:** 2026-08-06T09:12:02-04:00
+- **Status:** complete_with_blockers
 
 ## Community Access
 - OK — 20 members total, 2 new since 2026-07-30
@@ -15,7 +15,7 @@
 
 ## AI-news Post
 - **Title:** None
-- **Status:** pending
+- **Status:** blocked: missing_fields
 - **URL:** None
 - **Source:** None
 - **Image concept:** None
@@ -28,12 +28,13 @@
 - channel_and_author: pending
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo
 
 ## Saturday Digest
 - **Status:** not_saturday
 
-## Blockers (0)
+## Blockers (1)
+- AI-news publish failed: missing_fields
 
 ## Flagged Items (0)
 
