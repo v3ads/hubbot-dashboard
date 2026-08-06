@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-06T09:04:20-04:00",
-  "run_completed_at_et": "2026-08-06T09:04:21-04:00",
+  "run_completed_at_et": "2026-08-06T09:12:02-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 new since 2026-07-30",
@@ -30,7 +30,7 @@
   "ai_news_title": null,
   "ai_news_source_url": null,
   "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_publish_status": "blocked: missing_fields",
   "image_concept": null,
   "image_status": "pending",
   "pre_publish_checks": {
@@ -39,10 +39,12 @@
     "clickable_link": "pending",
     "channel_and_author": "pending"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
-  "blockers": [],
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "blockers": [
+    "AI-news publish failed: missing_fields"
+  ],
   "recommended_next_actions": [],
-  "status": "in_progress"
+  "status": "complete_with_blockers"
 }
