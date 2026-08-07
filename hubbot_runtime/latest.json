@@ -1,16 +1,19 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-07_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-07_hubbot_run.json",
-  "run_completed_at_et": "2026-08-07T09:04:37-04:00",
-  "status": "in_progress",
+  "run_completed_at_et": "2026-08-07T09:26:25-04:00",
+  "status": "complete",
   "new_members_found": [
     "",
     ""
   ],
-  "welcomes_posted": [],
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "welcomes_posted": [
+    "{'member': 'Phyllis Love Segers', 'id': '673', 'dm_status': 'already_welcomed_2026-08-01', 'public_post': 'already_welcomed_2026-08-01', 'note': 'Skipped per welcome-once rule; pipeline 7-day lookback re-listed her but the 2026-08-01 ledger shows DM + public welcome already sent.'}",
+    "{'member': 'Merlên L.', 'id': '2384', 'dm_status': 'already_welcomed_2026-08-01', 'public_post': 'already_welcomed_2026-08-01', 'note': 'Skipped per welcome-once rule; welcomed 2026-08-01 per ledger. NOTE: ledger history shows both members were mistakenly re-welcomed on 2026-08-04/08-05 — flagged for owner.'}"
+  ],
+  "ai_news_post_url": "https://community.hubactually.com/85898c2f-1e2b-4736-97f5-b6149806476c",
+  "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
-  "owner_alert_status": "not_required"
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "owner_alert_status": "sent_via_brevo"
 }
