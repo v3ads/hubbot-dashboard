@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-07T09:04:36-04:00",
-  "run_completed_at_et": "2026-08-07T09:04:37-04:00",
+  "run_completed_at_et": "2026-08-07T09:26:25-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 new since 2026-07-31",
@@ -24,25 +24,60 @@
       "lastActivity": "2026-07-31T20:12:45.583Z"
     }
   ],
-  "welcomes_posted": [],
-  "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "welcomes_posted": [
+    {
+      "member": "Phyllis Love Segers",
+      "id": "673",
+      "dm_status": "already_welcomed_2026-08-01",
+      "public_post": "already_welcomed_2026-08-01",
+      "note": "Skipped per welcome-once rule; pipeline 7-day lookback re-listed her but the 2026-08-01 ledger shows DM + public welcome already sent."
+    },
+    {
+      "member": "Merlên L.",
+      "id": "2384",
+      "dm_status": "already_welcomed_2026-08-01",
+      "public_post": "already_welcomed_2026-08-01",
+      "note": "Skipped per welcome-once rule; welcomed 2026-08-01 per ledger. NOTE: ledger history shows both members were mistakenly re-welcomed on 2026-08-04/08-05 — flagged for owner."
+    }
+  ],
+  "comments_added": [
+    {
+      "thread": "Thryv goes all-in on AI: a growth platform built for local service businesses",
+      "thread_url": "https://community.hubactually.com/4ece3e78-2a55-4638-b798-248245aba2ec",
+      "reply_to": "Phyllis Love Segers ('WOW!! That's cool!!')",
+      "comment": "Glad it caught your eye, Phyllis! The part that stood out to me was the AI lead scoring — 40% more revenue per client is a big claim for small service businesses. If you ever test a tool like this for your education business, I'd be curious what you think.",
+      "verified": "comment visible in thread from Hub Bot, editor cleared"
+    }
+  ],
+  "flagged_items": [
+    {
+      "item": "Double-welcome regression on 2026-08-04 and 2026-08-05: Phyllis (673) and Merlên (2384) were re-welcomed despite being welcomed 2026-08-01. Root cause: pipeline's rolling 7-day member lookback re-lists recent joiners as new_members, and the saved agent config lacked the explicit welcome-once dedup rule (it lives only in the repo playbook). Today's run caught it BEFORE sending; owner approved skipping.",
+      "recommended_action": "Owner approved a system-prompt patch adding an explicit welcome-once rule (dedup against prior ledgers' welcomes_posted). Consider also tightening the pipeline's new-member cutoff to 'since last run' instead of a fixed 7-day window."
+    },
+    {
+      "item": "Source-URL reachability gate: openai.com returned HTTP 403 to a desktop-browser UA from this network (consumer bot-wall). Verified reachable via Exa's index (published 2026-08-06, full content retrieved). Cloudflare blog alternative returned 200 directly.",
+      "recommended_action": "Treat openai.com 403s as bot-wall, not dead link; keep the Exa-verified source. If members report the link as broken, swap to an alternate outlet next time."
+    }
+  ],
+  "ai_news_title": "ChatGPT gets more accurate — and free users just got a big upgrade",
+  "ai_news_source_url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/",
+  "ai_news_post_url": "https://community.hubactually.com/85898c2f-1e2b-4736-97f5-b6149806476c",
+  "ai_news_publish_status": "published",
+  "image_concept": "A lighthouse whose beam is made of conversation bubbles, cutting through fog to illuminate a rocky coastline of scattered facts (books, calendars, calculators), with small boats sailing in confidently — the accuracy upgrade guides everyone safely in.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
-  "status": "in_progress"
+  "recommended_next_actions": [
+    "Approve the welcome-once system-prompt patch so the dedup rule is in the saved config, not just the playbook.",
+    "Optional: adjust hubbot-daily-run member-review cutoff from 7-day lookback to since-last-run to prevent re-listing."
+  ],
+  "status": "complete"
 }
