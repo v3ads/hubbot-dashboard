@@ -3,31 +3,45 @@
   "agent_version": "v3",
   "run_date": "2026-08-07",
   "run_started_at_et": "2026-08-07T09:01:00-04:00",
-  "run_completed_at_et": null,
-  "status": "in_progress",
-  "community_access_result": "OK — staged by dry-run test",
-  "new_members_found": [],
+  "run_completed_at_et": "2026-08-07T09:26:00-04:00",
+  "status": "complete",
+  "community_access_result": "OK — API + browser session live",
+  "new_members_found": [
+    {
+      "id": "673",
+      "name": "Phyllis Love Segers"
+    },
+    {
+      "id": "2384",
+      "name": "Merlên L."
+    }
+  ],
   "welcomes_posted": [],
   "comments_added": [
     {
-      "thread": "test",
-      "note": "dry-run verification of ledger-enrich mode"
+      "thread": "Thryv post",
+      "note": "replied to Phyllis"
     }
   ],
-  "flagged_items": [],
-  "ai_news_title": "DRY-RUN TEST — not a real post",
-  "ai_news_publish_status": "test",
+  "flagged_items": [
+    {
+      "summary": "welcome-once regression — pipeline 7-day lookback re-listed already-welcomed members; fixed via prompt rule + skill patch"
+    }
+  ],
+  "ai_news_title": "ChatGPT gets more accurate — and free users just got a big upgrade",
+  "ai_news_post_url": "https://community.hubactually.com/85898c2f-1e2b-4736-97f5-b6149806476c",
+  "ai_news_publish_status": "published",
+  "image_status": "uploaded",
+  "image_concept": "lighthouse over calm sea",
   "pre_publish_checks": {
-    "image_generated": "test-skip",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [
-    "DELETE THIS ENTRY — dry-run test artifact from 2026-08-07 cost-reduction session"
-  ]
+  "recommended_next_actions": []
 }
