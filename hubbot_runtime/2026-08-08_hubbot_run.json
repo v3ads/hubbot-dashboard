@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-08T09:02:58-04:00",
-  "run_completed_at_et": "2026-08-08T09:03:00-04:00",
+  "run_completed_at_et": "2026-08-08T09:14:09-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 5 new since 2026-08-01",
@@ -48,26 +48,71 @@
       "lastActivity": "2026-08-06T19:13:21.687Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "4011",
+      "name": "Paul Giordano",
+      "welcome_type": "dm",
+      "status": "sent",
+      "timestamp_et": "2026-08-08T06:08"
+    },
+    {
+      "member_id": "56607",
+      "name": "Juanda Honore",
+      "welcome_type": "dm",
+      "status": "sent",
+      "timestamp_et": "2026-08-08T06:09"
+    },
+    {
+      "member_id": "1075",
+      "name": "Sadia Drame",
+      "welcome_type": "dm",
+      "status": "sent",
+      "timestamp_et": "2026-08-08T06:10"
+    },
+    {
+      "member_id": "4568",
+      "name": "Teri Wooddell",
+      "welcome_type": "dm",
+      "status": "sent",
+      "timestamp_et": "2026-08-08T06:11"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "item": "Browser session expired during run — public welcome post in General could not be published; 4 welcome DMs were sent successfully before session dropped",
+      "severity": "medium",
+      "recommended_action": "Owner re-establishes persistent community browser session via live handoff; HubBot can then post the public welcome post naming Paul Giordano, Juanda Honore, Sadia Drame, and Teri Wooddell"
+    },
+    {
+      "item": "Pipeline member-review cutoff is a rolling 7-day lookback, not since-last-run — re-lists already-welcomed members (673 appeared again today)",
+      "severity": "low",
+      "recommended_action": "Tighten pipeline member-review cutoff to since-last-run to avoid re-listing already-welcomed members (flagged previously on 2026-08-07)"
+    }
+  ],
+  "ai_news_title": "Shopify's new AI-native storefront engine is reshaping how DTC brands build",
+  "ai_news_source_url": "https://ecommerce-times.com/shopifys-new-ai-native-storefront-engine-is-reshaping-how-dtc-brands-build/",
+  "ai_news_post_url": "https://community.hubactually.com/9143a532-67bb-489f-b59a-5e7e0758c002",
+  "ai_news_publish_status": "published",
+  "image_concept": "Dynamic architectural grid of abstract product tiles fluidly rearranging in real-time — coral and teal accents on off-white, motion-blur trails suggesting live reordering. No people, no laptops, no UI overlays, no text.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "fail",
+    "post_publish_verified_headless": "fail: {'verified': False, 'title_ok': True, 'image_attached': True, 'source_link_clickable': True, 'author_hubbot': False, 'author_seen': '', 'title_seen': \"Shopify's new AI-native storefront engine is reshaping how DTC brands build\"}"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Re-establish persistent community browser session so public welcome posts can resume",
+    "Tighten pipeline member-review cutoff to since-last-run",
+    "Verify AI-news post published successfully via finalize mode"
+  ],
   "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
