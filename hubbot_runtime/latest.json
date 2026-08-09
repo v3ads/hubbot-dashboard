@@ -1,132 +1,19 @@
 {
-  "agent_name": "HubBot",
-  "agent_version": "v3",
-  "run_started_at_et": "2026-08-08T09:02:58-04:00",
-  "run_completed_at_et": "2026-08-08T09:17:45-04:00",
-  "schedule_name": "HubActually daily community admin",
-  "schedule_cron": "0 0 9 * * *",
-  "community_access_result": "OK — 20 members total, 5 new since 2026-08-01",
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-09_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-09_hubbot_run.json",
+  "run_completed_at_et": "2026-08-09T09:03:32-04:00",
+  "status": "in_progress",
   "new_members_found": [
-    {
-      "id": "4011",
-      "name": "",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-08-08T02:17:57.778Z",
-      "lastActivity": "2026-08-08T11:45:11.392Z"
-    },
-    {
-      "id": "56607",
-      "name": "",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-08-08T01:59:17.016Z",
-      "lastActivity": "2026-08-08T04:38:02.287Z"
-    },
-    {
-      "id": "1075",
-      "name": "",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-08-08T01:36:53.332Z",
-      "lastActivity": "2026-08-08T06:21:51.584Z"
-    },
-    {
-      "id": "4568",
-      "name": "",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-08-07T21:01:37.702Z",
-      "lastActivity": "2026-08-08T05:20:12.899Z"
-    },
-    {
-      "id": "673",
-      "name": "",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-08-01T11:01:53.201Z",
-      "lastActivity": "2026-08-06T19:13:21.687Z"
-    }
+    "",
+    "",
+    "",
+    "",
+    ""
   ],
-  "welcomes_posted": [
-    {
-      "member_id": "4011",
-      "name": "Paul Giordano",
-      "welcome_type": "dm",
-      "status": "sent",
-      "timestamp_et": "2026-08-08T06:08"
-    },
-    {
-      "member_id": "56607",
-      "name": "Juanda Honore",
-      "welcome_type": "dm",
-      "status": "sent",
-      "timestamp_et": "2026-08-08T06:09"
-    },
-    {
-      "member_id": "1075",
-      "name": "Sadia Drame",
-      "welcome_type": "dm",
-      "status": "sent",
-      "timestamp_et": "2026-08-08T06:10"
-    },
-    {
-      "member_id": "4568",
-      "name": "Teri Wooddell",
-      "welcome_type": "dm",
-      "status": "sent",
-      "timestamp_et": "2026-08-08T06:11"
-    }
-  ],
-  "comments_added": [],
-  "flagged_items": [
-    {
-      "item": "Browser session expired during run — public welcome post in General could not be published",
-      "severity": "medium",
-      "recommended_action": "Owner re-establishes persistent community browser session via live handoff; HubBot can then post the public welcome post naming Paul Giordano, Juanda Honore, Sadia Drame, and Teri Wooddell"
-    },
-    {
-      "item": "Pipeline member-review cutoff is a rolling 7-day lookback, not since-last-run — re-lists already-welcomed members (673 appeared again today)",
-      "severity": "low",
-      "recommended_action": "Tighten pipeline member-review cutoff to since-last-run to avoid re-listing already-welcomed members (flagged previously on 2026-08-07)"
-    },
-    {
-      "item": "GetResponse sendOn scheduling field returns HTTP 400 — Saturday digest was sent immediately (~9:17 AM ET) instead of scheduled for 10:00 AM ET",
-      "severity": "low",
-      "recommended_action": "Acceptable for now (sent close to target time). If exact 10:00 AM scheduling is needed, investigate GetResponse account scheduling settings or use a different scheduling mechanism."
-    }
-  ],
-  "ai_news_title": "Shopify's new AI-native storefront engine is reshaping how DTC brands build",
-  "ai_news_source_url": "https://ecommerce-times.com/shopifys-new-ai-native-storefront-engine-is-reshaping-how-dtc-brands-build/",
-  "ai_news_post_url": "https://community.hubactually.com/9143a532-67bb-489f-b59a-5e7e0758c002",
-  "ai_news_publish_status": "published",
-  "image_concept": "Dynamic architectural grid of abstract product tiles fluidly rearranging in real-time — coral and teal accents on off-white, motion-blur trails suggesting live reordering. No people, no laptops, no UI overlays, no text.",
-  "image_status": "uploaded",
-  "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
-    "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass",
-    "source_reachable": "pass"
-  },
-  "owner_alert_status": "sent_via_brevo",
-  "saturday_digest_status": "sent",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [
-    "Browser session expired — public welcome post in General could not be published (4 DMs sent successfully)"
-  ],
-  "recommended_next_actions": [
-    "Re-establish persistent community browser session so public welcome posts can resume",
-    "Tighten pipeline member-review cutoff to since-last-run",
-    "Consider fixing GetResponse sendOn scheduling or accept immediate send on Saturday runs"
-  ],
-  "discussion_review_summary": "Pipeline verdict: open_browser_review. 2 member threads in 36h window: 'Saturday meeting' (1 comment, needs_attention=false — already has engagement) and 'ChatGPT gets more accurate' (0 comments, needs_attention=true — but this is HubBot's own AI-news post from 2026-08-07, skip self-engagement). Browser session expired before feed review could be performed. No comments added — no member-authored threads required engagement.",
-  "status": "complete_with_blockers",
-  "saturday_digest_reason": "Weekly digest sent through GetResponse",
-  "owner_alert_required": true,
-  "saturday_digest_scheduled_for_et": "2026-08-08T10:00:00-04:00",
-  "evidence": {
-    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260808T100100-0400_weekly_digest_result.json"
-  }
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
