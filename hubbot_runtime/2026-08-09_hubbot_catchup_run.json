@@ -1,0 +1,56 @@
+{
+  "agent_name": "HubBot",
+  "run_type": "catchup_welcome_session",
+  "run_date": "2026-08-09",
+  "run_started_at_et": "2026-08-09T06:25:00-04:00",
+  "run_completed_at_et": "2026-08-09T06:40:00-04:00",
+  "trigger": "owner_directive_after_autonomy_fixes",
+  "context": "Catch-up session following the 2026-08-09 9:03 AM daily run, which was blocked by an expired browser session. Owner authorized community self-login from Doppler and directed HubBot to complete the pending welcomes (Jim Kyser DM + public welcome post covering Jim + the 4 members whose public post was blocked on 08-08).",
+  "community_access_result": "OK — self-login from Doppler succeeded (Estage login email+password modal, no 2FA/OTP/captcha, verified live 2026-08-09)",
+  "new_members_found": [
+    {"id": "248", "name": "Jim Kyser", "joined": "2026-08-08 22:22 ET", "genuinely_new": true},
+    {"id": "4011", "name": "Paul Giordano", "joined": "2026-08-07", "genuinely_new": false, "note": "DM'd 08-08, public post blocked"},
+    {"id": "56607", "name": "Juanda Honore", "joined": "2026-08-07", "genuinely_new": false, "note": "DM'd 08-08, public post blocked"},
+    {"id": "1075", "name": "Sadia Drame", "joined": "2026-08-07", "genuinely_new": false, "note": "DM'd 08-08, public post blocked"},
+    {"id": "4568", "name": "Teri Wooddell", "joined": "2026-08-07", "genuinely_new": false, "note": "DM'd 08-08, public post blocked"}
+  ],
+  "welcomes_posted": [
+    {"id": "248", "name": "Jim Kyser", "dm_sent": true, "dm_time_et": "2026-08-09 06:37 AM", "public_post": true},
+    {"id": "4011", "name": "Paul Giordano", "dm_sent_previous_run": "2026-08-08 06:08 AM", "public_post": true, "note": "public post catch-up"},
+    {"id": "56607", "name": "Juanda Honore", "dm_sent_previous_run": "2026-08-08 06:09 AM", "public_post": true, "note": "public post catch-up"},
+    {"id": "1075", "name": "Sadia Drame", "dm_sent_previous_run": "2026-08-08 06:10 AM", "public_post": true, "note": "public post catch-up"},
+    {"id": "4568", "name": "Teri Wooddell", "dm_sent_previous_run": "2026-08-08 06:11 AM", "public_post": true, "note": "public post catch-up"}
+  ],
+  "welcome_post": {
+    "title": "Welcome to our newest members!",
+    "post_url": "https://community.hubactually.com/18e7322d-149f-4853-8e4f-4b596cddc91a",
+    "channel": "General",
+    "author": "Hub Bot",
+    "publish_method": "headless_estage_api",
+    "publish_status": "published",
+    "verified_live": true,
+    "members_named": ["Jim Kyser", "Paul Giordano", "Juanda Honore", "Sadia Drame", "Teri Wooddell"]
+  },
+  "jim_kyser_dm": {
+    "recipient": "Jim Kyser",
+    "sent": true,
+    "send_time_et": "2026-08-09 06:37 AM",
+    "method": "authenticated_browser_chat",
+    "verified": true
+  },
+  "self_login": {
+    "status": "success",
+    "method": "doppler_credentials_via_browser",
+    "estage_login": "email+password modal, no 2FA/OTP/captcha",
+    "owner_authorized": "2026-08-09",
+    "secret_safety": "password loaded from Doppler, used only in browser Password field, never echoed to chat/ledgers/screenshots; temp cred files removed after use"
+  },
+  "comments_added": [],
+  "flagged_items": [],
+  "blockers": [],
+  "owner_alert_status": "not_required_catchup",
+  "evidence_screenshots": [
+    {"title": "Welcome post published in General — 5 new members", "fileId": "cmsluednx18il07adhm2pe4a6"},
+    {"title": "Jim Kyser welcome DM sent successfully", "fileId": "cmslukcbd17yl06ad4k9tn5vu"}
+  ]
+}
