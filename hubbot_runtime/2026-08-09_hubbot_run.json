@@ -1,0 +1,73 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-09T09:03:31-04:00",
+  "run_completed_at_et": "2026-08-09T09:03:32-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 5 new since 2026-08-02",
+  "new_members_found": [
+    {
+      "id": "248",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-08T22:22:00.431Z",
+      "lastActivity": "2026-08-09T02:05:14.530Z"
+    },
+    {
+      "id": "4011",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-08T02:17:57.778Z",
+      "lastActivity": "2026-08-08T16:27:16.944Z"
+    },
+    {
+      "id": "56607",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-08T01:59:17.016Z",
+      "lastActivity": "2026-08-08T04:38:02.287Z"
+    },
+    {
+      "id": "1075",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-08T01:36:53.332Z",
+      "lastActivity": "2026-08-08T06:21:51.584Z"
+    },
+    {
+      "id": "4568",
+      "name": "",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-07T21:01:37.702Z",
+      "lastActivity": "2026-08-09T10:58:56.475Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "status": "in_progress"
+}
