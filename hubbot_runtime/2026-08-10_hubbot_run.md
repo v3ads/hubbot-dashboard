@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-10
 
 - **Started:** 2026-08-10T09:04:06-04:00
-- **Completed:** 2026-08-10T09:09:28-04:00
+- **Completed:** 2026-08-10T09:10:44-04:00
 - **Status:** complete
 
 ## Community Access
@@ -46,7 +46,7 @@
 
 ## Flagged Items (2)
 - {'item': 'duplicate_welcome_posts_2026-08-09', 'severity': 'low', 'detail': 'Two near-identical public welcome posts were published 2026-08-09 (06:31 and 06:32), both naming the same 5 members (Jim Kyser, Paul Giordano, Juanda Honore, Sadia Drame, Teri Wooddell). Likely a double-submit when the browser session was restored. Not harmful but redundant.', 'recommended_action': 'Owner may optionally delete one of the two duplicate welcome posts for cleanliness. No action required for community function.'}
-- {'item': 'author_field_empty_in_api_responses', 'severity': 'low', 'detail': "The Estage members API and thread read-back return empty author/displayName fields for HubBot's own posts and some members. The finalize headless verification reports author_hubbot:false for this reason, though posts are correctly authored as Hub Bot in the browser UI. Not a publish blocker.", 'recommended_action': 'No action required unless Estage changes the API shape; noted for traceability.'}
+- {'item': 'author_field_empty_in_api_responses', 'severity': 'low', 'detail': "The Estage members API and thread read-back return empty author/displayName fields for HubBot's own posts and some members. The finalize headless verification reports author_hubbot:false for this reason, though posts are correctly authored as Hub Bot in the browser UI (verified live: post shows 'Hub Bot' as author with robot avatar). Not a publish blocker.", 'recommended_action': 'No action required unless Estage changes the API shape; noted for traceability.'}
 
 ## Recommended Next Actions
 - Owner: optionally delete one of the two duplicate welcome posts from 2026-08-09 (06:31 vs 06:32) for cleanliness.
