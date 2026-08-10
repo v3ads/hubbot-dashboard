@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-10T09:04:06-04:00",
-  "run_completed_at_et": "2026-08-10T09:09:28-04:00",
+  "run_completed_at_et": "2026-08-10T09:10:44-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 5 new since 2026-08-03",
@@ -106,7 +106,7 @@
     {
       "item": "author_field_empty_in_api_responses",
       "severity": "low",
-      "detail": "The Estage members API and thread read-back return empty author/displayName fields for HubBot's own posts and some members. The finalize headless verification reports author_hubbot:false for this reason, though posts are correctly authored as Hub Bot in the browser UI. Not a publish blocker.",
+      "detail": "The Estage members API and thread read-back return empty author/displayName fields for HubBot's own posts and some members. The finalize headless verification reports author_hubbot:false for this reason, though posts are correctly authored as Hub Bot in the browser UI (verified live: post shows 'Hub Bot' as author with robot avatar). Not a publish blocker.",
       "recommended_action": "No action required unless Estage changes the API shape; noted for traceability."
     }
   ],
@@ -131,6 +131,6 @@
     "Owner: optionally delete one of the two duplicate welcome posts from 2026-08-09 (06:31 vs 06:32) for cleanliness.",
     "Consider tightening the pipeline member-review cutoff to since-last-run (the rolling 7-day lookback re-listed 4 members welcomed 08-08); dedup against prior ledgers continues to catch this manually."
   ],
-  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Browser review of the Saturday meeting thread (97eabb0f) — the only genuine member-authored discussion needing attention. Member Craig Dunn (id 29612) reported to owner AYMAN SHALABY that he could not see the Saturday meeting link at the top of the community. Per the 2026-08-09 owner-authorized auto-reply policy, HubBot replied directly as Hub Bot with the factual answer: Saturday live meeting is every Saturday at 1:00 PM ET, meeting link at the top of the community homepage (https://community.hubactually.com), with a 'Saturday Chat 1pm EST' tab in the navigation; noted mobile users may find it under a menu. Did not impersonate the owner. The other 2 threads flagged by the pipeline (the two duplicate welcome posts from 08-09 06:31/06:32) are HubBot's own posts, not member discussions — no comment action appropriate. The Adobe for ChatGPT AI-news post from 08-09 has 0 comments (normal for a news post). Cost rule honored: only the one genuine member thread was opened in the browser; no broad feed scrolling.",
   "status": "complete"
 }
