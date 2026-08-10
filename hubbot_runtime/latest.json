@@ -1,8 +1,8 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-10_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-10_hubbot_run.json",
-  "run_completed_at_et": "2026-08-10T09:04:08-04:00",
-  "status": "in_progress",
+  "run_completed_at_et": "2026-08-10T09:09:28-04:00",
+  "status": "complete",
   "new_members_found": [
     "",
     "",
@@ -10,10 +10,16 @@
     "",
     ""
   ],
-  "welcomes_posted": [],
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "welcomes_posted": [
+    "Jim Kyser",
+    "Paul Giordano",
+    "Juanda Honore",
+    "Sadia Drame",
+    "Teri Wooddell"
+  ],
+  "ai_news_post_url": "https://community.hubactually.com/e3cea48c-b02c-47d1-a8e5-2714453dbf92",
+  "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
-  "owner_alert_status": "not_required"
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "owner_alert_status": "sent_via_brevo"
 }
