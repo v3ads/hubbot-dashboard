@@ -1,8 +1,8 @@
 {
-  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-09_hubbot_run.json",
-  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-09_hubbot_run.json",
-  "run_completed_at_et": "2026-08-09T09:08:16-04:00",
-  "status": "complete_with_blockers",
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-10_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-10_hubbot_run.json",
+  "run_completed_at_et": "2026-08-10T09:04:08-04:00",
+  "status": "in_progress",
   "new_members_found": [
     "",
     "",
@@ -10,16 +10,10 @@
     "",
     ""
   ],
-  "welcomes_posted": [
-    "Jim Kyser",
-    "Paul Giordano",
-    "Juanda Honore",
-    "Sadia Drame",
-    "Teri Wooddell"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/e17ea377-d8a3-413b-8572-c0e66f11aa57",
-  "ai_news_publish_status": "published",
-  "saturday_digest_status": "not_saturday_skipped",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo (immediate new-members alert sent by pipeline at run start; end-of-run alert not needed for the same recipient — flagged items are recorded in this ledger for owner review)"
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
