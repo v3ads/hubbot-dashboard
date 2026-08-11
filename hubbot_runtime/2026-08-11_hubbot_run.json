@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-11T09:04:05-04:00",
-  "run_completed_at_et": "2026-08-11T09:06:00-04:00",
+  "run_completed_at_et": "2026-08-11T09:17:49-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 9 genuinely new, 0 already-welcomed (skipped) since 2026-08-04",
@@ -80,13 +80,68 @@
       "lastActivity": "2026-08-11T13:01:54.401Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "id": "3342",
+      "name": "Mayur Pote",
+      "channel": "dm",
+      "status": "sent"
+    },
+    {
+      "id": "315",
+      "name": "Marie Mitchell",
+      "channel": "dm",
+      "status": "sent"
+    },
+    {
+      "id": "1530",
+      "name": "QuoCentric",
+      "channel": "dm",
+      "status": "sent"
+    },
+    {
+      "id": "13759",
+      "name": "serge Panasenko",
+      "channel": "dm",
+      "status": "sent"
+    },
+    {
+      "id": "all_9",
+      "name": "Public welcome post in General",
+      "channel": "public_post",
+      "status": "posted",
+      "members_named": [
+        "Mayur Pote",
+        "Marie Mitchell",
+        "QuoCentric",
+        "Serge Panasenko",
+        "Jim Kyser",
+        "Paul Giordano",
+        "Juanda Honore",
+        "Sadia Drame",
+        "Teri Wooddell"
+      ]
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "item": "5 of 9 genuinely-new members already had welcome DMs sent by an earlier run today (~06:xx AM ET) but pipeline reported them as genuinely_new",
+      "severity": "low",
+      "recurring": true,
+      "recommended_action": "Known welcome-once dedup gap. Pipeline dedup reads last 10 days of ledgers but an earlier run today is not reflected. DM panel evidence was authoritative and re-welcomes were correctly skipped. Informational only."
+    },
+    {
+      "item": "AI-news post headless verification: author_hubbot=false (empty author field)",
+      "severity": "low",
+      "recurring": true,
+      "recommended_action": "Known Estage empty-author-field quirk. Title, image, and source link all verified. Informational only."
+    }
+  ],
   "ai_news_title": "Gen Z founders are rewriting the startup playbook with AI: build first, scale intelligently",
   "ai_news_source_url": "https://www.businesstoday.in/magazine/deep-dive/story/how-gen-z-start-up-founders-are-rewriting-the-countrys-innovation-playbook-548202-2026-08-10",
   "ai_news_post_url": "https://community.hubactually.com/ee742129-27de-41c3-9fd3-40ea4beb9d63",
-  "ai_news_publish_status": "published",
+  "ai_news_publish_status": "published_via_finalize_headless",
   "image_concept": "Young founders sketching ideas on a glass wall of sticky notes and wireframes with a subtle thread of light suggesting AI assistance; warm editorial illustration, no text",
   "image_status": "uploaded",
   "pre_publish_checks": {
@@ -102,6 +157,6 @@
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 0 needing attention — verdict: skim_feed_only",
+  "discussion_review_summary": "Pipeline verdict: skim_feed_only. 1 member thread in last 36h (Naive raises $28.5M, 2 comments, 0 needing attention). Light feed skim confirmed: feed consists of Hub Bot AI-news/welcome posts and owner (AYMAN SHALABY) announcements. No member-authored question or support threads. No auto-replies needed. Quiet day.",
   "status": "complete"
 }
