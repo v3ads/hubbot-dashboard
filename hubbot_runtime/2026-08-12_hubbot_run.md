@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-12
 
 - **Started:** 2026-08-12T09:04:26-04:00
-- **Completed:** 2026-08-12T09:07:56-04:00
+- **Completed:** 2026-08-12T09:08:32-04:00
 - **Status:** complete
 
 ## Community Access
@@ -9,7 +9,16 @@
 
 ## New Members (0)
 
-## Welcomes Posted (0)
+## Welcomes Posted (9)
+- Mayur Pote
+- Marie Mitchell
+- QuoCentric
+- Serge Panasenko
+- Jim Kyser
+- Paul Giordano
+- Juanda Honore
+- Sadia Drame
+- Teri Wooddell
 
 ## AI-news Post
 - **Title:** Alibaba's AI agents will now negotiate with your suppliers for you
@@ -34,6 +43,7 @@
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (1)
+- {'item': "Pipeline member-review 7-day lookback continues to re-list already-welcomed members as 'genuinely_new'", 'recommended_action': 'Tighten pipeline new-member cutoff to since-last-run, or have the pipeline dedup against prior ledger welcomes_posted itself (currently done by agent judgment each run).'}
 
 ## Recommended Next Actions
