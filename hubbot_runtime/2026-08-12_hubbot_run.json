@@ -2,14 +2,83 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-12T09:04:26-04:00",
-  "run_completed_at_et": "2026-08-12T09:07:56-04:00",
+  "run_completed_at_et": "2026-08-12T09:08:32-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-08-12",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "3342",
+      "name": "Mayur Pote",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Rolling 7-day lookback re-listed this member; DM sent 2026-08-11 and named in 2026-08-11 public welcome post. No re-welcome per welcome-once rule."
+    },
+    {
+      "member_id": "315",
+      "name": "Marie Mitchell",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Same as above."
+    },
+    {
+      "member_id": "1530",
+      "name": "QuoCentric",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Same as above."
+    },
+    {
+      "member_id": "13759",
+      "name": "Serge Panasenko",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Same as above."
+    },
+    {
+      "member_id": "248",
+      "name": "Jim Kyser",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-09",
+      "note": "DM sent 2026-08-09; named in public welcome posts 2026-08-09 and 2026-08-11."
+    },
+    {
+      "member_id": "4011",
+      "name": "Paul Giordano",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-08",
+      "note": "DM sent 2026-08-08; named in 2026-08-11 public post."
+    },
+    {
+      "member_id": "56607",
+      "name": "Juanda Honore",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-08",
+      "note": "DM sent 2026-08-08; named in 2026-08-11 public post."
+    },
+    {
+      "member_id": "1075",
+      "name": "Sadia Drame",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-08",
+      "note": "DM sent 2026-08-08; named in 2026-08-11 public post."
+    },
+    {
+      "member_id": "4568",
+      "name": "Teri Wooddell",
+      "channel": "dm",
+      "status": "already_welcomed_2026-08-08",
+      "note": "DM sent 2026-08-08; named in 2026-08-11 public post."
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "item": "Pipeline member-review 7-day lookback continues to re-list already-welcomed members as 'genuinely_new'",
+      "recommended_action": "Tighten pipeline new-member cutoff to since-last-run, or have the pipeline dedup against prior ledger welcomes_posted itself (currently done by agent judgment each run)."
+    }
+  ],
   "ai_news_title": "Alibaba's AI agents will now negotiate with your suppliers for you",
   "ai_news_source_url": "https://channelx.world/2026/08/accio-sourcing-toolkit-launched-by-alibaba-com/",
   "ai_news_post_url": "https://community.hubactually.com/fa53406d-a6ea-4515-94ad-fc9d731e0ed5",
@@ -29,6 +98,6 @@
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Quiet day. Headless discussion-scan flagged 2 threads in the 36h window, but both are Hub Bot's own posts from 2026-08-11 (welcome post + AI-news post) with 0 comments and no member questions or support keywords. No browser pass opened per discussion-review cost rule. 0 comments added.",
   "status": "complete"
 }
