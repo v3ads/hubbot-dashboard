@@ -1,10 +1,20 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-12_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-12_hubbot_run.json",
-  "run_completed_at_et": "2026-08-12T09:07:56-04:00",
+  "run_completed_at_et": "2026-08-12T09:08:32-04:00",
   "status": "complete",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "Mayur Pote",
+    "Marie Mitchell",
+    "QuoCentric",
+    "Serge Panasenko",
+    "Jim Kyser",
+    "Paul Giordano",
+    "Juanda Honore",
+    "Sadia Drame",
+    "Teri Wooddell"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/fa53406d-a6ea-4515-94ad-fc9d731e0ed5",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
