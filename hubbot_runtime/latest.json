@@ -1,19 +1,9 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-12_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-12_hubbot_run.json",
-  "run_completed_at_et": "2026-08-12T09:03:52-04:00",
+  "run_completed_at_et": "2026-08-12T09:04:28-04:00",
   "status": "in_progress",
-  "new_members_found": [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-  ],
+  "new_members_found": [],
   "welcomes_posted": [],
   "ai_news_post_url": null,
   "ai_news_publish_status": "pending",
