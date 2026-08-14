@@ -2,20 +2,25 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-14T09:07:13-04:00",
-  "run_completed_at_et": "2026-08-14T09:07:57-04:00",
+  "run_completed_at_et": "2026-08-14T09:09:33-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-08-14",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "severity": "low",
+      "summary": "Pipeline bug: discussion-scan does not exclude HubBot-authored threads (author field empty on API read-back), so every HubBot AI-news post with 0 comments is flagged as a member thread needing attention. Recommended: filter HubBot's own threads out of member_threads in the skill."
+    }
+  ],
+  "ai_news_title": "Ahrefs launches Letaido: an agent-powered workspace that runs your marketing workflows for you",
+  "ai_news_source_url": "https://www.webanditnews.com/2026/08/12/ahrefs-launches-new-agent-powered-workspace-to-help-marketing-teams-and-agencies-improve-collaboration-on-ai-generated-work-across-the-entire-marketing-stack/",
+  "ai_news_post_url": "https://community.hubactually.com/346be77b-cb64-4e0f-acf5-8b276352f6bf",
+  "ai_news_publish_status": "published",
+  "image_concept": "A small team around a wooden table carrying a handmade felt-and-paper diorama landscape; tiny courier drones trail warm light between the hills carrying blank cards — an always-on workspace moving marketing work across a business's whole world. No text.",
+  "image_status": "uploaded_and_attached",
   "pre_publish_checks": {
     "image_generated": "pending",
     "image_attached": "pending",
@@ -26,8 +31,10 @@
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Add a HubBot-author exclusion to discussion-scan in hubbot-daily-run so AI-news posts never trigger open_browser_review."
+  ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "0 comments added. discussion-scan flagged 2 threads (initial run + re-scan), but both are HubBot's own AI-news posts (Wix Symphony 08-13, Ahrefs Letaido 08-14) — author reads empty on API read-back so the scan cannot exclude HubBot posts. No genuine member-authored threads in the 36h window; no browser pass opened (headless-first policy).",
   "status": "complete"
 }
