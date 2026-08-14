@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-14T09:04:17-04:00",
-  "run_completed_at_et": "2026-08-14T09:04:23-04:00",
+  "run_completed_at_et": "2026-08-14T09:06:59-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 8 already-welcomed (skipped) since 2026-08-07",
@@ -10,21 +10,22 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_title": "Ahrefs launches Letaido: an agent-powered workspace that runs your marketing workflows for you",
+  "ai_news_source_url": "https://www.webanditnews.com/2026/08/12/ahrefs-launches-new-agent-powered-workspace-to-help-marketing-teams-and-agencies-improve-collaboration-on-ai-generated-work-across-the-entire-marketing-stack/",
+  "ai_news_post_url": "https://community.hubactually.com/346be77b-cb64-4e0f-acf5-8b276352f6bf",
+  "ai_news_publish_status": "published",
   "image_concept": null,
-  "image_status": "pending",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [
@@ -110,5 +111,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
