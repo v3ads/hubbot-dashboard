@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-15T09:02:05-04:00",
-  "run_completed_at_et": "2026-08-15T09:15:04-04:00",
+  "run_completed_at_et": "2026-08-15T09:22:28-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 5 already-welcomed (skipped) since 2026-08-08",
@@ -24,9 +24,101 @@
       "lastActivity": "2026-08-15T12:40:05.029Z"
     }
   ],
-  "welcomes_posted": [],
-  "comments_added": [],
-  "flagged_items": [],
+  "welcomes_posted": [
+    {
+      "member_id": "734",
+      "name": "Maker Majuec",
+      "welcome_type": "dm",
+      "status": "sent",
+      "note": "DM sent via browser 2026-08-15 09:0x ET. Name resolved from intro thread 30d4349c ('I'M New Here…', created 06:37Z, 6 min after member 734 join 06:31Z). Also named in public welcome post."
+    },
+    {
+      "member_id": "601",
+      "name": "Isabella Jo",
+      "welcome_type": "dm",
+      "status": "sent",
+      "note": "DM sent via browser 2026-08-15 09:0x ET into existing conversation thread. Name resolved from intro thread 204c97c8 ('Hello Everyone!', 03:46Z, ~1h before member 601 join 04:53Z). Also named in public welcome post."
+    },
+    {
+      "member_id": "3342",
+      "name": "Mayur Pote",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Pipeline already_welcomed skip — not re-welcomed per welcome-once rule."
+    },
+    {
+      "member_id": "315",
+      "name": "Marie Mitchell",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Pipeline already_welcomed skip."
+    },
+    {
+      "member_id": "1530",
+      "name": "QuoCentric",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Pipeline already_welcomed skip."
+    },
+    {
+      "member_id": "13759",
+      "name": "serge Panasenko",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Pipeline already_welcomed skip."
+    },
+    {
+      "member_id": "248",
+      "name": "Jim Kyser",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-09",
+      "note": "Pipeline already_welcomed skip."
+    },
+    {
+      "member_id": "public",
+      "name": "Public welcome post in General",
+      "welcome_type": "public_post",
+      "status": "posted",
+      "note": "Title 'Welcome our newest members!', General category, names Maker Majuec + Isabella Jo. Verified live in feed exactly once (2026-08-15 06:12 am shown)."
+    }
+  ],
+  "comments_added": [
+    {
+      "thread_id": "30d4349c-23fc-48a0-81cf-7045eb436404",
+      "thread_title": "I'M New Here…",
+      "author": "Hub Bot",
+      "type": "welcome_reply",
+      "text": "Hi Maker — welcome to HubActually! Great to have you here. What are you building right now?",
+      "timestamp_et": "2026-08-15T09:1x-04:00",
+      "note": "Reply to new member Maker Majuec's intro thread (0 comments before)."
+    },
+    {
+      "thread_id": "204c97c8-4e14-4688-9ed9-9c214321c79b",
+      "thread_title": "Hello Everyone!",
+      "author": "Hub Bot",
+      "type": "welcome_reply",
+      "text": "Welcome, Isabella! Glad you're here. Ayman will be happy to walk through SignalSmith — meanwhile, if you have any questions about the community itself, just message me (Hub Bot) anytime.",
+      "timestamp_et": "2026-08-15T09:1x-04:00",
+      "note": "Reply to new member Isabella Jo's intro thread (0 comments before). She asked about SignalSmith — flagged softly to owner via her question being directed at Ayman."
+    }
+  ],
+  "flagged_items": [
+    {
+      "severity": "low",
+      "summary": "Isabella Jo asked to see how SignalSmith works in her intro thread — a product question directed at the owner. HubBot welcomed her and noted Ayman will follow up, but a personal owner reply/demo would land well.",
+      "recommended_action": "Owner reply in thread 204c97c8-4e14-4688-9ed9-9c214321c79b with a SignalSmith pointer/demo."
+    },
+    {
+      "severity": "low",
+      "summary": "Pipeline bug persists: discussion-scan does not exclude HubBot-authored threads (author field empty on API read-back), so HubBot's own 0-comment AI-news posts get flagged as member threads needing attention.",
+      "recommended_action": "Filter HubBot's own threads out of member_threads in the skill (already flagged 2026-08-14)."
+    },
+    {
+      "severity": "info",
+      "summary": "Saturday digest initially failed with GetResponse HTTP 400. Root cause found and fixed: newsletter payload was missing the required top-level campaign.campaignId. Script hubbot_send_weekly_digest.py patched and committed to repo (commit 8302c89f4e); digest then scheduled successfully for 10:00 AM ET.",
+      "recommended_action": "None — fixed."
+    }
+  ],
   "ai_news_title": "Google Sheets can now turn your spreadsheet into an interactive mini-app with one prompt",
   "ai_news_source_url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
   "ai_news_post_url": "https://community.hubactually.com/40e0cf41-5708-43a9-a49e-16d854cbecf2",
@@ -41,10 +133,15 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "sent_via_brevo",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
-  "recommended_next_actions": [],
+  "blockers": [
+    "Saturday weekly digest blocked: GetResponse newsletter create failed with HTTP 400"
+  ],
+  "recommended_next_actions": [
+    "Owner to reply to Isabella Jo's SignalSmith question in thread 204c97c8-4e14-4688-9ed9-9c214321c79b.",
+    "Fix discussion-scan to exclude HubBot-authored threads so HubBot's own posts stop being flagged as member threads."
+  ],
   "already_welcomed": [
     {
       "id": "3342",
@@ -97,6 +194,12 @@
       "skip_reason": "Already welcomed on 2026-08-09 (id=248, name=)"
     }
   ],
-  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
-  "status": "complete"
+  "discussion_review_summary": "Browser review per pipeline verdict open_browser_review (3 threads flagged). (1) 'I'M New Here…' by Maker Majuec — replied with a warm welcome + question. (2) 'Hello Everyone!' by Isabella Jo — replied with welcome; she asked to see how SignalSmith works (directed at Ayman; HubBot did not impersonate, noted Ayman will follow up). (3) 'Ahrefs launches Letaido' is HubBot's OWN 2026-08-14 AI-news post with 0 comments — no action appropriate (known scan false-positive; author reads empty on API). 2 comments added total.",
+  "status": "complete_with_blockers",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "saturday_digest_scheduled_for_et": "2026-08-15T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260815T092135-0400_weekly_digest_result.json"
+  },
+  "owner_alert_required": true
 }
