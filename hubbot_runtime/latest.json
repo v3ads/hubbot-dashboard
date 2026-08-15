@@ -2,7 +2,7 @@
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-15_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-15_hubbot_run.json",
   "run_completed_at_et": "2026-08-15T09:22:56-04:00",
-  "status": "complete_with_blockers",
+  "status": "complete",
   "new_members_found": [
     "",
     ""
