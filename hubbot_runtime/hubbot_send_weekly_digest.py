@@ -280,6 +280,10 @@ def build_newsletter_payload(subject: str, html_body: str, text_body: str, resol
         'subject': subject,
         'fromField': {'fromFieldId': resolution['_from_field_id']},
         'content': {'html': html_body, 'plain': text_body},
+        # GetResponse v3 requires the top-level campaign object AND the recipients
+        # selector. Without 'campaign': {'campaignId': ...} the API returns
+        # HTTP 400 "Required field empty" for campaign.campaignId (added 2026-08-15).
+        'campaign': {'campaignId': resolution['_campaign_id']},
     # GetResponse v3 expects recipient selectors as arrays of plain ID strings,
     # NOT arrays of {campaignId: ...} objects (that shape returns 400 "Provided IDs
     # are not valid"). Mirrors the structure of a successfully-sent digest.
