@@ -1,8 +1,8 @@
 # HubBot Run — 2026-08-15
 
 - **Started:** 2026-08-15T09:02:05-04:00
-- **Completed:** 2026-08-15T09:02:08-04:00
-- **Status:** in_progress
+- **Completed:** 2026-08-15T09:15:04-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 2 genuinely new, 5 already-welcomed (skipped) since 2026-08-08
@@ -14,21 +14,22 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
+- **Title:** Google Sheets can now turn your spreadsheet into an interactive mini-app with one prompt
+- **Status:** published
+- **URL:** https://community.hubactually.com/40e0cf41-5708-43a9-a49e-16d854cbecf2
+- **Source:** https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/
 - **Image concept:** None
-- **Image status:** pending
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo
 
 ## Saturday Digest
 - **Status:** pending
