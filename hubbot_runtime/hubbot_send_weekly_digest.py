@@ -29,7 +29,9 @@ GETRESPONSE = 'https://api.getresponse.com/v3'
 SENDER_EMAIL = 'ayman@hubactually.com'
 CAMPAIGN_NAMES = ('hubactually', 'HubActually')
 TEMPLATE_NAME = 'community'
-PS_LINE = 'P.S. Our live meeting is every Saturday at 1:00 PM Eastern. You can find the meeting link at the top of the community.'
+PS_PREFIX = 'P.S. Our live meeting is every Saturday'
+PS_URL = 'https://community.hubactually.com'
+PS_LINE = 'P.S. Our live meeting is every Saturday at 1:00 PM Eastern. You can find the meeting link at the top of the community: ' + PS_URL
 
 
 def now_et() -> datetime:
@@ -100,6 +102,31 @@ def item_text(item: Any) -> str:
     return strip_tags(str(item))
 
 
+def has_ps_line(text: str) -> bool:
+    """True if text already contains any P.S. line about the Saturday meeting
+    (matches by prefix so a body-file P.S. with a URL suffix is still detected)."""
+    return any(line.lstrip().startswith(PS_PREFIX) for line in text.splitlines())
+
+
+def linkify_community_url(escaped_line: str) -> str:
+    """Linkify the community homepage URL inside an already-HTML-escaped line so
+    'top of the community' is a clickable anchor in the rendered HTML."""
+    return escaped_line.replace(PS_URL, f'<a href="{PS_URL}">{PS_URL}</a>')
+
+
+def render_lines_html(lines: list[str]) -> str:
+    parts: list[str] = []
+    for line in lines:
+        if line == '':
+            parts.append('<p></p>')
+        else:
+            escaped = escape_line(line)
+            if line.lstrip().startswith(PS_PREFIX):
+                escaped = linkify_community_url(escaped)
+            parts.append(f'<p>{escaped}</p>')
+    return ''.join(parts)
+
+
 def build_digest_content(ledger: dict[str, Any], *, body_file: Path | None = None) -> tuple[str, str, str]:
     run_dt = str(ledger.get('run_completed_at_et') or ledger.get('run_date') or now_et().date())
     run_date = str(ledger.get('run_date') or run_dt[:10])
@@ -107,11 +134,11 @@ def build_digest_content(ledger: dict[str, Any], *, body_file: Path | None = Non
 
     if body_file:
         text = body_file.read_text(encoding='utf-8').strip()
-        if PS_LINE not in text:
+        if not has_ps_line(text):
             text = text.rstrip() + '\n\n' + PS_LINE
         paragraphs = [p.strip() for p in re.split(r'\n\s*\n', text) if p.strip()]
         html_body = '<!doctype html><html><body style="font-family:Arial,sans-serif;line-height:1.55;color:#111827;">' + ''.join(
-            f'<p>{html.escape(p).replace(chr(10), "<br>")}</p>' for p in paragraphs
+            f'<p>{linkify_community_url(html.escape(p).replace(chr(10), "<br>"))}</p>' for p in paragraphs
         ) + '</body></html>'
         return subject, text + '\n', html_body
 
@@ -149,9 +176,7 @@ def build_digest_content(ledger: dict[str, Any], *, body_file: Path | None = Non
 
     lines.extend(['', PS_LINE])
     text = '\n'.join(lines) + '\n'
-    html_body = '<!doctype html><html><body style="font-family:Arial,sans-serif;line-height:1.55;color:#111827;">' + ''.join(
-        '<p></p>' if line == '' else f'<p>{escape_line(line)}</p>' for line in lines
-    ) + '</body></html>'
+    html_body = '<!doctype html><html><body style="font-family:Arial,sans-serif;line-height:1.55;color:#111827;">' + render_lines_html(lines) + '</body></html>'
     return subject, text, html_body
 
 
@@ -389,8 +414,8 @@ def main() -> int:
     subject, text_body, html_body = build_digest_content(ledger, body_file=Path(args.body_file) if args.body_file else None)
     result['subject'] = subject
     result['body_chars'] = len(text_body)
-    result['ps_line_present'] = PS_LINE in text_body
-    if PS_LINE not in text_body:
+    result['ps_line_present'] = has_ps_line(text_body)
+    if not has_ps_line(text_body):
         result.update({'status': 'blocked', 'reason': 'Required weekly digest P.S. line missing after content generation.'})
         write_json(result_path, result)
         update_ledger(ledger_path, result, result_path)
