@@ -135,9 +135,7 @@
   "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [
-    "Saturday weekly digest blocked: GetResponse newsletter create failed with HTTP 400"
-  ],
+  "blockers": [],
   "recommended_next_actions": [
     "Owner to reply to Isabella Jo's SignalSmith question in thread 204c97c8-4e14-4688-9ed9-9c214321c79b.",
     "Fix discussion-scan to exclude HubBot-authored threads so HubBot's own posts stop being flagged as member threads."
@@ -195,7 +193,7 @@
     }
   ],
   "discussion_review_summary": "Browser review per pipeline verdict open_browser_review (3 threads flagged). (1) 'I'M New Here…' by Maker Majuec — replied with a warm welcome + question. (2) 'Hello Everyone!' by Isabella Jo — replied with welcome; she asked to see how SignalSmith works (directed at Ayman; HubBot did not impersonate, noted Ayman will follow up). (3) 'Ahrefs launches Letaido' is HubBot's OWN 2026-08-14 AI-news post with 0 comments — no action appropriate (known scan false-positive; author reads empty on API). 2 comments added total.",
-  "status": "complete_with_blockers",
+  "status": "complete",
   "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
   "saturday_digest_scheduled_for_et": "2026-08-15T10:00:00-04:00",
   "evidence": {
