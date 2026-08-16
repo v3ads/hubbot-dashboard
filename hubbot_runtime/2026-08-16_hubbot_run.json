@@ -2,14 +2,65 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-16T09:05:15-04:00",
-  "run_completed_at_et": "2026-08-16T09:05:21-04:00",
+  "run_completed_at_et": "2026-08-16T09:05:54-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "Doppler blocked: RuntimeError",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "734",
+      "name": "Maker Majuec",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-15",
+      "note": "Welcome-once skip — welcomed via DM + public post on 2026-08-15. Not re-welcomed."
+    },
+    {
+      "member_id": "601",
+      "name": "Seamus Shell",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-15",
+      "note": "Welcome-once skip — welcomed via DM + public post on 2026-08-15. Not re-welcomed."
+    },
+    {
+      "member_id": "3342",
+      "name": "Mayur Pote",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Welcome-once skip — welcomed on 2026-08-11."
+    },
+    {
+      "member_id": "315",
+      "name": "Marie Mitchell",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Welcome-once skip — welcomed on 2026-08-11."
+    },
+    {
+      "member_id": "1530",
+      "name": "Ernie@QuoCentric",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Welcome-once skip — welcomed on 2026-08-11."
+    },
+    {
+      "member_id": "13759",
+      "name": "serge Panasenko",
+      "welcome_type": "dm",
+      "status": "already_welcomed_2026-08-11",
+      "note": "Welcome-once skip — welcomed on 2026-08-11."
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "summary": "Discussion-scan false-flagged Hub Bot's own public welcome post as a member thread needing attention",
+      "severity": "low",
+      "category": "pipeline_defect",
+      "detail": "discussion_check flagged thread 807f6f21 ('Welcome our newest members!', 0 comments, needs_attention true). This is Hub Bot's own public welcome post from 2026-08-15 (confirmed via Aug-15 ledger welcomes_posted public_post entry with that exact title in General). The scan excludes Hub Bot's AI-news post thread IDs from ledgers, but the public welcome post thread ID is not persisted in the ledger, so the exclusion set missed it. This is a variant of defect class #1 (discussion-scan false-flagging HubBot's own posts) — the existing fix excludes known AI-news thread IDs + filters by author name, but the public welcome post is neither.",
+      "recommended_action": "Persist the public welcome post thread ID in the ledger (e.g. a welcome_post_thread_id field alongside welcomes_posted) and add it to the discussion-scan exclusion set, OR extend the scan's title filter to skip threads whose title exactly matches the canonical welcome-post title pattern ('Welcome our newest members!'). Owner action: none required — no duplicate comment was posted."
+    }
+  ],
   "ai_news_title": "Facebook's new standalone Creator Studio app puts an AI assistant in every creator's pocket",
   "ai_news_source_url": "https://techcrunch.com/2026/08/12/facebook-officially-rolls-out-its-standalone-creator-studio-app-with-ai-tools-for-creators/",
   "ai_news_post_url": "https://community.hubactually.com/70279bc1-5e75-4fbd-8515-dc0fbbcb84b6",
@@ -17,16 +68,21 @@
   "image_concept": null,
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
-    "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "image_generated": true,
+    "image_attached": true,
+    "clickable_link": true,
+    "channel_and_author": true,
+    "post_publish_verified_headless": "pass",
+    "source_reachable": true,
+    "source_url": "https://techcrunch.com/2026/08/12/facebook-officially-rolls-out-its-standalone-creator-studio-app-with-ai-tools-for-creators/",
+    "image_concept": "A warm editorial flat-lay of a creator's workspace at golden hour — a smartphone on a wooden stand showing soft rounded chat bubbles (no legible text) alongside real analog creator tools (Leica film camera, open notebook, coffee mug, pressed leaves). AI co-pilot sitting gently beside the creator's real tools rather than dominating them. Landscape, muted warm palette, no holographic/neon overlays, no dashboards, no text-heavy graphics.",
+    "image_verified_landscape_no_text": true
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "pending",
   "blockers": [],
   "recommended_next_actions": [],
-  "status": "complete"
+  "status": "complete",
+  "discussion_review_summary": "Headless discussion_check returned verdict open_browser_review with 1 thread flagged (Welcome our newest members!, thread 807f6f21, 0 comments). Cross-referenced against the 2026-08-15 ledger: that thread is Hub Bot's OWN public welcome post (welcomes_posted public_post entry with the exact title 'Welcome our newest members!' in General, created 2026-08-15T13:12Z). The discussion scan's thread-ID exclusion set did not contain it because the public welcome post thread ID is not recorded in prior ledgers (only its title). No genuine member-authored discussion needed attention; the other 3 intro threads (Hey everyone!, I'M New Here..., Hello Everyone!) already had replies, including Hub Bot welcome replies from 2026-08-15. Browser not opened for discussion review (false-flag confirmed). 0 comments added."
 }
