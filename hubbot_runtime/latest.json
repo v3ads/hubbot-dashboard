@@ -1,25 +1,13 @@
 {
-  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-15_hubbot_run.json",
-  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-15_hubbot_run.json",
-  "run_completed_at_et": "2026-08-15T09:22:56-04:00",
-  "status": "complete",
-  "new_members_found": [
-    "",
-    ""
-  ],
-  "welcomes_posted": [
-    "Maker Majuec",
-    "Isabella Jo",
-    "Mayur Pote",
-    "Marie Mitchell",
-    "QuoCentric",
-    "serge Panasenko",
-    "Jim Kyser",
-    "Public welcome post in General"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/40e0cf41-5708-43a9-a49e-16d854cbecf2",
-  "ai_news_publish_status": "published",
-  "saturday_digest_status": "scheduled",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo"
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-16_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-16_hubbot_run.json",
+  "run_completed_at_et": "2026-08-16T09:02:36-04:00",
+  "status": "in_progress",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
