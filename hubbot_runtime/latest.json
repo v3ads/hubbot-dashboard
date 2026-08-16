@@ -1,10 +1,17 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-16_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-16_hubbot_run.json",
-  "run_completed_at_et": "2026-08-16T09:05:21-04:00",
+  "run_completed_at_et": "2026-08-16T09:05:54-04:00",
   "status": "complete",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "Maker Majuec",
+    "Seamus Shell",
+    "Mayur Pote",
+    "Marie Mitchell",
+    "Ernie@QuoCentric",
+    "serge Panasenko"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/70279bc1-5e75-4fbd-8515-dc0fbbcb84b6",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
