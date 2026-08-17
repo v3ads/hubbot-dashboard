@@ -1,0 +1,94 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-17T09:03:14-04:00",
+  "run_completed_at_et": "2026-08-17T09:03:17-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 0 genuinely new, 6 already-welcomed (skipped) since 2026-08-10",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "734",
+      "name": "Maker Majuec",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-15T06:31:37.631Z",
+      "lastActivity": "2026-08-16T19:01:36.818Z",
+      "welcome_status": "already_welcomed_2026-08-15",
+      "skip_reason": "Already welcomed on 2026-08-15 (id=734, name=Maker Majuec)"
+    },
+    {
+      "id": "601",
+      "name": "Seamus Shell",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-15T04:53:03.491Z",
+      "lastActivity": "2026-08-16T04:57:21.669Z",
+      "welcome_status": "already_welcomed_2026-08-15",
+      "skip_reason": "Already welcomed on 2026-08-15 (id=601, name=Seamus Shell)"
+    },
+    {
+      "id": "3342",
+      "name": "Mayur Pote",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-11T02:48:23.117Z",
+      "lastActivity": "2026-08-11T14:29:54.049Z",
+      "welcome_status": "already_welcomed_2026-08-11",
+      "skip_reason": "Already welcomed on 2026-08-11 (id=3342, name=Mayur Pote)"
+    },
+    {
+      "id": "315",
+      "name": "Marie Mitchell",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-10T20:23:01.078Z",
+      "lastActivity": "2026-08-11T03:39:22.364Z",
+      "welcome_status": "already_welcomed_2026-08-11",
+      "skip_reason": "Already welcomed on 2026-08-11 (id=315, name=Marie Mitchell)"
+    },
+    {
+      "id": "1530",
+      "name": "Ernie@QuoCentric",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-10T18:39:03.799Z",
+      "lastActivity": "2026-08-17T12:30:44.287Z",
+      "welcome_status": "already_welcomed_2026-08-11",
+      "skip_reason": "Already welcomed on 2026-08-11 (id=1530, name=Ernie@QuoCentric)"
+    },
+    {
+      "id": "13759",
+      "name": "serge Panasenko",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-10T17:03:32.853Z",
+      "lastActivity": "2026-08-14T00:13:11.014Z",
+      "welcome_status": "already_welcomed_2026-08-11",
+      "skip_reason": "Already welcomed on 2026-08-11 (id=13759, name=serge Panasenko)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "status": "in_progress"
+}
