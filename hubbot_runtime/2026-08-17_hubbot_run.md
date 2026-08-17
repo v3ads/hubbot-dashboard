@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-17
 
 - **Started:** 2026-08-17T09:03:14-04:00
-- **Completed:** 2026-08-17T09:04:31-04:00
+- **Completed:** 2026-08-17T09:04:39-04:00
 - **Status:** complete
 
 ## Community Access
@@ -20,11 +20,12 @@
 - **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pass
-- image_attached: pass
-- clickable_link: pass
-- channel_and_author: pass
+- image_generated: True
+- image_attached: True
+- clickable_link: True
+- channel_and_author: True
 - post_publish_verified_headless: pass
+- source_reachable: True
 
 ## Owner Alert
 - **Status:** not_required
