@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-17T09:03:14-04:00",
-  "run_completed_at_et": "2026-08-17T09:03:17-04:00",
+  "run_completed_at_et": "2026-08-17T09:04:31-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 6 already-welcomed (skipped) since 2026-08-10",
@@ -10,21 +10,22 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_title": "73% of small-business marketers now use AI every day — but only 30% can prove it's working",
+  "ai_news_source_url": "https://www.socialmediaexaminer.com/how-small-businesses-are-really-using-ai-5-eye-opening-findings/",
+  "ai_news_post_url": "https://community.hubactually.com/9067cafb-5357-43a0-b1da-5ecc7f5bc37c",
+  "ai_news_publish_status": "published",
   "image_concept": null,
-  "image_status": "pending",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [
@@ -90,5 +91,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
