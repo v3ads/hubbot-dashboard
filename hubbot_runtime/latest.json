@@ -1,14 +1,14 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-18_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-18_hubbot_run.json",
-  "run_completed_at_et": "2026-08-18T09:05:08-04:00",
-  "status": "in_progress",
-  "new_members_found": [
+  "run_completed_at_et": "2026-08-18T09:12:59-04:00",
+  "status": "complete",
+  "new_members_found": [],
+  "welcomes_posted": [
     "Errol Muller"
   ],
-  "welcomes_posted": [],
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_post_url": "https://community.hubactually.com/00ac6b59-0495-4835-962f-b3cccb463044",
+  "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "pending",
   "owner_alert_status": "not_required"
