@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-18
 
 - **Started:** 2026-08-18T09:10:56-04:00
-- **Completed:** 2026-08-18T09:12:59-04:00
+- **Completed:** 2026-08-18T09:13:11-04:00
 - **Status:** complete
 
 ## Community Access
@@ -21,14 +21,15 @@
 - **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pass
-- image_attached: pass
-- clickable_link: pass
-- channel_and_author: pass
+- image_generated: True
+- image_attached: True
+- clickable_link: True
+- channel_and_author: True
 - post_publish_verified_headless: pass
+- source_reachable: True
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo (new_members_found)
 
 ## Saturday Digest
 - **Status:** not_saturday
