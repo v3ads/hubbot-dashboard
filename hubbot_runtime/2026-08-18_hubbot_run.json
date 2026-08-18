@@ -1,0 +1,63 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-18T09:05:05-04:00",
+  "run_completed_at_et": "2026-08-18T09:05:08-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 1 genuinely new, 2 already-welcomed (skipped) since 2026-08-11",
+  "new_members_found": [
+    {
+      "id": "506",
+      "name": "Errol Muller",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-18T12:10:53.111Z",
+      "lastActivity": "2026-08-18T12:10:57.394Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "734",
+      "name": "Maker Majuec",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-15T06:31:37.631Z",
+      "lastActivity": "2026-08-16T19:01:36.818Z",
+      "welcome_status": "already_welcomed_2026-08-15",
+      "skip_reason": "Already welcomed on 2026-08-15 (id=734, name=Maker Majuec)"
+    },
+    {
+      "id": "601",
+      "name": "Seamus Shell",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-15T04:53:03.491Z",
+      "lastActivity": "2026-08-18T08:39:29.239Z",
+      "welcome_status": "already_welcomed_2026-08-15",
+      "skip_reason": "Already welcomed on 2026-08-15 (id=601, name=Seamus Shell)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "status": "in_progress"
+}
