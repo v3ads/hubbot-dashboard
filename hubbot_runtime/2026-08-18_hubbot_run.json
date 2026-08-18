@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-18T09:10:56-04:00",
-  "run_completed_at_et": "2026-08-18T09:12:59-04:00",
+  "run_completed_at_et": "2026-08-18T09:13:11-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "Doppler blocked: RuntimeError",
@@ -23,16 +23,18 @@
   "image_concept": "A small independent storefront at dusk with a translucent glowing AI search-summary card hovering above it, the card's text fragmented and shattering into mismatched shards — conveying an inaccurate AI-generated first impression of a real business. Landscape, concept-led, no readable embedded text.",
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
-    "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "image_generated": true,
+    "image_attached": true,
+    "clickable_link": true,
+    "channel_and_author": true,
+    "post_publish_verified_headless": "pass",
+    "source_reachable": true
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo (new_members_found)",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "pending",
   "blockers": [],
   "recommended_next_actions": [],
-  "status": "complete"
+  "status": "complete",
+  "discussion_review_summary": "Headless discussion check verdict: quiet_skip_browser. 0 member-authored threads needing attention in the last 36h. HubBot's own posts excluded by thread ID (hubbot_posts_excluded=1, hubbot_excluded_by_id=1). No browser feed review opened — quiet day. 0 comments added."
 }
