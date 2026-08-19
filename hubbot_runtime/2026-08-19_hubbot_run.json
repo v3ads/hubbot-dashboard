@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-19T09:03:42-04:00",
-  "run_completed_at_et": "2026-08-19T09:03:45-04:00",
+  "run_completed_at_et": "2026-08-19T09:16:37-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 5 genuinely new, 3 already-welcomed (skipped) since 2026-08-12",
@@ -51,21 +51,22 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_title": "Small-business owners now trust AI for insurance advice as much as their own agent",
+  "ai_news_source_url": "https://www.insurancebusinessmag.com/us/news/breaking-news/small-business-owners-now-trust-ai-insurance-advice-as-much-as-their-own-agent-survey-finds-586585.aspx",
+  "ai_news_post_url": "https://community.hubactually.com/791723a3-6044-469e-a310-ef9dc6ee5b7b",
+  "ai_news_publish_status": "published",
   "image_concept": null,
-  "image_status": "pending",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [
@@ -101,5 +102,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
