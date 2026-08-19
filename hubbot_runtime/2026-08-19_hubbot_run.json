@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-19T09:03:42-04:00",
-  "run_completed_at_et": "2026-08-19T09:16:37-04:00",
+  "run_completed_at_et": "2026-08-19T09:16:55-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 5 genuinely new, 3 already-welcomed (skipped) since 2026-08-12",
@@ -48,27 +48,77 @@
       "lastActivity": "2026-08-19T00:48:14.698Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "12107",
+      "name": "Benjamin Parker",
+      "status": "welcomed_dm+post"
+    },
+    {
+      "member_id": "207",
+      "name": "Lillian",
+      "status": "welcomed_dm+post"
+    },
+    {
+      "member_id": "13233",
+      "name": "inder grewal",
+      "status": "welcomed_dm+post"
+    },
+    {
+      "member_id": "9039",
+      "name": "Nancy Burrell",
+      "status": "welcomed_dm+post"
+    },
+    {
+      "member_id": "2662",
+      "name": "Fernando Ceballos",
+      "status": "welcomed_dm+post"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "summary": "Pipeline defect: welcome mode returned no_op:true (0 genuinely-new) due to a cutoff ordering bug in _build_cutoff_from_ledger. It computes max(run_completed_at_et, 7-day-floor); the default mode of the SAME run wrote run_completed_at_et=now into latest.json before welcome mode read it, so max(now, 7-days-ago)=now and no member who joined earlier today qualified. The default mode's direct 7-day-floor cutoff was correct and found all 5 genuinely-new members. Welcome-once was verified independently (none of the 5 appear in any prior ledger welcomes_posted across 12 backfilled days). Not fixed live per lean rules.",
+      "recommended_fix": "In _run_welcome, compute the cutoff from the PREVIOUS run's ledger (exclude today's same-run ledger), or pass the default mode's already-computed cutoff through instead of re-deriving from latest.json. Alternatively use min(completed, floor) semantics or a since-last-SUCCESSFUL-run marker that isn't overwritten by the current run's preflight.",
+      "severity": "medium",
+      "status": "flagged_for_owner"
+    },
+    {
+      "summary": "Browser-backend transient 'internal server error' failures recurred throughout the welcome DM choreography (click actions most affected). Recovered via a page-refresh workaround: the click registered server-side despite the error response, and refreshing landed on the /messages/<thread-id> route with the DM thread open, after which fill+send succeeded. All 5 DMs ultimately sent and verified. No DM was lost, but the flaky backend inflated the run's browser action count.",
+      "recommended_fix": "No code fix — infra-level Browserbase/Stagehand instability. Worth monitoring; if it persists across runs, consider a more resilient click-then-refresh pattern in the welcome choreography or a longer inter-action settle.",
+      "severity": "low",
+      "status": "flagged_for_owner"
+    },
+    {
+      "summary": "Discussion scan false-positive: the open_browser_review verdict listed Hub Bot's OWN prior welcome post (bcb4ae95, 'Welcome our newest member!') as a member thread needing attention. The ID-exclusion caught 1 HubBot post but missed this older one (it predates the recent-threads-by-ID set). Owner's announcement (cd15fe38) also surfaced as 'needs attention' despite 0 comments being appropriate for an owner promo post.",
+      "recommended_fix": "Widen the HubBot-self-post exclusion to match by author displayName='Hub Bot' on the thread read (not just known thread IDs), and exclude posts authored by the owner (AYMAN SHALABY) from the 'needs attention' set unless they contain a support keyword.",
+      "severity": "low",
+      "status": "flagged_for_owner"
+    }
+  ],
   "ai_news_title": "Small-business owners now trust AI for insurance advice as much as their own agent",
   "ai_news_source_url": "https://www.insurancebusinessmag.com/us/news/breaking-news/small-business-owners-now-trust-ai-insurance-advice-as-much-as-their-own-agent-survey-finds-586585.aspx",
   "ai_news_post_url": "https://community.hubactually.com/791723a3-6044-469e-a310-ef9dc6ee5b7b",
   "ai_news_publish_status": "published",
-  "image_concept": null,
+  "image_concept": "Two symbolic chairs at a consultation table: a glowing golden orb representing AI in one seat, an empty chair for a human insurance advisor in the other, a half-signed insurance document and pen on the table, soft morning window light. Hand-painted gouache editorial illustration, muted earthy palette with one golden accent. Concept: AI earning a seat at the high-stakes decision table alongside (not replacing) a human advisor.",
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
-    "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "image_generated": true,
+    "image_attached": true,
+    "clickable_link": true,
+    "channel_and_author": true,
+    "post_publish_verified_headless": "pass",
+    "source_reachable": true
   },
-  "owner_alert_status": "sent_via_brevo",
-  "saturday_digest_status": "not_saturday",
+  "owner_alert_status": "sent_via_brevo_by_pipeline (new_members_found). No additional alert sent — the pipeline's alert covered new members; flagged items are recorded in this ledger for owner review and do not require an immediate separate alert (no failed required step, no irreversible action).",
+  "saturday_digest_status": "not_saturday_skipped",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Patch _build_cutoff_from_ledger cutoff ordering so welcome mode does not re-derive cutoff from the current run's just-written ledger (medium priority).",
+    "Tighten discussion_check self/owner-post exclusion (low priority).",
+    "No action needed on welcomes — all 5 genuinely-new members welcomed via DM + public post, welcome-once rule intact."
+  ],
   "already_welcomed": [
     {
       "id": "506",
@@ -101,6 +151,6 @@
       "skip_reason": "Already welcomed on 2026-08-15 (id=601, name=Seamus Shell)"
     }
   ],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Quiet day. discussion_check flagged 2 threads but both were false positives for member engagement: (1) cd15fe38 'NEW FREE MINI COURSE: From Prompts to AI Skills' is the owner AYMAN SHALABY's own course announcement (0 comments) — not a member question, no filler comment warranted; (2) bcb4ae95 'Welcome our newest member!' is Hub Bot's own prior welcome post for Errol Muller — a self-post the scan's ID-exclusion missed because it predates the recent-threads window. No genuine member-authored threads needing a useful comment in the 36h window. 0 comments added.",
   "status": "complete"
 }
