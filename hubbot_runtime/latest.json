@@ -1,15 +1,19 @@
 {
-  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-18_hubbot_run.json",
-  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-18_hubbot_run.json",
-  "run_completed_at_et": "2026-08-18T09:13:11-04:00",
-  "status": "complete",
-  "new_members_found": [],
-  "welcomes_posted": [
-    "Errol Muller"
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-19_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-19_hubbot_run.json",
+  "run_completed_at_et": "2026-08-19T09:03:45-04:00",
+  "status": "in_progress",
+  "new_members_found": [
+    "Benjamin Parker",
+    "Lillian",
+    "inder grewal",
+    "Nancy Burrell",
+    "Fernando Ceballos"
   ],
-  "ai_news_post_url": "https://community.hubactually.com/00ac6b59-0495-4835-962f-b3cccb463044",
-  "ai_news_publish_status": "published",
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "pending",
-  "owner_alert_status": "sent_via_brevo (new_members_found)"
+  "owner_alert_status": "not_required"
 }
