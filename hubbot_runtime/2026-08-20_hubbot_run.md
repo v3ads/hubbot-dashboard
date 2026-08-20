@@ -1,8 +1,8 @@
 # HubBot Run — 2026-08-20
 
 - **Started:** 2026-08-20T09:04:13-04:00
-- **Completed:** 2026-08-20T09:04:16-04:00
-- **Status:** in_progress
+- **Completed:** 2026-08-20T09:06:00-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 8 already-welcomed (skipped) since 2026-08-13
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
+- **Title:** Meta AI just turned itself into a small-business marketing analyst
+- **Status:** published
+- **URL:** https://community.hubactually.com/3da18c79-9f44-47ed-8219-39d7b29b10e1
+- **Source:** https://smallbiztrends.com/meta-ai-adds-small-business-tools-for-ads-analytics-and-reports/
 - **Image concept:** None
-- **Image status:** pending
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
