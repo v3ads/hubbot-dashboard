@@ -1,25 +1,13 @@
 {
-  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-19_hubbot_run.json",
-  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-19_hubbot_run.json",
-  "run_completed_at_et": "2026-08-19T09:16:55-04:00",
-  "status": "complete",
-  "new_members_found": [
-    "Benjamin Parker",
-    "Lillian",
-    "inder grewal",
-    "Nancy Burrell",
-    "Fernando Ceballos"
-  ],
-  "welcomes_posted": [
-    "Benjamin Parker",
-    "Lillian",
-    "inder grewal",
-    "Nancy Burrell",
-    "Fernando Ceballos"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/791723a3-6044-469e-a310-ef9dc6ee5b7b",
-  "ai_news_publish_status": "published",
-  "saturday_digest_status": "not_saturday_skipped",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo_by_pipeline (new_members_found). No additional alert sent — the pipeline's alert covered new members; flagged items are recorded in this ledger for owner review and do not require an immediate separate alert (no failed required step, no irreversible action)."
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-20_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-20_hubbot_run.json",
+  "run_completed_at_et": "2026-08-20T09:04:16-04:00",
+  "status": "in_progress",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
