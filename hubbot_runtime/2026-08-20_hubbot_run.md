@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-20
 
 - **Started:** 2026-08-20T09:04:13-04:00
-- **Completed:** 2026-08-20T09:06:17-04:00
+- **Completed:** 2026-08-20T09:06:24-04:00
 - **Status:** complete
 
 ## Community Access
@@ -28,11 +28,12 @@
 - **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pass
-- image_attached: pass
-- clickable_link: pass
-- channel_and_author: pass
+- image_generated: passed
+- image_attached: passed - previewImages=1, finalize post_verification.image_attached=true
+- clickable_link: passed - source_url on own line with trailing space, API <a href>, verification.source_link_clickable=true
+- channel_and_author: passed - General category, Hub Bot token, verification.author_hubbot=true (author_assumed_empty_read)
 - post_publish_verified_headless: pass
+- source_reachable: passed - smallbiztrends.com HTTP 200 desktop UA 91987 bytes
 
 ## Owner Alert
 - **Status:** not_required
