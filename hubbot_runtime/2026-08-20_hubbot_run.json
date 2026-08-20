@@ -2,12 +2,53 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-20T09:04:13-04:00",
-  "run_completed_at_et": "2026-08-20T09:06:00-04:00",
+  "run_completed_at_et": "2026-08-20T09:06:17-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 8 already-welcomed (skipped) since 2026-08-13",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "12107",
+      "name": "Benjamin Parker",
+      "status": "already_welcomed_2026-08-19"
+    },
+    {
+      "member_id": "207",
+      "name": "Lillian",
+      "status": "already_welcomed_2026-08-19"
+    },
+    {
+      "member_id": "13233",
+      "name": "inder grewal",
+      "status": "already_welcomed_2026-08-19"
+    },
+    {
+      "member_id": "9039",
+      "name": "Nancy Burrell",
+      "status": "already_welcomed_2026-08-19"
+    },
+    {
+      "member_id": "2662",
+      "name": "Fernando Ceballos",
+      "status": "already_welcomed_2026-08-19"
+    },
+    {
+      "member_id": "506",
+      "name": "Errol Muller",
+      "status": "already_welcomed_2026-08-18"
+    },
+    {
+      "member_id": "734",
+      "name": "Maker Majuec",
+      "status": "already_welcomed_2026-08-15"
+    },
+    {
+      "member_id": "601",
+      "name": "Seamus Shell",
+      "status": "already_welcomed_2026-08-15"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Meta AI just turned itself into a small-business marketing analyst",
