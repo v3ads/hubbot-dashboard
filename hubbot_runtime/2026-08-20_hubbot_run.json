@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-20T09:04:13-04:00",
-  "run_completed_at_et": "2026-08-20T09:04:16-04:00",
+  "run_completed_at_et": "2026-08-20T09:06:00-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 8 already-welcomed (skipped) since 2026-08-13",
@@ -10,21 +10,22 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_title": "Meta AI just turned itself into a small-business marketing analyst",
+  "ai_news_source_url": "https://smallbiztrends.com/meta-ai-adds-small-business-tools-for-ads-analytics-and-reports/",
+  "ai_news_post_url": "https://community.hubactually.com/3da18c79-9f44-47ed-8219-39d7b29b10e1",
+  "ai_news_publish_status": "published",
   "image_concept": null,
-  "image_status": "pending",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [
@@ -110,5 +111,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
