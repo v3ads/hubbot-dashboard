@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-20T09:04:13-04:00",
-  "run_completed_at_et": "2026-08-20T09:06:17-04:00",
+  "run_completed_at_et": "2026-08-20T09:06:24-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 8 already-welcomed (skipped) since 2026-08-13",
@@ -58,11 +58,12 @@
   "image_concept": null,
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
-    "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "image_generated": "passed",
+    "image_attached": "passed - previewImages=1, finalize post_verification.image_attached=true",
+    "clickable_link": "passed - source_url on own line with trailing space, API <a href>, verification.source_link_clickable=true",
+    "channel_and_author": "passed - General category, Hub Bot token, verification.author_hubbot=true (author_assumed_empty_read)",
+    "post_publish_verified_headless": "pass",
+    "source_reachable": "passed - smallbiztrends.com HTTP 200 desktop UA 91987 bytes"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
