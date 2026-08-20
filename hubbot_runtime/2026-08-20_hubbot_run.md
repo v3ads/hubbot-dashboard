@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-20
 
 - **Started:** 2026-08-20T09:04:13-04:00
-- **Completed:** 2026-08-20T09:06:00-04:00
+- **Completed:** 2026-08-20T09:06:17-04:00
 - **Status:** complete
 
 ## Community Access
@@ -9,7 +9,15 @@
 
 ## New Members (0)
 
-## Welcomes Posted (0)
+## Welcomes Posted (8)
+- Benjamin Parker
+- Lillian
+- inder grewal
+- Nancy Burrell
+- Fernando Ceballos
+- Errol Muller
+- Maker Majuec
+- Seamus Shell
 
 ## AI-news Post
 - **Title:** Meta AI just turned itself into a small-business marketing analyst
