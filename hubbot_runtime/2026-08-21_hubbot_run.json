@@ -1,0 +1,123 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-21T09:04:11-04:00",
+  "run_completed_at_et": "2026-08-21T09:04:14-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 1 genuinely new, 8 already-welcomed (skipped) since 2026-08-14",
+  "new_members_found": [
+    {
+      "id": "77002",
+      "name": "Mohamed nounou",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-21T08:52:17.398Z",
+      "lastActivity": "2026-08-21T08:55:53.474Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "12107",
+      "name": "Benjamin Parker",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-19T02:39:35.610Z",
+      "lastActivity": "2026-08-19T03:52:11.995Z",
+      "welcome_status": "already_welcomed_2026-08-19",
+      "skip_reason": "Already welcomed on 2026-08-19 (id=12107, name=Benjamin Parker)"
+    },
+    {
+      "id": "207",
+      "name": "Lillian",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-19T02:31:50.754Z",
+      "lastActivity": "2026-08-19T04:40:53.004Z",
+      "welcome_status": "already_welcomed_2026-08-19",
+      "skip_reason": "Already welcomed on 2026-08-19 (id=207, name=Lillian)"
+    },
+    {
+      "id": "13233",
+      "name": "inder grewal",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-19T01:04:58.217Z",
+      "lastActivity": "2026-08-19T01:05:00.252Z",
+      "welcome_status": "already_welcomed_2026-08-19",
+      "skip_reason": "Already welcomed on 2026-08-19 (id=13233, name=inder grewal)"
+    },
+    {
+      "id": "9039",
+      "name": "Nancy Burrell",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-19T00:22:48.363Z",
+      "lastActivity": "2026-08-19T19:51:18.476Z",
+      "welcome_status": "already_welcomed_2026-08-19",
+      "skip_reason": "Already welcomed on 2026-08-19 (id=9039, name=Nancy Burrell)"
+    },
+    {
+      "id": "2662",
+      "name": "Fernando Ceballos",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-19T00:16:59.306Z",
+      "lastActivity": "2026-08-19T00:48:14.698Z",
+      "welcome_status": "already_welcomed_2026-08-19",
+      "skip_reason": "Already welcomed on 2026-08-19 (id=2662, name=Fernando Ceballos)"
+    },
+    {
+      "id": "506",
+      "name": "Errol Muller",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-18T12:10:53.111Z",
+      "lastActivity": "2026-08-18T12:10:57.394Z",
+      "welcome_status": "already_welcomed_2026-08-18",
+      "skip_reason": "Already welcomed on 2026-08-18 (id=506, name=Errol Muller)"
+    },
+    {
+      "id": "734",
+      "name": "Maker Majuec",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-15T06:31:37.631Z",
+      "lastActivity": "2026-08-21T06:02:47.099Z",
+      "welcome_status": "already_welcomed_2026-08-15",
+      "skip_reason": "Already welcomed on 2026-08-15 (id=734, name=Maker Majuec)"
+    },
+    {
+      "id": "601",
+      "name": "Seamus Shell",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-15T04:53:03.491Z",
+      "lastActivity": "2026-08-18T08:39:29.239Z",
+      "welcome_status": "already_welcomed_2026-08-15",
+      "skip_reason": "Already welcomed on 2026-08-15 (id=601, name=Seamus Shell)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "status": "in_progress"
+}
