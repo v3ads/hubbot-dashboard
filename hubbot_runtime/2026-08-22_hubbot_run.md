@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-22
 
 - **Started:** 2026-08-22T09:02:38-04:00
-- **Completed:** 2026-08-22T09:09:46-04:00
+- **Completed:** 2026-08-22T09:09:55-04:00
 - **Status:** complete_with_blockers
 
 ## Community Access
@@ -27,7 +27,7 @@
 - source_reachable: not_applicable_skipped
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** pending_send
 
 ## Saturday Digest
 - **Status:** scheduled
