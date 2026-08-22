@@ -1,7 +1,7 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-22_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-22_hubbot_run.json",
-  "run_completed_at_et": "2026-08-22T09:09:46-04:00",
+  "run_completed_at_et": "2026-08-22T09:09:55-04:00",
   "status": "complete_with_blockers",
   "new_members_found": [],
   "welcomes_posted": [],
@@ -9,5 +9,5 @@
   "ai_news_publish_status": "skipped_owner_posted_today",
   "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "not_required"
+  "owner_alert_status": "pending_send"
 }
