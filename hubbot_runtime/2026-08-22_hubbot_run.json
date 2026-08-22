@@ -2,30 +2,39 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-22T09:02:38-04:00",
-  "run_completed_at_et": "2026-08-22T09:02:46-04:00",
+  "run_completed_at_et": "2026-08-22T09:09:46-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 7 already-welcomed (skipped) since 2026-08-15",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "type": "owner_posted_ai_news_today",
+      "summary": "Owner (AYMAN SHALABY) manually published an AI-news post in General today at 04:22 AM ET before the scheduled HubBot run. Title: 'Transparent backgrounds are now available in preview for GPT-Image-2'. The post has one image but no source link or discussion question. HubBot skipped its own AI-news post to honor the one-per-day intent. Recommended action: none required from owner — but if the owner wants HubBot to still post a second item on days they post manually, they should confirm that override.",
+      "thread_url": "https://community.hubactually.com/d8d6bff2-b34c-4a3a-987b-1abf129b2064"
+    }
+  ],
   "ai_news_title": null,
   "ai_news_source_url": null,
   "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_publish_status": "skipped_owner_posted_today",
   "image_concept": null,
-  "image_status": "pending",
+  "image_status": "not_generated",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "not_applicable_skipped",
+    "image_attached": "not_applicable_skipped",
+    "clickable_link": "not_applicable_skipped",
+    "channel_and_author": "not_applicable_skipped",
+    "source_reachable": "not_applicable_skipped"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
-  "blockers": [],
+  "saturday_digest_status": "scheduled",
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "blockers": [
+    "Saturday weekly digest blocked: GetResponse API key is unavailable in environment or protected runtime store."
+  ],
   "recommended_next_actions": [],
   "already_welcomed": [
     {
@@ -99,6 +108,12 @@
       "skip_reason": "Already welcomed on 2026-08-18 (id=506, name=Errol Muller)"
     }
   ],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "discussion_review_summary": "Headless discussion_check returned open_browser_review with 2 threads needing attention. Browser inspection resolved both as non-actionable: (1) 'Transparent backgrounds are now available in preview for GPT-Image-2' (id d8d6bff2) authored by AYMAN SHALABY (owner) at 04:22 AM ET — not a member thread; (2) 'Welcome our newest member!' (id 1efc4618) authored by Hub Bot at 06:09 AM ET 08-21 — Hub Bot's own welcome post, misclassified by the scan. Zero genuine member-authored threads needing engagement. No comments added. Feed review confirms lurker-dominated pattern (no member-authored threads in top 18 feed items except Teri Wooddell intro 08-15 and Maker Majuec intro 08-14, both already with replies).",
+  "status": "complete_with_blockers",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "owner_alert_required": true,
+  "saturday_digest_scheduled_for_et": "2026-08-22T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/home/ubuntu/hubactually_hubbot_run_ledger/20260822T090932-0400_weekly_digest_result.json"
+  }
 }
