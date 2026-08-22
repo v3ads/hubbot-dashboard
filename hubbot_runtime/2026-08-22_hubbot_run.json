@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-22T09:02:38-04:00",
-  "run_completed_at_et": "2026-08-22T09:09:46-04:00",
+  "run_completed_at_et": "2026-08-22T09:09:55-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 7 already-welcomed (skipped) since 2026-08-15",
@@ -29,7 +29,7 @@
     "channel_and_author": "not_applicable_skipped",
     "source_reachable": "not_applicable_skipped"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "pending_send",
   "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [
