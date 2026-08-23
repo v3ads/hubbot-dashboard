@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-23
 
 - **Started:** 2026-08-23T09:03:10-04:00
-- **Completed:** 2026-08-23T09:09:35-04:00
+- **Completed:** 2026-08-23T09:09:47-04:00
 - **Status:** complete
 
 ## Community Access
@@ -11,7 +11,9 @@
 - ANNA HARRIS
 - RENATA HARRIS
 
-## Welcomes Posted (0)
+## Welcomes Posted (2)
+- ANNA HARRIS
+- RENATA HARRIS
 
 ## AI-news Post
 - **Title:** Adobe Firefly's audio tools are now generally available — generate music, voiceovers, and sound effects in one place
@@ -25,8 +27,9 @@
 - image_generated: pass
 - image_attached: pass
 - clickable_link: pass
-- channel_and_author: pass
+- channel_and_author: pass_general_hubbot_token
 - post_publish_verified_headless: pass
+- source_reachable: pass_http_200
 
 ## Owner Alert
 - **Status:** sent_via_brevo
@@ -36,6 +39,8 @@
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (2)
+- discussion_check flagged the owner's own GPT-Image-2 post (d8d6bff2) as a member thread needing attention because author.name was empty on read-back. Resolved by cross-referencing the 2026-08-22 ledger which records it as the owner's manual AI-news post. No action needed — the known eventual-consistency issue. Pipeline exclusion by thread ID did not catch it because the post is from yesterday and not in this run's own-ledger window.
+- The default-run owner alert was sent via Brevo fallback rather than the primary native google-gmail path. The gmail integration remains unreliable in scheduled/agent threads in this workspace (known issue). Alert was still delivered to vipaymanshalaby@gmail.com.
 
 ## Recommended Next Actions
