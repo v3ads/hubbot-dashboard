@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-23T09:03:10-04:00",
-  "run_completed_at_et": "2026-08-23T09:09:35-04:00",
+  "run_completed_at_et": "2026-08-23T09:09:47-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 7 already-welcomed (skipped) since 2026-08-16",
@@ -24,9 +24,33 @@
       "lastActivity": "2026-08-23T05:01:50.453Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "3228",
+      "name": "ANNA HARRIS",
+      "status": "welcomed_dm+post",
+      "dm_thread_url": "https://community.hubactually.com/messages/D4xFqFqGUVBdO9D4455w"
+    },
+    {
+      "member_id": "6581",
+      "name": "RENATA HARRIS",
+      "status": "welcomed_dm+post",
+      "dm_thread_url": "https://community.hubactually.com/messages/NN479k7bku279x5ZCbZx"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "type": "discussion_scan_false_flag",
+      "summary": "discussion_check flagged the owner's own GPT-Image-2 post (d8d6bff2) as a member thread needing attention because author.name was empty on read-back. Resolved by cross-referencing the 2026-08-22 ledger which records it as the owner's manual AI-news post. No action needed — the known eventual-consistency issue. Pipeline exclusion by thread ID did not catch it because the post is from yesterday and not in this run's own-ledger window.",
+      "recommended_action": "None required. Consider extending the discussion-scan's own-post exclusion to include owner-authored thread IDs from the prior 2-3 days of ledgers, not just HubBot's own posts."
+    },
+    {
+      "type": "owner_alert_sender_fallback",
+      "summary": "The default-run owner alert was sent via Brevo fallback rather than the primary native google-gmail path. The gmail integration remains unreliable in scheduled/agent threads in this workspace (known issue). Alert was still delivered to vipaymanshalaby@gmail.com.",
+      "recommended_action": "Owner may want to verify google-gmail is enabled in the HubBot agent config tools list and connected at /settings/integrations. Until then Brevo fallback continues to work."
+    }
+  ],
   "ai_news_title": "Adobe Firefly's audio tools are now generally available — generate music, voiceovers, and sound effects in one place",
   "ai_news_source_url": "https://blog.adobe.com/en/publish/2026/08/20/adobe-firefly-expands-its-creative-ai-studio-generate-music-speech-and-sound-effects-in-one-place",
   "ai_news_post_url": "https://community.hubactually.com/58e3cc20-9bbc-4be1-ad2b-03b9cd692b74",
@@ -37,8 +61,9 @@
     "image_generated": "pass",
     "image_attached": "pass",
     "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "channel_and_author": "pass_general_hubbot_token",
+    "post_publish_verified_headless": "pass",
+    "source_reachable": "pass_http_200"
   },
   "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
@@ -117,6 +142,6 @@
       "skip_reason": "Already welcomed on 2026-08-18 (id=506, name=Errol Muller)"
     }
   ],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Headless discussion_check returned open_browser_review flagging 1 thread ('Transparent backgrounds are now available in preview for GPT-Image-2', id d8d6bff2) with 0 comments. Cross-checked against the prior day's ledger (2026-08-22): this is the OWNER's own AI-news post (AYMAN SHALABY, published 2026-08-22 04:22 AM ET), not a member-authored thread — flagged by the scan due to empty author.name (eventual consistency, known defect class #1). Zero genuine member-authored threads needing engagement in the 36h window. No browser feed review opened; no comments added. Quiet day consistent with the community's lurker-dominated pattern.",
   "status": "complete"
 }
