@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-23T09:03:10-04:00",
-  "run_completed_at_et": "2026-08-23T09:03:13-04:00",
+  "run_completed_at_et": "2026-08-23T09:09:35-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 7 already-welcomed (skipped) since 2026-08-16",
@@ -27,21 +27,22 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Adobe Firefly's audio tools are now generally available — generate music, voiceovers, and sound effects in one place",
+  "ai_news_source_url": "https://blog.adobe.com/en/publish/2026/08/20/adobe-firefly-expands-its-creative-ai-studio-generate-music-speech-and-sound-effects-in-one-place",
+  "ai_news_post_url": "https://community.hubactually.com/58e3cc20-9bbc-4be1-ad2b-03b9cd692b74",
+  "ai_news_publish_status": "published",
+  "image_concept": "An elegant abstract visualization of an audio creation studio blooming from a single spark — three streams (music notes in coral, a speech-bubble waveform in teal, sound-effect ripples in gold) radiating from a luminous center on an indigo-to-cream gradient. Concept-led, landscape, no text, no people, no laptops.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [
@@ -117,5 +118,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
