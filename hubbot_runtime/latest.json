@@ -1,13 +1,16 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-23_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-23_hubbot_run.json",
-  "run_completed_at_et": "2026-08-23T09:09:35-04:00",
+  "run_completed_at_et": "2026-08-23T09:09:47-04:00",
   "status": "complete",
   "new_members_found": [
     "ANNA HARRIS",
     "RENATA HARRIS"
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "ANNA HARRIS",
+    "RENATA HARRIS"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/58e3cc20-9bbc-4be1-ad2b-03b9cd692b74",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
