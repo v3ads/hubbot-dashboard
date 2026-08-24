@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-24
 
 - **Started:** 2026-08-24T09:06:22-04:00
-- **Completed:** 2026-08-24T09:16:38-04:00
+- **Completed:** 2026-08-24T09:58:17-04:00
 - **Status:** complete
 
 ## Community Access
@@ -14,19 +14,20 @@
 - jania Masterson
 
 ## AI-news Post
-- **Title:** Patreon overhauls its discovery algorithm to surface smaller creators — plus 30 new tools [BLOCKED: no image]
-- **Status:** blocked_no_image
-- **URL:** None
+- **Title:** Patreon overhauls its discovery algorithm to surface smaller creators — plus 30 new tools
+- **Status:** published
+- **URL:** https://community.hubactually.com/75791de0-06f0-4645-a764-3db69f9a5c91
 - **Source:** https://techcrunch.com/2026/08/20/patreon-launches-30-new-creator-features-including-short-form-clips-and-revamped-discovery/
-- **Image concept:** A small independent creator's glowing project rising into a warm spotlight past a crowd of larger receding figures — an owned audience gathering around it. Concept-led editorial illustration, warm amber/gold vs deep teal-navy, landscape, no embedded text.
-- **Image status:** generated_but_unreachable_from_sandbox
+- **Image concept:** A small independent creator's glowing open book/project rising into a warm golden spotlight, with a ring of small hand-holding supporter figures (an owned audience) encircling it, while a larger crowd of faceless silhouettes recedes into cool blue shadow below. Concept-led editorial illustration, warm amber/gold vs deep teal-navy, landscape, no embedded text.
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: blocked_unreachable
-- image_attached: fail
+- image_generated: pass
+- image_attached: pass
 - clickable_link: pass
 - channel_and_author: pass
 - source_reachable: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** sent_via_brevo
