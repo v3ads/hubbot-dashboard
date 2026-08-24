@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-24T09:06:22-04:00",
-  "run_completed_at_et": "2026-08-24T09:16:28-04:00",
+  "run_completed_at_et": "2026-08-24T09:16:38-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 9 already-welcomed (skipped) since 2026-08-17",
@@ -34,12 +34,12 @@
       "recommended_next_action": "Retry tomorrow's run; if the gap persists across runs, escalate as a platform GenerateImage→sandbox file-path bug (the image artifact is created but never lands in a fetchable namespace). Owner can also manually publish the prepared post (title/source/image concept above) from the community composer today."
     }
   ],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
+  "ai_news_title": "Patreon overhauls its discovery algorithm to surface smaller creators — plus 30 new tools [BLOCKED: no image]",
+  "ai_news_source_url": "https://techcrunch.com/2026/08/20/patreon-launches-30-new-creator-features-including-short-form-clips-and-revamped-discovery/",
   "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_publish_status": "blocked_no_image",
+  "image_concept": "A small independent creator's glowing project rising into a warm spotlight past a crowd of larger receding figures — an owned audience gathering around it. Concept-led editorial illustration, warm amber/gold vs deep teal-navy, landscape, no embedded text.",
+  "image_status": "generated_but_unreachable_from_sandbox",
   "pre_publish_checks": {
     "image_generated": "blocked_unreachable",
     "image_attached": "fail",
@@ -52,8 +52,8 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "AI-news post did not publish today due to an image-materialization blocker (see flagged_items). Prepared topic is ready to publish manually or retry next run.",
-    "Welcome flow completed for jania Masterson (DM + public post).",
+    "AI-news post did not publish today due to an image-materialization blocker (generated image unreachable from sandbox: viewUrl 401, file-fetch tools 404). Prepared topic ready to publish manually or retry next run.",
+    "Welcome flow completed for jania Masterson (DM sent + public welcome post published).",
     "No genuine member discussion needed engagement today (quiet day; flagged thread was HubBot's own welcome post)."
   ],
   "already_welcomed": [
@@ -148,6 +148,6 @@
       "skip_reason": "Already welcomed on 2026-08-18 (id=506, name=Errol Muller)"
     }
   ],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "quiet_skip_browser — flagged thread was HubBot's own welcome post (0 replies normal), no genuine member thread needed a comment.",
   "status": "complete"
 }
