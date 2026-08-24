@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-24T09:06:22-04:00",
-  "run_completed_at_et": "2026-08-24T09:16:38-04:00",
+  "run_completed_at_et": "2026-08-24T09:58:17-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 9 already-welcomed (skipped) since 2026-08-17",
@@ -34,18 +34,19 @@
       "recommended_next_action": "Retry tomorrow's run; if the gap persists across runs, escalate as a platform GenerateImage→sandbox file-path bug (the image artifact is created but never lands in a fetchable namespace). Owner can also manually publish the prepared post (title/source/image concept above) from the community composer today."
     }
   ],
-  "ai_news_title": "Patreon overhauls its discovery algorithm to surface smaller creators — plus 30 new tools [BLOCKED: no image]",
+  "ai_news_title": "Patreon overhauls its discovery algorithm to surface smaller creators — plus 30 new tools",
   "ai_news_source_url": "https://techcrunch.com/2026/08/20/patreon-launches-30-new-creator-features-including-short-form-clips-and-revamped-discovery/",
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "blocked_no_image",
-  "image_concept": "A small independent creator's glowing project rising into a warm spotlight past a crowd of larger receding figures — an owned audience gathering around it. Concept-led editorial illustration, warm amber/gold vs deep teal-navy, landscape, no embedded text.",
-  "image_status": "generated_but_unreachable_from_sandbox",
+  "ai_news_post_url": "https://community.hubactually.com/75791de0-06f0-4645-a764-3db69f9a5c91",
+  "ai_news_publish_status": "published",
+  "image_concept": "A small independent creator's glowing open book/project rising into a warm golden spotlight, with a ring of small hand-holding supporter figures (an owned audience) encircling it, while a larger crowd of faceless silhouettes recedes into cool blue shadow below. Concept-led editorial illustration, warm amber/gold vs deep teal-navy, landscape, no embedded text.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "blocked_unreachable",
-    "image_attached": "fail",
+    "image_generated": "pass",
+    "image_attached": "pass",
     "clickable_link": "pass",
     "channel_and_author": "pass",
-    "source_reachable": "pass"
+    "source_reachable": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
