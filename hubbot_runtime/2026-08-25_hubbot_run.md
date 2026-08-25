@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-25
 
 - **Started:** 2026-08-25T09:04:24-04:00
-- **Completed:** 2026-08-25T09:06:46-04:00
+- **Completed:** 2026-08-25T09:07:01-04:00
 - **Status:** complete
 
 ## Community Access
@@ -20,11 +20,12 @@
 - **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pass
-- image_attached: pass
-- clickable_link: pass
-- channel_and_author: pass
+- image_generated: passed
+- image_attached: passed
+- clickable_link: passed
+- channel_and_author: passed
 - post_publish_verified_headless: pass
+- source_reachable: passed
 
 ## Owner Alert
 - **Status:** not_required
@@ -34,6 +35,8 @@
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (2)
+- discussion_check false-positived 3 self/owner-authored threads as needs_attention (known defect class: scan excludes by thread ID/name but author.name empty on recent posts). Headless authorship check via public threads API corrected the verdict. No action needed.
+- Aug 24 ledger (yesterday) recorded ai_news_title as null, but the Aug 24 Hub Bot AI-news post (Patreon overhauls discovery, thread 75791de0) is confirmed live via API. Minor ledger gap; dedup still has the title via recent_posts. No action needed.
 
 ## Recommended Next Actions
