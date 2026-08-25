@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-25T09:04:24-04:00",
-  "run_completed_at_et": "2026-08-25T09:04:28-04:00",
+  "run_completed_at_et": "2026-08-25T09:06:46-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 10 already-welcomed (skipped) since 2026-08-18",
@@ -10,21 +10,22 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_title": "Meta AI now connects to your Instagram, Facebook, and ad campaigns to give small businesses tailored insights",
+  "ai_news_source_url": "https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/",
+  "ai_news_post_url": "https://community.hubactually.com/63398df4-8ade-4303-a8f1-dbd58c6bf944",
+  "ai_news_publish_status": "published",
   "image_concept": null,
-  "image_status": "pending",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [
@@ -130,5 +131,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
