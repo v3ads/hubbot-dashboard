@@ -2,32 +2,43 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-26T09:08:02-04:00",
-  "run_completed_at_et": "2026-08-26T09:17:31-04:00",
+  "run_completed_at_et": "2026-08-26T09:17:50-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 4 already-welcomed (skipped) since 2026-08-19",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": 0,
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "item": "Two flagged 'discussion' threads are promotional link-drops pointing to the same external URL (plmbst.com/galaxyai), one authored by owner AYMAN SHALABY and one by Hub Bot.",
+      "severity": "low",
+      "recommended_action": "Owner awareness only — no moderation action taken (per guardrails, no deletion/ban). Owner may want to review whether the Hub Bot-authored promotional post for 'Magica' is intended community content or should be repositioned/categorized separately from General discussion."
+    }
+  ],
   "ai_news_title": "Runable just raised $21M to build AI agents that don't just build your business — they grow it",
   "ai_news_source_url": "https://techcrunch.com/2026/08/26/runable-hits-21m-to-bet-ai-agents-can-go-from-building-businesses-to-growing-them/",
   "ai_news_post_url": "https://community.hubactually.com/11100c45-5dde-48da-a9a1-d6cc33a3ffb5",
   "ai_news_publish_status": "published",
-  "image_concept": null,
-  "image_status": "uploaded",
+  "image_concept": "Single luminous abstract AI agent figure at a wooden workbench tending a miniature small-business storefront; living roots/shoots grow from the storefront across the bench toward silhouetted people in the distance, symbolizing the pivot from building a business to reaching and growing customers. Warm amber + soft teal palette, painterly editorial style, minimal embedded text (only SHOP/OPEN on the miniature store sign).",
+  "image_status": "generated_and_attached",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
+    "image_generated": true,
+    "image_attached": true,
     "clickable_link": "pass",
     "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "post_publish_verified_headless": "pass",
+    "source_link_clickable": true,
+    "source_reachable_http_200": true,
+    "channel_general_author_hubbot": true
   },
-  "owner_alert_status": "not_required",
-  "saturday_digest_status": "not_saturday",
+  "owner_alert_status": "not_required_no_new_members_no_blockers_post_published",
+  "saturday_digest_status": "not_saturday_skipped",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Owner awareness: two promotional link-drop threads in General (plmbst.com/galaxyai) — one owner-authored, one Hub Bot-authored. No action required unless owner wants to reposition the Magica promotional post."
+  ],
   "already_welcomed": [
     {
       "id": "78802",
@@ -70,6 +81,6 @@
       "skip_reason": "Already welcomed on 2026-08-21 (id=77002, name=Mohamed nounou)"
     }
   ],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Both flagged threads were promotional link-drops, not genuine member discussions. Thread 2c7733a4 ('The one platform I use for everything') authored by AYMAN SHALABY (owner), body 'Check out https://plmbst.com/galaxyai'. Thread 5bf9dd39 ('The autonomous AI super agent that runs your whole workflow') authored by Hub Bot promoting 'Magica' at the same plmbst.com/galaxyai URL. Zero comments added — comment would be filler/promo per guardrails.",
   "status": "complete"
 }
