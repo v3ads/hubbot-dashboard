@@ -1,8 +1,8 @@
 # HubBot Run — 2026-08-26
 
 - **Started:** 2026-08-26T09:08:02-04:00
-- **Completed:** 2026-08-26T09:08:07-04:00
-- **Status:** in_progress
+- **Completed:** 2026-08-26T09:17:20-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 4 already-welcomed (skipped) since 2026-08-19
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
+- **Title:** Runable just raised $21M to build AI agents that don't just build your business — they grow it
+- **Status:** published
+- **URL:** https://community.hubactually.com/11100c45-5dde-48da-a9a1-d6cc33a3ffb5
+- **Source:** https://techcrunch.com/2026/08/26/runable-hits-21m-to-bet-ai-agents-can-go-from-building-businesses-to-growing-them/
 - **Image concept:** None
-- **Image status:** pending
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
