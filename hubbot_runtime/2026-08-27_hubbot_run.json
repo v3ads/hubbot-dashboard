@@ -1,0 +1,83 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-27T09:12:32-04:00",
+  "run_completed_at_et": "2026-08-27T09:12:37-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 1 genuinely new, 4 already-welcomed (skipped) since 2026-08-20",
+  "new_members_found": [
+    {
+      "id": "307",
+      "name": "Vivian Hill",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-26T23:10:26.403Z",
+      "lastActivity": "2026-08-27T04:38:53.769Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "78802",
+      "name": "jania Masterson",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-23T17:31:53.490Z",
+      "lastActivity": "2026-08-23T17:32:04.166Z",
+      "welcome_status": "already_welcomed_2026-08-24",
+      "skip_reason": "Already welcomed on 2026-08-24 (id=78802, name=jania Masterson)"
+    },
+    {
+      "id": "3228",
+      "name": "ANNA HARRIS",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-22T19:50:42.001Z",
+      "lastActivity": "2026-08-26T21:02:26.534Z",
+      "welcome_status": "already_welcomed_2026-08-23",
+      "skip_reason": "Already welcomed on 2026-08-23 (id=3228, name=ANNA HARRIS)"
+    },
+    {
+      "id": "6581",
+      "name": "RENATA HARRIS",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-22T17:19:30.048Z",
+      "lastActivity": "2026-08-26T00:45:19.293Z",
+      "welcome_status": "already_welcomed_2026-08-23",
+      "skip_reason": "Already welcomed on 2026-08-23 (id=6581, name=RENATA HARRIS)"
+    },
+    {
+      "id": "77002",
+      "name": "Mohamed nounou",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-21T08:52:17.398Z",
+      "lastActivity": "2026-08-25T10:44:19.932Z",
+      "welcome_status": "already_welcomed_2026-08-21",
+      "skip_reason": "Already welcomed on 2026-08-21 (id=77002, name=Mohamed nounou)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "status": "in_progress"
+}
