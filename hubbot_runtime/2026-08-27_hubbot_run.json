@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-27T09:12:32-04:00",
-  "run_completed_at_et": "2026-08-27T09:12:37-04:00",
+  "run_completed_at_et": "2026-08-27T09:20:07-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 4 already-welcomed (skipped) since 2026-08-20",
@@ -16,26 +16,54 @@
       "lastActivity": "2026-08-27T04:38:53.769Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "307",
+      "name": "Vivian Hill",
+      "status": "pending_browser_session",
+      "public_post": "published",
+      "public_welcome_post_url": "https://community.hubactually.com/3ac88739-f798-4118-bb5f-f1aa800f29aa",
+      "dm_status": "pending_browser_session"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "type": "welcome_dm_pending_browser_session",
+      "summary": "Welcome DM to Vivian Hill (id 307) is pending. Public welcome is live. Community session exists on this computer but this scheduled run could not drive Estage Firebase chat.",
+      "recommended_action": "Send Vivian Hill the Hub Bot welcome DM from Messages. Do not publish a second public welcome."
+    },
+    {
+      "type": "ai_news_blocked_no_image",
+      "summary": "GenerateImage is not available on Grok Bot HubBot. Public image-gen fallback was low-quality (generic desk/laptop photo) and was rejected. AI-news post blocked rather than publishing text-only.",
+      "recommended_action": "Add GenerateImage or equivalent, then publish the Gemini 3.5 Transcribe post (Google blog source, HTTP 200)."
+    }
+  ],
+  "ai_news_title": "Google’s Gemini 3.5 Transcribe turns messy voice notes into clean, usable text",
+  "ai_news_source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
+  "ai_news_post_url": "",
+  "ai_news_publish_status": "blocked_no_image",
+  "image_concept": "A vintage microphone releasing a golden ribbon of sound that becomes floating pages of clean writing.",
+  "image_status": "blocked",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "fail",
+    "image_attached": "fail",
+    "clickable_link": "n/a_not_published",
+    "channel_and_author": "n/a_not_published",
+    "source_reachable": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_gmail_vipgmail_and_pipeline_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
-  "blockers": [],
-  "recommended_next_actions": [],
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "blockers": [
+    "blocked_no_image: GenerateImage unavailable; pollinations fallback was low-quality generic desk photo and was not used",
+    "welcome_dm_pending_browser_session: Vivian Hill (307); public welcome published"
+  ],
+  "recommended_next_actions": [
+    "Send Vivian Hill (member 307) the composed welcome DM in HubActually Messages.",
+    "Wire GenerateImage (or an equivalent) into Grok Bot HubBot so the daily AI-news post can publish.",
+    "Do not re-welcome Vivian publicly; post is already at https://community.hubactually.com/3ac88739-f798-4118-bb5f-f1aa800f29aa"
+  ],
   "already_welcomed": [
     {
       "id": "78802",
@@ -78,6 +106,6 @@
       "skip_reason": "Already welcomed on 2026-08-21 (id=77002, name=Mohamed nounou)"
     }
   ],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "discussion_review_summary": "0 comments, quiet day. Headless discussion_check verdict quiet_skip_browser; 0 member threads needing attention in last 36h.",
+  "status": "complete_with_blockers"
 }
