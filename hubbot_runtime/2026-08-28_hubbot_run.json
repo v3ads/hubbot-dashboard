@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-28T09:08:13-04:00",
-  "run_completed_at_et": "2026-08-28T09:09:48-04:00",
+  "run_completed_at_et": "2026-08-28T09:10:36-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-08-27",
@@ -28,10 +28,9 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "No new members today; none pending welcome.",
-    "Review Welcome Vivian Hill thread for light engagement if member activity appears."
+    "None — quiet member day; AI-news published."
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Reviewed Welcome Vivian Hill (3ac88739…): Hub Bot–authored welcome post from 2026-08-27; no member comments; no HubBot reply needed. False positive from headless attention flag (0 comments on HubBot welcome).",
   "status": "complete"
 }
