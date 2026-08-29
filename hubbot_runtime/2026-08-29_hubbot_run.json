@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-29T09:07:51-04:00",
-  "run_completed_at_et": "2026-08-29T09:07:54-04:00",
+  "run_completed_at_et": "2026-08-29T09:09:28-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-08-28",
@@ -10,24 +10,29 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Claude in Chrome is generally available — and it can act in your browser on its own",
+  "ai_news_source_url": "https://claude.com/blog/claude-in-chrome-generally-available",
+  "ai_news_post_url": "https://community.hubactually.com/25afb8f6-3267-405b-a49b-23cb427496f4",
+  "ai_news_publish_status": "published",
+  "image_concept": "Translucent floating browser window with layered tabs threaded by a golden-cyan light path — metaphor for an AI agent navigating real browser workflows safely",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Review member thread The lesson is,,,, for light engagement if appropriate.",
+    "Send Saturday digest with Meetn join CTA (before 1:00 PM ET).",
+    "No new members today."
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
