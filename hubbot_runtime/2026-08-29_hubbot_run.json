@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-29T09:07:51-04:00",
-  "run_completed_at_et": "2026-08-29T09:09:28-04:00",
+  "run_completed_at_et": "2026-08-29T09:11:19-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-08-28",
@@ -24,15 +24,24 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
+  "blockers": [
+    "Saturday weekly digest blocked: Required Saturday Chat join CTA (https://meetn.com/hubactually) missing or homepage used as hang URL."
+  ],
   "recommended_next_actions": [
-    "Review member thread The lesson is,,,, for light engagement if appropriate.",
-    "Send Saturday digest with Meetn join CTA (before 1:00 PM ET).",
-    "No new members today."
+    "Saturday digest scheduled for 10:00 AM ET via GetResponse (Meetn join CTA included).",
+    "No new members today.",
+    "Owner post The lesson is,,,, reviewed; no HubBot comment.",
+    "browserUse driver failed this run; rely on Estage API until box browser is healthy."
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "complete"
+  "discussion_review_summary": "API review of https://community.hubactually.com/a6396c4c-5dfb-400b-83fd-6ede92449cb4 — author AYMAN SHALABY (owner), General, 0 comments. Lesson post on maximizing AI capabilities now (Photography Reimagined book). No HubBot reply needed. browserUse driver failed; used Estage API instead.",
+  "status": "complete_with_blockers",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "owner_alert_required": true,
+  "saturday_digest_scheduled_for_et": "2026-08-29T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-08-29/20260829T091022-0400_weekly_digest_result.json"
+  }
 }
