@@ -26,20 +26,18 @@
   "owner_alert_status": "not_required",
   "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [
-    "Saturday weekly digest blocked: Required Saturday Chat join CTA (https://meetn.com/hubactually) missing or homepage used as hang URL."
-  ],
+  "blockers": [],
   "recommended_next_actions": [
-    "Saturday digest scheduled for 10:00 AM ET via GetResponse (Meetn join CTA included).",
+    "Saturday digest scheduled for 10:00 AM ET via GetResponse (Meetn join CTA).",
     "No new members today.",
     "Owner post The lesson is,,,, reviewed; no HubBot comment.",
-    "browserUse driver failed this run; rely on Estage API until box browser is healthy."
+    "browserUse driver failed this run; Estage API used for discussion review."
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "API review of https://community.hubactually.com/a6396c4c-5dfb-400b-83fd-6ede92449cb4 — author AYMAN SHALABY (owner), General, 0 comments. Lesson post on maximizing AI capabilities now (Photography Reimagined book). No HubBot reply needed. browserUse driver failed; used Estage API instead.",
-  "status": "complete_with_blockers",
+  "discussion_review_summary": "API review of https://community.hubactually.com/a6396c4c-5dfb-400b-83fd-6ede92449cb4 — author AYMAN SHALABY (owner), General, 0 comments. Lesson post on maximizing AI now. No HubBot reply needed. browserUse driver failed; used Estage API.",
+  "status": "complete",
   "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
-  "owner_alert_required": true,
+  "owner_alert_required": false,
   "saturday_digest_scheduled_for_et": "2026-08-29T10:00:00-04:00",
   "evidence": {
     "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-08-29/20260829T091022-0400_weekly_digest_result.json"
