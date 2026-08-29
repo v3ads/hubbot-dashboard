@@ -2,7 +2,7 @@
 
 - **Started:** 2026-08-29T09:07:51-04:00
 - **Completed:** 2026-08-29T09:11:19-04:00
-- **Status:** complete_with_blockers
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-08-28
@@ -32,13 +32,12 @@
 ## Saturday Digest
 - **Status:** scheduled
 
-## Blockers (1)
-- Saturday weekly digest blocked: Required Saturday Chat join CTA (https://meetn.com/hubactually) missing or homepage used as hang URL.
+## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Saturday digest scheduled for 10:00 AM ET via GetResponse (Meetn join CTA included).
+- Saturday digest scheduled for 10:00 AM ET via GetResponse (Meetn join CTA).
 - No new members today.
 - Owner post The lesson is,,,, reviewed; no HubBot comment.
-- browserUse driver failed this run; rely on Estage API until box browser is healthy.
+- browserUse driver failed this run; Estage API used for discussion review.
