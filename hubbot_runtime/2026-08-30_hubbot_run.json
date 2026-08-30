@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-30T09:13:33-04:00",
-  "run_completed_at_et": "2026-08-30T09:22:45-04:00",
+  "run_completed_at_et": "2026-08-30T09:28:54-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 3 genuinely new, 0 already-welcomed (skipped) since 2026-08-29",
@@ -32,7 +32,26 @@
       "lastActivity": "2026-08-30T11:00:29.204Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "15502",
+      "name": "Vali Ardeleanu",
+      "status": "welcomed_dm+post",
+      "post_url": "https://community.hubactually.com/55f35fb5-9e48-4927-9eaf-08eebadfd843"
+    },
+    {
+      "member_id": "4290",
+      "name": "Emmanuel Kailie",
+      "status": "welcomed_dm+post",
+      "post_url": "https://community.hubactually.com/55f35fb5-9e48-4927-9eaf-08eebadfd843"
+    },
+    {
+      "member_id": "23493",
+      "name": "Chelle",
+      "status": "welcomed_dm+post",
+      "post_url": "https://community.hubactually.com/55f35fb5-9e48-4927-9eaf-08eebadfd843"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Google's Gemini Omni 1.1 Flash lets you actually direct AI video, not just generate it",
@@ -53,11 +72,13 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Welcome DMs for Vali Ardeleanu, Emmanuel Kailie, Chelle via browser; public welcome post headless.",
-    "Nuggets Golden Nuggets post FREE ACCESS: 9 Ways To Use AI as Your Entrepreneur Copilot reviewed; no HubBot comment (not HubBot pipeline).",
-    "No Saturday digest (Sunday)."
+    "Welcomed Vali Ardeleanu, Emmanuel Kailie, Chelle (DM + public post https://community.hubactually.com/55f35fb5-9e48-4927-9eaf-08eebadfd843). Do not resend.",
+    "AI-news published: https://community.hubactually.com/b9d85857-c0b9-4e1d-9cc9-7b591d33183d",
+    "Nuggets lesson post reviewed; no HubBot comment.",
+    "No Saturday digest (Sunday).",
+    "browserUse driver still failing (same as Aug 29); computerUse used for DMs."
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Nuggets Golden Nuggets post FREE ACCESS: 9 Ways To Use AI as Your Entrepreneur Copilot (https://community.hubactually.com/a6807f0f-e8a7-44e1-a7d3-de61e052218c) — 0 comments. No HubBot reply (Nuggets owns that pipeline). browserUse driver failed again; DMs sent via computerUse as Hub.",
   "status": "complete"
 }
