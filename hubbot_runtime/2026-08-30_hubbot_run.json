@@ -1,0 +1,58 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-30T09:13:33-04:00",
+  "run_completed_at_et": "2026-08-30T09:13:35-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 3 genuinely new, 0 already-welcomed (skipped) since 2026-08-29",
+  "new_members_found": [
+    {
+      "id": "15502",
+      "name": "Vali Ardeleanu",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-30T12:47:32.250Z",
+      "lastActivity": "2026-08-30T13:01:42.649Z"
+    },
+    {
+      "id": "4290",
+      "name": "Emmanuel Kailie",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-29T22:41:53.807Z",
+      "lastActivity": "2026-08-29T22:41:56.568Z"
+    },
+    {
+      "id": "23493",
+      "name": "Chelle",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-29T14:59:00.701Z",
+      "lastActivity": "2026-08-30T11:00:29.204Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [],
+  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "status": "in_progress"
+}
