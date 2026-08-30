@@ -1,8 +1,8 @@
 # HubBot Run — 2026-08-30
 
 - **Started:** 2026-08-30T09:13:33-04:00
-- **Completed:** 2026-08-30T09:13:35-04:00
-- **Status:** in_progress
+- **Completed:** 2026-08-30T09:22:45-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 3 genuinely new, 0 already-welcomed (skipped) since 2026-08-29
@@ -15,21 +15,22 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** Google's Gemini Omni 1.1 Flash lets you actually direct AI video, not just generate it
+- **Status:** published
+- **URL:** https://community.hubactually.com/b9d85857-c0b9-4e1d-9cc9-7b591d33183d
+- **Source:** https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/
+- **Image concept:** Wireframe golden film camera on a light crane between two floating keyframe stills, teal-gold light path through a misty valley — metaphor for directing AI video by pinning first and last frames
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo
 
 ## Saturday Digest
 - **Status:** not_saturday
@@ -39,3 +40,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Welcome DMs for Vali Ardeleanu, Emmanuel Kailie, Chelle via browser; public welcome post headless.
+- Nuggets Golden Nuggets post FREE ACCESS: 9 Ways To Use AI as Your Entrepreneur Copilot reviewed; no HubBot comment (not HubBot pipeline).
+- No Saturday digest (Sunday).
