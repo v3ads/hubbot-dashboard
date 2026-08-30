@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-30
 
 - **Started:** 2026-08-30T09:13:33-04:00
-- **Completed:** 2026-08-30T09:22:45-04:00
+- **Completed:** 2026-08-30T09:28:54-04:00
 - **Status:** complete
 
 ## Community Access
@@ -12,7 +12,10 @@
 - Emmanuel Kailie
 - Chelle
 
-## Welcomes Posted (0)
+## Welcomes Posted (3)
+- Vali Ardeleanu
+- Emmanuel Kailie
+- Chelle
 
 ## AI-news Post
 - **Title:** Google's Gemini Omni 1.1 Flash lets you actually direct AI video, not just generate it
@@ -40,6 +43,8 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Welcome DMs for Vali Ardeleanu, Emmanuel Kailie, Chelle via browser; public welcome post headless.
-- Nuggets Golden Nuggets post FREE ACCESS: 9 Ways To Use AI as Your Entrepreneur Copilot reviewed; no HubBot comment (not HubBot pipeline).
+- Welcomed Vali Ardeleanu, Emmanuel Kailie, Chelle (DM + public post https://community.hubactually.com/55f35fb5-9e48-4927-9eaf-08eebadfd843). Do not resend.
+- AI-news published: https://community.hubactually.com/b9d85857-c0b9-4e1d-9cc9-7b591d33183d
+- Nuggets lesson post reviewed; no HubBot comment.
 - No Saturday digest (Sunday).
+- browserUse driver still failing (same as Aug 29); computerUse used for DMs.
