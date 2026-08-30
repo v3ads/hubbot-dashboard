@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-30T09:13:33-04:00",
-  "run_completed_at_et": "2026-08-30T09:13:35-04:00",
+  "run_completed_at_et": "2026-08-30T09:22:45-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 3 genuinely new, 0 already-welcomed (skipped) since 2026-08-29",
@@ -35,24 +35,29 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Google's Gemini Omni 1.1 Flash lets you actually direct AI video, not just generate it",
+  "ai_news_source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+  "ai_news_post_url": "https://community.hubactually.com/b9d85857-c0b9-4e1d-9cc9-7b591d33183d",
+  "ai_news_publish_status": "published",
+  "image_concept": "Wireframe golden film camera on a light crane between two floating keyframe stills, teal-gold light path through a misty valley — metaphor for directing AI video by pinning first and last frames",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Welcome DMs for Vali Ardeleanu, Emmanuel Kailie, Chelle via browser; public welcome post headless.",
+    "Nuggets Golden Nuggets post FREE ACCESS: 9 Ways To Use AI as Your Entrepreneur Copilot reviewed; no HubBot comment (not HubBot pipeline).",
+    "No Saturday digest (Sunday)."
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
