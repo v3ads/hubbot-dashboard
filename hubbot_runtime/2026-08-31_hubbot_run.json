@@ -1,0 +1,61 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-08-31T10:24:52-04:00",
+  "run_completed_at_et": "2026-08-31T10:24:54-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 2 genuinely new, 1 already-welcomed (skipped) since 2026-08-30",
+  "new_members_found": [
+    {
+      "id": "93243",
+      "name": "Mohamed Ahmed",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-30T22:59:05.713Z",
+      "lastActivity": "2026-08-31T02:56:57.108Z"
+    },
+    {
+      "id": "4832",
+      "name": "Mike Brin",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-30T18:38:59.153Z",
+      "lastActivity": "2026-08-30T20:10:13.099Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "15502",
+      "name": "Vali Ardeleanu",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-08-30T12:47:32.250Z",
+      "lastActivity": "2026-08-31T08:36:06.682Z",
+      "welcome_status": "already_welcomed_2026-08-30",
+      "skip_reason": "Already welcomed on 2026-08-30 (id=15502, name=Vali Ardeleanu)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
+  "status": "in_progress"
+}
