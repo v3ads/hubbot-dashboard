@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-08-31T10:24:52-04:00",
-  "run_completed_at_et": "2026-08-31T10:27:49-04:00",
+  "run_completed_at_et": "2026-08-31T10:32:08-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 1 already-welcomed (skipped) since 2026-08-30",
@@ -24,7 +24,23 @@
       "lastActivity": "2026-08-30T20:10:13.099Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "93243",
+      "name": "Mohamed Ahmed",
+      "status": "welcomed_dm+post"
+    },
+    {
+      "member_id": "4832",
+      "name": "Mike Brin",
+      "status": "welcomed_dm+post"
+    },
+    {
+      "member_id": "15502",
+      "name": "Vali Ardeleanu",
+      "status": "already_welcomed_2026-08-30"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Google's Gemini 3.5 Transcribe turns messy calls into clean text you can actually use",
@@ -45,9 +61,8 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Welcome DMs for Mohamed Ahmed (93243) and Mike Brin (4832) still in browser; public welcome posting separately.",
-    "Skip Vali Ardeleanu (15502) — already_welcomed_2026-08-30.",
-    "No HubBot comments on Nuggets FREE ACCESS posts or yesterday's welcome (0 member comments)."
+    "No further HubBot comments on Nuggets posts.",
+    "Do not resend Mohamed Ahmed or Mike Brin welcomes."
   ],
   "already_welcomed": [
     {
@@ -61,6 +76,6 @@
       "skip_reason": "Already welcomed on 2026-08-30 (id=15502, name=Vali Ardeleanu)"
     }
   ],
-  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Nuggets FREE ACCESS posts (funnels; copilot) and yesterday's welcome (Vali/Emmanuel/Chelle): 0 member comments; no HubBot reply. Public welcome today: Mohamed Ahmed, Mike Brin https://community.hubactually.com/19b7fe15-11a5-4a45-bf5a-d548fa7d1466. DMs delivered as Hub Bot.",
   "status": "complete"
 }
