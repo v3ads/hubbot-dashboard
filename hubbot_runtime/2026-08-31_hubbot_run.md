@@ -1,7 +1,7 @@
 # HubBot Run — 2026-08-31
 
 - **Started:** 2026-08-31T10:24:52-04:00
-- **Completed:** 2026-08-31T10:27:49-04:00
+- **Completed:** 2026-08-31T10:32:08-04:00
 - **Status:** complete
 
 ## Community Access
@@ -11,7 +11,10 @@
 - Mohamed Ahmed
 - Mike Brin
 
-## Welcomes Posted (0)
+## Welcomes Posted (3)
+- Mohamed Ahmed
+- Mike Brin
+- Vali Ardeleanu
 
 ## AI-news Post
 - **Title:** Google's Gemini 3.5 Transcribe turns messy calls into clean text you can actually use
@@ -39,6 +42,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Welcome DMs for Mohamed Ahmed (93243) and Mike Brin (4832) still in browser; public welcome posting separately.
-- Skip Vali Ardeleanu (15502) — already_welcomed_2026-08-30.
-- No HubBot comments on Nuggets FREE ACCESS posts or yesterday's welcome (0 member comments).
+- No further HubBot comments on Nuggets posts.
+- Do not resend Mohamed Ahmed or Mike Brin welcomes.
