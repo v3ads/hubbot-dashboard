@@ -1,13 +1,17 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-31_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-08-31_hubbot_run.json",
-  "run_completed_at_et": "2026-08-31T10:27:49-04:00",
+  "run_completed_at_et": "2026-08-31T10:32:08-04:00",
   "status": "complete",
   "new_members_found": [
     "Mohamed Ahmed",
     "Mike Brin"
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "Mohamed Ahmed",
+    "Mike Brin",
+    "Vali Ardeleanu"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/1c26bffb-1c7d-43b2-86a9-399a40c63070",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
