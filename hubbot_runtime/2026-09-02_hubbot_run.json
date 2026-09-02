@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-02T09:08:43-04:00",
-  "run_completed_at_et": "2026-09-02T09:08:46-04:00",
+  "run_completed_at_et": "2026-09-02T09:12:04-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-08-31",
@@ -16,27 +16,45 @@
       "lastActivity": "2026-08-31T20:16:57.071Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "18750",
+      "name": "Alison Franklin",
+      "status": "welcomed_post_pending_dm"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "id": "dc83cd18-bbf5-47a0-b41c-8b95963092e7",
+      "title": "You don't need 47 tools...",
+      "status": "browser_review_blocked",
+      "note": "browserUse driver failed; deferred"
+    }
+  ],
+  "ai_news_title": "Claude Fable 5.1 just made long-running AI work cheaper—and smarter",
+  "ai_news_source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+  "ai_news_post_url": "https://community.hubactually.com/67b562a9-3fcf-4901-a849-8097a89d5c78",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape dawn workspace: laptop on desk beside a vertical stack of translucent task cards completing themselves; soft gold light, abstract progress ribbons rising; no text, no logos — durable AI coworkers finishing multi-step work overnight",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Complete Alison Franklin DM via browser once desktop automation works",
+    "Re-review discussion thread You don't need 47 tools... when browser is healthy",
+    "No Saturday digest (Wednesday)"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
