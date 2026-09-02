@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-02
 
 - **Started:** 2026-09-02T09:08:43-04:00
-- **Completed:** 2026-09-02T09:12:04-04:00
+- **Completed:** 2026-09-02T09:17:28-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,9 +37,9 @@
 ## Blockers (0)
 
 ## Flagged Items (1)
-- {'id': 'dc83cd18-bbf5-47a0-b41c-8b95963092e7', 'title': "You don't need 47 tools...", 'status': 'browser_review_blocked', 'note': 'browserUse driver failed; deferred'}
+- {'id': 'dc83cd18-bbf5-47a0-b41c-8b95963092e7', 'title': "You don't need 47 tools...", 'status': 'skip_with_reason', 'note': 'Owner-authored (Ayman); noise_authors; 0 comments; not a member thread needing reply'}
 
 ## Recommended Next Actions
-- Complete Alison Franklin DM via browser once desktop automation works
-- Re-review discussion thread You don't need 47 tools... when browser is healthy
 - No Saturday digest (Wednesday)
+- Hubactually Community/Brand/Nuggets/10pm packet still paused per Director — room report posted; packet fold waits unpause
+- Do not resend Alison Franklin welcome
