@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-02T09:08:43-04:00",
-  "run_completed_at_et": "2026-09-02T09:12:04-04:00",
+  "run_completed_at_et": "2026-09-02T09:17:28-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-08-31",
@@ -20,7 +20,7 @@
     {
       "member_id": "18750",
       "name": "Alison Franklin",
-      "status": "welcomed_post_pending_dm"
+      "status": "welcomed_dm+post"
     }
   ],
   "comments_added": [],
@@ -28,8 +28,8 @@
     {
       "id": "dc83cd18-bbf5-47a0-b41c-8b95963092e7",
       "title": "You don't need 47 tools...",
-      "status": "browser_review_blocked",
-      "note": "browserUse driver failed; deferred"
+      "status": "skip_with_reason",
+      "note": "Owner-authored (Ayman); noise_authors; 0 comments; not a member thread needing reply"
     }
   ],
   "ai_news_title": "Claude Fable 5.1 just made long-running AI work cheaper—and smarter",
@@ -50,9 +50,9 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Complete Alison Franklin DM via browser once desktop automation works",
-    "Re-review discussion thread You don't need 47 tools... when browser is healthy",
-    "No Saturday digest (Wednesday)"
+    "No Saturday digest (Wednesday)",
+    "Hubactually Community/Brand/Nuggets/10pm packet still paused per Director — room report posted; packet fold waits unpause",
+    "Do not resend Alison Franklin welcome"
   ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
