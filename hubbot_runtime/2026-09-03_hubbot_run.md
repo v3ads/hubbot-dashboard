@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-03
 
 - **Started:** 2026-09-03T09:21:27-04:00
-- **Completed:** 2026-09-03T09:25:11-04:00
+- **Completed:** 2026-09-03T09:29:50-04:00
 - **Status:** complete
 
 ## Community Access
@@ -34,10 +34,12 @@
 
 ## Blockers (0)
 
-## Flagged Items (1)
-- {'id': 'dbe38ce0-8914-4894-89b2-41c5fec1b7d1', 'title': 'Welcome Alison Franklin', 'status': 'browser_review_pending', 'note': '0 comments at pipeline time; reviewing in parallel'}
+## Flagged Items (2)
+- {'id': 'dbe38ce0-8914-4894-89b2-41c5fec1b7d1', 'title': 'Welcome Alison Franklin', 'status': 'reviewed_no_reply_needed', 'note': '0 comments via Estage API; welcome post; no member ask'}
+- {'id': 'browser_driver', 'title': 'browserUse driver failure', 'status': 'degraded', 'note': 'browserUse Browser driver shell failed; discussion review used Estage headless instead'}
 
 ## Recommended Next Actions
 - No new members today
+- AI-news Gemini 3.8 Flash published
 - No Saturday digest (Thursday)
-- Confirm Alison welcome thread needs no reply after browser review
+- browserUse driver still broken — computerUse fallback if DM/browser composer needed
