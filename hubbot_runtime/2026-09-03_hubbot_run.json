@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-03T09:21:27-04:00",
-  "run_completed_at_et": "2026-09-03T09:25:11-04:00",
+  "run_completed_at_et": "2026-09-03T09:29:50-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-02",
@@ -13,8 +13,14 @@
     {
       "id": "dbe38ce0-8914-4894-89b2-41c5fec1b7d1",
       "title": "Welcome Alison Franklin",
-      "status": "browser_review_pending",
-      "note": "0 comments at pipeline time; reviewing in parallel"
+      "status": "reviewed_no_reply_needed",
+      "note": "0 comments via Estage API; welcome post; no member ask"
+    },
+    {
+      "id": "browser_driver",
+      "title": "browserUse driver failure",
+      "status": "degraded",
+      "note": "browserUse Browser driver shell failed; discussion review used Estage headless instead"
     }
   ],
   "ai_news_title": "Gemini 3.8 Flash: smarter coding and agents at the same Flash price",
@@ -36,10 +42,11 @@
   "blockers": [],
   "recommended_next_actions": [
     "No new members today",
+    "AI-news Gemini 3.8 Flash published",
     "No Saturday digest (Thursday)",
-    "Confirm Alison welcome thread needs no reply after browser review"
+    "browserUse driver still broken — computerUse fallback if DM/browser composer needed"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Headless Estage: Welcome Alison Franklin (dbe38ce0) still 0 comments; Hub Bot author; no member question. browserUse driver failed again — no browser comment. No reply warranted.",
   "status": "complete"
 }
