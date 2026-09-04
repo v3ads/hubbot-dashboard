@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-04T09:36:32-04:00",
-  "run_completed_at_et": "2026-09-04T09:38:44-04:00",
+  "run_completed_at_et": "2026-09-04T09:43:32-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 0 already-welcomed (skipped) since 2026-09-03",
@@ -28,12 +28,14 @@
     {
       "member_id": "94752",
       "name": "Darío BOLD",
-      "status": "welcome_post_published_dm_pending"
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/vV6m77P4S9BJYVqGtSav"
     },
     {
       "member_id": "3563",
       "name": "Leelavathy N",
-      "status": "welcome_post_published_dm_pending"
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/5r7buFMYi1oHPPMkYxff"
     }
   ],
   "comments_added": [],
@@ -54,13 +56,15 @@
   "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
+  "blockers": [
+    "browserUse driver failed; DMs via computerUse"
+  ],
   "recommended_next_actions": [
-    "Complete browser DMs to Darío BOLD and Leelavathy N",
+    "Welcomes complete for Darío BOLD and Leelavathy N",
     "No Saturday digest (Friday)",
-    "Discussion quiet — skip feed browser review"
+    "Discussion quiet"
   ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "complete"
+  "status": "complete_with_blockers"
 }
