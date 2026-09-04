@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-04
 
 - **Started:** 2026-09-04T09:36:32-04:00
-- **Completed:** 2026-09-04T09:36:35-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-04T09:38:44-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 2 genuinely new, 0 already-welcomed (skipped) since 2026-09-03
@@ -11,24 +11,27 @@
 - Darío BOLD
 - Leelavathy N
 
-## Welcomes Posted (0)
+## Welcomes Posted (2)
+- Darío BOLD
+- Leelavathy N
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** GPT-6 Astra: OpenAI's new computer-use frontier you can actually delegate to
+- **Status:** published
+- **URL:** https://community.hubactually.com/5b179aaa-2017-48a7-b355-0c2af3328686
+- **Source:** https://openai.com/index/gpt-6-astra/
+- **Image concept:** Landscape dawn desk: glowing eight-point navigation star above a laptop showing abstract workflow nodes — computer-use guidance without text or logos
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo
 
 ## Saturday Digest
 - **Status:** not_saturday
@@ -38,3 +41,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Complete browser DMs to Darío BOLD and Leelavathy N
+- No Saturday digest (Friday)
+- Discussion quiet — skip feed browser review
