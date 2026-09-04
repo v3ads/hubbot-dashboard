@@ -1,0 +1,50 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-09-04T09:36:32-04:00",
+  "run_completed_at_et": "2026-09-04T09:36:35-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 2 genuinely new, 0 already-welcomed (skipped) since 2026-09-03",
+  "new_members_found": [
+    {
+      "id": "94752",
+      "name": "Darío BOLD",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-09-04T07:04:03.196Z",
+      "lastActivity": "2026-09-04T07:04:07.084Z"
+    },
+    {
+      "id": "3563",
+      "name": "Leelavathy N",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-09-04T04:24:50.647Z",
+      "lastActivity": "2026-09-04T04:27:42.554Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [],
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "status": "in_progress"
+}
