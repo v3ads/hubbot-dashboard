@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-04
 
 - **Started:** 2026-09-04T09:36:32-04:00
-- **Completed:** 2026-09-04T09:38:44-04:00
-- **Status:** complete
+- **Completed:** 2026-09-04T09:43:32-04:00
+- **Status:** complete_with_blockers
 
 ## Community Access
 - OK — 20 members total, 2 genuinely new, 0 already-welcomed (skipped) since 2026-09-03
@@ -36,11 +36,12 @@
 ## Saturday Digest
 - **Status:** not_saturday
 
-## Blockers (0)
+## Blockers (1)
+- browserUse driver failed; DMs via computerUse
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Complete browser DMs to Darío BOLD and Leelavathy N
+- Welcomes complete for Darío BOLD and Leelavathy N
 - No Saturday digest (Friday)
-- Discussion quiet — skip feed browser review
+- Discussion quiet
