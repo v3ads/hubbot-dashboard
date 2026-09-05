@@ -1,7 +1,7 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-09-05_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-09-05_hubbot_run.json",
-  "run_completed_at_et": "2026-09-05T09:08:27-04:00",
+  "run_completed_at_et": "2026-09-05T09:32:50-04:00",
   "status": "complete",
   "new_members_found": [
     "STEVE LEWIS"
@@ -11,7 +11,7 @@
   ],
   "ai_news_post_url": "https://community.hubactually.com/35e958fd-6b73-414b-b748-ffb345f75fd6",
   "ai_news_publish_status": "published",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "owner_alert_status": "sent_via_brevo"
 }
