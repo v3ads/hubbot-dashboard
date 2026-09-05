@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-05
 
 - **Started:** 2026-09-05T09:06:22-04:00
-- **Completed:** 2026-09-05T09:08:27-04:00
+- **Completed:** 2026-09-05T09:32:50-04:00
 - **Status:** complete
 
 ## Community Access
@@ -32,13 +32,13 @@
 - **Status:** sent_via_brevo
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Complete browser DM to STEVE LEWIS
-- Send Saturday weekly digest via hubbot_send_weekly_digest.py
-- Browser-review 2 attention threads if still needed after digest
+- Do not resend STEVE LEWIS welcome
+- Do not resend Saturday digest (scheduled 10:00 AM ET)
+- Hub Lead folds room report when packet lane unpaused
