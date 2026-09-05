@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-05
 
 - **Started:** 2026-09-05T09:06:22-04:00
-- **Completed:** 2026-09-05T09:06:25-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-05T09:08:27-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 1 genuinely new, 1 already-welcomed (skipped) since 2026-09-04
@@ -10,24 +10,26 @@
 ## New Members (1)
 - STEVE LEWIS
 
-## Welcomes Posted (0)
+## Welcomes Posted (1)
+- STEVE LEWIS
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** Meta Muse Spark 1.3: frontier agent coding at the cheapest cost-per-task
+- **Status:** published
+- **URL:** https://community.hubactually.com/35e958fd-6b73-414b-b748-ffb345f75fd6
+- **Source:** https://artificialanalysis.ai/articles/muse-spark-1-3
+- **Image concept:** Landscape dusk desk: constellation-like muse of light rising from a laptop workflow map — agent efficiency without text or logos
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo
 
 ## Saturday Digest
 - **Status:** pending
@@ -37,3 +39,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Complete browser DM to STEVE LEWIS
+- Send Saturday weekly digest via hubbot_send_weekly_digest.py
+- Browser-review 2 attention threads if still needed after digest
