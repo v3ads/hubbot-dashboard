@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-05T09:06:22-04:00",
-  "run_completed_at_et": "2026-09-05T09:08:27-04:00",
+  "run_completed_at_et": "2026-09-05T09:32:50-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 1 already-welcomed (skipped) since 2026-09-04",
@@ -20,8 +20,9 @@
     {
       "member_id": "87",
       "name": "STEVE LEWIS",
-      "status": "welcome_post_published_dm_pending",
-      "public_welcome_post_url": "https://community.hubactually.com/a66d7073-e649-413c-884f-ea5ef249127c"
+      "status": "welcomed_dm+post",
+      "public_welcome_post_url": "https://community.hubactually.com/a66d7073-e649-413c-884f-ea5ef249127c",
+      "dm_thread": "https://community.hubactually.com/messages/OjXAgZRG5wsG7oxjkybs"
     }
   ],
   "comments_added": [],
@@ -40,13 +41,13 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "sent_via_brevo",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Complete browser DM to STEVE LEWIS",
-    "Send Saturday weekly digest via hubbot_send_weekly_digest.py",
-    "Browser-review 2 attention threads if still needed after digest"
+    "Do not resend STEVE LEWIS welcome",
+    "Do not resend Saturday digest (scheduled 10:00 AM ET)",
+    "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [
     {
@@ -60,6 +61,12 @@
       "skip_reason": "Already welcomed on 2026-08-31 (id=2115, name=Mike Brin)"
     }
   ],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "complete"
+  "discussion_review_summary": "API re-check: 2 attention threads both 0 comments (cash AI promo a4968cf1…; Welcome Darío/Leelavathy 1e471441…). 0 comments, no HubBot replies added.",
+  "status": "complete",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "owner_alert_required": false,
+  "saturday_digest_scheduled_for_et": "2026-09-05T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-09-05/20260905T090906-0400_weekly_digest_result.json"
+  }
 }
