@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-06
 
 - **Started:** 2026-09-06T09:01:08-04:00
-- **Completed:** 2026-09-06T09:03:33-04:00
+- **Completed:** 2026-09-06T09:04:40-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,5 +37,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Browser-review Welcome STEVE LEWIS attention thread
-- Run enrich after discussion verdict
+- Do not resend STEVE LEWIS welcome
+- Hub Lead folds room report when packet lane unpaused
