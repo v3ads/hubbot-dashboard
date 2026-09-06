@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-06T09:01:08-04:00",
-  "run_completed_at_et": "2026-09-06T09:03:33-04:00",
+  "run_completed_at_et": "2026-09-06T09:04:40-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-05",
@@ -28,10 +28,10 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Browser-review Welcome STEVE LEWIS attention thread",
-    "Run enrich after discussion verdict"
+    "Do not resend STEVE LEWIS welcome",
+    "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "API re-check Welcome STEVE LEWIS (a66d7073…): 0 comments, 1 view, Hub Bot author. No member questions; no HubBot reply added (no_action).",
   "status": "complete"
 }
