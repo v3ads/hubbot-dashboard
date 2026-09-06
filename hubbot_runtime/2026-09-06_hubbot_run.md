@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-06
 
 - **Started:** 2026-09-06T09:01:08-04:00
-- **Completed:** 2026-09-06T09:01:10-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-06T09:03:33-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-05
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** NVIDIA PAIR: turn spare home GPUs into a local multi-agent cluster
+- **Status:** published
+- **URL:** https://community.hubactually.com/98177c0d-7445-494b-90a8-42dc48126bf7
+- **Source:** https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/
+- **Image concept:** Landscape dusk home workshop: glowing compute nodes linked by light trails across laptop, tower, and compact workstation — local AI cluster routing, no text or logos
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
@@ -36,3 +37,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Browser-review Welcome STEVE LEWIS attention thread
+- Run enrich after discussion verdict
