@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-07T09:41:52-04:00",
-  "run_completed_at_et": "2026-09-07T09:41:54-04:00",
+  "run_completed_at_et": "2026-09-07T09:45:36-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-06",
@@ -16,27 +16,38 @@
       "lastActivity": "2026-09-07T00:35:21.793Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "10911",
+      "name": "Milla McCammon",
+      "status": "public_welcome_posted_dm_pending"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Adobe for Slack: turn chat context into campaign-ready creative",
+  "ai_news_source_url": "https://blog.adobe.com/en/publish/2026/09/02/introducing-adobe-for-slack",
+  "ai_news_post_url": "https://community.hubactually.com/b0d9a388-f7f6-481b-8792-8239d87699d8",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: glowing chat bubble opens like a studio door; finished campaign image, video frame, and PDF float out as talk becomes shippable creative — teal/coral, no text or logos",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Complete Milla McCammon welcome DM via browser",
+    "Do not comment on Ayman thread The AI Advantage Most Entrepreneurs Overlook",
+    "Run enrich after DM confirmation"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
