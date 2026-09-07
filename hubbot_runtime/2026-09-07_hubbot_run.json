@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-07T09:41:52-04:00",
-  "run_completed_at_et": "2026-09-07T09:45:36-04:00",
+  "run_completed_at_et": "2026-09-07T09:47:31-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-06",
@@ -20,7 +20,9 @@
     {
       "member_id": "10911",
       "name": "Milla McCammon",
-      "status": "public_welcome_posted_dm_pending"
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/BQVBx19xiXitXQDoEaVq",
+      "public_welcome_url": "https://community.hubactually.com/136989db-d253-473c-9212-5e401e41e84d"
     }
   ],
   "comments_added": [],
@@ -43,11 +45,10 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Complete Milla McCammon welcome DM via browser",
-    "Do not comment on Ayman thread The AI Advantage Most Entrepreneurs Overlook",
-    "Run enrich after DM confirmation"
+    "Do not resend Milla McCammon welcome",
+    "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "1 member thread in 36h needing attention: 'The AI Advantage Most Entrepreneurs Overlook' by AYMAN SHALABY (author_id 91) — skipped comment (owner-authored). 0 comments added.",
   "status": "complete"
 }
