@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-08T09:37:36-04:00",
-  "run_completed_at_et": "2026-09-08T09:43:26-04:00",
+  "run_completed_at_et": "2026-09-08T09:44:39-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-07",
@@ -28,11 +28,10 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Review Welcome Milla McCammon (0 comments) — likely no_reply_needed",
-    "Run enrich after discussion check",
+    "Do not resend Milla McCammon welcome",
     "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "API re-check Welcome Milla McCammon (136989db): 0 comments, Hub Bot author. No member questions; no HubBot reply added (no_action).",
   "status": "complete"
 }
