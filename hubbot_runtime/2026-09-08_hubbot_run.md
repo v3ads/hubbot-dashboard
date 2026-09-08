@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-08
 
 - **Started:** 2026-09-08T09:37:36-04:00
-- **Completed:** 2026-09-08T09:43:26-04:00
+- **Completed:** 2026-09-08T09:44:39-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,6 +37,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Review Welcome Milla McCammon (0 comments) — likely no_reply_needed
-- Run enrich after discussion check
+- Do not resend Milla McCammon welcome
 - Hub Lead folds room report when packet lane unpaused
