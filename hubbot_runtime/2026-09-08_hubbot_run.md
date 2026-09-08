@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-08
 
 - **Started:** 2026-09-08T09:37:36-04:00
-- **Completed:** 2026-09-08T09:37:39-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-08T09:43:26-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-07
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** GitHub HydraFusion: one Copilot pick that orchestrates the right models for you
+- **Status:** published
+- **URL:** https://community.hubactually.com/8516e60c-1da4-49c4-84ea-592cfc2351d2
+- **Source:** https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/
+- **Image concept:** Landscape: three glowing neural streams (teal/coral/amber) braid into one beam feeding a floating code editor — multi-model draft/critique/escalate as one workflow, no text or logos
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
@@ -36,3 +37,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Review Welcome Milla McCammon (0 comments) — likely no_reply_needed
+- Run enrich after discussion check
+- Hub Lead folds room report when packet lane unpaused
