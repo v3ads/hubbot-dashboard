@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-11T09:11:17-04:00",
-  "run_completed_at_et": "2026-09-11T09:11:19-04:00",
+  "run_completed_at_et": "2026-09-11T09:13:02-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-10",
@@ -10,24 +10,28 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "cfo.ai Ari: an always-on AI CFO that watches cash, ARR, and churn for founders",
+  "ai_news_source_url": "https://siliconangle.com/2026/09/10/exclusive-ai-finance-cfo-ai-launches-an-agentic-cfo-for-business-founders/",
+  "ai_news_post_url": "https://community.hubactually.com/fc1ef78f-be9b-4b5d-a532-897e25629b8c",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: calm founder office desk; translucent teal/gold holographic financial model (cash curves, ARR rings, amber alert pulse) as always-on AI CFO noticing a change — no text or logos, not a person at a laptop",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Discussion quiet — record 0 comments in enrich",
+    "Hub Lead folds room report when packet lane unpaused"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
