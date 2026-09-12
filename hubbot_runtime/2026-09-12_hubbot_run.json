@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-12T09:08:00-04:00",
-  "run_completed_at_et": "2026-09-12T09:09:45-04:00",
+  "run_completed_at_et": "2026-09-12T09:10:34-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-11",
@@ -24,15 +24,19 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Discussion quiet — record 0 comments in enrich",
-    "Send Saturday digest with Meetn join CTA + toolbox + mini-course reminders",
     "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "complete"
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser. 0 comments, quiet day.",
+  "status": "complete",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "owner_alert_required": false,
+  "saturday_digest_scheduled_for_et": "2026-09-12T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-09-12/20260912T091004-0400_weekly_digest_result.json"
+  }
 }
