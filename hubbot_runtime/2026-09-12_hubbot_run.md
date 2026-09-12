@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-12
 
 - **Started:** 2026-09-12T09:08:00-04:00
-- **Completed:** 2026-09-12T09:09:45-04:00
+- **Completed:** 2026-09-12T09:10:34-04:00
 - **Status:** complete
 
 ## Community Access
@@ -30,13 +30,11 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Discussion quiet — record 0 comments in enrich
-- Send Saturday digest with Meetn join CTA + toolbox + mini-course reminders
 - Hub Lead folds room report when packet lane unpaused
