@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-13
 
 - **Started:** 2026-09-13T09:20:22-04:00
-- **Completed:** 2026-09-13T09:21:51-04:00
+- **Completed:** 2026-09-13T09:22:08-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,6 +37,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Discussion quiet — record 0 comments in enrich
-- No Saturday digest (Sunday)
+- Do not invent welcomes — 0 new members today
 - Hub Lead folds room report when packet lane unpaused
