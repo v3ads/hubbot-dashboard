@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-14
 
 - **Started:** 2026-09-14T09:49:56-04:00
-- **Completed:** 2026-09-14T09:49:58-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-14T09:52:47-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-13
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** Copilot Cowork /app: describe a business app and get a governed full-stack scaffold
+- **Status:** published
+- **URL:** https://community.hubactually.com/b89179c6-c237-4fd3-928f-60155f01e29a
+- **Source:** https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/
+- **Image concept:** Landscape: cyan/amber conversational light ribbons feeding a floating stack of blank translucent glass panes — no text, logos, charts, people, or laptop
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
@@ -36,3 +37,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Discussion quiet — record 0 comments in enrich
+- No Saturday digest (Monday)
+- Hub Lead folds room report when packet lane unpaused
