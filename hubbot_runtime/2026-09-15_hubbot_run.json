@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-15T09:42:10-04:00",
-  "run_completed_at_et": "2026-09-15T09:42:14-04:00",
+  "run_completed_at_et": "2026-09-15T09:44:04-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-14",
@@ -10,24 +10,29 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Salesforce Koa: a CRM reasoning model for Agentforce, built on NVIDIA Nemotron",
+  "ai_news_source_url": "https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/",
+  "ai_news_post_url": "https://community.hubactually.com/07047f75-ba8b-4e1e-bb2e-83c74f19aaae",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: translucent prismatic crystal core splitting into emerald/amber/violet luminous pathways through frosted-glass workflow nodes — no text, logos, charts, people, or laptop",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Discussion quiet — record 0 comments in enrich",
+    "No Saturday digest (Tuesday)",
+    "Hub Lead folds room report when packet lane unpaused"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
