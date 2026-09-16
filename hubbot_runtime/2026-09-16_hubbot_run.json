@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-16T09:32:10-04:00",
-  "run_completed_at_et": "2026-09-16T09:34:21-04:00",
+  "run_completed_at_et": "2026-09-16T09:36:11-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-15",
@@ -16,7 +16,15 @@
       "lastActivity": "2026-09-16T12:12:25.154Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "56342",
+      "name": "James Ganuere",
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/snXuHysVVGz1kw80q74u",
+      "public_welcome_url": "https://community.hubactually.com/87121bf8-f783-44b0-9362-702536e490ba"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Claude for Small Business: 43 growth workflows and 27 new tool integrations",
@@ -37,12 +45,11 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Complete James Ganuere welcome DM if still pending, then enrich with welcomes_posted",
-    "Discussion quiet — record 0 comments in enrich",
+    "Do not resend James Ganuere welcome",
     "No Saturday digest (Wednesday)",
     "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "0 comments, quiet day — headless discussion check quiet_skip_browser; no member threads needing attention in 36h window.",
   "status": "complete"
 }
