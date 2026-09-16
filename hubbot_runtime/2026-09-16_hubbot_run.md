@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-16
 
 - **Started:** 2026-09-16T09:32:10-04:00
-- **Completed:** 2026-09-16T09:34:21-04:00
+- **Completed:** 2026-09-16T09:36:11-04:00
 - **Status:** complete
 
 ## Community Access
@@ -10,7 +10,8 @@
 ## New Members (1)
 - James Ganuere
 
-## Welcomes Posted (0)
+## Welcomes Posted (1)
+- James Ganuere
 
 ## AI-news Post
 - **Title:** Claude for Small Business: 43 growth workflows and 27 new tool integrations
@@ -38,7 +39,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Complete James Ganuere welcome DM if still pending, then enrich with welcomes_posted
-- Discussion quiet — record 0 comments in enrich
+- Do not resend James Ganuere welcome
 - No Saturday digest (Wednesday)
 - Hub Lead folds room report when packet lane unpaused
