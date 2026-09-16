@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-16T09:32:10-04:00",
-  "run_completed_at_et": "2026-09-16T09:32:13-04:00",
+  "run_completed_at_et": "2026-09-16T09:34:21-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-15",
@@ -19,24 +19,30 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Claude for Small Business: 43 growth workflows and 27 new tool integrations",
+  "ai_news_source_url": "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
+  "ai_news_post_url": "https://community.hubactually.com/d4b8dc5c-06ec-4828-b034-3f1131a00c00",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: vintage ledger/calendar/stamp toolkit dissolving into amber-teal luminous workflow ribbons carrying growth paths — no text, logos, charts, people, or laptop",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Complete James Ganuere welcome DM if still pending, then enrich with welcomes_posted",
+    "Discussion quiet — record 0 comments in enrich",
+    "No Saturday digest (Wednesday)",
+    "Hub Lead folds room report when packet lane unpaused"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
