@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-16
 
 - **Started:** 2026-09-16T09:32:10-04:00
-- **Completed:** 2026-09-16T09:32:13-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-16T09:34:21-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-15
@@ -13,21 +13,22 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** Claude for Small Business: 43 growth workflows and 27 new tool integrations
+- **Status:** published
+- **URL:** https://community.hubactually.com/d4b8dc5c-06ec-4828-b034-3f1131a00c00
+- **Source:** https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs
+- **Image concept:** Landscape: vintage ledger/calendar/stamp toolkit dissolving into amber-teal luminous workflow ribbons carrying growth paths — no text, logos, charts, people, or laptop
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo
 
 ## Saturday Digest
 - **Status:** not_saturday
@@ -37,3 +38,7 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Complete James Ganuere welcome DM if still pending, then enrich with welcomes_posted
+- Discussion quiet — record 0 comments in enrich
+- No Saturday digest (Wednesday)
+- Hub Lead folds room report when packet lane unpaused
