@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-17T09:25:33-04:00",
-  "run_completed_at_et": "2026-09-17T09:28:27-04:00",
+  "run_completed_at_et": "2026-09-17T09:32:33-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 3 genuinely new, 0 already-welcomed (skipped) since 2026-09-16",
@@ -32,7 +32,29 @@
       "lastActivity": "2026-09-16T21:07:03.827Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "3010",
+      "name": "Remi Dairo",
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/ySQu5aLmg7p6rjNLvVT9",
+      "public_welcome_url": "https://community.hubactually.com/200704ee-d573-4d60-980f-c0e915a3309f"
+    },
+    {
+      "member_id": "3292",
+      "name": "Stewart Scott",
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/Iyy8Dkq2sY1AvNqlOPw9",
+      "public_welcome_url": "https://community.hubactually.com/200704ee-d573-4d60-980f-c0e915a3309f"
+    },
+    {
+      "member_id": "3465",
+      "name": "Amy Sleezer",
+      "status": "welcomed_dm+post",
+      "dm_thread": "https://community.hubactually.com/messages/m8lF1v4rf0k6Wkb50AEh",
+      "public_welcome_url": "https://community.hubactually.com/200704ee-d573-4d60-980f-c0e915a3309f"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Gemini 3.8 Live: voice agents that think while they talk — now in Workspace",
@@ -51,14 +73,15 @@
   "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
+  "blockers": [
+    "ledger_path_remapped: /home/ubuntu missing on box; LEDGER_DIR remapped to /workspace/hubbot_runtime for this run"
+  ],
   "recommended_next_actions": [
-    "Finish 3 welcome DMs (Remi Dairo, Stewart Scott, Amy Sleezer) then enrich with welcomes_posted + public welcome URL",
-    "Discussion: 2 zero-comment threads (Video Prompt Architect announce; Welcome James) — no HubBot replies needed",
+    "Hub Lead folds room report when packet lane unpaused",
     "No Saturday digest (Thursday)",
-    "Hub Lead folds room report when packet lane unpaused"
+    "Restore /home/ubuntu ledger path on box (or keep workspace remap) before next run"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "complete"
+  "discussion_review_summary": "API re-check: 2 attention threads both 0 comments (Video Prompt Architect fd6d1e28…; Welcome James 87121bf8…). 0 comments, no HubBot replies added.",
+  "status": "complete_with_blockers"
 }
