@@ -1,14 +1,18 @@
 {
   "latest_file": "/workspace/hubbot_runtime/2026-09-17_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/2026-09-17_hubbot_run.json",
-  "run_completed_at_et": "2026-09-17T09:28:27-04:00",
-  "status": "complete",
+  "run_completed_at_et": "2026-09-17T09:32:33-04:00",
+  "status": "complete_with_blockers",
   "new_members_found": [
     "Remi Dairo",
     "Stewart Scott",
     "Amy Sleezer"
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "Remi Dairo",
+    "Stewart Scott",
+    "Amy Sleezer"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/fbe8d5b8-5640-4500-9601-803d10d845db",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
