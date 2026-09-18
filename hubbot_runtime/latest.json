@@ -1,12 +1,14 @@
 {
   "latest_file": "/workspace/hubbot_runtime/2026-09-18_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/2026-09-18_hubbot_run.json",
-  "run_completed_at_et": "2026-09-18T09:19:39-04:00",
+  "run_completed_at_et": "2026-09-18T09:21:34-04:00",
   "status": "complete",
   "new_members_found": [
     "John Rodgers"
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "John Rodgers"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/9fc7c67e-37c5-45ad-a411-367252865dfb",
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
