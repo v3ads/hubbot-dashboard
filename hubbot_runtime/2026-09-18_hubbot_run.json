@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-18T09:17:40-04:00",
-  "run_completed_at_et": "2026-09-18T09:17:42-04:00",
+  "run_completed_at_et": "2026-09-18T09:19:39-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 2 already-welcomed (skipped) since 2026-09-17",
@@ -19,23 +19,29 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Qwen3.8-Omni-Flash: cheap omni AV agents that rival Gemini 3.8 Flash",
+  "ai_news_source_url": "https://qwen.ai/blog?id=qwen3.8-omni-flash",
+  "ai_news_post_url": "https://community.hubactually.com/9fc7c67e-37c5-45ad-a411-367252865dfb",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: amber-teal sound-wave ribbons weaving through translucent video-frame panels under indigo dawn — no text, logos, charts, people, phones, or laptops",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Finish John Rodgers welcome DM then enrich with welcomes_posted + public welcome URL",
+    "Discussion: 2 zero-comment threads (Welcome Remi/Stewart/Amy; Video Prompt Architect) — no HubBot replies needed",
+    "No Saturday digest (Friday)",
+    "Hub Lead folds room report when packet lane unpaused"
+  ],
   "already_welcomed": [
     {
       "id": "3010",
@@ -59,5 +65,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
