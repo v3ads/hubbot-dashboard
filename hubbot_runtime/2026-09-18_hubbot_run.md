@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-18
 
 - **Started:** 2026-09-18T09:17:40-04:00
-- **Completed:** 2026-09-18T09:19:39-04:00
+- **Completed:** 2026-09-18T09:21:34-04:00
 - **Status:** complete
 
 ## Community Access
@@ -10,7 +10,8 @@
 ## New Members (1)
 - John Rodgers
 
-## Welcomes Posted (0)
+## Welcomes Posted (1)
+- John Rodgers
 
 ## AI-news Post
 - **Title:** Qwen3.8-Omni-Flash: cheap omni AV agents that rival Gemini 3.8 Flash
@@ -38,7 +39,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Finish John Rodgers welcome DM then enrich with welcomes_posted + public welcome URL
-- Discussion: 2 zero-comment threads (Welcome Remi/Stewart/Amy; Video Prompt Architect) — no HubBot replies needed
-- No Saturday digest (Friday)
 - Hub Lead folds room report when packet lane unpaused
+- No Saturday digest (Friday)
