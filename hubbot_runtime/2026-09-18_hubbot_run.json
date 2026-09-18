@@ -1,0 +1,63 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-09-18T09:17:40-04:00",
+  "run_completed_at_et": "2026-09-18T09:17:42-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 1 genuinely new, 2 already-welcomed (skipped) since 2026-09-17",
+  "new_members_found": [
+    {
+      "id": "12651",
+      "name": "John Rodgers",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-09-17T13:28:09.975Z",
+      "lastActivity": "2026-09-17T13:31:26.811Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "3010",
+      "name": "Remi Dairo",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-09-17T13:25:22.513Z",
+      "lastActivity": "2026-09-17T13:25:25.496Z",
+      "welcome_status": "already_welcomed_2026-09-17",
+      "skip_reason": "Already welcomed on 2026-09-17 (id=3010, name=Remi Dairo)"
+    },
+    {
+      "id": "3292",
+      "name": "Stewart Scott",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-09-17T12:31:12.808Z",
+      "lastActivity": "2026-09-17T12:33:48.664Z",
+      "welcome_status": "already_welcomed_2026-09-17",
+      "skip_reason": "Already welcomed on 2026-09-17 (id=3292, name=Stewart Scott)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "status": "in_progress"
+}
