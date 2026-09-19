@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-19T09:17:48-04:00",
-  "run_completed_at_et": "2026-09-19T09:19:22-04:00",
+  "run_completed_at_et": "2026-09-19T09:20:07-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-18",
@@ -24,15 +24,20 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Discussion: Welcome John Rodgers still at 0 comments — no HubBot reply needed unless Ayman wants a nudge",
-    "Saturday digest: send/schedule with join CTA (before 1pm ET) + toolbox + mini-course reminders",
+    "Saturday digest GetResponse message Vkoow9 scheduled 10:00 AM ET with join CTA + toolbox + mini-course",
     "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "complete"
+  "status": "complete",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "owner_alert_required": false,
+  "saturday_digest_scheduled_for_et": "2026-09-19T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-09-19/20260919T091952-0400_weekly_digest_result.json"
+  }
 }
