@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-19
 
 - **Started:** 2026-09-19T09:17:48-04:00
-- **Completed:** 2026-09-19T09:19:22-04:00
+- **Completed:** 2026-09-19T09:20:07-04:00
 - **Status:** complete
 
 ## Community Access
@@ -30,13 +30,12 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Discussion: Welcome John Rodgers still at 0 comments — no HubBot reply needed unless Ayman wants a nudge
-- Saturday digest: send/schedule with join CTA (before 1pm ET) + toolbox + mini-course reminders
+- Saturday digest GetResponse message Vkoow9 scheduled 10:00 AM ET with join CTA + toolbox + mini-course
 - Hub Lead folds room report when packet lane unpaused
