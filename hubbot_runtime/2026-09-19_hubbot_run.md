@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-19
 
 - **Started:** 2026-09-19T09:17:48-04:00
-- **Completed:** 2026-09-19T09:17:49-04:00
-- **Status:** in_progress
+- **Completed:** 2026-09-19T09:19:22-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-18
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** ChatGPT Sponsored Agents: ads that open a real sales conversation
+- **Status:** published
+- **URL:** https://community.hubactually.com/45c2c5df-4a4c-4f53-ae43-0d2c86161d54
+- **Source:** https://openai.com/index/reimagining-advertising-with-ai/
+- **Image concept:** Landscape: glowing conversation bubble feeding warm light into a boutique shop window of floating product cards — no text, logos, charts, people, phones, or laptops
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
@@ -36,3 +37,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- Discussion: Welcome John Rodgers still at 0 comments — no HubBot reply needed unless Ayman wants a nudge
+- Saturday digest: send/schedule with join CTA (before 1pm ET) + toolbox + mini-course reminders
+- Hub Lead folds room report when packet lane unpaused
