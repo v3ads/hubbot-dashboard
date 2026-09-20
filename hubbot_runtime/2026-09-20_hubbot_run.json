@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-20T09:14:10-04:00",
-  "run_completed_at_et": "2026-09-20T09:14:14-04:00",
+  "run_completed_at_et": "2026-09-20T09:16:26-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-19",
@@ -10,24 +10,29 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Google CC: a shared household AI agent with its own account and permissions",
+  "ai_news_source_url": "https://techcrunch.com/2026/09/18/googles-new-cc-is-an-ai-agent-that-helps-families-run-their-households/",
+  "ai_news_post_url": "https://community.hubactually.com/5e11f9fa-3ad8-41f2-b6f4-3d3cd18c029b",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: amber-teal orb under an isolated glass dome on a wooden table, orbited by translucent calendar cards and permission-ribbon seals — no text, logos, charts, people, phones, or laptops",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Discussion quiet — record 0 comments in enrich",
+    "No Saturday digest (Sunday)",
+    "Hub Lead folds room report when packet lane unpaused"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
