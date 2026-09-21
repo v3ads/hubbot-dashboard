@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-21T09:25:41-04:00",
-  "run_completed_at_et": "2026-09-21T09:28:09-04:00",
+  "run_completed_at_et": "2026-09-21T09:29:05-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-20",
@@ -28,11 +28,11 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Discussion review in progress for Bridge Marketing?",
     "No Saturday digest (Monday)",
-    "Hub Lead folds room report when packet lane unpaused"
+    "Hub Lead folds room report when packet lane unpaused",
+    "Leave Bridge Marketing? alone unless members engage"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Reviewed Bridge Marketing? (e233b14d): owner AYMAN SHALABY soft-promo for brdgy.com ('try free'), 0 comments. No HubBot reply — owner-authored product post, not a member support ask. Quiet otherwise.",
   "status": "complete"
 }
