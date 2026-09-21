@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-21
 
 - **Started:** 2026-09-21T09:25:41-04:00
-- **Completed:** 2026-09-21T09:28:09-04:00
+- **Completed:** 2026-09-21T09:29:05-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,6 +37,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Discussion review in progress for Bridge Marketing?
 - No Saturday digest (Monday)
 - Hub Lead folds room report when packet lane unpaused
+- Leave Bridge Marketing? alone unless members engage
