@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-23T09:22:58-04:00",
-  "run_completed_at_et": "2026-09-23T09:23:01-04:00",
+  "run_completed_at_et": "2026-09-23T09:24:50-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-22",
@@ -10,24 +10,29 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Claude Opus 5.5: frontier coding agents at ~40% less cost",
+  "ai_news_source_url": "https://www.anthropic.com/claude-opus-5-5",
+  "ai_news_post_url": "https://community.hubactually.com/8f10cc6b-8146-410f-a912-5eb76e5d5151",
+  "ai_news_publish_status": "published",
+  "image_concept": "Landscape: heavy copper invoices dissolve into one slim gold filament racing through a clear hourglass into a polished bronze capsule on a wooden workshop bench — no text, logos, charts, people, or laptops",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Bridge Marketing? (Ayman BRDGY promo) reviewed again — still 0 comments; no reply needed",
+    "No Saturday digest (Wednesday)",
+    "Hub Lead folds room report when packet lane unpaused"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
