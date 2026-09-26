@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-26
 
 - **Started:** 2026-09-26T09:00:53-04:00
-- **Completed:** 2026-09-26T09:06:31-04:00
+- **Completed:** 2026-09-26T09:06:45-04:00
 - **Status:** complete
 
 ## Community Access
@@ -35,10 +35,9 @@
 ## Blockers (0)
 
 ## Flagged Items (1)
-- {'type': 'ai_news_recovered', 'reason': 'Earlier ai_news_blocked_no_image cleared after GenerateImage succeeded on parent runner; post finalized same morning.'}
+- {'type': 'ai_news_recovered', 'reason': 'Earlier image blocker cleared; GenerateImage succeeded; finalize published same morning.'}
 
 ## Recommended Next Actions
-- Bridge Marketing? (Ayman BRDGY promo) reviewed again — still quiet; no reply needed
-- Saturday digest already scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule
-- Owner alert already sent for earlier image blocker; no second alert needed after recovery
-- Hub Lead folds room report when packet lane unpaused
+- Bridge Marketing? reviewed again — still quiet; no reply
+- Saturday digest VkM8Za scheduled 10:00 AM ET — do not reschedule
+- Owner alert already sent for earlier blocker; no second alert
