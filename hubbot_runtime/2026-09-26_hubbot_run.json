@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-26T09:00:53-04:00",
-  "run_completed_at_et": "2026-09-26T09:04:49-04:00",
+  "run_completed_at_et": "2026-09-26T09:06:31-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-25",
@@ -11,39 +11,36 @@
   "comments_added": [],
   "flagged_items": [
     {
-      "type": "ai_news_blocked_no_image",
-      "reason": "GenerateImage unavailable on this runner; pollinations fallback rejected for quality. AI-news publish blocked.",
-      "intended_title": "Amazon Selling Partner plugin: run Seller Central from Claude or Amazon Quick",
-      "intended_source_url": "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude"
+      "type": "ai_news_recovered",
+      "reason": "Earlier ai_news_blocked_no_image cleared after GenerateImage succeeded on parent runner; post finalized same morning."
     }
   ],
   "ai_news_title": "Amazon Selling Partner plugin: run Seller Central from Claude or Amazon Quick",
   "ai_news_source_url": "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude",
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "blocked: GenerateImage unavailable; fallback image rejected_for_quality",
-  "image_concept": "Small-business packing bench with cardboard mailers; translucent holographic chat pane above; luminous inventory cubes and price tags flowing into the pane; glowing approval stamp sealing one tag — amber/cyan, no text/logos",
-  "image_status": "rejected_for_quality",
+  "ai_news_post_url": "https://community.hubactually.com/6feabb12-6da0-49c5-a3aa-e22df14e5a27",
+  "ai_news_publish_status": "published",
+  "image_concept": "Dark seller desk, laptop dashboard of inventory bars and price arrows; glowing data threads to two AI orbs and a shared memory notebook — no logos, watermarks, or brand marks",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "sent",
   "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [
-    "ai_news_blocked_no_image: GenerateImage not available on this executor; pollinations fallback rejected (generic corridor + watermark, not concept-led)"
-  ],
+  "blockers": [],
   "recommended_next_actions": [
-    "AI-news blocked: regenerate concept-led cover with GenerateImage when available, then finalize Amazon Selling Partner plugin post",
-    "Bridge Marketing? reviewed again — no comment",
-    "Saturday digest scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule",
+    "Bridge Marketing? (Ayman BRDGY promo) reviewed again — still quiet; no reply needed",
+    "Saturday digest already scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule",
+    "Owner alert already sent for earlier image blocker; no second alert needed after recovery",
     "Hub Lead folds room report when packet lane unpaused"
   ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless discussion check quiet (0 member threads / 36h). Bridge Marketing? (Ayman BRDGY promo) reviewed again — still no member comments; no HubBot reply. 0 comments added. Quiet day.",
-  "status": "complete_with_blockers",
+  "status": "complete",
   "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
   "owner_alert_required": false,
   "saturday_digest_scheduled_for_et": "2026-09-26T10:00:00-04:00",
