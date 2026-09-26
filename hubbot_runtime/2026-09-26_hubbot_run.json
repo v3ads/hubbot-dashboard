@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-26T09:00:53-04:00",
-  "run_completed_at_et": "2026-09-26T09:06:31-04:00",
+  "run_completed_at_et": "2026-09-26T09:06:45-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-25",
@@ -12,7 +12,7 @@
   "flagged_items": [
     {
       "type": "ai_news_recovered",
-      "reason": "Earlier ai_news_blocked_no_image cleared after GenerateImage succeeded on parent runner; post finalized same morning."
+      "reason": "Earlier image blocker cleared; GenerateImage succeeded; finalize published same morning."
     }
   ],
   "ai_news_title": "Amazon Selling Partner plugin: run Seller Central from Claude or Amazon Quick",
@@ -33,10 +33,9 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Bridge Marketing? (Ayman BRDGY promo) reviewed again — still quiet; no reply needed",
-    "Saturday digest already scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule",
-    "Owner alert already sent for earlier image blocker; no second alert needed after recovery",
-    "Hub Lead folds room report when packet lane unpaused"
+    "Bridge Marketing? reviewed again — still quiet; no reply",
+    "Saturday digest VkM8Za scheduled 10:00 AM ET — do not reschedule",
+    "Owner alert already sent for earlier blocker; no second alert"
   ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless discussion check quiet (0 member threads / 36h). Bridge Marketing? (Ayman BRDGY promo) reviewed again — still no member comments; no HubBot reply. 0 comments added. Quiet day.",
