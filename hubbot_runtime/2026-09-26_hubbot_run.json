@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-26T09:00:53-04:00",
-  "run_completed_at_et": "2026-09-26T09:04:34-04:00",
+  "run_completed_at_et": "2026-09-26T09:04:49-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-25",
@@ -12,7 +12,7 @@
   "flagged_items": [
     {
       "type": "ai_news_blocked_no_image",
-      "reason": "GenerateImage unavailable on this runner; pollinations fallback returned a generic watermarked image rejected for quality (not concept-led). AI-news publish blocked per no-text-only rule.",
+      "reason": "GenerateImage unavailable on this runner; pollinations fallback rejected for quality. AI-news publish blocked.",
       "intended_title": "Amazon Selling Partner plugin: run Seller Central from Claude or Amazon Quick",
       "intended_source_url": "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude"
     }
@@ -29,14 +29,14 @@
     "clickable_link": "pending",
     "channel_and_author": "pending"
   },
-  "owner_alert_status": "pending_send",
+  "owner_alert_status": "sent",
   "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [
     "ai_news_blocked_no_image: GenerateImage not available on this executor; pollinations fallback rejected (generic corridor + watermark, not concept-led)"
   ],
   "recommended_next_actions": [
-    "AI-news blocked: regenerate concept-led cover with GenerateImage when available, then finalize publish for Amazon Selling Partner plugin story",
+    "AI-news blocked: regenerate concept-led cover with GenerateImage when available, then finalize Amazon Selling Partner plugin post",
     "Bridge Marketing? reviewed again — no comment",
     "Saturday digest scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule",
     "Hub Lead folds room report when packet lane unpaused"
