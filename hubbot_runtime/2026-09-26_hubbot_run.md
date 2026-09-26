@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-26
 
 - **Started:** 2026-09-26T09:00:53-04:00
-- **Completed:** 2026-09-26T09:04:49-04:00
-- **Status:** complete_with_blockers
+- **Completed:** 2026-09-26T09:06:31-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-25
@@ -13,17 +13,18 @@
 
 ## AI-news Post
 - **Title:** Amazon Selling Partner plugin: run Seller Central from Claude or Amazon Quick
-- **Status:** blocked: GenerateImage unavailable; fallback image rejected_for_quality
-- **URL:** None
+- **Status:** published
+- **URL:** https://community.hubactually.com/6feabb12-6da0-49c5-a3aa-e22df14e5a27
 - **Source:** https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude
-- **Image concept:** Small-business packing bench with cardboard mailers; translucent holographic chat pane above; luminous inventory cubes and price tags flowing into the pane; glowing approval stamp sealing one tag — amber/cyan, no text/logos
-- **Image status:** rejected_for_quality
+- **Image concept:** Dark seller desk, laptop dashboard of inventory bars and price arrows; glowing data threads to two AI orbs and a shared memory notebook — no logos, watermarks, or brand marks
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** sent
@@ -31,14 +32,13 @@
 ## Saturday Digest
 - **Status:** scheduled
 
-## Blockers (1)
-- ai_news_blocked_no_image: GenerateImage not available on this executor; pollinations fallback rejected (generic corridor + watermark, not concept-led)
+## Blockers (0)
 
 ## Flagged Items (1)
-- {'type': 'ai_news_blocked_no_image', 'reason': 'GenerateImage unavailable on this runner; pollinations fallback rejected for quality. AI-news publish blocked.', 'intended_title': 'Amazon Selling Partner plugin: run Seller Central from Claude or Amazon Quick', 'intended_source_url': 'https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude'}
+- {'type': 'ai_news_recovered', 'reason': 'Earlier ai_news_blocked_no_image cleared after GenerateImage succeeded on parent runner; post finalized same morning.'}
 
 ## Recommended Next Actions
-- AI-news blocked: regenerate concept-led cover with GenerateImage when available, then finalize Amazon Selling Partner plugin post
-- Bridge Marketing? reviewed again — no comment
-- Saturday digest scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule
+- Bridge Marketing? (Ayman BRDGY promo) reviewed again — still quiet; no reply needed
+- Saturday digest already scheduled GetResponse VkM8Za for 10:00 AM ET — do not reschedule
+- Owner alert already sent for earlier image blocker; no second alert needed after recovery
 - Hub Lead folds room report when packet lane unpaused
