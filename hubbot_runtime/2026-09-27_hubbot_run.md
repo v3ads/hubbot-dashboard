@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-27
 
 - **Started:** 2026-09-27T09:04:09-04:00
-- **Completed:** 2026-09-27T09:08:35-04:00
+- **Completed:** 2026-09-27T09:08:56-04:00
 - **Status:** complete_with_blockers
 
 ## Community Access
@@ -28,7 +28,7 @@
 - channel_and_author: pending
 
 ## Owner Alert
-- **Status:** pending_blockers_alert
+- **Status:** sent_via_gmail_vipgmail
 
 ## Saturday Digest
 - **Status:** not_saturday
