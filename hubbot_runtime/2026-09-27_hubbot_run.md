@@ -1,8 +1,8 @@
 # HubBot Run — 2026-09-27
 
 - **Started:** 2026-09-27T09:04:09-04:00
-- **Completed:** 2026-09-27T09:10:38-04:00
-- **Status:** complete
+- **Completed:** 2026-09-27T09:11:01-04:00
+- **Status:** complete_with_blockers
 
 ## Community Access
 - OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-26
@@ -19,7 +19,7 @@
 - **URL:** https://community.hubactually.com/cb42b921-42d6-4391-83f7-204a7145b5aa
 - **Source:** https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/
 - **Image concept:** Concept-led landscape cover: a luminous gemstone-like core labeled only by shape (no text) suspended above a clean workstation blueprint where small agent nodes orbit like planets — metaphor for Gemini 4 entering post-training inside an agent platform; premium editorial, small-business context, no embedded text, not an infographic, not a laptop-person cliché.
-- **Image status:** uploaded
+- **Image status:** generated_via_GenerateImage_recovered
 
 ## Pre-publish Checks
 - image_generated: pass
@@ -34,10 +34,12 @@
 ## Saturday Digest
 - **Status:** not_saturday
 
-## Blockers (0)
+## Blockers (1)
+- welcome_dm_blocked: community browser session expired (Join Group/Login). credentials_ready but scheduled run must not type password — owner desktop handoff needed for Sara Bolton DM (id 99798).
 
-## Flagged Items (1)
+## Flagged Items (2)
 - {'title': 'Bridge Marketing?', 'thread_id': 'e233b14d-bd55-4189-b1d7-2b66a1c1ac42', 'url': 'https://community.hubactually.com/e233b14d-bd55-4189-b1d7-2b66a1c1ac42', 'outcome': 'reviewed again — commentsCount=0; owner Ayman BRDGY soft-promo; no HubBot reply'}
+- {'type': 'ai_news_recovered', 'reason': 'Earlier GenerateImage blocker cleared on parent runner; finalize published same morning.'}
 
 ## Recommended Next Actions
 - Desktop handoff: log into community.hubactually.com as HubBot, DM Sara Bolton with the precomposed welcome text from 2026-09-27_welcome_plan.json (public welcome already live).
