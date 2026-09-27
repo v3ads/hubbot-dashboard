@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-27T09:04:09-04:00",
-  "run_completed_at_et": "2026-09-27T09:10:38-04:00",
+  "run_completed_at_et": "2026-09-27T09:11:01-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-26",
@@ -20,7 +20,9 @@
     {
       "member_id": "99798",
       "name": "Sara Bolton",
-      "status": "welcomed_public_only_dm_blocked"
+      "status": "welcomed_public_only_dm_blocked",
+      "public_welcome_post_url": "https://community.hubactually.com/2fd31dd2-b1e1-4733-8245-adcde7f9538b",
+      "dm_status": "blocked_session_expired_desktop_handoff"
     }
   ],
   "comments_added": [],
@@ -30,6 +32,10 @@
       "thread_id": "e233b14d-bd55-4189-b1d7-2b66a1c1ac42",
       "url": "https://community.hubactually.com/e233b14d-bd55-4189-b1d7-2b66a1c1ac42",
       "outcome": "reviewed again — commentsCount=0; owner Ayman BRDGY soft-promo; no HubBot reply"
+    },
+    {
+      "type": "ai_news_recovered",
+      "reason": "Earlier GenerateImage blocker cleared on parent runner; finalize published same morning."
     }
   ],
   "ai_news_title": "Gemini 4 enters post-training: Google eyes an early agent-ready release",
@@ -37,7 +43,7 @@
   "ai_news_post_url": "https://community.hubactually.com/cb42b921-42d6-4391-83f7-204a7145b5aa",
   "ai_news_publish_status": "published",
   "image_concept": "Concept-led landscape cover: a luminous gemstone-like core labeled only by shape (no text) suspended above a clean workstation blueprint where small agent nodes orbit like planets — metaphor for Gemini 4 entering post-training inside an agent platform; premium editorial, small-business context, no embedded text, not an infographic, not a laptop-person cliché.",
-  "image_status": "uploaded",
+  "image_status": "generated_via_GenerateImage_recovered",
   "pre_publish_checks": {
     "image_generated": "pass",
     "image_attached": "pass",
@@ -48,12 +54,14 @@
   "owner_alert_status": "sent_via_gmail_vipgmail",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
+  "blockers": [
+    "welcome_dm_blocked: community browser session expired (Join Group/Login). credentials_ready but scheduled run must not type password — owner desktop handoff needed for Sara Bolton DM (id 99798)."
+  ],
   "recommended_next_actions": [
     "Desktop handoff: log into community.hubactually.com as HubBot, DM Sara Bolton with the precomposed welcome text from 2026-09-27_welcome_plan.json (public welcome already live).",
     "Do not re-post public welcome for Sara — already at https://community.hubactually.com/2fd31dd2-b1e1-4733-8245-adcde7f9538b"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless discussion check quiet (0 member threads / 36h). Bridge Marketing? (Ayman BRDGY promo) reviewed again — commentsCount=0; no HubBot reply. 0 comments added. Quiet day.",
-  "status": "complete"
+  "discussion_review_summary": "Headless discussion check quiet (0 member threads / 36h). Bridge Marketing? reviewed again — commentsCount=0; no HubBot reply. AI-news recovered and published same morning.",
+  "status": "complete_with_blockers"
 }
