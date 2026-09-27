@@ -1,8 +1,8 @@
 {
   "latest_file": "/workspace/hubbot_runtime/2026-09-27_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/2026-09-27_hubbot_run.json",
-  "run_completed_at_et": "2026-09-27T09:10:38-04:00",
-  "status": "complete",
+  "run_completed_at_et": "2026-09-27T09:11:01-04:00",
+  "status": "complete_with_blockers",
   "new_members_found": [
     "Sara Bolton"
   ],
