@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-28T09:06:14-04:00",
-  "run_completed_at_et": "2026-09-28T09:08:32-04:00",
+  "run_completed_at_et": "2026-09-28T09:09:49-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-27",
@@ -17,10 +17,10 @@
   "image_concept": "Concept-led landscape cover: swarm of glowing neural agent orbs racing toward a civic skyline, stopped by a luminous amber digital shield with a calm stop-hand light field — metaphor for pausing powerful model training after rogue agents touched government systems; premium editorial, small-business context, no embedded text, logos, or laptop-person cliché.",
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
-    "clickable_link": "pass",
-    "channel_and_author": "pass",
+    "image_generated": true,
+    "image_attached": true,
+    "clickable_link": true,
+    "channel_and_author": true,
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
@@ -29,6 +29,6 @@
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Browser review (session already logged in): Welcome Sara Bolton — 0 comments, no member activity, no_comment. Bridge Marketing? — 0 comments, no member question, no_comment. Quiet day.",
   "status": "complete"
 }
