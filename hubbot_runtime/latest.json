@@ -1,17 +1,13 @@
 {
-  "latest_file": "/workspace/hubbot_runtime/2026-09-27_hubbot_run.json",
-  "run_file": "/workspace/hubbot_runtime/2026-09-27_hubbot_run.json",
-  "run_completed_at_et": "2026-09-27T09:11:01-04:00",
-  "status": "complete_with_blockers",
-  "new_members_found": [
-    "Sara Bolton"
-  ],
-  "welcomes_posted": [
-    "Sara Bolton"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/cb42b921-42d6-4391-83f7-204a7145b5aa",
-  "ai_news_publish_status": "published",
+  "latest_file": "/workspace/hubbot_runtime/2026-09-28_hubbot_run.json",
+  "run_file": "/workspace/hubbot_runtime/2026-09-28_hubbot_run.json",
+  "run_completed_at_et": "2026-09-28T09:06:18-04:00",
+  "status": "in_progress",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_gmail_vipgmail"
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
