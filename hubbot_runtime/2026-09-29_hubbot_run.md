@@ -1,7 +1,7 @@
 # HubBot Run — 2026-09-29
 
 - **Started:** 2026-09-29T09:07:51-04:00
-- **Completed:** 2026-09-29T09:15:14-04:00
+- **Completed:** 2026-09-29T09:15:31-04:00
 - **Status:** complete
 
 ## Community Access
@@ -28,7 +28,7 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo_new_members_at_pipeline
 
 ## Saturday Digest
 - **Status:** not_saturday
