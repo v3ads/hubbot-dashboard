@@ -1,14 +1,13 @@
 # HubBot Run — 2026-09-29
 
-- **Started:** 2026-09-29T09:07:08-04:00
-- **Completed:** 2026-09-29T09:07:12-04:00
+- **Started:** 2026-09-29T09:07:51-04:00
+- **Completed:** 2026-09-29T09:07:54-04:00
 - **Status:** in_progress
 
 ## Community Access
-- OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-28
+- OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-29
 
-## New Members (1)
-- Tommy Lakes
+## New Members (0)
 
 ## Welcomes Posted (0)
 
