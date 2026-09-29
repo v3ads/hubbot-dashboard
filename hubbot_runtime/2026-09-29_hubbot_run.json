@@ -1,21 +1,12 @@
 {
   "agent_name": "HubBot",
   "agent_version": "v3",
-  "run_started_at_et": "2026-09-29T09:07:08-04:00",
-  "run_completed_at_et": "2026-09-29T09:07:12-04:00",
+  "run_started_at_et": "2026-09-29T09:07:51-04:00",
+  "run_completed_at_et": "2026-09-29T09:07:54-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
-  "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-09-28",
-  "new_members_found": [
-    {
-      "id": "10544",
-      "name": "Tommy Lakes",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-09-28T13:39:03.465Z",
-      "lastActivity": "2026-09-28T20:53:19.430Z"
-    }
-  ],
+  "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-29",
+  "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
