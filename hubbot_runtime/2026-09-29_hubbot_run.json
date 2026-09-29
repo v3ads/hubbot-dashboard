@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-29T09:07:51-04:00",
-  "run_completed_at_et": "2026-09-29T09:15:14-04:00",
+  "run_completed_at_et": "2026-09-29T09:15:31-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-29",
@@ -11,7 +11,10 @@
     {
       "member_id": "10544",
       "name": "Tommy Lakes",
-      "status": "welcomed_dm+post"
+      "status": "welcomed_dm+post",
+      "public_url": "https://community.hubactually.com/659eb32c-9306-4d33-af0b-9287e91d4c26",
+      "dm_status": "sent",
+      "dm_thread": "https://community.hubactually.com/messages/XLuR3k7uuhbrnpmD5JOw"
     }
   ],
   "comments_added": [],
@@ -29,12 +32,12 @@
     "channel_and_author": "pass",
     "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo_new_members_at_pipeline",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Browser review (session already logged in): Ninety feet of open ground. Fifteen minutes to decide. (Ayman novel trailer) — 0 comments, no_comment. Bridge Marketing? — 0 comments, no member question, no_comment. Welcome Sara Bolton / Welcome Tommy Lakes / recent HubBot AI-news — quiet. Member comment-question sweep (last 7d HubBot posts): answered 0, alerted 0.",
   "status": "complete"
 }
