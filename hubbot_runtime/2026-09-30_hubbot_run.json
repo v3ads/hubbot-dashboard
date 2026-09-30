@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-09-30T09:04:29-04:00",
-  "run_completed_at_et": "2026-09-30T09:06:08-04:00",
+  "run_completed_at_et": "2026-09-30T09:08:50-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-09-29",
@@ -17,11 +17,12 @@
   "image_concept": "Concept-led landscape cover: warm golden Sol orb lighting a small-business workbench of floating code, docs, and workflow nodes while a cooler indigo Astra monolith stays muted behind frosted safety glass — metaphor for near-Astra capability at Sol pricing with the riskier tier held back; premium editorial, no embedded text, logos, or laptop-person cliché.",
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
+    "image_generated": true,
+    "image_attached": true,
     "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "channel_and_author": true,
+    "post_publish_verified_headless": "pass",
+    "source_link_clickable": true
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
@@ -29,6 +30,6 @@
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Browser+API review 2026-09-30: Welcome Tommy Lakes and Ninety feet of open ground — both No comments yet / Be the first to comment; quiet, no HubBot reply. Member questions last-7d on HubBot AI-news + welcomes: answered 0, alerted 0 (all commentsCount=0).",
   "status": "complete"
 }
