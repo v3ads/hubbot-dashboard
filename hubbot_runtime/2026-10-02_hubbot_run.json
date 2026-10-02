@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-02T08:59:33-04:00",
-  "run_completed_at_et": "2026-10-02T09:04:24-04:00",
+  "run_completed_at_et": "2026-10-02T09:04:43-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-01",
@@ -17,11 +17,12 @@
   "image_concept": "Concept-led landscape cover: translucent amber puzzle-piece hook locking into a violet glowing coding-agent core, with light ribbons rewriting tool paths beside a small-business desk — metaphor for Claude Code Mods that extend AI agents from inside; premium editorial, no embedded text, logos, or laptop-person cliché.",
   "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pass",
-    "image_attached": "pass",
+    "image_generated": true,
+    "image_attached": true,
     "clickable_link": "pass",
-    "channel_and_author": "pass",
-    "post_publish_verified_headless": "pass"
+    "channel_and_author": true,
+    "post_publish_verified_headless": "pass",
+    "source_link_clickable": true
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
@@ -29,6 +30,6 @@
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "Headless discussion check quiet_skip_browser (0 member threads needing attention in 36h window). Member comment-question sweep last-7d on HubBot AI-news + Welcome Tommy Lakes: answered 0, alerted 0. One non-question engagement on GPT-6.1 Sol (user_id 601 thank-you/@mention to Ayman about savvysmug + Sol pricing) — no HubBot reply required.",
   "status": "complete"
 }
