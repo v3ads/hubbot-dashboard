@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-03
 
 - **Started:** 2026-10-03T08:58:15-04:00
-- **Completed:** 2026-10-03T09:00:59-04:00
+- **Completed:** 2026-10-03T09:01:27-04:00
 - **Status:** complete
 
 ## Community Access
@@ -30,13 +30,12 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Send Saturday digest after AI-news publish
-- Enrich ledger with discussion + member-question counts
-- Post same-morning room report to Hubactually group
+- Room report to Hubactually group via parent
+- No other open blockers
