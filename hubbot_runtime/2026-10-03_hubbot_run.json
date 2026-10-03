@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-03T08:58:15-04:00",
-  "run_completed_at_et": "2026-10-03T09:00:59-04:00",
+  "run_completed_at_et": "2026-10-03T09:01:27-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-02",
@@ -24,15 +24,20 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Send Saturday digest after AI-news publish",
-    "Enrich ledger with discussion + member-question counts",
-    "Post same-morning room report to Hubactually group"
+    "Room report to Hubactually group via parent",
+    "No other open blockers"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "complete"
+  "discussion_review_summary": "Member thread flag 'How To Use Claude and Jev When Projects Drift' is Hub Bot Golden Nuggets lesson (author Hub Bot, posted ~7:40 AM ET) — 0 comments, no_comment. Member comment-question sweep last-7d on HubBot AI-news + that Nuggets post: answered 0, alerted 0. One non-question engagement on GPT-6.1 Sol (Seamus Shell thank-you/@mention to Ayman about savvysmug + Sol pricing) — already noted 10/2, no HubBot reply required.",
+  "status": "complete",
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "owner_alert_required": false,
+  "saturday_digest_scheduled_for_et": "2026-10-03T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-10-03/20261003T090113-0400_weekly_digest_result.json"
+  }
 }
