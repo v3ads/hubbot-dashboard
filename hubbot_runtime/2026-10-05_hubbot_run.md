@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-05
 
 - **Started:** 2026-10-05T09:03:42-04:00
-- **Completed:** 2026-10-05T09:07:01-04:00
+- **Completed:** 2026-10-05T09:07:34-04:00
 - **Status:** complete
 
 ## Community Access
@@ -28,7 +28,7 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** sent_via_brevo
+- **Status:** sent_via_brevo (new member) + sent_via_gmail_vipgmail (held welcome flag, msg 1a10c2d1d1650583)
 
 ## Saturday Digest
 - **Status:** not_saturday
@@ -36,10 +36,8 @@
 ## Blockers (0)
 
 ## Flagged Items (1)
-- {'type': 'welcome_held_owner_decision', 'member_id': '108798', 'member_name': 'Apple Review', 'joined_at_utc': '2026-10-05T09:06:34Z', 'reason': "Name looks like an Apple App Store review/test account, not a person. Held DM and public welcome post so the community doesn't see 'Welcome Apple Review'.", 'recommended_action': 'Ayman: confirm whether to welcome this account; HubBot will welcome it on the next run only if told to.'}
+- Welcome held for 'Apple Review' (member 108798, joined 2026-10-05 09:06 UTC): looks like an Apple App Store review/test account. Owner decision requested via vipgmail alert.
 
 ## Recommended Next Actions
-- Apple Review (member 108798) welcome held pending Ayman's call; not recorded as welcomed.
-- Nuggets lesson How To Fix Claude's Blind Spots on Systems and Data: 0 comments, no HubBot action (Nuggets owns).
-- Member questions on HubBot posts last 7d: answered 0, alerted 0.
-- No Saturday digest (Monday).
+- Ayman to confirm whether to welcome 'Apple Review' (member 108798); not recorded as welcomed.
+- AI-news published: https://community.hubactually.com/d007dd85-6020-493e-a576-e100a3b4c44a
