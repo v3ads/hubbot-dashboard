@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-05T09:03:42-04:00",
-  "run_completed_at_et": "2026-10-05T09:07:01-04:00",
+  "run_completed_at_et": "2026-10-05T09:07:34-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-10-04",
@@ -20,12 +20,10 @@
   "comments_added": [],
   "flagged_items": [
     {
+      "summary": "Welcome held for 'Apple Review' (member 108798, joined 2026-10-05 09:06 UTC): looks like an Apple App Store review/test account. Owner decision requested via vipgmail alert.",
       "type": "welcome_held_owner_decision",
       "member_id": "108798",
-      "member_name": "Apple Review",
-      "joined_at_utc": "2026-10-05T09:06:34Z",
-      "reason": "Name looks like an Apple App Store review/test account, not a person. Held DM and public welcome post so the community doesn't see 'Welcome Apple Review'.",
-      "recommended_action": "Ayman: confirm whether to welcome this account; HubBot will welcome it on the next run only if told to."
+      "member_name": "Apple Review"
     }
   ],
   "ai_news_title": "Gemini Skills start rolling out in Google Workspace today, and they're replacing Gems",
@@ -41,17 +39,15 @@
     "channel_and_author": "pass",
     "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "sent_via_brevo",
+  "owner_alert_status": "sent_via_brevo (new member) + sent_via_gmail_vipgmail (held welcome flag, msg 1a10c2d1d1650583)",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Apple Review (member 108798) welcome held pending Ayman's call; not recorded as welcomed.",
-    "Nuggets lesson How To Fix Claude's Blind Spots on Systems and Data: 0 comments, no HubBot action (Nuggets owns).",
-    "Member questions on HubBot posts last 7d: answered 0, alerted 0.",
-    "No Saturday digest (Monday)."
+    "Ayman to confirm whether to welcome 'Apple Review' (member 108798); not recorded as welcomed.",
+    "AI-news published: https://community.hubactually.com/d007dd85-6020-493e-a576-e100a3b4c44a"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Nuggets lesson How To Fix Claude's Blind Spots on Systems and Data: 0 comments, no_action (Nuggets owns). Great Community! (Isabella Jo): already thanked 10/4, no new comments. Member questions last 7d on HubBot posts (AI-news 9/28-10/4, Welcome Shereen farghal): answered 0, alerted 0. Only comment found is Seamus Shell's thank-you on GPT-6.1 Sol (not a question, Ayman already replied).",
   "status": "complete"
 }
