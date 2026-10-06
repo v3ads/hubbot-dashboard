@@ -1,15 +1,16 @@
 {
-  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-05_hubbot_run.json",
-  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-05_hubbot_run.json",
-  "run_completed_at_et": "2026-10-05T09:07:34-04:00",
-  "status": "complete",
+  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-06_hubbot_run.json",
+  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-06_hubbot_run.json",
+  "run_completed_at_et": "2026-10-06T09:07:57-04:00",
+  "status": "in_progress",
   "new_members_found": [
+    "MonicaDOT AI",
     "Apple Review"
   ],
   "welcomes_posted": [],
-  "ai_news_post_url": "https://community.hubactually.com/d007dd85-6020-493e-a576-e100a3b4c44a",
-  "ai_news_publish_status": "published",
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo (new member) + sent_via_gmail_vipgmail (held welcome flag, msg 1a10c2d1d1650583)"
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
