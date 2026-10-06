@@ -1,7 +1,7 @@
 {
   "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-06_hubbot_run.json",
   "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-06_hubbot_run.json",
-  "run_completed_at_et": "2026-10-06T09:11:06-04:00",
+  "run_completed_at_et": "2026-10-06T09:11:22-04:00",
   "status": "complete",
   "new_members_found": [
     "MonicaDOT AI",
@@ -16,5 +16,5 @@
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo"
+  "owner_alert_status": "pipeline sent_via_brevo (new_members_found: MonicaDOT AI, Apple Review, both on permanent skip list); no further alert needed"
 }
