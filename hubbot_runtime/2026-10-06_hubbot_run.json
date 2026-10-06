@@ -1,0 +1,61 @@
+{
+  "agent_name": "HubBot",
+  "agent_version": "v3",
+  "run_started_at_et": "2026-10-06T09:07:52-04:00",
+  "run_completed_at_et": "2026-10-06T09:07:57-04:00",
+  "schedule_name": "HubActually daily community admin",
+  "schedule_cron": "0 0 9 * * *",
+  "community_access_result": "OK — 20 members total, 2 genuinely new, 1 already-welcomed (skipped) since 2026-09-29",
+  "new_members_found": [
+    {
+      "id": "108914",
+      "name": "MonicaDOT AI",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-10-06T09:29:01.303Z",
+      "lastActivity": "2026-10-06T09:53:46.374Z"
+    },
+    {
+      "id": "108798",
+      "name": "Apple Review",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-10-05T09:06:34.133Z",
+      "lastActivity": "2026-10-05T21:52:13.846Z"
+    }
+  ],
+  "welcomes_posted": [],
+  "comments_added": [],
+  "flagged_items": [],
+  "ai_news_title": null,
+  "ai_news_source_url": null,
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "image_concept": null,
+  "image_status": "pending",
+  "pre_publish_checks": {
+    "image_generated": "pending",
+    "image_attached": "pending",
+    "clickable_link": "pending",
+    "channel_and_author": "pending"
+  },
+  "owner_alert_status": "not_required",
+  "saturday_digest_status": "not_saturday",
+  "dashboard_update_status": "pending",
+  "blockers": [],
+  "recommended_next_actions": [],
+  "already_welcomed": [
+    {
+      "id": "108651",
+      "name": "Shereen farghal",
+      "role": "member",
+      "approved": true,
+      "timestamp": "2026-10-03T21:54:17.029Z",
+      "lastActivity": "2026-10-03T21:54:21.425Z",
+      "welcome_status": "already_welcomed_2026-10-04",
+      "skip_reason": "Already welcomed on 2026-10-04 (id=108651, name=Shereen farghal)"
+    }
+  ],
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "status": "in_progress"
+}
