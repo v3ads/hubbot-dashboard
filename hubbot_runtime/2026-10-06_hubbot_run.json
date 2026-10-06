@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-06T09:07:52-04:00",
-  "run_completed_at_et": "2026-10-06T09:11:06-04:00",
+  "run_completed_at_et": "2026-10-06T09:11:22-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 1 already-welcomed (skipped) since 2026-09-29",
@@ -56,14 +56,13 @@
     "channel_and_author": "pass",
     "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "sent_via_brevo",
+  "owner_alert_status": "pipeline sent_via_brevo (new_members_found: MonicaDOT AI, Apple Review, both on permanent skip list); no further alert needed",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "No welcomes today: both new joins (MonicaDOT AI, Apple Review) are on the permanent skip list.",
-    "Member questions on HubBot posts last 7d: answered 0, alerted 0.",
-    "No Saturday digest (Tuesday)."
+    "AI-news published: https://community.hubactually.com/a6706a3c-a04d-429d-a6a7-f20bc2632372",
+    "Box migration note: pipeline hardcodes /home/ubuntu paths; created /home/ubuntu/{hubactually_hubbot_run_ledger,hubbot-dashboard} owned by box so the run could proceed."
   ],
   "already_welcomed": [
     {
@@ -77,6 +76,6 @@
       "skip_reason": "Already welcomed on 2026-10-04 (id=108651, name=Shereen farghal)"
     }
   ],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "Headless check quiet (0 member threads in 36h). Member questions last 7d on HubBot posts (AI-news 9/29-10/5, Welcome Shereen farghal, Great Community! thank-you thread): answered 0, alerted 0. Only member comment in window is Seamus Shell's thank-you on GPT-6.1 Sol (not a question, Ayman already replied). Nuggets lesson How To Fix Claude's Blind Spots: 0 comments, no action (Nuggets owns).",
   "status": "complete"
 }
