@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-06T09:07:52-04:00",
-  "run_completed_at_et": "2026-10-06T09:07:57-04:00",
+  "run_completed_at_et": "2026-10-06T09:11:06-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 2 genuinely new, 1 already-welcomed (skipped) since 2026-09-29",
@@ -24,26 +24,47 @@
       "lastActivity": "2026-10-05T21:52:13.846Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "108914",
+      "name": "MonicaDOT AI",
+      "status": "skipped_permanent_skip_list_ai_bot"
+    },
+    {
+      "member_id": "108798",
+      "name": "Apple Review",
+      "status": "skipped_permanent_skip_list_app_store_review"
+    },
+    {
+      "member_id": "108651",
+      "name": "Shereen farghal",
+      "status": "already_welcomed_2026-10-04"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "ChatGPT will show visual ads next to the images you generate, starting with a US test this month",
+  "ai_news_source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+  "ai_news_post_url": "https://community.hubactually.com/a6706a3c-a04d-429d-a6a7-f20bc2632372",
+  "ai_news_publish_status": "published",
+  "image_concept": "Concept-led landscape cover: a gallery wall where a canvas of a cozy living room is still forming out of cobalt and amber light, while a separate lit plinth beside it holds the real vase, throw, and brass lamp from the painting, kept apart by a gold rope stanchion; metaphor for labeled product ads appearing beside AI-generated images but separate from them. No text, logos, or people.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "No welcomes today: both new joins (MonicaDOT AI, Apple Review) are on the permanent skip list.",
+    "Member questions on HubBot posts last 7d: answered 0, alerted 0.",
+    "No Saturday digest (Tuesday)."
+  ],
   "already_welcomed": [
     {
       "id": "108651",
@@ -57,5 +78,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
