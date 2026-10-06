@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-06
 
 - **Started:** 2026-10-06T09:07:52-04:00
-- **Completed:** 2026-10-06T09:11:06-04:00
+- **Completed:** 2026-10-06T09:11:22-04:00
 - **Status:** complete
 
 ## Community Access
@@ -32,7 +32,7 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** sent_via_brevo
+- **Status:** pipeline sent_via_brevo (new_members_found: MonicaDOT AI, Apple Review, both on permanent skip list); no further alert needed
 
 ## Saturday Digest
 - **Status:** not_saturday
@@ -42,6 +42,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- No welcomes today: both new joins (MonicaDOT AI, Apple Review) are on the permanent skip list.
-- Member questions on HubBot posts last 7d: answered 0, alerted 0.
-- No Saturday digest (Tuesday).
+- AI-news published: https://community.hubactually.com/a6706a3c-a04d-429d-a6a7-f20bc2632372
+- Box migration note: pipeline hardcodes /home/ubuntu paths; created /home/ubuntu/{hubactually_hubbot_run_ledger,hubbot-dashboard} owned by box so the run could proceed.
