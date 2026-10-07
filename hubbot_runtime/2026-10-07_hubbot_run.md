@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-07
 
 - **Started:** 2026-10-07T09:07:54-04:00
-- **Completed:** 2026-10-07T09:10:38-04:00
+- **Completed:** 2026-10-07T09:10:50-04:00
 - **Status:** complete
 
 ## Community Access
@@ -38,6 +38,5 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- No welcomes today: 0 genuinely new members; MonicaDOT AI is on the permanent skip list.
-- Member questions on HubBot posts last 7d: answered 0, alerted 0.
-- No Saturday digest (Wednesday).
+- AI-news published: https://community.hubactually.com/76f9da9b-0526-4a83-b667-1d2e541d6da3
+- Path migration: run used /workspace/hubbot_runtime/ledger successfully; temporary /home/ubuntu rollback dirs can now be cleaned up.
