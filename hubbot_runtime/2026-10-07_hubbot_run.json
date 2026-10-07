@@ -2,31 +2,42 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-07T09:07:54-04:00",
-  "run_completed_at_et": "2026-10-07T09:07:56-04:00",
+  "run_completed_at_et": "2026-10-07T09:10:38-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 1 already-welcomed (skipped) since 2026-10-06",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "108914",
+      "name": "MonicaDOT AI",
+      "status": "skipped_permanent_skip_list_ai_bot"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Amex's free playbook for agentic commerce: getting your business ready for AI agents that shop for customers",
+  "ai_news_source_url": "https://www.americanexpress.com/en-us/newsroom/articles/amex-for-business/agentic-commerce-business-playbook.html",
+  "ai_news_post_url": "https://community.hubactually.com/76f9da9b-0526-4a83-b667-1d2e541d6da3",
+  "ai_news_publish_status": "published",
+  "image_concept": "Concept-led landscape cover: a dusk main street of independent shops where a glowing cobalt orb (the AI shopping agent) trailing a ribbon of light casts a single amber beam onto the one well-lit, open florist doorway while neighboring shops stay dim; metaphor for AI agents narrowing choices to the business that is easy to find and trust. No text, logos, or people.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "No welcomes today: 0 genuinely new members; MonicaDOT AI is on the permanent skip list.",
+    "Member questions on HubBot posts last 7d: answered 0, alerted 0.",
+    "No Saturday digest (Wednesday)."
+  ],
   "already_welcomed": [
     {
       "id": "108914",
@@ -40,5 +51,5 @@
     }
   ],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
