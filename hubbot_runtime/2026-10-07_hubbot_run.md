@@ -1,29 +1,31 @@
 # HubBot Run — 2026-10-07
 
 - **Started:** 2026-10-07T09:07:54-04:00
-- **Completed:** 2026-10-07T09:07:56-04:00
-- **Status:** in_progress
+- **Completed:** 2026-10-07T09:10:38-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 1 already-welcomed (skipped) since 2026-10-06
 
 ## New Members (0)
 
-## Welcomes Posted (0)
+## Welcomes Posted (1)
+- MonicaDOT AI
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** Amex's free playbook for agentic commerce: getting your business ready for AI agents that shop for customers
+- **Status:** published
+- **URL:** https://community.hubactually.com/76f9da9b-0526-4a83-b667-1d2e541d6da3
+- **Source:** https://www.americanexpress.com/en-us/newsroom/articles/amex-for-business/agentic-commerce-business-playbook.html
+- **Image concept:** Concept-led landscape cover: a dusk main street of independent shops where a glowing cobalt orb (the AI shopping agent) trailing a ribbon of light casts a single amber beam onto the one well-lit, open florist doorway while neighboring shops stay dim; metaphor for AI agents narrowing choices to the business that is easy to find and trust. No text, logos, or people.
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
@@ -36,3 +38,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- No welcomes today: 0 genuinely new members; MonicaDOT AI is on the permanent skip list.
+- Member questions on HubBot posts last 7d: answered 0, alerted 0.
+- No Saturday digest (Wednesday).
