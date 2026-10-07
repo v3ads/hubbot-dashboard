@@ -1,20 +1,13 @@
 {
-  "latest_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-06_hubbot_run.json",
-  "run_file": "/home/ubuntu/hubactually_hubbot_run_ledger/2026-10-06_hubbot_run.json",
-  "run_completed_at_et": "2026-10-06T09:11:22-04:00",
-  "status": "complete",
-  "new_members_found": [
-    "MonicaDOT AI",
-    "Apple Review"
-  ],
-  "welcomes_posted": [
-    "MonicaDOT AI",
-    "Apple Review",
-    "Shereen farghal"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/a6706a3c-a04d-429d-a6a7-f20bc2632372",
-  "ai_news_publish_status": "published",
+  "latest_file": "/workspace/hubbot_runtime/ledger/2026-10-07_hubbot_run.json",
+  "run_file": "/workspace/hubbot_runtime/ledger/2026-10-07_hubbot_run.json",
+  "run_completed_at_et": "2026-10-07T09:07:56-04:00",
+  "status": "in_progress",
+  "new_members_found": [],
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "pipeline sent_via_brevo (new_members_found: MonicaDOT AI, Apple Review, both on permanent skip list); no further alert needed"
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
