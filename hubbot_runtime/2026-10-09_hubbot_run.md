@@ -1,8 +1,8 @@
 # HubBot Run — 2026-10-09
 
 - **Started:** 2026-10-09T09:24:35-04:00
-- **Completed:** 2026-10-09T09:24:38-04:00
-- **Status:** in_progress
+- **Completed:** 2026-10-09T09:26:33-04:00
+- **Status:** complete
 
 ## Community Access
 - OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-08
@@ -12,18 +12,19 @@
 ## Welcomes Posted (0)
 
 ## AI-news Post
-- **Title:** None
-- **Status:** pending
-- **URL:** None
-- **Source:** None
-- **Image concept:** None
-- **Image status:** pending
+- **Title:** Synthesia's Syren turns one sentence into a finished video
+- **Status:** published
+- **URL:** https://community.hubactually.com/dc5f82f6-e4bc-4c96-9c50-223a2b7aae72
+- **Source:** https://www.synthesia.io/post/syren-studio
+- **Image concept:** Concept-led tabletop scene: a handwritten paper note on a maker's workbench unspools into a film reel and a strip of glowing frames that flows into a small retro screen with music notes and a microphone floating nearby; metaphor for one sentence becoming a finished video with voiceover and music. Warm daylight, mint and coral palette, no text, logos, or people.
+- **Image status:** uploaded
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
 - **Status:** not_required
@@ -36,3 +37,6 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- No welcomes today: 0 genuinely new members since 2026-10-08 09:08 ET.
+- Member questions on HubBot posts last 7d: answered 0, alerted 0 (all 6 HubBot posts have 0 comments).
+- No Saturday digest (Friday).
