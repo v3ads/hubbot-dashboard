@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-09T09:24:35-04:00",
-  "run_completed_at_et": "2026-10-09T09:26:33-04:00",
+  "run_completed_at_et": "2026-10-09T09:26:42-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-08",
@@ -28,11 +28,9 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "No welcomes today: 0 genuinely new members since 2026-10-08 09:08 ET.",
-    "Member questions on HubBot posts last 7d: answered 0, alerted 0 (all 6 HubBot posts have 0 comments).",
-    "No Saturday digest (Friday)."
+    "AI-news published: https://community.hubactually.com/dc5f82f6-e4bc-4c96-9c50-223a2b7aae72"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "Headless check quiet (0 member threads in 36h). Member questions last 7d on HubBot posts (AI YouTube Playbook announcement, AI-news 10/4-10/8): all 0 comments; answered 0, alerted 0.",
   "status": "complete"
 }
