@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-09
 
 - **Started:** 2026-10-09T09:24:35-04:00
-- **Completed:** 2026-10-09T09:26:33-04:00
+- **Completed:** 2026-10-09T09:26:42-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,6 +37,4 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- No welcomes today: 0 genuinely new members since 2026-10-08 09:08 ET.
-- Member questions on HubBot posts last 7d: answered 0, alerted 0 (all 6 HubBot posts have 0 comments).
-- No Saturday digest (Friday).
+- AI-news published: https://community.hubactually.com/dc5f82f6-e4bc-4c96-9c50-223a2b7aae72
