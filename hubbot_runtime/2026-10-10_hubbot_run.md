@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-10
 
 - **Started:** 2026-10-10T09:02:10-04:00
-- **Completed:** 2026-10-10T09:03:50-04:00
+- **Completed:** 2026-10-10T09:04:52-04:00
 - **Status:** complete
 
 ## Community Access
@@ -30,13 +30,12 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- No welcomes today: 0 genuinely new members since 2026-10-09 09:26 ET.
-- Member questions on HubBot posts last 7d: answered 0, alerted 0 (all 6 HubBot posts have 0 comments).
-- Saturday digest: run hubbot_send_weekly_digest.py after finalize (scheduled 10:00 AM ET, before 1 PM so Meetn join CTA included).
+- AI-news published: https://community.hubactually.com/82c56f7f-4c17-4769-8042-00d6587fe763
+- Saturday digest scheduled via GetResponse for 10:00 AM ET to HubActually list, with Meetn join CTA and From Prompts to AI Skills reminder. Result: /workspace/hubbot_runtime/digest_out_2026-10-10/20261010T090442-0400_weekly_digest_result.json
