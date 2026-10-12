@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-12T09:19:30-04:00",
-  "run_completed_at_et": "2026-10-12T09:21:00-04:00",
+  "run_completed_at_et": "2026-10-12T09:21:10-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-11",
@@ -28,10 +28,9 @@
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "No welcomes today: 0 genuinely new members since 2026-10-11 09:10 ET.",
-    "Discussion check: only member-window thread is the Golden Nuggets lesson post '5 New Ways To Expand Claude' (0 comments); nothing to answer."
+    "AI-news published: https://community.hubactually.com/230528a4-314f-4f87-827b-bba3959c78e5"
   ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Headless check: 1 member-window thread, the Golden Nuggets lesson post '5 New Ways To Expand Claude' (published by Hub Ops 10 Oct, 0 comments). Nothing to answer, no browser review needed.",
   "status": "complete"
 }
