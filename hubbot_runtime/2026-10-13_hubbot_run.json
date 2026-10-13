@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-13T09:12:50-04:00",
-  "run_completed_at_et": "2026-10-13T09:12:52-04:00",
+  "run_completed_at_et": "2026-10-13T09:14:19-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-12",
@@ -10,24 +10,28 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Meta's new Muse Wonder models are built to remember you and finish real tasks, not just chat",
+  "ai_news_source_url": "https://research.meta.ai/blog/muse-wonder",
+  "ai_news_post_url": "https://community.hubactually.com/3aaa46f2-e5d7-412b-9848-3f0f1f04d270",
+  "ai_news_publish_status": "published",
+  "image_concept": "Concept-led desk scene: a glowing box of index cards (remembered preferences) sends one unbroken coral thread across the desk linking three finished tasks, a trail map with a running route, a round seating-chart plan with place cards, and a sketchbook t-shirt design beside a clipped photo; metaphor for an AI agent with memory that keeps working until each task is done. Warm daylight, mint, coral, cream and navy palette, no text, logos, or people.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "No welcomes today: 0 genuinely new members since 2026-10-12 09:21 ET.",
+    "Discussion check: quiet, 0 member threads in the 36-hour window; nothing to answer."
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
