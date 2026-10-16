@@ -2,32 +2,42 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-16T09:06:37-04:00",
-  "run_completed_at_et": "2026-10-16T09:06:41-04:00",
+  "run_completed_at_et": "2026-10-16T09:11:23-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-15",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "type": "discussion_attention",
+      "title": "For agency owners running unlimited hubs: your bottleneck isn't projects — it's everything before and around the build",
+      "url": "https://community.hubactually.com/bd78e9b4-3836-499f-acab-a857412eed17",
+      "note": "Owner GeniPath post from 15 Oct with 0 comments in 36h window; no HubBot reply added."
+    }
+  ],
+  "ai_news_title": "Figma Specs and Code Layers let AI agents follow your design system while you build on the canvas",
+  "ai_news_source_url": "https://www.figma.com/blog/build-by-design/",
+  "ai_news_post_url": "https://community.hubactually.com/1f4cc469-3c39-4bdb-b76a-f0ecdcfed8a4",
+  "ai_news_publish_status": "published",
+  "image_concept": "A wide landscape showing a floating translucent blueprint canvas where abstract geometric building blocks and soft glowing pathways snap into place like a living design system, suggesting humans and agents co-building without logos or text. Premium editorial cover, cream-and-slate dawn light, indigo and amber accents, no embedded text, not an infographic, no logos, no people.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Optional owner follow-up on GeniPath post engagement if desired"
+  ],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete"
 }
