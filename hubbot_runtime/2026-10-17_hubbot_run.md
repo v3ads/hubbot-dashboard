@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-17
 
 - **Started:** 2026-10-17T09:05:16-04:00
-- **Completed:** 2026-10-17T09:08:30-04:00
+- **Completed:** 2026-10-17T09:10:19-04:00
 - **Status:** complete
 
 ## Community Access
@@ -30,11 +30,13 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (1)
-- {'type': 'discussion_attention', 'title': 'Filo is sick...', 'url': 'https://community.hubactually.com/8daf08b5-5842-4ed4-8ad5-72a30251c97e', 'note': "Owner post from 16 Oct cancelling today's live meeting (Filo vet appointment); 0 comments. Owner announcement, no HubBot reply added."}
+- {'type': 'discussion_attention', 'title': 'Filo is sick...', 'url': 'https://community.hubactually.com/8daf08b5-5842-4ed4-8ad5-72a30251c97e', 'note': "Owner post from 16 Oct cancelling today's live meeting; 0 comments. Owner announcement, no HubBot reply added."}
 
 ## Recommended Next Actions
+- AI-news published: https://community.hubactually.com/910980ae-8390-4c6b-83d5-cd9519bdd111
+- Saturday digest scheduled via GetResponse (newsletter VkITKH) for 10:00 AM ET to the HubActually list from ayman@hubactually.com. No Meetn CTA (live meeting cancelled today), 'no live meeting this Saturday' notice and From Prompts to AI Skills reminder included. Result: /workspace/hubbot_runtime/digest_out_2026-10-17/20261017T090954-0400_weekly_digest_result.json
