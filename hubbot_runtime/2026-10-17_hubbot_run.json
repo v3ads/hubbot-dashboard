@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-17T09:05:16-04:00",
-  "run_completed_at_et": "2026-10-17T09:08:30-04:00",
+  "run_completed_at_et": "2026-10-17T09:10:19-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-16",
@@ -14,7 +14,7 @@
       "type": "discussion_attention",
       "title": "Filo is sick...",
       "url": "https://community.hubactually.com/8daf08b5-5842-4ed4-8ad5-72a30251c97e",
-      "note": "Owner post from 16 Oct cancelling today's live meeting (Filo vet appointment); 0 comments. Owner announcement, no HubBot reply added."
+      "note": "Owner post from 16 Oct cancelling today's live meeting; 0 comments. Owner announcement, no HubBot reply added."
     }
   ],
   "ai_news_title": "Wix's Symphony AI agents can now pay your bills and reorder stock, with you approving every purchase",
@@ -31,13 +31,21 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "AI-news published: https://community.hubactually.com/910980ae-8390-4c6b-83d5-cd9519bdd111",
+    "Saturday digest scheduled via GetResponse (newsletter VkITKH) for 10:00 AM ET to the HubActually list from ayman@hubactually.com. No Meetn CTA (live meeting cancelled today), 'no live meeting this Saturday' notice and From Prompts to AI Skills reminder included. Result: /workspace/hubbot_runtime/digest_out_2026-10-17/20261017T090954-0400_weekly_digest_result.json"
+  ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Headless check found 1 thread in the 36h window: Ayman's own 'Filo is sick...' post cancelling today's live meeting (0 comments). Owner announcement, so no browser review or HubBot reply.",
   "status": "complete",
   "image_source": "generate_image",
-  "owner_alert_required": false
+  "owner_alert_required": false,
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "saturday_digest_scheduled_for_et": "2026-10-17T10:00:00-04:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-10-17/20261017T090954-0400_weekly_digest_result.json"
+  }
 }
