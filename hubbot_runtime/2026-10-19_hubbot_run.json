@@ -2,32 +2,54 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-19T09:09:59-04:00",
-  "run_completed_at_et": "2026-10-19T09:10:02-04:00",
+  "run_completed_at_et": "2026-10-19T09:11:41-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-18",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "type": "discussion_attention",
+      "title": "Welcome Betty J",
+      "url": "https://community.hubactually.com/c084bf5b-f1ba-41de-9e14-31eb5fac0a36",
+      "note": "HubBot welcome post from 18 Oct; 0 comments. No reply needed."
+    },
+    {
+      "type": "discussion_attention",
+      "title": "The HubActually app is now on Google Play (Android)",
+      "url": "https://community.hubactually.com/a704ba72-9187-4928-9648-bab6e378cd66",
+      "note": "Owner-approved announcement from 18 Oct; 0 comments. No HubBot reply needed."
+    },
+    {
+      "type": "discussion_attention",
+      "title": "AI-Native Services: Sell Finished Work, Not Hours",
+      "url": "https://community.hubactually.com/ddb5988a-d94c-4cc5-ac08-cf1db18e18b2",
+      "note": "Golden Nuggets lesson 6 post from 18 Oct; 0 comments. No HubBot reply needed."
+    }
+  ],
+  "ai_news_title": "Notion 3.8 turns your workspace into shared memory for every AI agent you use",
+  "ai_news_source_url": "https://www.notion.com/releases/2026-10-13",
+  "ai_news_post_url": "https://community.hubactually.com/8ccb4aff-258d-4c46-bb43-02654701873f",
+  "ai_news_publish_status": "published",
+  "image_concept": "Scattered, disconnected glowing agent orbs on the left flow along luminous lines into one calm stacked hub of pages and database tiles on the right; many agents sharing one organized memory. Abstract, no text, no logos, no people.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete",
+  "image_source": "generate_image",
+  "owner_alert_required": false
 }
