@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-23T09:00:28-04:00",
-  "run_completed_at_et": "2026-10-23T09:01:24-04:00",
+  "run_completed_at_et": "2026-10-23T09:01:35-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-22",
@@ -27,9 +27,11 @@
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "AI-news published: https://community.hubactually.com/32c22189-ed6d-443c-a950-8b1bba676359"
+  ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "No new members. Headless check flagged one thread in the 36h window: the approved Muse invite post (e800e896, posted 7:04 AM ET today with Ayman's approval), 0 comments, nothing needing a reply, so no browser review.",
   "status": "complete",
   "image_source": "generate_image",
   "image_path": "/workspace/hubbot_runtime/images/2026-10-23_ai_news_canva_craft.jpg",
