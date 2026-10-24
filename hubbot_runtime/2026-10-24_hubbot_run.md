@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-24
 
 - **Started:** 2026-10-24T09:06:36-04:00
-- **Completed:** 2026-10-24T09:07:51-04:00
+- **Completed:** 2026-10-24T09:09:18-04:00
 - **Status:** complete
 
 ## Community Access
@@ -30,10 +30,13 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (1)
+- {'type': 'discussion_attention', 'title': 'My AI Teammate Fixed a Broken Script Before I Finished My Coffee', 'url': 'https://community.hubactually.com/e800e896-4fae-4c75-aac1-9b6ffce3f5a1', 'note': "Ayman's own Muse invite post from 23 Oct; 0 comments. Owner announcement, no HubBot reply added."}
 
 ## Recommended Next Actions
+- AI-news published: https://community.hubactually.com/691f4900-6ced-486f-97ee-dbfbe6cc7b48
+- Saturday digest scheduled via GetResponse (newsletter Vk3bL3) for 10:00 AM ET to the HubActually list from ayman@hubactually.com, with the Meetn join CTA and From Prompts to AI Skills reminder. Result: /workspace/hubbot_runtime/digest_out_2026-10-24/20261024T090902-0400_weekly_digest_result.json
