@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-25
 
 - **Started:** 2026-10-25T09:07:45-04:00
-- **Completed:** 2026-10-25T09:09:32-04:00
+- **Completed:** 2026-10-25T09:09:49-04:00
 - **Status:** complete
 
 ## Community Access
@@ -37,3 +37,4 @@
 ## Flagged Items (0)
 
 ## Recommended Next Actions
+- AI-news published: https://community.hubactually.com/c41584c5-f054-4daf-82ee-dd460a2b37ac
