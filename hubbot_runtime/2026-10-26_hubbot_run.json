@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-26T09:14:56-04:00",
-  "run_completed_at_et": "2026-10-26T09:16:06-04:00",
+  "run_completed_at_et": "2026-10-26T09:16:18-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 20 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-25",
@@ -27,9 +27,11 @@
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "AI-news published: https://community.hubactually.com/ff7eadc6-13ce-4895-a8c8-01b3de2c5bd6"
+  ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "0 comments, quiet day. Headless check found no member threads in the 36h window, so no browser feed review.",
   "status": "complete",
   "image_source": "generate_image",
   "owner_alert_required": false
