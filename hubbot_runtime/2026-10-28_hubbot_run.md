@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-28
 
 - **Started:** 2026-10-28T09:12:30-04:00
-- **Completed:** 2026-10-28T09:14:59-04:00
+- **Completed:** 2026-10-28T09:16:09-04:00
 - **Status:** complete
 
 ## Community Access
@@ -10,7 +10,8 @@
 ## New Members (1)
 - Sadia Drame
 
-## Welcomes Posted (0)
+## Welcomes Posted (1)
+- Sadia Drame
 
 ## AI-news Post
 - **Title:** Google's Gemini 4 Argon is built to turn months of messy work into one finished deliverable
@@ -28,13 +29,16 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** sent_via_brevo
+- **Status:** new_members_alert_sent_via_brevo_by_pipeline
 
 ## Saturday Digest
 - **Status:** not_saturday
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (1)
+- Box browser HubBot session expired; welcome DM to Sadia Drame (1075) not sent yet. Public welcome post https://community.hubactually.com/aa127502-27f1-4951-b507-2c29893eb9f8 is live.
 
 ## Recommended Next Actions
+- AI-news published: https://community.hubactually.com/8d4ca365-3ecb-40cf-aca5-8bb0fc28d286
+- Re-login HubBot in the box browser and send the pending welcome DM to Sadia Drame
