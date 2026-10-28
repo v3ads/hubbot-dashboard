@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-28T09:12:30-04:00",
-  "run_completed_at_et": "2026-10-28T09:14:59-04:00",
+  "run_completed_at_et": "2026-10-28T09:16:09-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 135 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-10-27",
@@ -16,9 +16,19 @@
       "lastActivity": "2026-10-28T12:04:45.317Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "1075",
+      "name": "Sadia Drame",
+      "status": "public_post_done_dm_pending_browser_login"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "summary": "Box browser HubBot session expired; welcome DM to Sadia Drame (1075) not sent yet. Public welcome post https://community.hubactually.com/aa127502-27f1-4951-b507-2c29893eb9f8 is live."
+    }
+  ],
   "ai_news_title": "Google's Gemini 4 Argon is built to turn months of messy work into one finished deliverable",
   "ai_news_source_url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/",
   "ai_news_post_url": "https://community.hubactually.com/8d4ca365-3ecb-40cf-aca5-8bb0fc28d286",
@@ -32,13 +42,16 @@
     "channel_and_author": "pass",
     "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "sent_via_brevo",
+  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "AI-news published: https://community.hubactually.com/8d4ca365-3ecb-40cf-aca5-8bb0fc28d286",
+    "Re-login HubBot in the box browser and send the pending welcome DM to Sadia Drame"
+  ],
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 0 needing attention — verdict: skim_feed_only",
+  "discussion_review_summary": "1 thread in the 36h window: Ayman's GenLocalSite launch announcement (41767e6e-79b5-47a4-afd4-b3de7eba99bd), 1 comment, needs_attention false. Browser skim not possible (session expired); headless check shows nothing needing a reply.",
   "status": "complete",
   "image_source": "generate_image",
   "image_path": "/workspace/hubbot_runtime/images/2026-10-28_ai_news_gemini4_argon.jpg",
