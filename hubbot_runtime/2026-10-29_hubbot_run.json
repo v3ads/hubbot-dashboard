@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-29T09:01:42-04:00",
-  "run_completed_at_et": "2026-10-29T09:01:55-04:00",
+  "run_completed_at_et": "2026-10-29T09:04:29-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 138 members total, 3 genuinely new, 0 already-welcomed (skipped) since 2026-10-28",
@@ -32,24 +32,41 @@
       "lastActivity": "2026-10-29T00:53:31.832Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "320",
+      "name": "Joseph S",
+      "status": "public_post_done"
+    },
+    {
+      "member_id": "13909",
+      "name": "Armando M.",
+      "status": "public_post_done"
+    },
+    {
+      "member_id": "774",
+      "name": "Danny",
+      "status": "public_post_done"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Canva just launched Craft, its own AI image model that plans the layout before it draws",
+  "ai_news_source_url": "https://www.canva.com/newsroom/news/canva-craft/",
+  "ai_news_post_url": "https://community.hubactually.com/3af3d091-4139-4319-9d69-3932a5acfb4d",
+  "ai_news_publish_status": "published",
+  "image_concept": "Rough blueprint sketch of a layout on graph paper on the left, a planning gear and rendering prism in the center, and the finished design as floating editable layers on the right. Navy, teal and coral flat vector, no text, no logos, no people.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "member_review_dualrun": {
@@ -62,5 +79,10 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete",
+  "image_source": "generate_image",
+  "image_path": "/workspace/hubbot_runtime/images/2026-10-29_ai_news_canva_craft.jpg",
+  "image_sha256": "136f2be7c74dbc8bacb52ef1c369f253807ed4c9976a827a860bd0bcfb1ee093",
+  "image_distinct_check": "pass",
+  "owner_alert_required": false
 }
