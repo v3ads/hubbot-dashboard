@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-29
 
 - **Started:** 2026-10-29T09:01:42-04:00
-- **Completed:** 2026-10-29T09:04:29-04:00
+- **Completed:** 2026-10-29T09:06:27-04:00
 - **Status:** complete
 
 ## Community Access
@@ -12,10 +12,11 @@
 - Armando M.
 - Danny
 
-## Welcomes Posted (3)
+## Welcomes Posted (4)
 - Joseph S
 - Armando M.
 - Danny
+- Sadia Drame
 
 ## AI-news Post
 - **Title:** Canva just launched Craft, its own AI image model that plans the layout before it draws
@@ -33,13 +34,16 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** sent_via_brevo
+- **Status:** new_members_alert_sent_via_brevo_by_pipeline
 
 ## Saturday Digest
 - **Status:** not_saturday
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (1)
+- Danny's welcome DM showed 'Sending…' in the last screenshot ~2.5s after send; not re-checked.
 
 ## Recommended Next Actions
+- AI-news published: https://community.hubactually.com/3af3d091-4139-4319-9d69-3932a5acfb4d
+- Public welcome post: https://community.hubactually.com/cef45f2d-5615-4aad-86d1-f84e8a88ef24
