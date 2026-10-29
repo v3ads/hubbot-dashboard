@@ -1,17 +1,17 @@
 {
-  "latest_file": "/workspace/hubbot_runtime/ledger/2026-10-28_hubbot_run.json",
-  "run_file": "/workspace/hubbot_runtime/ledger/2026-10-28_hubbot_run.json",
-  "run_completed_at_et": "2026-10-28T09:16:09-04:00",
-  "status": "complete",
+  "latest_file": "/workspace/hubbot_runtime/ledger/2026-10-29_hubbot_run.json",
+  "run_file": "/workspace/hubbot_runtime/ledger/2026-10-29_hubbot_run.json",
+  "run_completed_at_et": "2026-10-29T09:01:55-04:00",
+  "status": "in_progress",
   "new_members_found": [
-    "Sadia Drame"
+    "Joseph S",
+    "Armando M.",
+    "Danny"
   ],
-  "welcomes_posted": [
-    "Sadia Drame"
-  ],
-  "ai_news_post_url": "https://community.hubactually.com/8d4ca365-3ecb-40cf-aca5-8bb0fc28d286",
-  "ai_news_publish_status": "published",
+  "welcomes_posted": [],
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline"
+  "dashboard_update_status": "pending",
+  "owner_alert_status": "not_required"
 }
