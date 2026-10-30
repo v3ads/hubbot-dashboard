@@ -1,21 +1,12 @@
 {
   "agent_name": "HubBot",
   "agent_version": "v3",
-  "run_started_at_et": "2026-10-30T09:04:35-04:00",
-  "run_completed_at_et": "2026-10-30T09:04:44-04:00",
+  "run_started_at_et": "2026-10-30T09:05:49-04:00",
+  "run_completed_at_et": "2026-10-30T09:05:58-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
-  "community_access_result": "OK — 139 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-10-29",
-  "new_members_found": [
-    {
-      "id": "2146",
-      "name": "Ertifa Alomari",
-      "role": "member",
-      "approved": true,
-      "timestamp": "2026-10-29T19:06:45.274Z",
-      "lastActivity": "2026-10-30T02:01:31.540Z"
-    }
-  ],
+  "community_access_result": "OK — 139 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-30",
+  "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
@@ -37,17 +28,45 @@
   "blockers": [],
   "recommended_next_actions": [],
   "member_review_dualrun": {
-    "status": "connector_snapshot_missing",
-    "action": "agent: call genesis_crm_contacts (projectId 56382, all pages) then run ingest_connector",
+    "status": "compared",
+    "source_of_truth": "legacy",
+    "connector_fetched_at_et": "2026-10-30T09:05:32-04:00",
+    "connector_total": 154,
+    "legacy_status": "ok",
+    "legacy_total": 139,
+    "legacy_new": [],
+    "connector_new": [],
+    "differences": [
+      "total differs: legacy 139 vs connector CRM 154"
+    ],
+    "match": false,
     "genesis_community_members": {
-      "status": "connector_snapshot_missing"
+      "status": "ok",
+      "total": 0,
+      "names": [],
+      "usable": false
     }
   },
   "community_stats": {
-    "status": "connector_snapshot_missing",
-    "action": "agent: call genesis_community_overview {communityId:'56382'} and save raw JSON"
+    "status": "ok",
+    "source": "user-estage-api genesis_community_overview",
+    "members": 139,
+    "activeMembers": {
+      "last7Days": 28,
+      "last30Days": 55
+    },
+    "posts": {
+      "last7Days": 9,
+      "last30Days": 46
+    },
+    "comments": {
+      "last7Days": 6,
+      "last30Days": 13
+    },
+    "pendingRequests": 0,
+    "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
+  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
   "status": "in_progress"
 }
