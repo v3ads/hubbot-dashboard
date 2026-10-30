@@ -1,7 +1,7 @@
 # HubBot Run — 2026-10-30
 
 - **Started:** 2026-10-30T09:05:49-04:00
-- **Completed:** 2026-10-30T09:10:08-04:00
+- **Completed:** 2026-10-30T09:10:24-04:00
 - **Status:** complete
 
 ## Community Access
@@ -28,13 +28,17 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** new_members_alert_sent_via_brevo_by_pipeline
 
 ## Saturday Digest
 - **Status:** not_saturday
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (2)
+- Connector presigned upload (genesis_upload_start PUT) returned S3 AccessDenied (VPC endpoint policy); AI-news image uploaded via genesis_upload_inline instead.
+- Ertifa's DM confirmed via page text (sent 09:07, no 'Sending…'); the post-send screenshot was stale.
 
 ## Recommended Next Actions
+- AI-news published: https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2
+- Public welcome post: https://community.hubactually.com/d210ab96-08f7-456c-b7cc-67beba6f6130
