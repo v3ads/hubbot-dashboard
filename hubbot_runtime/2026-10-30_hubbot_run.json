@@ -2,18 +2,24 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-30T09:05:49-04:00",
-  "run_completed_at_et": "2026-10-30T09:05:58-04:00",
+  "run_completed_at_et": "2026-10-30T09:08:12-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 139 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-30",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "2146",
+      "name": "Ertifa Alomari",
+      "status": "public_post_done"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
+  "ai_news_title": "GitHub's new Copilot app lets you hand it a goal and it runs a team of AI agents to get it done",
+  "ai_news_source_url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
   "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_publish_status": "pending_connector",
   "image_concept": null,
   "image_status": "pending",
   "pre_publish_checks": {
@@ -24,7 +30,7 @@
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "member_review_dualrun": {
@@ -68,5 +74,5 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
