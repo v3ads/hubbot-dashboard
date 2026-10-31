@@ -1,66 +1,60 @@
 {
   "agent_name": "HubBot",
   "agent_version": "v3",
-  "run_started_at_et": "2026-10-31T09:07:44-04:00",
-  "run_completed_at_et": "2026-10-31T09:08:24-04:00",
+  "run_started_at_et": "2026-10-30T09:05:49-04:00",
+  "run_completed_at_et": "2026-10-30T09:10:24-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
-  "community_access_result": "OK — 140 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-31",
+  "community_access_result": "OK — 139 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-30",
   "new_members_found": [],
   "welcomes_posted": [
     {
-      "member_id": "14180",
-      "name": "Sharon Woods",
-      "status": "public_post_done; DM pending browser execution"
+      "member_id": "2146",
+      "name": "Ertifa Alomari",
+      "status": "welcomed_dm+post"
     }
   ],
   "comments_added": [],
   "flagged_items": [
     {
-      "summary": "Connector presigned upload (genesis_upload_start PUT) returned S3 AccessDenied (VPC endpoint policy) again; AI-news image uploaded via genesis_upload_inline instead."
+      "summary": "Connector presigned upload (genesis_upload_start PUT) returned S3 AccessDenied (VPC endpoint policy); AI-news image uploaded via genesis_upload_inline instead."
     },
     {
-      "summary": "Default re-run after finalize reset the AI-news ledger fields; restored here via enrich."
-    },
-    {
-      "summary": "Saturday digest HELD: hubbot_send_weekly_digest.py hard-codes and requires the meetn.com/hubactually join CTA before 1 PM ET (blocks if the P.S. uses the community homepage); complying with Ayman's 31 Oct no-meeting-link rule needs a script change. Not sent."
+      "summary": "Ertifa's DM confirmed via page text (sent 09:07, no 'Sending…'); the post-send screenshot was stale."
     }
   ],
-  "ai_news_title": "Gemini in Google Slides can now edit your whole deck from one prompt",
-  "ai_news_source_url": "https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html",
-  "ai_news_post_url": "https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d",
+  "ai_news_title": "GitHub's new Copilot app lets you hand it a goal and it runs a team of AI agents to get it done",
+  "ai_news_source_url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
+  "ai_news_post_url": "https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2",
   "ai_news_publish_status": "published",
-  "image_concept": "A stack of slide cards fanned out behind a prompt bar, showing a whole deck being restyled at once from one instruction. Warm sunset palette, flat vector.",
-  "image_status": "uploaded",
+  "image_concept": "One prompt bar sends a wave of light through a row of slides: messy mismatched slides behind the wave, unified teal/coral slides after it. Flat-3D on navy, no text or logos.",
+  "image_status": "attached_previewImages_after_correction",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline (first default run)",
-  "saturday_digest_status": "held_meetn_link_hardcoded",
+  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline",
+  "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [
-    "saturday_digest_held: meetn link hard-coded in hubbot_send_weekly_digest.py conflicts with 31 Oct no-meeting-link rule"
-  ],
+  "blockers": [],
   "recommended_next_actions": [
-    "Browser: send welcome DM to Sharon Woods (14180)",
-    "Ayman: approve a digest-script change (community homepage instead of meetn link) or skip this week's digest",
-    "AI-news published: https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d",
-    "Public welcome post: https://community.hubactually.com/ec3a5810-3510-4e9b-aae9-6a2b8c9046ac"
+    "AI-news published: https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2",
+    "Public welcome post: https://community.hubactually.com/d210ab96-08f7-456c-b7cc-67beba6f6130"
   ],
   "member_review_dualrun": {
     "status": "compared",
     "source_of_truth": "legacy",
-    "connector_fetched_at_et": "2026-10-31T09:04:08-04:00",
-    "connector_total": 156,
+    "connector_fetched_at_et": "2026-10-30T09:05:32-04:00",
+    "connector_total": 154,
     "legacy_status": "ok",
-    "legacy_total": 140,
+    "legacy_total": 139,
     "legacy_new": [],
     "connector_new": [],
     "differences": [
-      "total differs: legacy 140 vs connector CRM 156"
+      "total differs: legacy 139 vs connector CRM 154"
     ],
     "match": false,
     "genesis_community_members": {
@@ -73,14 +67,14 @@
   "community_stats": {
     "status": "ok",
     "source": "user-estage-api genesis_community_overview",
-    "members": 140,
+    "members": 139,
     "activeMembers": {
-      "last7Days": 30,
-      "last30Days": 56
+      "last7Days": 28,
+      "last30Days": 55
     },
     "posts": {
-      "last7Days": 12,
-      "last30Days": 48
+      "last7Days": 9,
+      "last30Days": 46
     },
     "comments": {
       "last7Days": 6,
@@ -90,7 +84,20 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Connector check: 3 threads flagged in 36h window, all authored by the owner account (authorId 91: Put your Hubs to work!, yesterday's AI-news, yesterday's welcome); no member-authored threads; only comment in 2 days is a Hub Bot reply. Nothing to propose.",
-  "status": "complete_with_blockers",
-  "image_source": "local_pil_fallback"
+  "discussion_review_summary": "Connector check: 0 member threads needing attention in the 36h window; quiet.",
+  "status": "complete",
+  "image_source": "generate_image",
+  "image_path": "/workspace/hubbot_runtime/images/2026-10-31_ai_news_gemini_whole_deck_wave.jpg",
+  "image_sha256": "71de6662d637b3fd65b62bf2b566b6247f2be3a1e6a6ae2e24e96e1134cadc8f",
+  "image_distinct_check": "pass",
+  "owner_alert_required": false,
+  "image_correction_2026_10_31": {
+    "found": "Post was published via user-estage-api connector with the image only as an <img> in the body; previewImages was EMPTY, so no image rendered in the feed. The earlier image_status 'uploaded'/image_verified true was self-reported and wrong.",
+    "fixed_at_et": "2026-10-31T10:28:40-04:00",
+    "method": "legacy Estage REST: POST /api/56382/upload + PUT /threads/{id} with previewImages (Ayman-approved one-time exception 2026-10-31 10:24 ET)",
+    "previous_image_path": "/workspace/hubbot_runtime/images/2026-10-30_ai_news_copilot_goal_agent_team.jpg",
+    "previous_image_source": "generate_image"
+  },
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1793456782108.jpg",
+  "image_verified_on_live_post": true
 }
