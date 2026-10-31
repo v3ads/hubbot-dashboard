@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-31T09:03:27-04:00",
-  "run_completed_at_et": "2026-10-31T09:05:50-04:00",
+  "run_completed_at_et": "2026-10-31T09:07:19-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 140 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-10-30",
@@ -27,15 +27,16 @@
   "flagged_items": [],
   "ai_news_title": "Gemini in Google Slides can now edit your whole deck from one prompt",
   "ai_news_source_url": "https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html",
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending_connector",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_post_url": "https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d",
+  "ai_news_publish_status": "published",
+  "image_concept": "A stack of slide cards fanned out behind a prompt bar, showing a whole deck being restyled at once from one instruction. Warm sunset palette, flat vector.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "pending",
@@ -57,5 +58,10 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
-  "status": "complete"
+  "status": "complete",
+  "image_source": "local_pil_fallback",
+  "image_path": "/workspace/hubbot_runtime/images/2026-10-31_ai_news_gemini_slides_deck_pilfallback_090529_e41431.jpg",
+  "image_sha256": "4b8a55f8a7473a427586f6ff078fa08fe1c51b6b65c01c5acc0c5798fd3603b4",
+  "image_distinct_check": "pass",
+  "owner_alert_required": false
 }
