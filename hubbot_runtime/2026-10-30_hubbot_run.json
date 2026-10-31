@@ -27,8 +27,8 @@
   "ai_news_source_url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
   "ai_news_post_url": "https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2",
   "ai_news_publish_status": "published",
-  "image_concept": "A goal sticky note with a target on the left flows into a glowing hub that fans out to several small robot helpers working in parallel lanes on a document, a design mockup and a desktop app window, then the finished results land on a review tray with a checkmark. Purple, navy and amber flat vector, no text, no logos, no people.",
-  "image_status": "uploaded",
+  "image_concept": "A person hands one glowing goal card to an orchestrator orb that fans out to five robot workers whose results flow back into one finished package on a review desk. Amber/indigo isometric, no text or logos.",
+  "image_status": "attached_previewImages_after_correction",
   "pre_publish_checks": {
     "image_generated": "pass",
     "image_attached": "pass",
@@ -87,8 +87,17 @@
   "discussion_review_summary": "Connector check: 0 member threads needing attention in the 36h window; quiet.",
   "status": "complete",
   "image_source": "generate_image",
-  "image_path": "/workspace/hubbot_runtime/images/2026-10-30_ai_news_copilot_app.jpg",
-  "image_sha256": "2ed7fe66d73c0425c098c1b2b6cc839270c0b94354385c11bbd0b667d1621f82",
+  "image_path": "/workspace/hubbot_runtime/images/2026-10-30_ai_news_copilot_goal_agent_team.jpg",
+  "image_sha256": "592596518512b3aed34dcb0ce33f296bc10bdad80a4adfc793bcb43947074447",
   "image_distinct_check": "pass",
-  "owner_alert_required": false
+  "owner_alert_required": false,
+  "image_correction": {
+    "corrected_at_et": "2026-10-31T10:29:23-04:00",
+    "found": "Published via user-estage-api connector with the image only as an <img> in the body; previewImages was EMPTY so no image rendered. Earlier image_status 'uploaded' / image_verified true was self-reported, not checked on the live post.",
+    "method": "legacy Estage REST upload + PUT /threads/{id} with previewImages (Ayman one-time approval 2026-10-31 10:24 ET)",
+    "previous_image_path": "/workspace/hubbot_runtime/images/2026-10-30_ai_news_copilot_app.jpg",
+    "previous_image_source": "generate_image"
+  },
+  "image_url": "https://estage-test.b-cdn.net/uploads/images/1793456786568.jpg",
+  "image_verified_on_live_post": true
 }
