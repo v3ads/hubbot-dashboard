@@ -1,15 +1,15 @@
 {
   "latest_file": "/workspace/hubbot_runtime/ledger/2026-10-31_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/ledger/2026-10-31_hubbot_run.json",
-  "run_completed_at_et": "2026-10-31T09:08:24-04:00",
-  "status": "complete_with_blockers",
+  "run_completed_at_et": "2026-10-30T09:10:24-04:00",
+  "status": "complete",
   "new_members_found": [],
   "welcomes_posted": [
-    "Sharon Woods"
+    "Ertifa Alomari"
   ],
-  "ai_news_post_url": "https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d",
+  "ai_news_post_url": "https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2",
   "ai_news_publish_status": "published",
-  "saturday_digest_status": "held_meetn_link_hardcoded",
+  "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline (first default run)"
+  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline"
 }
