@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-31T09:03:27-04:00",
-  "run_completed_at_et": "2026-10-31T09:03:35-04:00",
+  "run_completed_at_et": "2026-10-31T09:05:50-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 140 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-10-30",
@@ -16,13 +16,19 @@
       "lastActivity": "2026-10-31T05:45:26.906Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "14180",
+      "name": "Sharon Woods",
+      "status": "public_post_done"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
+  "ai_news_title": "Gemini in Google Slides can now edit your whole deck from one prompt",
+  "ai_news_source_url": "https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html",
   "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_publish_status": "pending_connector",
   "image_concept": null,
   "image_status": "pending",
   "pre_publish_checks": {
@@ -31,11 +37,13 @@
     "clickable_link": "pending",
     "channel_and_author": "pending"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Welcome DM to Sharon Woods (14180) pending browser execution"
+  ],
   "member_review_dualrun": {
     "status": "connector_snapshot_missing",
     "action": "agent: call genesis_crm_contacts (projectId 56382, all pages) then run ingest_connector",
@@ -49,5 +57,5 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
-  "status": "in_progress"
+  "status": "complete"
 }
