@@ -1,15 +1,17 @@
 {
   "latest_file": "/workspace/hubbot_runtime/ledger/2026-10-31_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/ledger/2026-10-31_hubbot_run.json",
-  "run_completed_at_et": "2026-10-31T09:03:35-04:00",
-  "status": "in_progress",
+  "run_completed_at_et": "2026-10-31T09:05:50-04:00",
+  "status": "complete",
   "new_members_found": [
     "Sharon Woods"
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "Sharon Woods"
+  ],
   "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
+  "ai_news_publish_status": "pending_connector",
   "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
-  "owner_alert_status": "not_required"
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "owner_alert_status": "sent_via_brevo"
 }
