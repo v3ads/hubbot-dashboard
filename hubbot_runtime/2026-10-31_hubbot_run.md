@@ -1,47 +1,44 @@
 # HubBot Run — 2026-10-31
 
-- **Started:** 2026-10-31T09:07:44-04:00
-- **Completed:** 2026-10-31T09:08:24-04:00
-- **Status:** complete_with_blockers
+- **Started:** 2026-10-30T09:05:49-04:00
+- **Completed:** 2026-10-30T09:10:24-04:00
+- **Status:** complete
 
 ## Community Access
-- OK — 140 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-31
+- OK — 139 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-30
 
 ## New Members (0)
 
 ## Welcomes Posted (1)
-- Sharon Woods
+- Ertifa Alomari
 
 ## AI-news Post
-- **Title:** Gemini in Google Slides can now edit your whole deck from one prompt
+- **Title:** GitHub's new Copilot app lets you hand it a goal and it runs a team of AI agents to get it done
 - **Status:** published
-- **URL:** https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d
-- **Source:** https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html
-- **Image concept:** A stack of slide cards fanned out behind a prompt bar, showing a whole deck being restyled at once from one instruction. Warm sunset palette, flat vector.
-- **Image status:** uploaded
+- **URL:** https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2
+- **Source:** https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/
+- **Image concept:** One prompt bar sends a wave of light through a row of slides: messy mismatched slides behind the wave, unified teal/coral slides after it. Flat-3D on navy, no text or logos.
+- **Image status:** attached_previewImages_after_correction
 
 ## Pre-publish Checks
-- image_generated: pending
-- image_attached: pending
-- clickable_link: pending
-- channel_and_author: pending
+- image_generated: pass
+- image_attached: pass
+- clickable_link: pass
+- channel_and_author: pass
+- post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** new_members_alert_sent_via_brevo_by_pipeline (first default run)
+- **Status:** new_members_alert_sent_via_brevo_by_pipeline
 
 ## Saturday Digest
-- **Status:** held_meetn_link_hardcoded
+- **Status:** not_saturday
 
-## Blockers (1)
-- saturday_digest_held: meetn link hard-coded in hubbot_send_weekly_digest.py conflicts with 31 Oct no-meeting-link rule
+## Blockers (0)
 
-## Flagged Items (3)
-- Connector presigned upload (genesis_upload_start PUT) returned S3 AccessDenied (VPC endpoint policy) again; AI-news image uploaded via genesis_upload_inline instead.
-- Default re-run after finalize reset the AI-news ledger fields; restored here via enrich.
-- Saturday digest HELD: hubbot_send_weekly_digest.py hard-codes and requires the meetn.com/hubactually join CTA before 1 PM ET (blocks if the P.S. uses the community homepage); complying with Ayman's 31 Oct no-meeting-link rule needs a script change. Not sent.
+## Flagged Items (2)
+- Connector presigned upload (genesis_upload_start PUT) returned S3 AccessDenied (VPC endpoint policy); AI-news image uploaded via genesis_upload_inline instead.
+- Ertifa's DM confirmed via page text (sent 09:07, no 'Sending…'); the post-send screenshot was stale.
 
 ## Recommended Next Actions
-- Browser: send welcome DM to Sharon Woods (14180)
-- Ayman: approve a digest-script change (community homepage instead of meetn link) or skip this week's digest
-- AI-news published: https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d
-- Public welcome post: https://community.hubactually.com/ec3a5810-3510-4e9b-aae9-6a2b8c9046ac
+- AI-news published: https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2
+- Public welcome post: https://community.hubactually.com/d210ab96-08f7-456c-b7cc-67beba6f6130
