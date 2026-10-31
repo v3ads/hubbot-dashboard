@@ -2,31 +2,54 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-10-31T09:07:44-04:00",
-  "run_completed_at_et": "2026-10-31T09:07:51-04:00",
+  "run_completed_at_et": "2026-10-31T09:08:24-04:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 140 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-10-31",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "14180",
+      "name": "Sharon Woods",
+      "status": "public_post_done; DM pending browser execution"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "flagged_items": [
+    {
+      "summary": "Connector presigned upload (genesis_upload_start PUT) returned S3 AccessDenied (VPC endpoint policy) again; AI-news image uploaded via genesis_upload_inline instead."
+    },
+    {
+      "summary": "Default re-run after finalize reset the AI-news ledger fields; restored here via enrich."
+    },
+    {
+      "summary": "Saturday digest HELD: hubbot_send_weekly_digest.py hard-codes and requires the meetn.com/hubactually join CTA before 1 PM ET (blocks if the P.S. uses the community homepage); complying with Ayman's 31 Oct no-meeting-link rule needs a script change. Not sent."
+    }
+  ],
+  "ai_news_title": "Gemini in Google Slides can now edit your whole deck from one prompt",
+  "ai_news_source_url": "https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html",
+  "ai_news_post_url": "https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d",
+  "ai_news_publish_status": "published",
+  "image_concept": "A stack of slide cards fanned out behind a prompt bar, showing a whole deck being restyled at once from one instruction. Warm sunset palette, flat vector.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
     "image_generated": "pending",
     "image_attached": "pending",
     "clickable_link": "pending",
     "channel_and_author": "pending"
   },
-  "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
-  "blockers": [],
-  "recommended_next_actions": [],
+  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline (first default run)",
+  "saturday_digest_status": "held_meetn_link_hardcoded",
+  "dashboard_update_status": "completed_via_repo_fallback",
+  "blockers": [
+    "saturday_digest_held: meetn link hard-coded in hubbot_send_weekly_digest.py conflicts with 31 Oct no-meeting-link rule"
+  ],
+  "recommended_next_actions": [
+    "Browser: send welcome DM to Sharon Woods (14180)",
+    "Ayman: approve a digest-script change (community homepage instead of meetn link) or skip this week's digest",
+    "AI-news published: https://community.hubactually.com/2c49c06e-1d5c-4218-9941-c9ac8195e99d",
+    "Public welcome post: https://community.hubactually.com/ec3a5810-3510-4e9b-aae9-6a2b8c9046ac"
+  ],
   "member_review_dualrun": {
     "status": "compared",
     "source_of_truth": "legacy",
@@ -67,6 +90,7 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 3 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "discussion_review_summary": "Connector check: 3 threads flagged in 36h window, all authored by the owner account (authorId 91: Put your Hubs to work!, yesterday's AI-news, yesterday's welcome); no member-authored threads; only comment in 2 days is a Hub Bot reply. Nothing to propose.",
+  "status": "complete_with_blockers",
+  "image_source": "local_pil_fallback"
 }
