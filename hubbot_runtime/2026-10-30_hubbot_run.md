@@ -42,3 +42,6 @@
 ## Recommended Next Actions
 - AI-news published: https://community.hubactually.com/697bfc28-c8b0-4e97-b173-cffb5315ace2
 - Public welcome post: https://community.hubactually.com/d210ab96-08f7-456c-b7cc-67beba6f6130
+
+## Image correction (2026-10-31)
+- previewImages was empty (connector path); attached new image https://estage-test.b-cdn.net/uploads/images/1793456786568.jpg via legacy upload + PUT; verified on live post.
