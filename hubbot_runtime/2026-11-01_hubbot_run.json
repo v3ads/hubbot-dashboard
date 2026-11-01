@@ -2,14 +2,18 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-01T09:01:54-05:00",
-  "run_completed_at_et": "2026-11-01T09:03:15-05:00",
+  "run_completed_at_et": "2026-11-01T09:03:47-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 140 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-01",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "summary": "Sharon Woods (14180) welcome DM was still pending browser execution in the 31 Oct ledger; no record it was sent. Not sent today to avoid a possible double DM; needs confirmation."
+    }
+  ],
   "ai_news_title": "Google Sheets now shows the web source behind every cell Gemini fills in",
   "ai_news_source_url": "https://workspaceupdates.googleblog.com/2026/10/fill-with-gemini-now-provides-cell-level-citations-for-web-sources-and-supports-larger-requests.html",
   "ai_news_post_url": "https://community.hubactually.com/15e3a36e-d7e0-403a-b778-7a822d171ba0",
@@ -27,7 +31,10 @@
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Confirm whether Sharon Woods (14180) got her welcome DM on 31 Oct; if not, send it once via browser",
+    "AI-news published: https://community.hubactually.com/15e3a36e-d7e0-403a-b778-7a822d171ba0"
+  ],
   "member_review_dualrun": {
     "status": "compared",
     "source_of_truth": "legacy",
@@ -68,7 +75,7 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 7 member thread(s) in last 36h, 4 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Connector check: 7 threads in 36h window; 4 flagged with 0 comments (GenLocalSite Reveal, yesterday's AI-news, Welcome Sharon Woods, Put your Hubs to work!). Recent member comments are positive reactions to GenLocalSite (one member mentions a prior tool and sees opportunities with Estage). Nothing urgent; nothing proposed.",
   "status": "complete",
   "image_verified_on_live_post": true,
   "image_source": "generate_image",
