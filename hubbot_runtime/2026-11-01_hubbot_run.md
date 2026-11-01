@@ -1,7 +1,7 @@
 # HubBot Run — 2026-11-01
 
 - **Started:** 2026-11-01T09:01:54-05:00
-- **Completed:** 2026-11-01T09:03:15-05:00
+- **Completed:** 2026-11-01T09:03:47-05:00
 - **Status:** complete
 
 ## Community Access
@@ -34,6 +34,9 @@
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (1)
+- Sharon Woods (14180) welcome DM was still pending browser execution in the 31 Oct ledger; no record it was sent. Not sent today to avoid a possible double DM; needs confirmation.
 
 ## Recommended Next Actions
+- Confirm whether Sharon Woods (14180) got her welcome DM on 31 Oct; if not, send it once via browser
+- AI-news published: https://community.hubactually.com/15e3a36e-d7e0-403a-b778-7a822d171ba0
