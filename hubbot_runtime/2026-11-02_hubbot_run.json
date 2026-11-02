@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-02T09:16:46-05:00",
-  "run_completed_at_et": "2026-11-02T09:16:56-05:00",
+  "run_completed_at_et": "2026-11-02T09:20:20-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 141 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-11-01",
@@ -16,24 +16,31 @@
       "lastActivity": "2026-11-02T00:43:45.064Z"
     }
   ],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "97378",
+      "name": "Robert Phillips",
+      "status": "public_post_done; DM pending browser execution"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Shopify now lets you run your store from ChatGPT, Claude, Gemini or Copilot",
+  "ai_news_source_url": "https://www.shopify.com/blog/how-to-start-and-run-a-shopify-store-with-ai-agents",
+  "ai_news_post_url": "https://community.hubactually.com/8df3b67d-646f-423b-9d8c-b1c52ce8eaa8",
+  "ai_news_publish_status": "published",
+  "image_concept": "A chat window wired to a small online storefront with stock shelves, an order receipt and a rising sales chart: running a shop just by chatting.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [],
   "member_review_dualrun": {
@@ -49,5 +56,11 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
-  "status": "in_progress"
+  "status": "complete",
+  "image_verified_on_live_post": true,
+  "image_source": "local_pil_fallback",
+  "image_path": "/workspace/hubbot_runtime/images/2026-11-02_ai_news_shopify_connectors_pilfallback_091951_9e3094.jpg",
+  "image_sha256": "be2955236b58a2e67638bd34b1aa992a65cc75f4d0df79b67f5772295e76843f",
+  "image_distinct_check": "pass",
+  "owner_alert_required": false
 }
