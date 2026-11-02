@@ -1,7 +1,7 @@
 {
   "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-02_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/ledger/2026-11-02_hubbot_run.json",
-  "run_completed_at_et": "2026-11-02T09:20:20-05:00",
+  "run_completed_at_et": "2026-11-02T09:20:53-05:00",
   "status": "complete",
   "new_members_found": [
     "Robert Phillips"
@@ -13,5 +13,5 @@
   "ai_news_publish_status": "published",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "owner_alert_status": "sent_via_brevo"
+  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline"
 }
