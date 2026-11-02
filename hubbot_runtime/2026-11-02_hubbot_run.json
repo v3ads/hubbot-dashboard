@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-02T09:16:46-05:00",
-  "run_completed_at_et": "2026-11-02T09:20:20-05:00",
+  "run_completed_at_et": "2026-11-02T09:20:53-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 141 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-11-01",
@@ -20,11 +20,24 @@
     {
       "member_id": "97378",
       "name": "Robert Phillips",
-      "status": "public_post_done; DM pending browser execution"
+      "status": "welcomed_dm+post"
     }
   ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "summary": "GenerateImage produced an image but it was stored off-box (unreadable path), so the local PIL fallback image was used; published with image verified."
+    },
+    {
+      "summary": "Default re-run after connector snapshots was skipped to avoid a duplicate Brevo new-member alert (script has no alert dedupe); connector snapshots saved and CRM ingested (157 contacts)."
+    },
+    {
+      "summary": "Member intro post 'Hello everyone, happy to be here with you.' (ed02afcf-ca14-4e0a-bc28-d43027b53f46, authorId 320) has no reply yet; comment is propose-only."
+    },
+    {
+      "summary": "HubBot DM inbox shows unread member replies from Teri Wooddell and Joseph S (Joseph asks where to start); not answered by this run."
+    }
+  ],
   "ai_news_title": "Shopify now lets you run your store from ChatGPT, Claude, Gemini or Copilot",
   "ai_news_source_url": "https://www.shopify.com/blog/how-to-start-and-run-a-shopify-store-with-ai-agents",
   "ai_news_post_url": "https://community.hubactually.com/8df3b67d-646f-423b-9d8c-b1c52ce8eaa8",
@@ -38,11 +51,15 @@
     "channel_and_author": "pass",
     "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "sent_via_brevo",
+  "owner_alert_status": "new_members_alert_sent_via_brevo_by_pipeline",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Ayman: optionally reply to the new intro post https://community.hubactually.com/ed02afcf-ca14-4e0a-bc28-d43027b53f46",
+    "Ayman: unread HubBot DMs from Teri Wooddell and Joseph S",
+    "Dual-run members: legacy 141, connector genesis_community_members 0, CRM contacts 157"
+  ],
   "member_review_dualrun": {
     "status": "connector_snapshot_missing",
     "action": "agent: call genesis_crm_contacts (projectId 56382, all pages) then run ingest_connector",
@@ -55,7 +72,7 @@
     "action": "agent: call genesis_community_overview {communityId:'56382'} and save raw JSON"
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
+  "discussion_review_summary": "Connector snapshot: 1 new member-authored post in 36h (intro 'Hello everyone, happy to be here with you.', authorId 320, no comments). Recent comments are thanks/praise (Sadia Drame, SHASHIDHAR CN, Digital Joe); nothing needing moderation. Overview: 141 members, 0 pending, 0 banned, 39 active in 7 days.",
   "status": "complete",
   "image_verified_on_live_post": true,
   "image_source": "local_pil_fallback",
