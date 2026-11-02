@@ -1,7 +1,7 @@
 # HubBot Run — 2026-11-02
 
 - **Started:** 2026-11-02T09:16:46-05:00
-- **Completed:** 2026-11-02T09:20:20-05:00
+- **Completed:** 2026-11-02T09:20:53-05:00
 - **Status:** complete
 
 ## Community Access
@@ -29,13 +29,20 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** sent_via_brevo
+- **Status:** new_members_alert_sent_via_brevo_by_pipeline
 
 ## Saturday Digest
 - **Status:** not_saturday
 
 ## Blockers (0)
 
-## Flagged Items (0)
+## Flagged Items (4)
+- GenerateImage produced an image but it was stored off-box (unreadable path), so the local PIL fallback image was used; published with image verified.
+- Default re-run after connector snapshots was skipped to avoid a duplicate Brevo new-member alert (script has no alert dedupe); connector snapshots saved and CRM ingested (157 contacts).
+- Member intro post 'Hello everyone, happy to be here with you.' (ed02afcf-ca14-4e0a-bc28-d43027b53f46, authorId 320) has no reply yet; comment is propose-only.
+- HubBot DM inbox shows unread member replies from Teri Wooddell and Joseph S (Joseph asks where to start); not answered by this run.
 
 ## Recommended Next Actions
+- Ayman: optionally reply to the new intro post https://community.hubactually.com/ed02afcf-ca14-4e0a-bc28-d43027b53f46
+- Ayman: unread HubBot DMs from Teri Wooddell and Joseph S
+- Dual-run members: legacy 141, connector genesis_community_members 0, CRM contacts 157
