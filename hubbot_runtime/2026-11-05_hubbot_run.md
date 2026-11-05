@@ -1,15 +1,20 @@
 # HubBot Run — 2026-11-05
 
 - **Started:** 2026-11-05T09:14:43-05:00
-- **Completed:** 2026-11-05T09:16:33-05:00
-- **Status:** complete
+- **Completed:** 2026-11-05T09:16:58-05:00
+- **Status:** complete_with_blockers
 
 ## Community Access
 - OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-05
 
 ## New Members (0)
 
-## Welcomes Posted (0)
+## Welcomes Posted (5)
+- Dominik Kowalski
+- Sherry Douglas
+- Yuraandar Palani
+- James Vorwerk
+- Pete Dyck
 
 ## AI-news Post
 - **Title:** OpenAI's Images 2.6 is 50% faster and can now make looping GIFs from a single prompt
@@ -27,13 +32,17 @@
 - post_publish_verified_headless: pass
 
 ## Owner Alert
-- **Status:** not_required
+- **Status:** sent_via_brevo (new members, from the first default run)
 
 ## Saturday Digest
 - **Status:** not_saturday
 
-## Blockers (0)
+## Blockers (1)
+- welcome_dms_pending: no browser tool in this run; 5 welcome DMs not sent
 
-## Flagged Items (0)
+## Flagged Items (1)
+- {'item': "Digital Joe thread 'Gen Whisperer/ open router' unanswered, GenLocalSite/OpenRouter question", 'url': 'https://community.hubactually.com/0ea063ee-cf61-4529-9027-a795c8311714'}
 
 ## Recommended Next Actions
+- Dispatch computerUse to send the 5 welcome DMs as Hub Bot (texts in run_2026-11-05_welcome.json dm_texts). Public welcome post efc15b53 already live; do not re-post.
+- Ayman: consider replying to Digital Joe's GenLocalSite/OpenRouter question.
