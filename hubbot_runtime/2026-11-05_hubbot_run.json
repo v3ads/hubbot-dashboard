@@ -1,8 +1,8 @@
 {
   "agent_name": "HubBot",
   "agent_version": "v3",
-  "run_started_at_et": "2026-11-05T09:14:18-05:00",
-  "run_completed_at_et": "2026-11-05T09:14:27-05:00",
+  "run_started_at_et": "2026-11-05T09:14:43-05:00",
+  "run_completed_at_et": "2026-11-05T09:14:49-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-05",
@@ -57,6 +57,6 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
+  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
   "status": "in_progress"
 }
