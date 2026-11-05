@@ -2,14 +2,50 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-05T09:14:43-05:00",
-  "run_completed_at_et": "2026-11-05T09:16:33-05:00",
+  "run_completed_at_et": "2026-11-05T09:16:58-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-05",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "4017",
+      "name": "Dominik Kowalski",
+      "status": "welcomed_post_only_dm_pending_browser",
+      "post_url": "https://community.hubactually.com/efc15b53-9385-4677-b8dd-2ff32f933ab9"
+    },
+    {
+      "member_id": "991",
+      "name": "Sherry Douglas",
+      "status": "welcomed_post_only_dm_pending_browser",
+      "post_url": "https://community.hubactually.com/efc15b53-9385-4677-b8dd-2ff32f933ab9"
+    },
+    {
+      "member_id": "308",
+      "name": "Yuraandar Palani",
+      "status": "welcomed_post_only_dm_pending_browser",
+      "post_url": "https://community.hubactually.com/efc15b53-9385-4677-b8dd-2ff32f933ab9"
+    },
+    {
+      "member_id": "505",
+      "name": "James Vorwerk",
+      "status": "welcomed_post_only_dm_pending_browser",
+      "post_url": "https://community.hubactually.com/efc15b53-9385-4677-b8dd-2ff32f933ab9"
+    },
+    {
+      "member_id": "3387",
+      "name": "Pete Dyck",
+      "status": "welcomed_post_only_dm_pending_browser",
+      "post_url": "https://community.hubactually.com/efc15b53-9385-4677-b8dd-2ff32f933ab9"
+    }
+  ],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "item": "Digital Joe thread 'Gen Whisperer/ open router' unanswered, GenLocalSite/OpenRouter question",
+      "url": "https://community.hubactually.com/0ea063ee-cf61-4529-9027-a795c8311714"
+    }
+  ],
   "ai_news_title": "OpenAI's Images 2.6 is 50% faster and can now make looping GIFs from a single prompt",
   "ai_news_source_url": "https://openai.com/index/introducing-images-2-6/",
   "ai_news_post_url": "https://community.hubactually.com/bee598bc-3585-43a8-b366-f4d54be2c7cd",
@@ -23,11 +59,16 @@
     "channel_and_author": "pass",
     "post_publish_verified_headless": "pass"
   },
-  "owner_alert_status": "not_required",
+  "owner_alert_status": "sent_via_brevo (new members, from the first default run)",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
-  "recommended_next_actions": [],
+  "blockers": [
+    "welcome_dms_pending: no browser tool in this run; 5 welcome DMs not sent"
+  ],
+  "recommended_next_actions": [
+    "Dispatch computerUse to send the 5 welcome DMs as Hub Bot (texts in run_2026-11-05_welcome.json dm_texts). Public welcome post efc15b53 already live; do not re-post.",
+    "Ayman: consider replying to Digital Joe's GenLocalSite/OpenRouter question."
+  ],
   "member_review_dualrun": {
     "status": "dual_run_ended",
     "until": "2026-11-04",
@@ -58,8 +99,8 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 1 member thread(s) in last 36h, 1 needing attention — verdict: open_browser_review",
-  "status": "complete",
+  "discussion_review_summary": "Member thread 'Gen Whisperer/ open router' by Digital Joe (https://community.hubactually.com/0ea063ee-cf61-4529-9027-a795c8311714), 0 comments, asks whether to use Estage/GenLocalSite or fund OpenRouter to build. No comment posted (comments are propose-only); flagged for Ayman.",
+  "status": "complete_with_blockers",
   "image_verified_on_live_post": true,
   "image_source": "generate_image",
   "image_path": "/workspace/hubbot_runtime/images/2026-11-05_ai_news_images26_motion.jpg",
