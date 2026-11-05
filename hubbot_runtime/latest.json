@@ -1,15 +1,9 @@
 {
   "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-05_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/ledger/2026-11-05_hubbot_run.json",
-  "run_completed_at_et": "2026-11-05T09:13:50-05:00",
+  "run_completed_at_et": "2026-11-05T09:14:27-05:00",
   "status": "in_progress",
-  "new_members_found": [
-    "Dominik Kowalski",
-    "Sherry Douglas",
-    "Yuraandar Palani",
-    "James Vorwerk",
-    "Pete Dyck"
-  ],
+  "new_members_found": [],
   "welcomes_posted": [],
   "ai_news_post_url": null,
   "ai_news_publish_status": "pending",
