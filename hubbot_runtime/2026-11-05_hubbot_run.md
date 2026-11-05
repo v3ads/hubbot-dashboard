@@ -1,18 +1,13 @@
 # HubBot Run — 2026-11-05
 
-- **Started:** 2026-11-05T09:13:42-05:00
-- **Completed:** 2026-11-05T09:13:50-05:00
+- **Started:** 2026-11-05T09:14:18-05:00
+- **Completed:** 2026-11-05T09:14:27-05:00
 - **Status:** in_progress
 
 ## Community Access
-- OK — 146 members total, 5 genuinely new, 0 already-welcomed (skipped) since 2026-11-04
+- OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-05
 
-## New Members (5)
-- Dominik Kowalski
-- Sherry Douglas
-- Yuraandar Palani
-- James Vorwerk
-- Pete Dyck
+## New Members (0)
 
 ## Welcomes Posted (0)
 
