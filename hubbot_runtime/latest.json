@@ -1,13 +1,19 @@
 {
-  "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-04_hubbot_run.json",
-  "run_file": "/workspace/hubbot_runtime/ledger/2026-11-04_hubbot_run.json",
-  "run_completed_at_et": "2026-11-04T09:08:05-05:00",
-  "status": "complete",
-  "new_members_found": [],
+  "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-05_hubbot_run.json",
+  "run_file": "/workspace/hubbot_runtime/ledger/2026-11-05_hubbot_run.json",
+  "run_completed_at_et": "2026-11-05T09:13:50-05:00",
+  "status": "in_progress",
+  "new_members_found": [
+    "Dominik Kowalski",
+    "Sherry Douglas",
+    "Yuraandar Palani",
+    "James Vorwerk",
+    "Pete Dyck"
+  ],
   "welcomes_posted": [],
-  "ai_news_post_url": "https://community.hubactually.com/5c71fd8f-d68c-4624-ac25-98f6c5a4b723",
-  "ai_news_publish_status": "published",
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
+  "dashboard_update_status": "pending",
   "owner_alert_status": "not_required"
 }
