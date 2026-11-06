@@ -2,14 +2,19 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-06T09:08:55-05:00",
-  "run_completed_at_et": "2026-11-06T09:10:24-05:00",
+  "run_completed_at_et": "2026-11-06T09:12:22-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-06",
   "new_members_found": [],
   "welcomes_posted": [],
   "comments_added": [],
-  "flagged_items": [],
+  "flagged_items": [
+    {
+      "item": "Carry-forward: 5 welcome DMs from 2026-11-05 still pending (public post live). No computerUse in this executor; parent must dispatch browser DMs.",
+      "url": "https://community.hubactually.com/efc15b53-9385-4677-b8dd-2ff32f933ab9"
+    }
+  ],
   "ai_news_title": "Claude can now connect to your bank accounts and answer money questions (read-only)",
   "ai_news_source_url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
   "ai_news_post_url": "https://community.hubactually.com/696b3ff6-7f8d-49cd-833e-ef271b95a0b0",
@@ -26,8 +31,13 @@
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
   "dashboard_update_status": "completed_via_repo_fallback",
-  "blockers": [],
-  "recommended_next_actions": [],
+  "blockers": [
+    "welcome_dms_pending_carryforward: no computerUse in this run; 5 welcome DMs from 2026-11-05 still not sent (Dominik Kowalski/4017, Sherry Douglas/991, Yuraandar Palani/308, James Vorwerk/505, Pete Dyck/3387)"
+  ],
+  "recommended_next_actions": [
+    "Dispatch computerUse to send the 5 pending welcome DMs as Hub Bot (Dominik Kowalski 4017, Sherry Douglas 991, Yuraandar Palani 308, James Vorwerk 505, Pete Dyck 3387). Texts: /workspace/hubbot_runtime/connector/2026-11-05_welcome_dms/ and index /workspace/hubbot_runtime/connector/2026-11-05_welcome_dms_index.json (also in run_2026-11-05_welcome.json dm_texts). Public welcome post already live — do not re-post.",
+    "GenerateImage tool unavailable in cursor namespace today; PIL fallback used and image verified on live AI-news post."
+  ],
   "member_review_dualrun": {
     "status": "dual_run_ended",
     "until": "2026-11-04",
@@ -58,8 +68,8 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 3 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "complete",
+  "discussion_review_summary": "Connector review (no browser): 'Hub(s) + Social !' (04ddb6d7, authorId 91 = Ayman) — owner post, no action. Welcome post efc15b53 is HubActually admin welcome for Nov 5 cohort, no action. Digital Joe 'Gen Whisperer/ open router' (0ea063ee) now has Ayman reply + Digital Joe thanks — resolved, no longer flagged. Sadia Drame praised HubRipple post. Overview: 146 members, 0 pending, 0 banned, 44 active in 7 days. Dual-run: legacy members 146, genesis_community_members total 0 (unusable).",
+  "status": "complete_with_blockers",
   "image_verified_on_live_post": true,
   "image_source": "local_pil_fallback",
   "image_path": "/workspace/hubbot_runtime/images/2026-11-06_ai_news_claude_can_now_connect_to_your_bank_acco_pilfallback_091019_0526ae.jpg",
