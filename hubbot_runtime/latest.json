@@ -1,8 +1,8 @@
 {
   "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-06_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/ledger/2026-11-06_hubbot_run.json",
-  "run_completed_at_et": "2026-11-06T09:10:24-05:00",
-  "status": "complete",
+  "run_completed_at_et": "2026-11-06T09:12:22-05:00",
+  "status": "complete_with_blockers",
   "new_members_found": [],
   "welcomes_posted": [],
   "ai_news_post_url": "https://community.hubactually.com/696b3ff6-7f8d-49cd-833e-ef271b95a0b0",
