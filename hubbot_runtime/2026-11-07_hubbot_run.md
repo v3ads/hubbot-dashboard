@@ -1,7 +1,7 @@
 # HubBot Run — 2026-11-07
 
 - **Started:** 2026-11-07T09:09:59-05:00
-- **Completed:** 2026-11-07T09:11:18-05:00
+- **Completed:** 2026-11-07T09:12:44-05:00
 - **Status:** complete
 
 ## Community Access
@@ -9,7 +9,12 @@
 
 ## New Members (0)
 
-## Welcomes Posted (0)
+## Welcomes Posted (5)
+- Dominik Kowalski
+- Sherry Douglas
+- Yuraandar Palani
+- James Vorwerk
+- Pete Dyck
 
 ## AI-news Post
 - **Title:** Google's Gemini Omni 1.2 Flash makes 15-second video clips and cuts price 30%
@@ -30,12 +35,12 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
 ## Flagged Items (0)
 
 ## Recommended Next Actions
-- Send 5 carryforward welcome DMs from 2026-11-05 (Dominik Kowalski/4017, Sherry Douglas/991, Yuraandar Palani/308, James Vorwerk/505, Pete Dyck/3387) via computerUse.
-- Saturday digest after AI-news finalize.
+- False blocker cleared: the 5 Nov 5 welcome DMs were already delivered in Hub Bot Messages (Nov 5 ~09:27 ET); do not re-send.
+- Saturday digest Vk1nim scheduled for 10:00 AM ET via GetResponse; confirm delivery later if needed.
