@@ -2,12 +2,38 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-07T09:09:59-05:00",
-  "run_completed_at_et": "2026-11-07T09:11:18-05:00",
+  "run_completed_at_et": "2026-11-07T09:12:44-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-07",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "4017",
+      "name": "Dominik Kowalski",
+      "status": "dm_already_sent_2026-11-05_public_welcome_live"
+    },
+    {
+      "member_id": "991",
+      "name": "Sherry Douglas",
+      "status": "dm_already_sent_2026-11-05_public_welcome_live"
+    },
+    {
+      "member_id": "308",
+      "name": "Yuraandar Palani",
+      "status": "dm_already_sent_2026-11-05_public_welcome_live"
+    },
+    {
+      "member_id": "505",
+      "name": "James Vorwerk",
+      "status": "dm_already_sent_2026-11-05_public_welcome_live"
+    },
+    {
+      "member_id": "3387",
+      "name": "Pete Dyck",
+      "status": "dm_already_sent_2026-11-05_public_welcome_live"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
   "ai_news_title": "Google's Gemini Omni 1.2 Flash makes 15-second video clips and cuts price 30%",
@@ -24,12 +50,12 @@
     "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
   "recommended_next_actions": [
-    "Send 5 carryforward welcome DMs from 2026-11-05 (Dominik Kowalski/4017, Sherry Douglas/991, Yuraandar Palani/308, James Vorwerk/505, Pete Dyck/3387) via computerUse.",
-    "Saturday digest after AI-news finalize."
+    "False blocker cleared: the 5 Nov 5 welcome DMs were already delivered in Hub Bot Messages (Nov 5 ~09:27 ET); do not re-send.",
+    "Saturday digest Vk1nim scheduled for 10:00 AM ET via GetResponse; confirm delivery later if needed."
   ],
   "member_review_dualrun": {
     "status": "dual_run_ended",
@@ -61,12 +87,17 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Connector flagged 2 threads in the 36h window (HubRipple is here!; Hub(s) + Social !). Both authorId 91 (Ayman). No HubBot reply needed. Sadia comment on HubRipple post is positive; leave as-is. No member-support threads requiring action.",
   "status": "complete",
   "image_verified_on_live_post": true,
   "image_source": "generate_image",
   "image_path": "/workspace/hubbot_runtime/images/2026-11-07_ai_news_gemini_omni_12_flash.jpg",
   "image_sha256": "40e3c4f181d1afac51814c2c30f0f0247e530e6265489cf44005b238bbe22043",
   "image_distinct_check": "pass",
-  "owner_alert_required": false
+  "owner_alert_required": false,
+  "saturday_digest_reason": "Weekly digest scheduled through GetResponse",
+  "saturday_digest_scheduled_for_et": "2026-11-07T10:00:00-05:00",
+  "evidence": {
+    "saturday_digest_result_path": "/workspace/hubbot_runtime/digest_out_2026-11-07/20261107T091137-0500_weekly_digest_result.json"
+  }
 }
