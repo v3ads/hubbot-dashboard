@@ -1,13 +1,19 @@
 {
   "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-07_hubbot_run.json",
   "run_file": "/workspace/hubbot_runtime/ledger/2026-11-07_hubbot_run.json",
-  "run_completed_at_et": "2026-11-07T09:11:18-05:00",
+  "run_completed_at_et": "2026-11-07T09:12:44-05:00",
   "status": "complete",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    "Dominik Kowalski",
+    "Sherry Douglas",
+    "Yuraandar Palani",
+    "James Vorwerk",
+    "Pete Dyck"
+  ],
   "ai_news_post_url": "https://community.hubactually.com/baa0d396-694a-4ae2-be53-fe0c00bc03ea",
   "ai_news_publish_status": "published",
-  "saturday_digest_status": "pending",
+  "saturday_digest_status": "scheduled",
   "dashboard_update_status": "completed_via_repo_fallback",
   "owner_alert_status": "not_required"
 }
