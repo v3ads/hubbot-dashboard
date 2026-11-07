@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-07T09:09:59-05:00",
-  "run_completed_at_et": "2026-11-07T09:10:06-05:00",
+  "run_completed_at_et": "2026-11-07T09:11:18-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 146 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-07",
@@ -10,23 +10,27 @@
   "welcomes_posted": [],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Google's Gemini Omni 1.2 Flash makes 15-second video clips and cuts price 30%",
+  "ai_news_source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+  "ai_news_post_url": "https://community.hubactually.com/baa0d396-694a-4ae2-be53-fe0c00bc03ea",
+  "ai_news_publish_status": "published",
+  "image_concept": "Wide abstract concept: film strip dissolving into a polished 15-second product video frame with soft camera orbit arcs and a chat-edit bubble for multi-turn refinements. Warm sunrise orange to soft teal, flat vector, no logos or text.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "pending",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Send 5 carryforward welcome DMs from 2026-11-05 (Dominik Kowalski/4017, Sherry Douglas/991, Yuraandar Palani/308, James Vorwerk/505, Pete Dyck/3387) via computerUse.",
+    "Saturday digest after AI-news finalize."
+  ],
   "member_review_dualrun": {
     "status": "dual_run_ended",
     "until": "2026-11-04",
@@ -58,5 +62,11 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
-  "status": "in_progress"
+  "status": "complete",
+  "image_verified_on_live_post": true,
+  "image_source": "generate_image",
+  "image_path": "/workspace/hubbot_runtime/images/2026-11-07_ai_news_gemini_omni_12_flash.jpg",
+  "image_sha256": "40e3c4f181d1afac51814c2c30f0f0247e530e6265489cf44005b238bbe22043",
+  "image_distinct_check": "pass",
+  "owner_alert_required": false
 }
