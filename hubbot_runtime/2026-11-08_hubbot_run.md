@@ -1,14 +1,13 @@
 # HubBot Run — 2026-11-08
 
-- **Started:** 2026-11-08T09:02:15-05:00
-- **Completed:** 2026-11-08T09:02:25-05:00
+- **Started:** 2026-11-08T09:03:53-05:00
+- **Completed:** 2026-11-08T09:04:01-05:00
 - **Status:** in_progress
 
 ## Community Access
-- OK — 147 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-11-07
+- OK — 147 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-08
 
-## New Members (1)
-- rufus trotman
+## New Members (0)
 
 ## Welcomes Posted (0)
 
