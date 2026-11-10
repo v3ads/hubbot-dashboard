@@ -1,13 +1,16 @@
 {
-  "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-09_hubbot_run.json",
-  "run_file": "/workspace/hubbot_runtime/ledger/2026-11-09_hubbot_run.json",
-  "run_completed_at_et": "2026-11-09T09:08:06-05:00",
-  "status": "complete",
-  "new_members_found": [],
+  "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-10_hubbot_run.json",
+  "run_file": "/workspace/hubbot_runtime/ledger/2026-11-10_hubbot_run.json",
+  "run_completed_at_et": "2026-11-10T09:09:25-05:00",
+  "status": "in_progress",
+  "new_members_found": [
+    "Gaurav Verma",
+    "Trin Rios"
+  ],
   "welcomes_posted": [],
-  "ai_news_post_url": "https://community.hubactually.com/30a97dbf-b777-4e91-9df2-5a4f7c5bbebd",
-  "ai_news_publish_status": "published",
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
+  "dashboard_update_status": "pending",
   "owner_alert_status": "not_required"
 }
