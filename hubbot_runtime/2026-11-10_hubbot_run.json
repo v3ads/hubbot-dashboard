@@ -2,31 +2,45 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-10T09:09:51-05:00",
-  "run_completed_at_et": "2026-11-10T09:10:02-05:00",
+  "run_completed_at_et": "2026-11-10T09:11:05-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 149 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-10",
   "new_members_found": [],
-  "welcomes_posted": [],
+  "welcomes_posted": [
+    {
+      "member_id": "31",
+      "name": "Gaurav Verma",
+      "status": "post_only_dm_pending"
+    },
+    {
+      "member_id": "58330",
+      "name": "Trin Rios",
+      "status": "post_only_dm_pending"
+    }
+  ],
   "comments_added": [],
   "flagged_items": [],
-  "ai_news_title": null,
-  "ai_news_source_url": null,
-  "ai_news_post_url": null,
-  "ai_news_publish_status": "pending",
-  "image_concept": null,
-  "image_status": "pending",
+  "ai_news_title": "Anthropic releases Claude Fable 5.2: up to 30% faster and cheaper than 5.1",
+  "ai_news_source_url": "https://www.etvbharat.com/en/technology/major-ai-upgrades-meta-muse-openai-dot-multi-device-support-google-maps-platform-in-ai-studio-and-claude-fable-mythos-enn26111002884",
+  "ai_news_post_url": "https://community.hubactually.com/2d4c5ba0-4fbd-43cc-b55e-e5ff2b778011",
+  "ai_news_publish_status": "published",
+  "image_concept": "Wide abstract concept: a slow winding path on the left transforming into a straight bright fast lane on the right, with a small price tag shape shrinking along the way. Deep indigo to warm orange, flat vector, no logos or text.",
+  "image_status": "uploaded",
   "pre_publish_checks": {
-    "image_generated": "pending",
-    "image_attached": "pending",
-    "clickable_link": "pending",
-    "channel_and_author": "pending"
+    "image_generated": "pass",
+    "image_attached": "pass",
+    "clickable_link": "pass",
+    "channel_and_author": "pass",
+    "post_publish_verified_headless": "pass"
   },
   "owner_alert_status": "not_required",
   "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "pending",
+  "dashboard_update_status": "completed_via_repo_fallback",
   "blockers": [],
-  "recommended_next_actions": [],
+  "recommended_next_actions": [
+    "Send welcome DMs to Gaurav Verma and Trin Rios (browser-only)"
+  ],
   "member_review_dualrun": {
     "status": "dual_run_ended",
     "until": "2026-11-04",
@@ -58,5 +72,11 @@
   },
   "already_welcomed": [],
   "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: unknown_check_in_browser",
-  "status": "in_progress"
+  "status": "complete",
+  "image_verified_on_live_post": true,
+  "image_source": "local_pil_fallback",
+  "image_path": "/workspace/hubbot_runtime/images/2026-11-10_ai_news_anthropic_releases_claude_fable_5_2_up_t_pilfallback_091101_fa6521.jpg",
+  "image_sha256": "2c30053800660352e078daf8abc2831a76c60a2040a88c702fa36fa5b1c11f52",
+  "image_distinct_check": "pass",
+  "owner_alert_required": false
 }
