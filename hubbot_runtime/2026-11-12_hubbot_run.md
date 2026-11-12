@@ -1,7 +1,7 @@
 # HubBot Run — 2026-11-12
 
 - **Started:** 2026-11-12T09:06:02-05:00
-- **Completed:** 2026-11-12T09:07:16-05:00
+- **Completed:** 2026-11-12T09:09:36-05:00
 - **Status:** complete
 
 ## Community Access
@@ -9,7 +9,9 @@
 
 ## New Members (0)
 
-## Welcomes Posted (0)
+## Welcomes Posted (2)
+- Renata Harris
+- Gerald Gabardi | HubArchitect™
 
 ## AI-news Post
 - **Title:** Anthropic adds Claude Sheets, Whiteboards and Data: shared work tools inside Claude
