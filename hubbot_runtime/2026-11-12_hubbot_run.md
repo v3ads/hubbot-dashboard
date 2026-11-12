@@ -1,15 +1,13 @@
 # HubBot Run — 2026-11-12
 
-- **Started:** 2026-11-12T09:04:09-05:00
-- **Completed:** 2026-11-12T09:04:18-05:00
+- **Started:** 2026-11-12T09:04:43-05:00
+- **Completed:** 2026-11-12T09:04:52-05:00
 - **Status:** in_progress
 
 ## Community Access
-- OK — 151 members total, 2 genuinely new, 0 already-welcomed (skipped) since 2026-11-11
+- OK — 151 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-12
 
-## New Members (2)
-- Renata Harris
-- Gerald Gabardi | HubArchitect™
+## New Members (0)
 
 ## Welcomes Posted (0)
 
