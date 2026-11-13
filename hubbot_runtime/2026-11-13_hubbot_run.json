@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-13T09:11:08-05:00",
-  "run_completed_at_et": "2026-11-13T09:11:41-05:00",
+  "run_completed_at_et": "2026-11-13T09:11:52-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 151 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-13",
@@ -58,7 +58,7 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 2 member thread(s) in last 36h, 2 needing attention — verdict: open_browser_review",
+  "discussion_review_summary": "Connector check: Ayman's 542b18c5 post (Quick Chat / referral) and the 11-12 welcome post have 0 comments; 4bfe655f Find Leads has 4 comments, all friendly or answered by Ayman. Nothing needing HubBot action.",
   "status": "complete",
   "image_verified_on_live_post": true,
   "image_source": "local_pil_fallback",
