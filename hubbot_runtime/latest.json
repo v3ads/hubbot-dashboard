@@ -1,13 +1,13 @@
 {
-  "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-13_hubbot_run.json",
-  "run_file": "/workspace/hubbot_runtime/ledger/2026-11-13_hubbot_run.json",
-  "run_completed_at_et": "2026-11-13T09:11:52-05:00",
-  "status": "complete",
+  "latest_file": "/workspace/hubbot_runtime/ledger/2026-11-14_hubbot_run.json",
+  "run_file": "/workspace/hubbot_runtime/ledger/2026-11-14_hubbot_run.json",
+  "run_completed_at_et": "2026-11-14T09:01:54-05:00",
+  "status": "in_progress",
   "new_members_found": [],
   "welcomes_posted": [],
-  "ai_news_post_url": "https://community.hubactually.com/20cc1e85-6def-47c0-a336-99780c0b8483",
-  "ai_news_publish_status": "published",
-  "saturday_digest_status": "not_saturday",
-  "dashboard_update_status": "completed_via_repo_fallback",
+  "ai_news_post_url": null,
+  "ai_news_publish_status": "pending",
+  "saturday_digest_status": "pending",
+  "dashboard_update_status": "pending",
   "owner_alert_status": "not_required"
 }
