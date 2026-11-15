@@ -1,14 +1,13 @@
 # HubBot Run — 2026-11-15
 
-- **Started:** 2026-11-15T09:06:40-05:00
-- **Completed:** 2026-11-15T09:06:49-05:00
+- **Started:** 2026-11-15T09:07:28-05:00
+- **Completed:** 2026-11-15T09:07:37-05:00
 - **Status:** in_progress
 
 ## Community Access
-- OK — 152 members total, 1 genuinely new, 0 already-welcomed (skipped) since 2026-11-14
+- OK — 152 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-15
 
-## New Members (1)
-- Ian Gyan
+## New Members (0)
 
 ## Welcomes Posted (0)
 
