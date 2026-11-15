@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-15T09:07:28-05:00",
-  "run_completed_at_et": "2026-11-15T09:10:17-05:00",
+  "run_completed_at_et": "2026-11-15T09:11:25-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 152 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-15",
@@ -11,7 +11,7 @@
     {
       "member_id": "122280",
       "name": "Ian Gyan",
-      "status": "welcomed_post_dm_pending"
+      "status": "welcomed_dm+post"
     }
   ],
   "comments_added": [],
@@ -64,7 +64,7 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "0 comments, quiet day (connector check: no member threads needing attention in 36h).",
   "status": "complete",
   "image_verified_on_live_post": true,
   "image_source": "generate_image",
