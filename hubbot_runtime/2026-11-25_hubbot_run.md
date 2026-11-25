@@ -1,11 +1,11 @@
 # HubBot Run — 2026-11-25
 
-- **Started:** 2026-11-25T09:08:06-05:00
-- **Completed:** 2026-11-25T09:08:15-05:00
+- **Started:** 2026-11-25T09:08:42-05:00
+- **Completed:** 2026-11-25T09:08:51-05:00
 - **Status:** in_progress
 
 ## Community Access
-- OK — 152 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-24
+- OK — 152 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-25
 
 ## New Members (0)
 
