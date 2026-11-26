@@ -2,7 +2,7 @@
   "agent_name": "HubBot",
   "agent_version": "v3",
   "run_started_at_et": "2026-11-26T09:07:36-05:00",
-  "run_completed_at_et": "2026-11-26T09:09:22-05:00",
+  "run_completed_at_et": "2026-11-26T09:09:40-05:00",
   "schedule_name": "HubActually daily community admin",
   "schedule_cron": "0 0 9 * * *",
   "community_access_result": "OK — 152 members total, 0 genuinely new, 0 already-welcomed (skipped) since 2026-11-26",
@@ -58,7 +58,7 @@
     "bannedNow": 0
   },
   "already_welcomed": [],
-  "discussion_review_summary": "Headless check: 0 member thread(s) in last 36h, 0 needing attention — verdict: quiet_skip_browser",
+  "discussion_review_summary": "0 comments in 2 days, quiet day (connector headless check). No member threads need attention. No new members (152 legacy; connector members tool returns 0). Thursday: no digest. Overview: 17 active members last 7 days, 0 pending requests.",
   "status": "complete",
   "image_verified_on_live_post": true,
   "image_source": "generate_image",
