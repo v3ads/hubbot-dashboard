@@ -1,7 +1,7 @@
 # HubBot Run — 2026-11-28
 
 - **Started:** 2026-11-28T09:04:34-05:00
-- **Completed:** 2026-11-28T09:06:47-05:00
+- **Completed:** 2026-11-28T09:08:14-05:00
 - **Status:** complete
 
 ## Community Access
@@ -30,7 +30,7 @@
 - **Status:** not_required
 
 ## Saturday Digest
-- **Status:** pending
+- **Status:** scheduled
 
 ## Blockers (0)
 
